@@ -1,4 +1,21 @@
-<mat-sidenav-container class="example-container">
-    <mat-sidenav mode="side" opened>Sidenav content</mat-sidenav>
-    <mat-sidenav-content>Main content</mat-sidenav-content>
+<mat-toolbar class="app-header" color="primary" fxLayout="row" fxLayoutAlign="space-between center">
+    <button mat-icon-button (click)="toggleSideNav()">
+        <i class="material-icons">
+            timeline
+        </i>
+    </button>
+
+    <span>App</span>
+
+    <i class="material-icons">
+        menu
+    </i>
+</mat-toolbar>
+
+
+<mat-sidenav-container class="app-container">
+    <mat-sidenav class="app-sidenav" #sidenav mode="side" [(opened)]="opened">Sidenav content</mat-sidenav>
+    <mat-sidenav-content>
+        main content goes here
+    </mat-sidenav-content>
 </mat-sidenav-container>

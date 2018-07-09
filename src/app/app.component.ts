@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'e-learning';
+  opened: boolean;
+
+  constructor() {
+    this.opened = true;
+  }
+
+  toggleSideNav() {
+    this.opened = !this.opened;
+  }
 }

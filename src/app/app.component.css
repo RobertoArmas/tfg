@@ -1,8 +1,19 @@
-.example-container {
+.app-container {
     position: absolute;
-    top: 0;
+    top: 60px;
     bottom: 0;
     left: 0;
     right: 0;
     background: #eee;
+}
+
+.app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.app-sidenav {
+    background: #b79262;
 }
