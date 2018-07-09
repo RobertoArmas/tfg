@@ -16,6 +16,9 @@
 <mat-sidenav-container class="app-container">
     <mat-sidenav class="app-sidenav" #sidenav mode="side" [(opened)]="opened">Sidenav content</mat-sidenav>
     <mat-sidenav-content>
-            <app-title [title]="'¿Qué es Mindstair?'"></app-title>
+            <app-title [title]="'Título solo'"></app-title>
+            <app-subtitle [subtitle]="'Subtítulo solo'"></app-subtitle>
+            <app-review-tabs [tabs]="sampleTabsContent"></app-review-tabs>
+            <app-title-text [title]="'Title with text'" [content]="sampleContent"></app-title-text>
     </mat-sidenav-content>
 </mat-sidenav-container>
