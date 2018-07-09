@@ -134,5 +134,18 @@ export class ReviewTabsComponent implements OnInit {
 
 /**
 Para resolver el problema he diseñado una estructura del 'slide' por componentes, para entender esto de los componentes mejor te adjunto un dibujo de todos los que he definido para hacer las pruebas de que esta aproximación funciona).
+Como se puede observar hay componentes tan básicos como un simple título, esto me va a permitir colocarlo en la parte que yo quiera del Slide y además 'trackearlo' con xAPI o añadir funcionalidad adicional por javascript a todos esos componentes,
+Para el posicionamiento de los componentes me he basado en el sistema de 'grid' de Bootstrap por filas y columnas, en principio cada componente va a ir en una fila, no existirán las columnas porque si en algún momento necesito un texto y una imagen
+uno al lado del otro lo que voy a hacer es crear un nuevo componente de ese tipo, se que a lo mejor salen muchos componentes, pero hay que tener en cuenta que se pueden combinar como piezas de Lego. 
+Una vez dicho esto voy a pasar a la presentación del experimento:
+En primer lugar he creado los componentes más básicos de texto para ver si tenía sentido hacer todo ese trabajo y también un componente interactivo para la demostración del funcionamiento de xAPI.
+(img)
+Los estilos de la página aún están por refinar y el contenido irá en el centro de la pantalla con márgenes a la izquierda y a la derecha.
+El experimento que voy a enseñarte es el 'tracking' de que se recorren todos los elementos de las 'tabs', para ello dentro del componente he puesto la lógica para poder generar los statements y enviarlos al LRS, pero eso mejor te lo explico el lunes que viene porque es muy lioso,
+Haciendo por ejemplo la secuencia Tab1 -> Tab2 -> Tab1 -> Tab4 -> Tab3 -> Tab5 -> Tab 1 se generan los siguientes statements en el LRS:
+(img)
+Como ves hay uno que dice que el alumno ha superado el componente Tab (haber visitado todos sus elementos) y después sigue almacenando la traza.
+Dentro de cada statement la información que se genera por ahora, aunque aún hay que estudiar qué campos nos interesa que haya y la jerarquía entre los 'parents' y su 'children':
+(img)
 
  */
