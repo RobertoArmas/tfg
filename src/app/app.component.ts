@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { paragraphs } from '../assets/data/paragraphs-sample';
-import { Tabs } from '../assets/data/tabs-sample';
-import { Tab } from '../assets/classes/tab';
+import { SampleData } from '../assets/classes/sample-data';
 
 @Component({
   selector: 'app-root',
@@ -9,18 +7,25 @@ import { Tab } from '../assets/classes/tab';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'e-learning';
-  opened: boolean;
-  sampleContent: string[];
-  sampleTabsContent: Tab[];
+  startSideNavOpen: boolean;
+  endSideNavOpen: boolean;
+
+  /********** SAMPLE DATA  **********/
+  sampleParagraph: string;
+
+  /********** SAMPLE DATA END  **********/
 
   constructor() {
-    this.opened = true;
-    this.sampleContent = paragraphs;
-    this.sampleTabsContent = Tabs;
+    this.startSideNavOpen = true;
+    this.endSideNavOpen = true;
+    this.sampleParagraph = SampleData.paragraph;
   }
 
-  toggleSideNav() {
-    this.opened = !this.opened;
+  toggleStartSideNav() {
+    this.startSideNavOpen = !this.startSideNavOpen;
+  }
+
+  toggleEndSideNav() {
+    this.endSideNavOpen = !this.endSideNavOpen;
   }
 }

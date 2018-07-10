@@ -1,24 +1,25 @@
 <mat-toolbar class="app-header" color="primary" fxLayout="row" fxLayoutAlign="space-between center">
-    <button mat-icon-button (click)="toggleSideNav()">
-        <i class="material-icons">
-            timeline
-        </i>
+    <button mat-icon-button (click)="toggleStartSideNav()">
+        <i class="material-icons">timeline</i>
     </button>
 
     <span>App</span>
 
-    <i class="material-icons">
-        menu
-    </i>
+    <button mat-icon-button (click)="toggleEndSideNav()">
+        <i class="material-icons">menu</i>
+    </button>
 </mat-toolbar>
 
 
 <mat-sidenav-container class="app-container">
-    <mat-sidenav class="app-sidenav" #sidenav mode="side" [(opened)]="opened">Sidenav content</mat-sidenav>
+    <mat-sidenav mode="side" [(opened)]="startSideNavOpen">Sidenav content</mat-sidenav>
+    <mat-sidenav opened mode="side" position="end" [(opened)]="endSideNavOpen">End content</mat-sidenav>
+
     <mat-sidenav-content>
-            <app-title [title]="'Título solo'"></app-title>
-            <app-subtitle [subtitle]="'Subtítulo solo'"></app-subtitle>
-            <app-review-tabs [tabs]="sampleTabsContent"></app-review-tabs>
-            <app-title-text [title]="'Title with text'" [content]="sampleContent"></app-title-text>
+        <app-paragraph [data]="sampleParagraph"></app-paragraph>
+        <app-paragraph [data]="sampleParagraph"></app-paragraph>
+        <app-paragraph [data]="sampleParagraph"></app-paragraph>
+        <app-paragraph [data]="sampleParagraph"></app-paragraph>
+        <app-paragraph></app-paragraph>
     </mat-sidenav-content>
 </mat-sidenav-container>
