@@ -1,0 +1,12 @@
+
+.chunk-text {
+    font-size: 1.1rem;
+    overflow: visible;
+    box-sizing: content-box;
+    max-width: 47.61rem;
+}
+
+.chunk-text p {
+    font-weight: 400;
+    line-height: 1.941176470588235;
+}

@@ -1,10 +1,10 @@
+
 .app-container {
     position: absolute;
     top: 60px;
     bottom: 0;
     left: 0;
     right: 0;
-    background: #eee;
 }
 
 .app-header {
@@ -15,6 +15,28 @@
 }
 
 .mat-sidenav {
-    background: #b79262;
-    width: 320px;
+    background: #fafafa;
+    width: 280px;
+}
+
+.lesson-content {
+    background: #f5f5f5;
+}
+
+.course-lesson {
+    padding-bottom: 12rem;
+    padding-top: 5rem;
+    background: #fff;
+    display: block;
+    font-family: 'Merriweather', serif;
+    word-wrap: break-word;
+}
+
+a,abbr,acronym,address,applet,article,aside,audio,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }

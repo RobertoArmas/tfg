@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Tab } from 'src/assets/classes/tab';
 
 import * as TinCan from 'tincanjs';
 import { MatTabChangeEvent } from '../../../../../node_modules/@angular/material';
@@ -10,7 +9,7 @@ import { MatTabChangeEvent } from '../../../../../node_modules/@angular/material
   styleUrls: ['./review-tabs.component.css']
 })
 export class ReviewTabsComponent implements OnInit {
-  @Input() tabs: Tab[];
+  @Input() tabs: any[];
 
   lrs: any;
   pendingTabs: string[];

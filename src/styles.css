@@ -4,7 +4,6 @@
 /* @import "~@angular/material/prebuilt-themes/pink-bluegrey.css"; */
 /* @import "~@angular/material/prebuilt-themes/purple-green.css"; */
 
-.data-chunk {
-    font-family: 'Merriweather', serif;
-    /* background-color: white; */
+body {
+    color: #313537;
 }

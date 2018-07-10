@@ -1,0 +1,11 @@
+.course-nav-header {
+    font-family: 'Lato', sans-serif;
+    max-height: 203px;
+    box-sizing: border-box;
+    padding: 5rem 3rem 0rem 2rem;
+    overflow: hidden;
+    vertical-align: baseline;
+}
+
+.course-nav-header-background {
+}

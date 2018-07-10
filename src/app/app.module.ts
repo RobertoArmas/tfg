@@ -11,7 +11,9 @@ import { TitleComponent } from './common/text/title/title.component';
 import { SubtitleComponent } from './common/text/subtitle/subtitle.component';
 import { TitleTextComponent } from './common/text/title-text/title-text.component';
 import { ReviewTabsComponent } from './common/interactive/review-tabs/review-tabs.component';
-import { ParagraphComponent } from './common/text/paragraph/paragraph.component';
+import { PageHeaderComponent } from './common/page-header/page-header.component';
+import { ChunkTextComponent } from './common/text/chunk-text/chunk-text.component';
+import { CourseNavComponent } from './common/course-nav/course-nav.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ParagraphComponent } from './common/text/paragraph/paragraph.component'
     SubtitleComponent,
     TitleTextComponent,
     ReviewTabsComponent,
-    ParagraphComponent,
+    PageHeaderComponent,
+    ChunkTextComponent,
+    CourseNavComponent,
   ],
   imports: [
     BrowserModule,

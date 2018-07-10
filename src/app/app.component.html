@@ -12,14 +12,21 @@
 
 
 <mat-sidenav-container class="app-container">
-    <mat-sidenav mode="side" [(opened)]="startSideNavOpen">Sidenav content</mat-sidenav>
-    <mat-sidenav opened mode="side" position="end" [(opened)]="endSideNavOpen">End content</mat-sidenav>
+    <mat-sidenav class="mat-elevation-z8" mode="side" [(opened)]="startSideNavOpen">
+        <app-course-nav></app-course-nav>
+    </mat-sidenav>
+    <mat-sidenav class="mat-elevation-z8" opened mode="side" position="end" [(opened)]="endSideNavOpen">End content</mat-sidenav>
 
-    <mat-sidenav-content>
-        <app-paragraph [data]="sampleParagraph"></app-paragraph>
-        <app-paragraph [data]="sampleParagraph"></app-paragraph>
-        <app-paragraph [data]="sampleParagraph"></app-paragraph>
-        <app-paragraph [data]="sampleParagraph"></app-paragraph>
-        <app-paragraph></app-paragraph>
+    <mat-sidenav-content class="mat-elevation-z2 lesson-content">
+        <app-page-header></app-page-header>
+        <div class="page-content">
+            <section class="course-lesson">
+                <app-chunk-text [data]="sampleParagraph"></app-chunk-text>
+                <app-chunk-text [data]="sampleParagraph"></app-chunk-text>
+                <app-chunk-text [data]="sampleParagraph"></app-chunk-text>
+                <app-chunk-text [data]="sampleParagraph"></app-chunk-text>
+                <app-chunk-text [data]="sampleParagraph"></app-chunk-text>
+            </section>
+        </div>
     </mat-sidenav-content>
 </mat-sidenav-container>
