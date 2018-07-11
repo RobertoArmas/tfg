@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {FlexLayoutModule} from '@angular/flex-layout';
 // tslint:disable-next-line:max-line-length
-import { MatSidenavModule, MatCheckboxModule, MatToolbarModule, MatButtonModule, MatCardModule, MatTabsModule, MatListModule } from '@angular/material';
+import { MatSidenavModule, MatCheckboxModule, MatToolbarModule, MatButtonModule, MatCardModule, MatTabsModule, MatListModule, MatProgressBarModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { TitleComponent } from './common/text/title/title.component';
@@ -37,7 +37,8 @@ import { CourseNavComponent } from './common/course-nav/course-nav.component';
     MatButtonModule,
     MatCardModule,
     MatTabsModule,
-    MatListModule
+    MatListModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

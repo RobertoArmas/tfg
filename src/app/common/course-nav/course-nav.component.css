@@ -1,11 +1,58 @@
 .course-nav-header {
     font-family: 'Lato', sans-serif;
-    max-height: 203px;
+    /* max-height: 7rem; */
     box-sizing: border-box;
     padding: 5rem 3rem 0rem 2rem;
     overflow: hidden;
     vertical-align: baseline;
+    color: white;
 }
 
 .course-nav-header-background {
+    background-image: url("../../../assets/images/agriculture-countryside-crop-1137338.jpg");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    max-height: 230px;
+}
+
+.course-nav-header-title {
+    margin: 0;
+}
+
+.overview-info {
+    height: 100%;
+    width: 80%;
+}
+
+.course-nav-overview {
+    height: 100%;
+}
+
+.course-nav-header-progress {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .12rem;
+    font-size: .7rem;
+}
+.overview-progress {
+    margin-bottom: 10px;
+}
+
+.course-nav-header-overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.overview-span {
+    height: 30px;
 }
