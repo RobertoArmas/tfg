@@ -17,7 +17,7 @@ export class AppComponent {
 
   constructor() {
     this.startSideNavOpen = true;
-    this.endSideNavOpen = true;
+    this.endSideNavOpen = false;
     this.sampleParagraph = SampleData.paragraph;
   }
 

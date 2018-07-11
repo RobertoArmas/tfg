@@ -15,17 +15,17 @@
     <mat-sidenav class="mat-elevation-z8" mode="side" [(opened)]="startSideNavOpen">
         <app-course-nav></app-course-nav>
     </mat-sidenav>
-    <mat-sidenav class="mat-elevation-z8" opened mode="side" position="end" [(opened)]="endSideNavOpen">End content</mat-sidenav>
+    <mat-sidenav class="mat-elevation-z8" mode="side" position="end" [(opened)]="endSideNavOpen">End content</mat-sidenav>
 
     <mat-sidenav-content class="mat-elevation-z2 lesson-content">
         <app-page-header></app-page-header>
         <div class="page-content">
             <section class="course-lesson">
-                <app-chunk-text [data]="sampleParagraph"></app-chunk-text>
-                <app-chunk-text [data]="sampleParagraph"></app-chunk-text>
-                <app-chunk-text [data]="sampleParagraph"></app-chunk-text>
-                <app-chunk-text [data]="sampleParagraph"></app-chunk-text>
-                <app-chunk-text [data]="sampleParagraph"></app-chunk-text>
+                <app-chunk-text [backgroundColor]="'#e8f5e9'"></app-chunk-text>
+                <app-chunk-heading></app-chunk-heading>
+                <app-chunk-text></app-chunk-text>
+                <app-chunk-subheading></app-chunk-subheading>
+                <app-chunk-text></app-chunk-text>
             </section>
         </div>
     </mat-sidenav-content>

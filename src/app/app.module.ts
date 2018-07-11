@@ -14,6 +14,8 @@ import { ReviewTabsComponent } from './common/interactive/review-tabs/review-tab
 import { PageHeaderComponent } from './common/page-header/page-header.component';
 import { ChunkTextComponent } from './common/text/chunk-text/chunk-text.component';
 import { CourseNavComponent } from './common/course-nav/course-nav.component';
+import { ChunkHeadingComponent } from './common/text/chunk-heading/chunk-heading.component';
+import { ChunkSubheadingComponent } from './common/text/chunk-subheading/chunk-subheading.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { CourseNavComponent } from './common/course-nav/course-nav.component';
     PageHeaderComponent,
     ChunkTextComponent,
     CourseNavComponent,
+    ChunkHeadingComponent,
+    ChunkSubheadingComponent,
   ],
   imports: [
     BrowserModule,
