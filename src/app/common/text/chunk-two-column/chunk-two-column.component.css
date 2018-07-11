@@ -1,5 +1,4 @@
-
-.chunk-text {
+.chunk-two-column {
     font-size: 1.063rem;
     overflow: visible;
     box-sizing: content-box;
@@ -7,10 +6,12 @@
     color: #313537; 
 }
 
-.chunk-text p {
+.chunk-two-column p {
     font-weight: 400;
-    line-height: 1.941176470588235;
+    line-height: 1.594rem;
     margin: 0;
     width: 47.61rem;
     float: left;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
 }

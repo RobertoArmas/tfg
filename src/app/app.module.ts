@@ -16,6 +16,9 @@ import { ChunkTextComponent } from './common/text/chunk-text/chunk-text.componen
 import { CourseNavComponent } from './common/course-nav/course-nav.component';
 import { ChunkHeadingComponent } from './common/text/chunk-heading/chunk-heading.component';
 import { ChunkSubheadingComponent } from './common/text/chunk-subheading/chunk-subheading.component';
+import { ChunkHeadingTextComponent } from './common/text/chunk-heading-text/chunk-heading-text.component';
+import { ChunkSubheadingTextComponent } from './common/text/chunk-subheading-text/chunk-subheading-text.component';
+import { ChunkTwoColumnComponent } from './common/text/chunk-two-column/chunk-two-column.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +32,9 @@ import { ChunkSubheadingComponent } from './common/text/chunk-subheading/chunk-s
     CourseNavComponent,
     ChunkHeadingComponent,
     ChunkSubheadingComponent,
+    ChunkHeadingTextComponent,
+    ChunkSubheadingTextComponent,
+    ChunkTwoColumnComponent,
   ],
   imports: [
     BrowserModule,
