@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$id": "http://example.com/text/basic.schema.json",
+    "description": "Estructura de cualquier chunk de tipo text de una columna",
+    "type": "object",
+    "required": [ "id", "type" ],
+    "additionalProperties": false,
+    "properties": {
+        "type": {
+            "enum": [
+                "heading", "text", "subheading"
+            ]
+        },
+        "id": {
+            "type": "string",
+            "description": "Indentificador único para el chunk"
+        },
+        "data": {
+            "type": "string",
+            "description": "Contenido del texto"
+        },
+        "paddingTop": {
+            "type": "integer",
+            "description": "Padding top del chunk"
+        },
+        "paddingBottom": {
+            "type": "integer"
+        },
+        "backgroundColor": {
+            "type": "string",
+            "description": "Color del chunk en formato Hexadecimal",
+            "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
+        }
+    }
+}

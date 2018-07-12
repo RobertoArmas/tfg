@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$id": "http://example.com/lesson.schema.json",
+    "description": "Estructura de una lección para una sección de un curso e-learning",
+    "type": "object",
+    "required": [
+        "id",
+        "title"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "id": {
+            "type": "string",
+            "description": "Identificador único para la lección"
+        },
+        "title": {
+            "type": "string",
+            "description": "Título de la lección"
+        },
+        "chunks": {
+            "description": "Chunks de la lección",
+            "type": "array",
+            "items": {
+                "oneOf": [
+                    { "$ref": "chunks\\text\\basic.schema.json" },
+                    { "$ref": "chunks\\text\\two-col.schema.json" },
+                    { "$ref": "chunks\\text\\heading-text.schema.json" }
+                ]
+            }
+        }
+    }
+}

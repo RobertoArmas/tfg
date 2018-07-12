@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$id": "http://example.com/course.schema.json",
+    "title": "Course",
+    "description": "Estructura de un curso e-learning para...",
+    "required": [ "courseId", "courseTitle" ],
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {
+        "courseId": {
+            "description": "Identificador único para un curso",
+            "type": "string"
+        },
+        "courseTitle": {
+            "description": "Título del curso",
+            "type": "string"
+        },
+        "sections": {
+            "description": "Secciones del curso",
+            "type": "array",
+            "items": {
+                "$ref": "section.schema.json"
+            }
+        }        
+    }
+}

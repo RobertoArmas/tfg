@@ -1,0 +1,39 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$id": "http://example.com/text/two-col.schema.json",
+    "description": "Estructura de un chunk tipo texto con dos columnas",
+    "type": "object",
+    "required": [ "id", "type" ],
+    "additionalProperties": false,
+    "properties": {
+        "type": {
+            "enum": [
+                "two-column"
+            ]
+        },
+        "id": {
+            "type": "string",
+            "description": "Indentificador único para el chunk"
+        },
+        "dataCol1": {
+            "type": "string",
+            "description": "Contenido del texto de la columna 1"
+        },
+        "dataCol2": {
+            "type": "string",
+            "description": "Contenido del texto de la columna 2"
+        },
+        "paddingTop": {
+            "type": "integer",
+            "description": "Padding top del chunk"
+        },
+        "paddingBottom": {
+            "type": "integer"
+        },
+        "backgroundColor": {
+            "type": "string",
+            "description": "Color del chunk en formato Hexadecimal",
+            "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
+        }
+    }
+}

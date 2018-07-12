@@ -6,11 +6,11 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./chunk-heading-text.component.css']
 })
 export class ChunkHeadingTextComponent implements OnInit {
+  @Input() headingData: string;
+  @Input() textData: string;
   @Input() paddingTop: number;
   @Input() paddingBottom: number;
   @Input() backgroundColor: string;
-  @Input() headingData: string;
-  @Input() textData: string;
 
   constructor() {
     this.paddingTop = 30;

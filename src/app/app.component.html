@@ -1,4 +1,4 @@
-<mat-toolbar class="app-header" color="primary" fxLayout="row" fxLayoutAlign="space-between center">
+<mat-toolbar class="app-header mat-elevation-z6" color="primary" fxLayout="row" fxLayoutAlign="space-between center">
     <button mat-icon-button (click)="toggleStartSideNav()">
         <i class="material-icons">timeline</i>
     </button>
@@ -10,14 +10,14 @@
     </button>
 </mat-toolbar>
 
-
 <mat-sidenav-container class="app-container">
-    <mat-sidenav class="mat-elevation-z8" mode="side" [(opened)]="startSideNavOpen">
+    <!-- class="mat-elevation-z8" -->
+    <mat-sidenav class="course-info-sidenav" mode="side" [(opened)]="startSideNavOpen">
         <app-course-nav></app-course-nav>
     </mat-sidenav>
-    <mat-sidenav class="mat-elevation-z8" mode="side" position="end" [(opened)]="endSideNavOpen">End content</mat-sidenav>
+    <mat-sidenav mode="side" position="end" [(opened)]="endSideNavOpen">End content</mat-sidenav>
 
-    <mat-sidenav-content class="mat-elevation-z2 lesson-content">
+    <mat-sidenav-content class="mat-elevation-z8 lesson-content">
         <div class="page-content">
             <section class="course-lesson">
                 <app-page-header></app-page-header>

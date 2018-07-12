@@ -5,6 +5,7 @@
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: -1 !important; 
 }
 
 .app-header {
@@ -17,6 +18,10 @@
 .mat-sidenav {
     background: #fafafa;
     width: 280px;
+}
+
+.course-info-sidenav {
+    z-index: -1 !important;
 }
 
 .lesson-content {
