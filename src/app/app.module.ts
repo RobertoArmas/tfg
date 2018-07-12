@@ -16,6 +16,7 @@ import { ChunkSubheadingComponent } from './common/text/chunk-subheading/chunk-s
 import { ChunkHeadingTextComponent } from './common/text/chunk-heading-text/chunk-heading-text.component';
 import { ChunkSubheadingTextComponent } from './common/text/chunk-subheading-text/chunk-subheading-text.component';
 import { ChunkTwoColumnComponent } from './common/text/chunk-two-column/chunk-two-column.component';
+import { HttpClientModule } from '../../node_modules/@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ChunkTwoColumnComponent } from './common/text/chunk-two-column/chunk-tw
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
     FlexLayoutModule,
