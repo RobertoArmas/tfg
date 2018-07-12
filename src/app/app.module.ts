@@ -53,3 +53,13 @@ import { HttpClientModule } from '../../node_modules/@angular/common/http';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+/**
+ * TODO: Hay que mirar implementar un BackendService que se encargue de obtener
+ * los datos, después el course service lo que va a hacer es coger todo el objeto
+ * y extraer un objeto en el que solo estén el título del curso, los títulos de las
+ * secciones y los títulos de las lecciones.
+ * 
+ * Después 
+ */
