@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpModule } from '@angular/http';
-import { RouterModule, Routes } from '@angular/router';
 // tslint:disable-next-line:max-line-length
 import { MatSidenavModule, MatCheckboxModule, MatToolbarModule, MatButtonModule, MatCardModule, MatTabsModule, MatListModule, MatProgressBarModule, MatExpansionModule, MatIconModule, MatProgressSpinnerModule } from '@angular/material';
 
@@ -21,26 +20,14 @@ import { ChunkTwoColumnComponent } from './common/text/chunk-two-column/chunk-tw
 import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './api.service';
 import { CourseDataService } from './course-data.service';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { CourseViewerComponent } from './course-viewer/course-viewer.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 /**GUÍA MUY COMPLETA SOBRE ANGULAR 2 (SERVICIOS, COMPONENTES, ETC.)
  * https://www.sitepoint.com/angular-2-tutorial/
 */
-
-const appRoutes: Routes = [
-  // { path: 'crisis-center', component: CrisisListComponent },
-  // { path: 'hero/:id',      component: HeroDetailComponent },
-  // {
-  //   path: 'heroes',
-  //   component: HeroListComponent,
-  //   data: { title: 'Heroes List' }
-  // },
-  // { path: '',
-  //   redirectTo: '/heroes',
-  //   pathMatch: 'full'
-  // },
-  // { path: '**', component: PageNotFoundComponent }
-];
 
 @NgModule({
   declarations: [
@@ -54,6 +41,8 @@ const appRoutes: Routes = [
     ChunkHeadingTextComponent,
     ChunkSubheadingTextComponent,
     ChunkTwoColumnComponent,
+    WelcomeComponent,
+    CourseViewerComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,10 +62,7 @@ const appRoutes: Routes = [
     MatExpansionModule,
     MatIconModule,
     MatProgressSpinnerModule,
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging
-    )
+    AppRoutingModule
   ],
   providers: [ ApiService, CourseDataService ],
   bootstrap: [AppComponent]

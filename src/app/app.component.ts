@@ -1,24 +1,13 @@
 import { Component } from '@angular/core';
+import { ChildInteractionService } from './child-interaction.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [ ChildInteractionService ]
 })
 export class AppComponent {
-  startSideNavOpen: boolean;
-  endSideNavOpen: boolean;
 
-  constructor() {
-    this.startSideNavOpen = true;
-    this.endSideNavOpen = false;
-  }
-
-  toggleStartSideNav() {
-    this.startSideNavOpen = !this.startSideNavOpen;
-  }
-
-  toggleEndSideNav() {
-    this.endSideNavOpen = !this.endSideNavOpen;
-  }
+  constructor() {}
 }
