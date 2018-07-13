@@ -1,22 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { CourseService } from '../../course.service';
+import { CourseDataService } from '../../course-data.service';
+import { Course } from '../../../assets/data/classes/course';
 
 @Component({
   selector: 'app-course-nav',
   templateUrl: './course-nav.component.html',
-  styleUrls: ['./course-nav.component.css']
+  styleUrls: ['./course-nav.component.css'],
+  // providers: [CourseDataService]
 })
 export class CourseNavComponent implements OnInit {
-  course: any;
-  error: any;
+  course: Course = new Course();
 
-  constructor(private courseService: CourseService) { }
+  constructor(private courseDataService: CourseDataService) { }
 
   ngOnInit() {
-    this.courseService.getConfig()
+    this.courseDataService
+      .getCourse()
       .subscribe(
-        (data: any) => this.course = { ...data },
-        error => this.error = error
+        (course) => {
+          this.course = course;
+        }
       );
   }
 }

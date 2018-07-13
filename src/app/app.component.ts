@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { SampleData } from '../assets/classes/sample-data';
 
 @Component({
   selector: 'app-root',
@@ -10,15 +9,9 @@ export class AppComponent {
   startSideNavOpen: boolean;
   endSideNavOpen: boolean;
 
-  /********** SAMPLE DATA  **********/
-  sampleParagraph: string;
-
-  /********** SAMPLE DATA END  **********/
-
   constructor() {
     this.startSideNavOpen = true;
     this.endSideNavOpen = false;
-    this.sampleParagraph = SampleData.paragraph;
   }
 
   toggleStartSideNav() {

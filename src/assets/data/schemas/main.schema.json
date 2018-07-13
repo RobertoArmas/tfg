@@ -3,11 +3,11 @@
     "$id": "http://example.com/main.schema.json",
     "title": "Main object",
     "description": "Objeto inicial requerido para trabajar con json-server",
-    "required": [ "main" ],
+    "required": [ "course" ],
     "additionalProperties": false,
     "type": "object",
     "properties": {
-        "main": {
+        "course": {
             "description": "Objeto inicial requerido para que funcione json-server",
             "type": "object",
             "$ref": "course.schema.json"

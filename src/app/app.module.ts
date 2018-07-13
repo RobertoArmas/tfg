@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import { HttpModule } from '@angular/http';
 // tslint:disable-next-line:max-line-length
 import { MatSidenavModule, MatCheckboxModule, MatToolbarModule, MatButtonModule, MatCardModule, MatTabsModule, MatListModule, MatProgressBarModule, MatExpansionModule, MatIconModule, MatProgressSpinnerModule } from '@angular/material';
 
@@ -18,6 +19,7 @@ import { ChunkSubheadingTextComponent } from './common/text/chunk-subheading-tex
 import { ChunkTwoColumnComponent } from './common/text/chunk-two-column/chunk-two-column.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './api.service';
+import { CourseDataService } from './course-data.service';
 
 
 /**GUÍA MUY COMPLETA SOBRE ANGULAR 2 (SERVICIOS, COMPONENTES, ETC.)
@@ -40,6 +42,7 @@ import { ApiService } from './api.service';
   imports: [
     BrowserModule,
     HttpClientModule,
+    HttpModule,
     BrowserAnimationsModule,
     FormsModule,
     FlexLayoutModule,
@@ -55,7 +58,7 @@ import { ApiService } from './api.service';
     MatIconModule,
     MatProgressSpinnerModule
   ],
-  providers: [ ApiService ],
+  providers: [ ApiService, CourseDataService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
