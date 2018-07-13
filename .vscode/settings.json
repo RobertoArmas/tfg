@@ -4,7 +4,7 @@
             "fileMatch": [
                 "/*.course.json"
             ],
-            "url": "./src/assets/data/schemas/course.schema.json"
+            "url": "./src/assets/data/schemas/main.schema.json"
         }
     ]
 }

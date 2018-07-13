@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import * as TinCan from 'tincanjs';
-import { MatTabChangeEvent } from '../../../../../node_modules/@angular/material';
+import { MatTabChangeEvent } from '@angular/material';
 
 @Component({
   selector: 'app-review-tabs',

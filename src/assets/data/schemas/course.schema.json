@@ -3,15 +3,15 @@
     "$id": "http://example.com/course.schema.json",
     "title": "Course",
     "description": "Estructura de un curso e-learning para...",
-    "required": [ "courseId", "courseTitle" ],
+    "required": [ "id", "title" ],
     "additionalProperties": false,
     "type": "object",
     "properties": {
-        "courseId": {
+        "id": {
             "description": "Identificador único para un curso",
             "type": "string"
         },
-        "courseTitle": {
+        "title": {
             "description": "Título del curso",
             "type": "string"
         },

@@ -16,7 +16,13 @@ import { ChunkSubheadingComponent } from './common/text/chunk-subheading/chunk-s
 import { ChunkHeadingTextComponent } from './common/text/chunk-heading-text/chunk-heading-text.component';
 import { ChunkSubheadingTextComponent } from './common/text/chunk-subheading-text/chunk-subheading-text.component';
 import { ChunkTwoColumnComponent } from './common/text/chunk-two-column/chunk-two-column.component';
-import { HttpClientModule } from '../../node_modules/@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { ApiService } from './api.service';
+
+
+/**GUÍA MUY COMPLETA SOBRE ANGULAR 2 (SERVICIOS, COMPONENTES, ETC.)
+ * https://www.sitepoint.com/angular-2-tutorial/
+*/
 
 @NgModule({
   declarations: [
@@ -49,7 +55,7 @@ import { HttpClientModule } from '../../node_modules/@angular/common/http';
     MatIconModule,
     MatProgressSpinnerModule
   ],
-  providers: [],
+  providers: [ ApiService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
@@ -60,6 +66,6 @@ export class AppModule { }
  * los datos, después el course service lo que va a hacer es coger todo el objeto
  * y extraer un objeto en el que solo estén el título del curso, los títulos de las
  * secciones y los títulos de las lecciones.
- * 
- * Después 
+ *
+ * Después
  */

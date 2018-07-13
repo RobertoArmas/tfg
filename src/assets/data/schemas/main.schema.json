@@ -1,0 +1,16 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$id": "http://example.com/main.schema.json",
+    "title": "Main object",
+    "description": "Objeto inicial requerido para trabajar con json-server",
+    "required": [ "main" ],
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {
+        "main": {
+            "description": "Objeto inicial requerido para que funcione json-server",
+            "type": "object",
+            "$ref": "course.schema.json"
+        }        
+    }
+}
