@@ -9,5 +9,15 @@ import { ChildInteractionService } from './child-interaction.service';
 })
 export class AppComponent {
 
-  constructor() {}
+  constructor(private childInteractionService: ChildInteractionService) {
+
+  }
+
+  toggleStartSidenav() {
+    this.childInteractionService.toggleStartSidenav();
+  }
+
+  toggleEndSidenav() {
+    this.childInteractionService.toggleEndSidenav();
+  }
 }

@@ -11,6 +11,10 @@
     z-index: -1 !important;
 }
 
+.settings-sidenav {
+    z-index: -1 !important;
+}
+
 .lesson-content {
     background: #f5f5f5;
 }

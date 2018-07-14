@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ChildInteractionService } from '../child-interaction.service';
+import { Subscription } from '../../../node_modules/rxjs';
 
 @Component({
   selector: 'app-course-viewer',
@@ -6,22 +8,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./course-viewer.component.css']
 })
 export class CourseViewerComponent implements OnInit {
-  startSideNavOpen: boolean;
-  endSideNavOpen: boolean;
+  startSidenavOpen: boolean;
+  endSidenavOpen: boolean;
+  startSidenavSubscription: Subscription;
+  endSidenavSubscription: Subscription;
 
-  constructor() {
-    this.startSideNavOpen = true;
-    this.endSideNavOpen = false;
+  constructor(private childInteractionService: ChildInteractionService) {
+    this.startSidenavOpen = true;
+    this.endSidenavOpen = false;
+    this.startSidenavSubscription = childInteractionService.sartSidenavToggled$.subscribe(
+      toggle => {
+        this.startSidenavOpen = !this.startSidenavOpen;
+      }
+    );
+    this.endSidenavSubscription = childInteractionService.endSidenavToggled$.subscribe(
+      toggle => {
+        this.endSidenavOpen = !this.endSidenavOpen;
+      }
+    );
   }
 
   ngOnInit() {
   }
 
-  toggleStartSideNav() {
-    this.startSideNavOpen = !this.startSideNavOpen;
-  }
+  // toggleStartSideNav() {
+  //   this.startSideNavOpen = !this.startSideNavOpen;
+  // }
 
-  toggleEndSideNav() {
-    this.endSideNavOpen = !this.endSideNavOpen;
-  }
+  // toggleEndSideNav() {
+  //   this.endSideNavOpen = !this.endSideNavOpen;
+  // }
 }
