@@ -1,0 +1,94 @@
+{
+    "course": {
+        "id": "c0",
+        "title": "Demo course"
+    },
+    "sections": [
+        {
+            "id": "c0-s1",
+            "title": "Sección 1"
+        },
+        {
+            "id": "c0-s2",
+            "title": "Sección 2"
+        },
+        {
+            "id": "c0-s3",
+            "title": "Sección 3"
+        }
+    ],
+    "lessons": [
+        {
+            "id": "c0-s1-l1",
+            "sectionId": "c0-s1",
+            "title": "Introducción",
+            "chunks": [
+                {
+                    "id": "c0-s1-l1-ch1",
+                    "type": "heading",
+                    "data": "Introducción al curso demo de la aplicación"
+                },
+                {
+                    "id": "c0-s1-l1-ch2",
+                    "type": "text",
+                    "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ullamcorper non nisi sit amet rutrum. Nullam risus arcu, imperdiet nec risus vitae, ultricies malesuada dui. Mauris in massa congue, luctus ipsum quis, tempor diam. Donec consequat vulputate arcu, sed finibus diam maximus in. Praesent rhoncus odio ante, in molestie neque facilisis nec. Quisque nec tellus volutpat, viverra lectus quis, semper metus. Vivamus sit amet ultrices arcu, eu auctor enim. Suspendisse eleifend lectus eu risus volutpat porttitor. Vivamus pulvinar, turpis ac congue sodales, augue leo sodales quam, in luctus eros lectus sed dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin posuere, metus tristique maximus sagittis, sem lectus cursus ipsum, in hendrerit mi dui ac ipsum. Aenean eu odio ultrices, tristique libero vel, faucibus nisl. Etiam quis magna id ipsum feugiat molestie ac eget nisi. Vestibulum euismod, tortor et mattis vestibulum, velit dui pharetra lectus, ut tempor urna leo accumsan nibh. Integer ultrices metus non feugiat lacinia. "
+                }
+            ]
+        },
+        {
+            "id": "c0-s1-l2",
+            "sectionId": "c0-s1",
+            "title": "Parte 1",
+            "chunks": [
+                {
+                    "id": "c0-s1-l2-ch1",
+                    "type": "heading",
+                    "data": "Pruebas de todos los elementos de texto"
+                },
+                {
+                    "id": "c0-s1-l2-ch2",
+                    "type": "text",
+                    "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ullamcorper non nisi sit amet rutrum. Nullam risus arcu, imperdiet nec risus vitae, ultricies malesuada dui. Mauris in massa congue, luctus ipsum quis, tempor diam. Donec consequat vulputate arcu, sed finibus diam maximus in. Praesent rhoncus odio ante, in molestie neque facilisis nec. Quisque nec tellus volutpat, viverra lectus quis, semper metus. Vivamus sit amet ultrices arcu, eu auctor enim. Suspendisse eleifend lectus eu risus volutpat porttitor. Vivamus pulvinar, turpis ac congue sodales, augue leo sodales quam, in luctus eros lectus sed dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin posuere, metus tristique maximus sagittis, sem lectus cursus ipsum, in hendrerit mi dui ac ipsum. Aenean eu odio ultrices, tristique libero vel, faucibus nisl. Etiam quis magna id ipsum feugiat molestie ac eget nisi. Vestibulum euismod, tortor et mattis vestibulum, velit dui pharetra lectus, ut tempor urna leo accumsan nibh. Integer ultrices metus non feugiat lacinia. "
+                },
+                {
+                    "id": "c0-s1-l2-ch3",
+                    "type": "subheading",
+                    "data": "Incluso con paddings y colores"
+                },
+                {
+                    "id": "c0-s1-l2-ch4",
+                    "type": "text",
+                    "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ullamcorper non nisi sit amet rutrum. Nullam risus arcu, imperdiet nec risus vitae, ultricies malesuada dui. Mauris in massa congue, luctus ipsum quis, tempor diam. Donec consequat vulputate arcu, sed finibus diam maximus in. Praesent rhoncus odio ante, in molestie neque facilisis nec. Quisque nec tellus volutpat, viverra lectus quis, semper metus. Vivamus sit amet ultrices arcu, eu auctor enim. Suspendisse eleifend lectus eu risus volutpat porttitor. Vivamus pulvinar, turpis ac congue sodales, augue leo sodales quam, in luctus eros lectus sed dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin posuere, metus tristique maximus sagittis, sem lectus cursus ipsum, in hendrerit mi dui ac ipsum. Aenean eu odio ultrices, tristique libero vel, faucibus nisl. Etiam quis magna id ipsum feugiat molestie ac eget nisi. Vestibulum euismod, tortor et mattis vestibulum, velit dui pharetra lectus, ut tempor urna leo accumsan nibh. Integer ultrices metus non feugiat lacinia. ",
+                    "backgroundColor": "#e1f5fe"
+                },
+                {
+                    "id": "c0-s1-l2-ch5",
+                    "type": "two-column",
+                    "dataCol1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum enim urna, ac rutrum lorem vulputate condimentum. Vestibulum finibus, urna id pharetra hendrerit, metus mi cursus felis, sit amet dapibus odio felis nec ligula. Aliquam id pulvinar metus. Suspendisse potenti. Donec eu sapien vitae diam mollis malesuada vel sed metus. Vivamus mi enim, gravida sit amet suscipit vel, lacinia a purus. Nunc luctus malesuada felis, id efficitur felis auctor quis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam et enim sit amet elit auctor vehicula eget sit amet ipsum. Ut bibendum iaculis arcu, non accumsan magna consectetur nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; ",
+                    "dataCol2": "Duis vitae convallis nunc, ut varius est. Fusce a massa purus. Nunc et leo fermentum, dictum orci quis, convallis turpis. Nullam vestibulum porttitor blandit. Donec posuere augue eget augue posuere auctor in vel lectus. Cras convallis facilisis tellus. Nulla sed luctus nunc. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin vel dapibus lectus. Ut ac rhoncus ex, at dictum ligula. Ut sem tortor, egestas ac commodo quis, placerat non risus. ",
+                    "paddingTop": 50
+                }
+            ]
+        },
+        {
+            "id": "c0-s2-l1",
+            "sectionId": "c0-s2",
+            "title": "Parte 2",
+            "chunks": [
+                {
+                    "id": "c0-s2-l1-ch1",
+                    "type": "heading-text",
+                    "headingData": "Aquí se presentan los componentes de heading + texto",
+                    "textData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum enim urna, ac rutrum lorem vulputate condimentum. Vestibulum finibus, urna id pharetra hendrerit, metus mi cursus felis, sit amet dapibus odio felis nec ligula. Aliquam id pulvinar metus. Suspendisse potenti. Donec eu sapien vitae diam mollis malesuada vel sed metus. Vivamus mi enim, gravida sit amet suscipit vel, lacinia a purus. Nunc luctus malesuada felis, id efficitur felis auctor quis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam et enim sit amet elit auctor vehicula eget sit amet ipsum. Ut bibendum iaculis arcu, non accumsan magna consectetur nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; "
+                },
+                {
+                    "id": "c0-s2-l1-ch1",
+                    "type": "subheading-text",
+                    "headingData": "También con subheadings",
+                    "textData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum enim urna, ac rutrum lorem vulputate condimentum. Vestibulum finibus, urna id pharetra hendrerit, metus mi cursus felis, sit amet dapibus odio felis nec ligula. Aliquam id pulvinar metus. Suspendisse potenti. Donec eu sapien vitae diam mollis malesuada vel sed metus. Vivamus mi enim, gravida sit amet suscipit vel, lacinia a purus. Nunc luctus malesuada felis, id efficitur felis auctor quis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam et enim sit amet elit auctor vehicula eget sit amet ipsum. Ut bibendum iaculis arcu, non accumsan magna consectetur nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; ",
+                    "backgroundColor": "#e8f5e9"
+                }
+            ]
+        }
+    ]
+}

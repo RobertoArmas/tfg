@@ -1,13 +1,15 @@
 <mat-sidenav-container class="app-container">
     <mat-sidenav class="course-info-sidenav" mode="side" [(opened)]="startSidenavOpen">
-        <app-course-nav></app-course-nav>
+        <!-- <app-course-nav></app-course-nav> -->
+        <router-outlet name="sidenav"></router-outlet>
     </mat-sidenav>
     <mat-sidenav class="settings-sidenav" mode="side" position="end" [(opened)]="endSidenavOpen">End content</mat-sidenav>
 
     <mat-sidenav-content class="mat-elevation-z8 lesson-content">
         <div class="page-content">
             <section class="course-lesson">
-                <app-page-header></app-page-header>
+                <router-outlet></router-outlet>
+                <!-- <app-page-header></app-page-header>
                 <app-chunk-text></app-chunk-text>
                 <app-chunk-heading></app-chunk-heading>
                 <app-chunk-text></app-chunk-text>
@@ -15,7 +17,7 @@
                 <app-chunk-text></app-chunk-text>
                 <app-chunk-heading-text></app-chunk-heading-text>
                 <app-chunk-subheading-text></app-chunk-subheading-text>
-                <app-chunk-two-column></app-chunk-two-column>
+                <app-chunk-two-column></app-chunk-two-column> -->
             </section>
         </div>
     </mat-sidenav-content>

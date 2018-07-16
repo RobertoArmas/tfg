@@ -85,3 +85,7 @@
     font-size: 0.813rem;
     margin: 0 -1rem 0.5rem -0.5rem;
 }
+
+.lessons-list-item {
+    cursor: pointer;
+}

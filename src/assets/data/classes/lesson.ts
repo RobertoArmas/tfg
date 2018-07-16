@@ -4,6 +4,7 @@ import { TwoCol } from './chunks/twoCol';
 
 export class Lesson {
     id: string;
+    sectionId: string;
     title: string;
     chunks: Basic | HeadingText | TwoCol;
 

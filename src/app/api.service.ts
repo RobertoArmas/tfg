@@ -4,6 +4,8 @@ import { Http } from '@angular/http';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { Course } from '../assets/data/classes/course';
+import { Lesson } from '../assets/data/classes/lesson';
+import { Section } from '../assets/data/classes/section';
 
 const API_URL = environment.apiUrl;
 
@@ -13,6 +15,18 @@ const API_URL = environment.apiUrl;
 export class ApiService {
 
   constructor( private http: Http ) { }
+
+  // public getCourse(): Observable<Course> {
+  //   return this.http
+  //     .get(API_URL + '/course')
+  //     .pipe(
+  //       map(response => {
+  //         const course = response.json();
+  //         return new Course(course);
+  //       }),
+  //       catchError(this.handleError)
+  //     );
+  // }
 
   public getCourse(): Observable<Course> {
     return this.http
@@ -25,6 +39,31 @@ export class ApiService {
         catchError(this.handleError)
       );
   }
+
+  public getAllSections(): Observable<Section[]> {
+    return this.http
+      .get(API_URL + '/sections')
+      .pipe(
+        map(response => {
+          const sections = response.json();
+          return sections.map((section) => new Section(section));
+        }),
+        catchError(this.handleError)
+      );
+  }
+
+  public getAllLessons(): Observable<Lesson[]> {
+    return this.http
+      .get(API_URL + '/lessons')
+      .pipe(
+        map(response => {
+          const lessons = response.json();
+          return lessons.map((lesson) => new Lesson(lesson));
+        }),
+        catchError(this.handleError)
+      );
+  }
+
 
   handleError(error: Response | any) {
     console.error('ApiService::handleError', error);

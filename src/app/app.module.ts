@@ -11,7 +11,6 @@ import { AppComponent } from './app.component';
 import { ReviewTabsComponent } from './common/interactive/review-tabs/review-tabs.component';
 import { PageHeaderComponent } from './common/page-header/page-header.component';
 import { ChunkTextComponent } from './common/text/chunk-text/chunk-text.component';
-import { CourseNavComponent } from './common/course-nav/course-nav.component';
 import { ChunkHeadingComponent } from './common/text/chunk-heading/chunk-heading.component';
 import { ChunkSubheadingComponent } from './common/text/chunk-subheading/chunk-subheading.component';
 import { ChunkHeadingTextComponent } from './common/text/chunk-heading-text/chunk-heading-text.component';
@@ -23,6 +22,11 @@ import { CourseDataService } from './course-data.service';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { CourseViewerComponent } from './course-viewer/course-viewer.component';
 import { AppRoutingModule } from './app-routing.module';
+import { CourseViewerRoutingModule } from './course-viewer/course-viewer-routing.module';
+import { LessonDetailComponent } from './course-viewer/lesson-detail/lesson-detail.component';
+import { CourseNavComponent } from './course-viewer/course-nav/course-nav.component';
+import { CourseListComponent } from './course-viewer/course-list/course-list.component';
+import { CourseViewerHomeComponent } from './course-viewer/course-viewer-home/course-viewer-home.component';
 
 
 /**GUÍA MUY COMPLETA SOBRE ANGULAR 2 (SERVICIOS, COMPONENTES, ETC.)
@@ -43,8 +47,12 @@ import { AppRoutingModule } from './app-routing.module';
     ChunkTwoColumnComponent,
     WelcomeComponent,
     CourseViewerComponent,
+    LessonDetailComponent,
+    CourseListComponent,
+    CourseViewerHomeComponent,
   ],
   imports: [
+    CourseViewerRoutingModule,
     BrowserModule,
     HttpClientModule,
     HttpModule,
