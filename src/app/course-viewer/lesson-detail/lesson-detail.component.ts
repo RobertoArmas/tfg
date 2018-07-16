@@ -1,12 +1,12 @@
-import { Component, OnInit, ViewChild, ComponentFactoryResolver } from '@angular/core';
+import { Component, OnInit, ViewChild, ComponentFactoryResolver, Type } from '@angular/core';
 import { Lesson } from '../../../assets/data/classes/lesson';
-import { Course } from '../../../assets/data/classes/course';
 import { CourseDataService } from '../../course-data.service';
 import { ActivatedRoute } from '@angular/router';
 import { ChunkDirective } from './chunk-directive.directive';
 import { ChunkHeadingComponent } from '../../common/text/chunk-heading/chunk-heading.component';
-import { Basic } from '../../../assets/data/classes/chunks/basic';
 import { ChunkComponent } from '../../../assets/data/classes/chunkComponent';
+import { ComponentDef } from '../../../../node_modules/@angular/core/src/render3';
+import { ComponentType } from '../../../../node_modules/@angular/cdk/portal';
 import { ChunkTextComponent } from '../../common/text/chunk-text/chunk-text.component';
 
 @Component({
@@ -29,37 +29,50 @@ export class LessonDetailComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.id = params['id'];
       this.courseDataService
-      .getLesson(this.id)
-      .subscribe(
-        (lesson) => {
-          this.lesson = lesson[0];
-          this.createComponent(this.lesson.chunks[0]);
-          // this.loadComponent(this.lesson.chunks[0]);
-        }
-      );
+        .getLesson(this.id)
+        .subscribe(
+          (lesson) => {
+            this.lesson = lesson[0];
+            const viewContainerRef = this.chunkHost.viewContainerRef;
+            viewContainerRef.clear();
+            for (let chunk of this.lesson.chunks) {
+              let chunkComponent = this.createComponent(chunk);
+              this.loadComponent(chunkComponent);
+            }
+          }
+        );
     });
   }
 
-  createComponent(chunkItem) {
-    console.log(chunkItem);
-    return new ChunkComponent(chunkItem.type, {});
+  createComponent(chunkItem): ChunkComponent {
+    let component: any;
+    switch (chunkItem.type) {
+      case 'ChunkHeadingComponent':
+        component = ChunkHeadingComponent;
+        break;
+      case 'text':
+        component = ChunkTextComponent;
+      default:
+        break;
+    }
+    return new ChunkComponent(component, chunkItem.attributes);
   }
 
 
-  // TODO: Genealizar esto
-  loadComponent(chunkComponent: any) {
-    // tslint:disable-next-line:no-unused-expression
-    // const chunkItem: any = new ChunkItem(ChunkHeadingComponent, {data: 'Introduction to dynamic components'});
-    console.log(chunkComponent);
 
 
-    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(chunkItem.component);
+  loadComponent(chunkComponent: ChunkComponent) {
+    // chunkComponent = new ChunkComponent(ChunkHeadingComponent, {data: 'Introduction to dynamic components'});
+    // console.log(chunkComponent);
+
+
+    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(chunkComponent.type);
     const viewContainerRef = this.chunkHost.viewContainerRef;
 
-    viewContainerRef.clear();
+    // viewContainerRef.clear();
 
     const componentRef = viewContainerRef.createComponent(componentFactory);
     // tslint:disable-next-line:no-unused-expression
-    (<ChunkComponent>componentRef.instance).attributes = chunkItem.attributes;
+    (<ChunkComponent>componentRef.instance).attributes = chunkComponent.attributes;
   }
 }

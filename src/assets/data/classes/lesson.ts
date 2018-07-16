@@ -6,7 +6,7 @@ export class Lesson {
     id: string;
     sectionId: string;
     title: string;
-    chunks: Basic | HeadingText | TwoCol;
+    chunks: Basic[] | HeadingText[] | TwoCol[];
 
     constructor(values: Object = {}) {
         Object.assign(this, values);

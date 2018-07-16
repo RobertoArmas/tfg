@@ -10,6 +10,7 @@ export class ChunkTextComponent implements OnInit {
   @Input() paddingTop: number;
   @Input() paddingBottom: number;
   @Input() backgroundColor: string;
+  @Input() attributes: any;
 
   constructor() {
     // tslint:disable-next-line:max-line-length

@@ -1,4 +1,3 @@
-import { Type } from '@angular/core';
 
 export class Basic implements Chunk {
     type: string;

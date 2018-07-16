@@ -74,7 +74,8 @@ import { ChunkDirective } from './course-viewer/lesson-detail/chunk-directive.di
     AppRoutingModule
   ],
   entryComponents: [
-    ChunkHeadingComponent
+    ChunkHeadingComponent,
+    ChunkTextComponent
   ],
   providers: [ ApiService, CourseDataService ],
   bootstrap: [AppComponent]
