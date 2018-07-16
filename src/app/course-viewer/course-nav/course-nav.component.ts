@@ -29,26 +29,17 @@ export class CourseNavComponent implements OnInit {
       .getAllSections()
       .subscribe(
         (sections) => {
+          sections.map((section) => {
+            this.courseDataService.getSectionLessons(section.id)
+            .subscribe(
+              (lessons) => {
+                section.lessons = lessons;
+              }
+            );
+
+          });
           this.sections = sections;
         }
       );
-
-      this.courseDataService
-      .getAllLessons()
-      .subscribe(
-        (lessons) => {
-          for (const section of this.sections) {
-            section.lessons = lessons.filter((lesson) => {
-              // tslint:disable-next-line:no-unused-expression
-              section.id === lesson.sectionId;
-            });
-          }
-          // this.lessons = lessons;
-        }
-      );
-  }
-
-  belongsToSection(lessonParentId, sectionId): boolean {
-    return lessonParentId === sectionId;
   }
 }

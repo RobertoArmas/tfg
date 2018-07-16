@@ -28,4 +28,8 @@ export class CourseDataService {
     return this.api.getAllLessons();
   }
 
+  getSectionLessons(sectionId: string): Observable<Lesson[]> {
+    return this.api.getSectionLessons(sectionId);
+  }
+
 }
