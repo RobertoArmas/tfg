@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ChildInteractionService } from '../child-interaction.service';
-import { Subscription } from '../../../node_modules/rxjs';
+import { Subscription } from 'rxjs';
 
 @Component({
   templateUrl: './course-viewer.component.html',

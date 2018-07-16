@@ -25,7 +25,7 @@
             "chunks": [
                 {
                     "id": "c0-s1-l1-ch1",
-                    "type": "heading",
+                    "type": "ChunkHeadingComponent",
                     "data": "Introducción al curso demo de la aplicación"
                 },
                 {
@@ -42,7 +42,7 @@
             "chunks": [
                 {
                     "id": "c0-s1-l2-ch1",
-                    "type": "heading",
+                    "type": "ChunkHeadingComponent",
                     "data": "Pruebas de todos los elementos de texto"
                 },
                 {
@@ -77,8 +77,8 @@
             "chunks": [
                 {
                     "id": "c0-s2-l1-ch1",
-                    "type": "heading-text",
-                    "headingData": "Aquí se presentan los componentes de heading + texto",
+                    "type": "ChunkHeadingComponent-text",
+                    "headingData": "Aquí se presentan los componentes de ChunkHeadingComponent + texto",
                     "textData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum enim urna, ac rutrum lorem vulputate condimentum. Vestibulum finibus, urna id pharetra hendrerit, metus mi cursus felis, sit amet dapibus odio felis nec ligula. Aliquam id pulvinar metus. Suspendisse potenti. Donec eu sapien vitae diam mollis malesuada vel sed metus. Vivamus mi enim, gravida sit amet suscipit vel, lacinia a purus. Nunc luctus malesuada felis, id efficitur felis auctor quis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam et enim sit amet elit auctor vehicula eget sit amet ipsum. Ut bibendum iaculis arcu, non accumsan magna consectetur nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; "
                 },
                 {

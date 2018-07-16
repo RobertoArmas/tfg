@@ -1,6 +1,6 @@
-import { Routes, RouterModule } from '../../../node_modules/@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { CourseViewerComponent } from './course-viewer.component';
-import { NgModule } from '../../../node_modules/@angular/core';
+import { NgModule } from '@angular/core';
 import { LessonDetailComponent } from './lesson-detail/lesson-detail.component';
 import { CourseNavComponent } from './course-nav/course-nav.component';
 import { CourseListComponent } from './course-list/course-list.component';

@@ -1,4 +1,6 @@
 
 <div class="lesson-detail">
     <app-page-header [title]="lesson.title"></app-page-header>
+    {{lesson.chunks[0] | json}}
+    <ng-template chunk-host></ng-template>
 </div>

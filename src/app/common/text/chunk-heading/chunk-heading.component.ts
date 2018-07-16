@@ -10,6 +10,7 @@ export class ChunkHeadingComponent implements OnInit {
   @Input() paddingTop: number;
   @Input() paddingBottom: number;
   @Input() backgroundColor: string;
+  @Input() attributes: any;
 
   constructor() {
     this.data = 'Heading';

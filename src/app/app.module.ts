@@ -27,6 +27,7 @@ import { LessonDetailComponent } from './course-viewer/lesson-detail/lesson-deta
 import { CourseNavComponent } from './course-viewer/course-nav/course-nav.component';
 import { CourseListComponent } from './course-viewer/course-list/course-list.component';
 import { CourseViewerHomeComponent } from './course-viewer/course-viewer-home/course-viewer-home.component';
+import { ChunkDirective } from './course-viewer/lesson-detail/chunk-directive.directive';
 
 /**GUÍA MUY COMPLETA SOBRE ANGULAR 2 (SERVICIOS, COMPONENTES, ETC.)
  * https://www.sitepoint.com/angular-2-tutorial/
@@ -49,6 +50,7 @@ import { CourseViewerHomeComponent } from './course-viewer/course-viewer-home/co
     LessonDetailComponent,
     CourseListComponent,
     CourseViewerHomeComponent,
+    ChunkDirective,
   ],
   imports: [
     CourseViewerRoutingModule,
@@ -70,6 +72,9 @@ import { CourseViewerHomeComponent } from './course-viewer/course-viewer-home/co
     MatIconModule,
     MatProgressSpinnerModule,
     AppRoutingModule
+  ],
+  entryComponents: [
+    ChunkHeadingComponent
   ],
   providers: [ ApiService, CourseDataService ],
   bootstrap: [AppComponent]
