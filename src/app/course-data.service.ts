@@ -32,4 +32,8 @@ export class CourseDataService {
     return this.api.getSectionLessons(sectionId);
   }
 
+  getLesson(lessonId: string): Observable<Lesson> {
+    return this.api.getLesson(lessonId);
+  }
+
 }

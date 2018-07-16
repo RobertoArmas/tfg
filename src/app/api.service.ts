@@ -76,6 +76,18 @@ export class ApiService {
       );
   }
 
+  public getLesson(lessonId): Observable<Lesson> {
+    return this.http
+      .get(API_URL + '/lessons?id=' + lessonId)
+      .pipe(
+        map(response => {
+          const lesson = response.json();
+          return new Lesson(lesson);
+        }),
+        catchError(this.handleError)
+      );
+  }
+
 
   handleError(error: Response | any) {
     console.error('ApiService::handleError', error);

@@ -7,12 +7,12 @@ import { ActivatedRoute } from '../../../../node_modules/@angular/router';
 @Component({
   selector: 'app-lesson-detail',
   templateUrl: './lesson-detail.component.html',
-  styleUrls: ['./lesson-detail.component.css'],
+  styleUrls: ['./lesson-detail.component.css']
 })
 export class LessonDetailComponent implements OnInit {
   lesson: Lesson;
-  course: Course = new Course();
   id: string;
+  course: Course;
 
   constructor(
     private courseDataService: CourseDataService,
@@ -23,23 +23,21 @@ export class LessonDetailComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.id = params['id'];
     });
+
+    this.courseDataService
+      .getCourseAttributes()
+      .subscribe(
+        (course) => {
+          this.course = course;
+        }
+      );
+
     // this.courseDataService
-    // .getCourse()
-    // .subscribe(
-    //   (course) => {
-    //     this.course = course;
-    //   }
-    // );
-
-    this.getLesson(this.id);
+    //   .getLesson('c0-s1-l2')
+    //   .subscribe(
+    //     (lesson) => {
+    //       this.lesson = lesson;
+    //     }
+    //   );
   }
-
-  private getLesson(id: string) {
-    // console.log(this.course.title);
-    // this.course.sections.find((section) => {
-    //   console.log(section);
-    //   return section.id === 'Sección 1';
-    // });
-  }
-
 }

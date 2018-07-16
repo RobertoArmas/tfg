@@ -17,29 +17,29 @@ export class CourseNavComponent implements OnInit {
   constructor(private courseDataService: CourseDataService) { }
 
   ngOnInit() {
-    this.courseDataService
-      .getCourseAttributes()
-      .subscribe(
-        (course) => {
-          this.course = course;
-        }
-      );
+    // this.courseDataService
+    //   .getCourseAttributes()
+    //   .subscribe(
+    //     (course) => {
+    //       this.course = course;
+    //     }
+    //   );
 
-    this.courseDataService
-      .getAllSections()
-      .subscribe(
-        (sections) => {
-          sections.map((section) => {
-            this.courseDataService.getSectionLessons(section.id)
-            .subscribe(
-              (lessons) => {
-                section.lessons = lessons;
-              }
-            );
+    // this.courseDataService
+    //   .getAllSections()
+    //   .subscribe(
+    //     (sections) => {
+    //       sections.map((section) => {
+    //         this.courseDataService.getSectionLessons(section.id)
+    //         .subscribe(
+    //           (lessons) => {
+    //             section.lessons = lessons;
+    //           }
+    //         );
 
-          });
-          this.sections = sections;
-        }
-      );
+    //       });
+    //       this.sections = sections;
+    //     }
+    //   );
   }
 }
