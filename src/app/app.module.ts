@@ -28,7 +28,6 @@ import { CourseNavComponent } from './course-viewer/course-nav/course-nav.compon
 import { CourseListComponent } from './course-viewer/course-list/course-list.component';
 import { CourseViewerHomeComponent } from './course-viewer/course-viewer-home/course-viewer-home.component';
 
-
 /**GUÍA MUY COMPLETA SOBRE ANGULAR 2 (SERVICIOS, COMPONENTES, ETC.)
  * https://www.sitepoint.com/angular-2-tutorial/
 */

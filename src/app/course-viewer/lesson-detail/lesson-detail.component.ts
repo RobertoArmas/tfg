@@ -12,7 +12,6 @@ import { ActivatedRoute } from '../../../../node_modules/@angular/router';
 export class LessonDetailComponent implements OnInit {
   lesson: Lesson;
   id: string;
-  course: Course;
 
   constructor(
     private courseDataService: CourseDataService,
@@ -22,22 +21,13 @@ export class LessonDetailComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.id = params['id'];
-    });
-
-    this.courseDataService
-      .getCourseAttributes()
+      this.courseDataService
+      .getLesson(this.id)
       .subscribe(
-        (course) => {
-          this.course = course;
+        (lesson) => {
+          this.lesson = lesson[0];
         }
       );
-
-    // this.courseDataService
-    //   .getLesson('c0-s1-l2')
-    //   .subscribe(
-    //     (lesson) => {
-    //       this.lesson = lesson;
-    //     }
-    //   );
+    });
   }
 }
