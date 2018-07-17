@@ -11,6 +11,20 @@
             "description": "Objeto inicial requerido para que funcione json-server",
             "type": "object",
             "$ref": "course.schema.json"
+        },
+        "sections": {
+            "description": "Array de objetos de tipo sección del curso",
+            "type": "array",
+            "items": {
+                "$ref": "section.schema.json"
+            }
+        },
+        "lessons": {
+            "description": "Array de objetos de tipo lección del curso, cada lección se vincula a una sección en el campo sectionId",
+            "type": "array",
+            "items": {
+                "$ref": "lesson.schema.json"
+            }
         }        
     }
 }

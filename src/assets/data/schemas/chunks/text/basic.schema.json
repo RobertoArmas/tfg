@@ -3,33 +3,46 @@
     "$id": "http://example.com/text/basic.schema.json",
     "description": "Estructura de cualquier chunk de tipo text de una columna",
     "type": "object",
-    "required": [ "id", "type" ],
+    "required": [
+        "id",
+        "type",
+        "attributes"
+    ],
     "additionalProperties": false,
     "properties": {
         "type": {
             "enum": [
-                "heading", "text", "subheading"
+                "heading",
+                "text",
+                "subheading"
             ]
         },
         "id": {
             "type": "string",
             "description": "Indentificador único para el chunk"
         },
-        "data": {
-            "type": "string",
-            "description": "Contenido del texto"
-        },
-        "paddingTop": {
-            "type": "integer",
-            "description": "Padding top del chunk"
-        },
-        "paddingBottom": {
-            "type": "integer"
-        },
-        "backgroundColor": {
-            "type": "string",
-            "description": "Color del chunk en formato Hexadecimal",
-            "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
+        "attributes": {
+            "type": "object",
+            "description": "Atributos de un chunk de tipo texto normal",
+            "additionalProperties": false,
+            "properties": {
+                "data": {
+                    "type": "string",
+                    "description": "Contenido del texto"
+                },
+                "paddingTop": {
+                    "type": "integer",
+                    "description": "Padding top del chunk"
+                },
+                "paddingBottom": {
+                    "type": "integer"
+                },
+                "backgroundColor": {
+                    "type": "string",
+                    "description": "Color del chunk en formato Hexadecimal",
+                    "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
+                }
+            }
         }
     }
 }

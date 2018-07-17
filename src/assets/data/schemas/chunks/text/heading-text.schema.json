@@ -3,37 +3,49 @@
     "$id": "http://example.com/text/two-col.schema.json",
     "description": "Estructura de un chunk tipo heading o subheading con texto",
     "type": "object",
-    "required": [ "id", "type" ],
+    "required": [
+        "id",
+        "type",
+        "attributes"
+    ],
     "additionalProperties": false,
     "properties": {
         "type": {
             "enum": [
-                "heading-text", "subheading-text"
+                "headingText",
+                "subheadingText"
             ]
         },
         "id": {
             "type": "string",
             "description": "Indentificador único para el chunk"
         },
-        "headingData": {
-            "type": "string",
-            "description": "Contenido del texto del heading o subheading"
-        },
-        "textData": {
-            "type": "string",
-            "description": "Contenido del texto"
-        },
-        "paddingTop": {
-            "type": "integer",
-            "description": "Padding top del chunk"
-        },
-        "paddingBottom": {
-            "type": "integer"
-        },
-        "backgroundColor": {
-            "type": "string",
-            "description": "Color del chunk en formato Hexadecimal",
-            "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
+        "attributes": {
+            "type": "object",
+            "description": "Atributos de un chunk de tipo heading",
+            "additionalProperties": false,
+            "properties": {
+                "headingData": {
+                    "type": "string",
+                    "description": "Contenido del texto del heading o subheading"
+                },
+                "textData": {
+                    "type": "string",
+                    "description": "Contenido del texto"
+                },
+                "paddingTop": {
+                    "type": "integer",
+                    "description": "Padding top del chunk"
+                },
+                "paddingBottom": {
+                    "type": "integer"
+                },
+                "backgroundColor": {
+                    "type": "string",
+                    "description": "Color del chunk en formato Hexadecimal",
+                    "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
+                }
+            }
         }
     }
 }

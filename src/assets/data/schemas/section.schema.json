@@ -13,13 +13,6 @@
         "title": {
             "type": "string",
             "description": "Título de la sección"
-        },
-        "lessons": {
-            "description": "Lecciones del curso",
-            "type": "array",
-            "items": {
-                "$ref": "lesson.schema.json"
-            }
         }
     }
 }

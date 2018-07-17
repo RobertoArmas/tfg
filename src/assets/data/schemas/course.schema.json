@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "$id": "http://example.com/course.schema.json",
     "title": "Course",
-    "description": "Estructura de un curso e-learning para...",
+    "description": "Atributos generales del curso",
     "required": [ "id", "title" ],
     "additionalProperties": false,
     "type": "object",
@@ -14,13 +14,6 @@
         "title": {
             "description": "Título del curso",
             "type": "string"
-        },
-        "sections": {
-            "description": "Secciones del curso",
-            "type": "array",
-            "items": {
-                "$ref": "section.schema.json"
-            }
         }        
     }
 }

@@ -5,7 +5,8 @@
     "type": "object",
     "required": [
         "id",
-        "title"
+        "title",
+        "sectionId"
     ],
     "additionalProperties": false,
     "properties": {
@@ -16,6 +17,10 @@
         "title": {
             "type": "string",
             "description": "Título de la lección"
+        },
+        "sectionId": {
+            "type": "string",
+            "description": "Identificador de sección al que pertenece esta lección"
         },
         "chunks": {
             "description": "Chunks de la lección",

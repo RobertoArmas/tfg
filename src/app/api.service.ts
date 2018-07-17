@@ -16,18 +16,6 @@ export class ApiService {
 
   constructor( private http: Http ) { }
 
-  // public getCourse(): Observable<Course> {
-  //   return this.http
-  //     .get(API_URL + '/course')
-  //     .pipe(
-  //       map(response => {
-  //         const course = response.json();
-  //         return new Course(course);
-  //       }),
-  //       catchError(this.handleError)
-  //     );
-  // }
-
   public getCourse(): Observable<Course> {
     return this.http
       .get(API_URL + '/course')
