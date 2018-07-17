@@ -32,3 +32,8 @@
     background: #fafafa;
     width: 280px;
 }
+
+.next-lesson {
+    height: 70px;
+    cursor: pointer;
+}

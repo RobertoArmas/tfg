@@ -9,16 +9,17 @@
         <div class="page-content">
             <section class="course-lesson">
                 <router-outlet></router-outlet>
-                <!-- <app-page-header></app-page-header>
-                <app-chunk-text></app-chunk-text>
-                <app-chunk-heading></app-chunk-heading>
-                <app-chunk-text></app-chunk-text>
-                <app-chunk-subheading></app-chunk-subheading>
-                <app-chunk-text></app-chunk-text>
-                <app-chunk-heading-text></app-chunk-heading-text>
-                <app-chunk-subheading-text></app-chunk-subheading-text>
-                <app-chunk-two-column></app-chunk-two-column> -->
             </section>
         </div>
+
+        <a class="next-lesson" fxLayout="row" fxLayoutAlign="center center">
+            <div fxLayout="column" fxLayoutAlign="space-evenly center">
+                <span>
+                    <b>Siguiente lección</b>
+                </span>
+                <mat-icon>trending_up</mat-icon>
+            </div>
+        </a>
+
     </mat-sidenav-content>
 </mat-sidenav-container>
