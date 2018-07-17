@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from './api.service';
-import { Course } from '../assets/data/classes/course';
+import { Course } from './course-viewer/Course';
 import { Observable } from 'rxjs';
-import { Lesson } from '../assets/data/classes/lesson';
-import { Section } from '../assets/data/classes/section';
+import { Lesson } from './course-viewer/lesson-detail/Lesson';
+import { Section } from './course-viewer/Section';
 
 @Injectable({
   providedIn: 'root'
@@ -11,10 +11,6 @@ import { Section } from '../assets/data/classes/section';
 export class CourseDataService {
 
   constructor(private api: ApiService) { }
-
-  // getCourse(): Observable<Course> {
-  //   return this.api.getCourse();
-  // }
 
   getCourseAttributes(): Observable<Course> {
     return this.api.getCourse();
@@ -35,5 +31,4 @@ export class CourseDataService {
   getLesson(lessonId: string): Observable<Lesson> {
     return this.api.getLesson(lessonId);
   }
-
 }

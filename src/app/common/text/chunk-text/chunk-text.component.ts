@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Basic } from '../../../../assets/data/classes/chunks/basic';
+import { Basic } from '../Basic';
 
 @Component({
   selector: 'app-chunk-text',

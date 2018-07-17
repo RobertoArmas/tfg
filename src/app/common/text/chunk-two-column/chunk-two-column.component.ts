@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { TwoCol } from '../../../../assets/data/classes/chunks/twoCol';
+import { TwoCol } from './TwoCol';
 
 @Component({
   selector: 'app-chunk-two-column',

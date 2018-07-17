@@ -3,9 +3,9 @@ import { environment } from '../environments/environment';
 import { Http } from '@angular/http';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
-import { Course } from '../assets/data/classes/course';
-import { Lesson } from '../assets/data/classes/lesson';
-import { Section } from '../assets/data/classes/section';
+import { Course } from './course-viewer/Course';
+import { Lesson } from './course-viewer/lesson-detail/Lesson';
+import { Section } from './course-viewer/Section';
 
 const API_URL = environment.apiUrl;
 

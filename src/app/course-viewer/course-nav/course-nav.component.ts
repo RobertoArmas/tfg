@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseDataService } from '../../course-data.service';
-import { Course } from '../../../assets/data/classes/course';
-import { Section } from '../../../assets/data/classes/section';
-import { Lesson } from '../../../assets/data/classes/lesson';
+import { Course } from '../Course';
+import { Section } from '../Section';
+import { Lesson } from '../lesson-detail/Lesson';
 
 @Component({
   selector: 'app-course-nav',

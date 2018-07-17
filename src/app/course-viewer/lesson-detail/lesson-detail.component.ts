@@ -1,12 +1,10 @@
 import { Component, OnInit, ViewChild, ComponentFactoryResolver, Type } from '@angular/core';
-import { Lesson } from '../../../assets/data/classes/lesson';
+import { Lesson } from './Lesson';
 import { CourseDataService } from '../../course-data.service';
 import { ActivatedRoute } from '@angular/router';
 import { ChunkDirective } from './chunk-directive.directive';
 import { ChunkHeadingComponent } from '../../common/text/chunk-heading/chunk-heading.component';
-import { ChunkComponent } from '../../../assets/data/classes/chunkComponent';
-import { ComponentDef } from '../../../../node_modules/@angular/core/src/render3';
-import { ComponentType } from '../../../../node_modules/@angular/cdk/portal';
+import { ChunkComponent } from '../../common/ChunkComponent';
 import { ChunkTextComponent } from '../../common/text/chunk-text/chunk-text.component';
 import { ChunkSubheadingComponent } from '../../common/text/chunk-subheading/chunk-subheading.component';
 import { ChunkTwoColumnComponent } from '../../common/text/chunk-two-column/chunk-two-column.component';

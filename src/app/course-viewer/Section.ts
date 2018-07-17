@@ -1,9 +1,9 @@
-import { Section } from './section';
+import { Lesson } from './lesson-detail/Lesson';
 
-export class Course {
+export class Section {
     id: string;
     title: string;
-    sections: Section[];
+    lessons: Lesson[];
 
     constructor(values: Object = {}) {
         Object.assign(this, values);

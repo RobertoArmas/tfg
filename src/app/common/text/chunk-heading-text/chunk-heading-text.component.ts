@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { HeadingText } from '../../../../assets/data/classes/chunks/headingText';
+import { HeadingText } from '../HeadingText';
 
 @Component({
   selector: 'app-chunk-heading-text',

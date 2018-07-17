@@ -29,12 +29,4 @@ export class CourseViewerComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  // toggleStartSideNav() {
-  //   this.startSideNavOpen = !this.startSideNavOpen;
-  // }
-
-  // toggleEndSideNav() {
-  //   this.endSideNavOpen = !this.endSideNavOpen;
-  // }
 }

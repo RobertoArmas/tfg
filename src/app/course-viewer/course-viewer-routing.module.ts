@@ -3,7 +3,6 @@ import { CourseViewerComponent } from './course-viewer.component';
 import { NgModule } from '@angular/core';
 import { LessonDetailComponent } from './lesson-detail/lesson-detail.component';
 import { CourseNavComponent } from './course-nav/course-nav.component';
-import { CourseListComponent } from './course-list/course-list.component';
 import { CourseViewerHomeComponent } from './course-viewer-home/course-viewer-home.component';
 
 const courseViewerRoutes: Routes = [
