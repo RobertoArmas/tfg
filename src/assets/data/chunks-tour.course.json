@@ -71,7 +71,7 @@
                     "id": "c0-s1-l1-ch7",
                     "type": "text",
                     "attributes": {
-                        "data": "Curabitur nec erat et nisl lacinia venenatis. Duis aliquet justo in porttitor placerat. Aliquam ut orci elementum, euismod erat ac, maximus neque. Nullam consectetur est nec nisi fringilla pulvinar. Nulla ac laoreet tortor. Maecenas nec tellus et ipsum porta semper scelerisque interdum purus. Mauris dapibus ultrices velit non accumsan. Aenean in felis in risus mollis gravida sit amet vitae massa. Aenean vitae tincidunt ex, ut porta dolor. Curabitur aliquam iaculis sem vel tristique. Pellentesque ac elit sed nibh blandit imperdiet. "
+                        "data": "El siguiente Chunk de texto estará más separado que el de arriba (heading + texto) por defecto."
                     }
                 },
                 {
@@ -87,9 +87,50 @@
         {
             "id": "c0-s1-l2",
             "sectionId": "c0-s1",
-            "title": "Parte 1",
+            "title": "¿Por qué hacer un curso con Chunks?",
             "chunks": [
-                
+                {
+                    "id": "c0-s1-l2-ch1",
+                    "type": "text",
+                    "attributes": {
+                        "data": "Cada Chunk tiene su propio ámbito independiente dentro de la aplicación. Esto va a permitir realizar personalizaciones sobre cada Chunk o sobre cada tipo de chunk, además de que va a permitir a xAPI identificar exactamente con qué tipos de Chunk interactúa el alumno, e incluso determinar si hay algun Chunk que sea especialmente difícil para todos los alumnos porque han pasado más tiempo del esperado interactuando con el, ya sea leyendolo o intentando resolver un Chunk de tipo 'Interactivo'."
+                    }
+                },
+                {
+                    "id": "c0-s1-l2-ch2",
+                    "type": "heading",
+                    "attributes": {
+                        "data": "Ámbito independiente"
+                    }
+                },
+                {
+                    "id": "c0-s1-l2-ch3",
+                    "type": "text",
+                    "attributes": {
+                        "data": "Porque los Chunks tienen ámbito independiente se pueden personalizar, este por ejemplo tiene un color de fondo distinto que permite resaltar el texto del resto de Chunks de la lección",
+                        "backgroundColor": "#f1f8e9"
+                    }
+                },
+                {
+                    "id": "c0-s1-l2-ch4",
+                    "type": "subheadingText",
+                    "attributes": {
+                        "headingData": "Detalles",
+                        "textData": "Si te fijas, este Chunk subheading-text está un poco más separado de los demás, esto permite aislar partes de la lección para darles importancia.",
+                        "paddingTop": 60,
+                        "paddingBottom": 60
+                    }
+                },
+                {
+                    "id": "c0-s1-l2-ch5",
+                    "type": "twoColumn",
+                    "attributes": {
+                        "dataCol2": "Por último, también se pueden poner Chunks de tipo two-column con una sola columna, ¡Y además se pueden combinar las opciones de personalización!",
+                        "backgroundColor": "#f9fbe7",
+                        "paddingTop":  60,
+                        "paddingBottom": 30
+                    }
+                }
             ]
         },
         {
