@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChildInteractionService } from '../child-interaction.service';
 import { Subscription } from 'rxjs';
+import { ActivatedRoute } from '../../../node_modules/@angular/router';
 
 @Component({
   templateUrl: './course-viewer.component.html',
@@ -12,7 +13,7 @@ export class CourseViewerComponent implements OnInit {
   startSidenavSubscription: Subscription;
   endSidenavSubscription: Subscription;
 
-  constructor(private childInteractionService: ChildInteractionService) {
+  constructor(private activatedRoute: ActivatedRoute, private childInteractionService: ChildInteractionService) {
     this.startSidenavOpen = true;
     this.endSidenavOpen = false;
     this.startSidenavSubscription = childInteractionService.sartSidenavToggled$.subscribe(
@@ -28,5 +29,9 @@ export class CourseViewerComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  goToNextLesson() {
+    console.log(this.activatedRoute.params);
   }
 }
