@@ -20,7 +20,6 @@
 }
 
 .course-lesson {
-    padding-bottom: 12rem;
     padding-top: 5rem;
     background: #fff;
     display: block;
@@ -31,9 +30,4 @@
 .mat-sidenav {
     background: #fafafa;
     width: 280px;
-}
-
-.next-lesson {
-    height: 70px;
-    cursor: pointer;
 }

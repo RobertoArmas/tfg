@@ -3,3 +3,12 @@
     <app-page-header [title]="lesson.title"></app-page-header>
     <ng-template chunk-host></ng-template>
 </div>
+
+<a (click)="goToNextLesson()" class="next-lesson" fxLayout="row" fxLayoutAlign="center center">
+    <div fxLayout="column" fxLayoutAlign="space-evenly center">
+        <span>
+            <b>Siguiente lección</b>
+        </span>
+        <mat-icon>trending_up</mat-icon>
+    </div>
+</a>

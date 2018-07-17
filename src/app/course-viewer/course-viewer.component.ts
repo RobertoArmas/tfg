@@ -13,7 +13,7 @@ export class CourseViewerComponent implements OnInit {
   startSidenavSubscription: Subscription;
   endSidenavSubscription: Subscription;
 
-  constructor(private activatedRoute: ActivatedRoute, private childInteractionService: ChildInteractionService) {
+  constructor(private childInteractionService: ChildInteractionService) {
     this.startSidenavOpen = true;
     this.endSidenavOpen = false;
     this.startSidenavSubscription = childInteractionService.sartSidenavToggled$.subscribe(
@@ -29,9 +29,6 @@ export class CourseViewerComponent implements OnInit {
   }
 
   ngOnInit() {
-  }
-
-  goToNextLesson() {
-    console.log(this.activatedRoute.params);
+    
   }
 }

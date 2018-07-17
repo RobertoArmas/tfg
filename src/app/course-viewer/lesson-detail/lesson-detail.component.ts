@@ -42,6 +42,7 @@ export class LessonDetailComponent implements OnInit {
               const chunkComponent = this.createComponent(chunk);
               this.loadComponent(chunkComponent);
             }
+            setNextLessonRoute();
           }
         );
     });
@@ -93,5 +94,9 @@ export class LessonDetailComponent implements OnInit {
     const componentRef = viewContainerRef.createComponent(componentFactory);
     // tslint:disable-next-line:no-unused-expression
     (<ChunkComponent>componentRef.instance).attributes = chunkComponent.attributes;
+  }
+
+  setNextLessonRoute() {
+    // TODO
   }
 }
