@@ -29,7 +29,8 @@
                 "oneOf": [
                     { "$ref": "chunks\\text\\basic.schema.json" },
                     { "$ref": "chunks\\text\\two-col.schema.json" },
-                    { "$ref": "chunks\\text\\heading-text.schema.json" }
+                    { "$ref": "chunks\\text\\heading-text.schema.json" },
+                    { "$ref": "chunks\\interactive\\checkbox-list.schema.json" }
                 ]
             }
         }

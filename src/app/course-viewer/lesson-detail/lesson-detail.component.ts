@@ -10,6 +10,7 @@ import { ChunkSubheadingComponent } from '../../common/text/chunk-subheading/chu
 import { ChunkTwoColumnComponent } from '../../common/text/chunk-two-column/chunk-two-column.component';
 import { ChunkHeadingTextComponent } from '../../common/text/chunk-heading-text/chunk-heading-text.component';
 import { ChunkSubheadingTextComponent } from '../../common/text/chunk-subheading-text/chunk-subheading-text.component';
+import { ChunkCheckboxListComponent } from '../../common/interactive/chunk-checkbox-list/chunk-checkbox-list.component';
 
 @Component({
   selector: 'app-lesson-detail',
@@ -66,6 +67,9 @@ export class LessonDetailComponent implements OnInit {
         break;
       case 'subheadingText':
         component = ChunkSubheadingTextComponent;
+        break;
+      case 'checkboxList':
+        component = ChunkCheckboxListComponent;
         break;
       default:
         break;

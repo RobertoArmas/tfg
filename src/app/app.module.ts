@@ -28,6 +28,7 @@ import { CourseNavComponent } from './course-viewer/course-nav/course-nav.compon
 import { CourseListComponent } from './course-viewer/course-list/course-list.component';
 import { CourseViewerHomeComponent } from './course-viewer/course-viewer-home/course-viewer-home.component';
 import { ChunkDirective } from './course-viewer/lesson-detail/chunk-directive.directive';
+import { ChunkCheckboxListComponent } from './common/interactive/chunk-checkbox-list/chunk-checkbox-list.component';
 
 /**GUÍA MUY COMPLETA SOBRE ANGULAR 2 (SERVICIOS, COMPONENTES, ETC.)
  * https://www.sitepoint.com/angular-2-tutorial/
@@ -51,6 +52,7 @@ import { ChunkDirective } from './course-viewer/lesson-detail/chunk-directive.di
     CourseListComponent,
     CourseViewerHomeComponent,
     ChunkDirective,
+    ChunkCheckboxListComponent,
   ],
   imports: [
     CourseViewerRoutingModule,
@@ -79,7 +81,8 @@ import { ChunkDirective } from './course-viewer/lesson-detail/chunk-directive.di
     ChunkTextComponent,
     ChunkTwoColumnComponent,
     ChunkHeadingTextComponent,
-    ChunkSubheadingTextComponent
+    ChunkSubheadingTextComponent,
+    ChunkCheckboxListComponent
   ],
   providers: [ ApiService, CourseDataService ],
   bootstrap: [AppComponent]

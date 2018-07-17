@@ -1,0 +1,14 @@
+.chunk-checkbox-list {
+    max-width: 47.61rem;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.mat-checkbox {
+    font-family: 'Merriweather', serif;
+    font-size: 1.04rem;
+    line-height: 1.941176470588235;
+    width: 43.4rem !important;
+    float: left;
+    margin-bottom: 30px;
+}

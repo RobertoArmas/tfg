@@ -39,20 +39,32 @@
                 },
                 {
                     "id": "c0-s1-l1-ch3",
+                    "type": "checkboxList",
+                    "attributes": {
+                        "items": [
+                            "Chunk de cabecera - título de la lección",
+                            "Chunk Heading - resaltar apartados dentro de una lección",
+                            "Chunk Text - explicaciones",
+                            "Chunk Checklist - comprobar conceptos adquiridos"
+                        ]
+                    }
+                },
+                {
+                    "id": "c0-s1-l1-ch4",
                     "type": "subheading",
                     "attributes": {
                         "data": "También se pueden crear apartados con Subheadings"
                     }
                 },
                 {
-                    "id": "c0-s1-l1-ch4",
+                    "id": "c0-s1-l1-ch5",
                     "type": "text",
                     "attributes": {
                         "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ullamcorper non nisi sit amet rutrum. Nullam risus arcu, imperdiet nec risus vitae, ultricies malesuada dui. Mauris in massa congue, luctus ipsum quis, tempor diam. Donec consequat vulputate arcu, sed finibus diam maximus in. Praesent rhoncus odio ante, in molestie neque facilisis nec. Quisque nec tellus volutpat, viverra lectus quis, semper metus. Vivamus sit amet ultrices arcu, eu auctor enim. Suspendisse eleifend lectus eu risus volutpat porttitor. Vivamus pulvinar, turpis ac congue sodales, augue leo sodales quam, in luctus eros lectus sed dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin posuere, metus tristique maximus sagittis, sem lectus cursus ipsum, in hendrerit mi dui ac ipsum. Aenean eu odio ultrices, tristique libero vel, faucibus nisl. Etiam quis magna id ipsum feugiat molestie ac eget nisi. Vestibulum euismod, tortor et mattis vestibulum, velit dui pharetra lectus, ut tempor urna leo accumsan nibh. Integer ultrices metus non feugiat lacinia. "
                     }
                 },
                 {
-                    "id": "c0-s1-l1-ch5",
+                    "id": "c0-s1-l1-ch6",
                     "type": "twoColumn",
                     "attributes": {
                         "dataCol1": "Otra manera de mostrar los datos de tipo texto es mediante el Chunk 'Two-column'.",
@@ -60,7 +72,7 @@
                     }
                 },
                 {
-                    "id": "c0-s1-l1-ch6",
+                    "id": "c0-s1-l1-ch7",
                     "type": "headingText",
                     "attributes": {
                         "headingData": "Existe un Chunk especial que combina un Heading y un Text",
@@ -68,14 +80,14 @@
                     }
                 },
                 {
-                    "id": "c0-s1-l1-ch7",
+                    "id": "c0-s1-l1-ch8",
                     "type": "text",
                     "attributes": {
                         "data": "El siguiente Chunk de texto estará más separado que el de arriba (heading + texto) por defecto."
                     }
                 },
                 {
-                    "id": "c0-s1-l1-ch8",
+                    "id": "c0-s1-l1-ch9",
                     "type": "subheadingText",
                     "attributes": {
                         "headingData": "Subheading + Text",
