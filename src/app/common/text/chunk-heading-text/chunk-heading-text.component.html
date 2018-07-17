@@ -1,7 +1,7 @@
 <div class="chunk-heading-text" 
-  [style.paddingTop]="paddingTop"
-  [style.paddingBottom]="paddingBottom"
-  [style.background-color]="backgroundColor">
-  <app-chunk-heading [data]="headingData"></app-chunk-heading>
-  <app-chunk-text [data]="textData" [paddingTop]="0" [paddingBottom]="0"></app-chunk-text>
+  [style.paddingTop]="attributes.paddingTop"
+  [style.paddingBottom]="attributes.paddingBottom"
+  [style.background-color]="attributes.backgroundColor">
+  <app-chunk-heading [attributes]="getHeadingAttributes()"></app-chunk-heading>
+  <app-chunk-text [attributes]="getTextAttributes()"></app-chunk-text>
 </div>

@@ -1,12 +1,12 @@
 <div>
-  <div fxLayout="row" fxLayoutAlign="center center" [style.background-color]="backgroundColor">
-    <div class="chunk-two-column" [style.padding-top.px]="paddingTop" [style.padding-bottom.px]="paddingBottom">
+  <div fxLayout="row" fxLayoutAlign="center center" [style.background-color]="attributes.backgroundColor">
+    <div class="chunk-two-column" [style.padding-top.px]="attributes.paddingTop" [style.padding-bottom.px]="attributes.paddingBottom">
       <div fxLayout="row" fxLayoutAlign="space-evenly center">
         <p>
-          {{dataCol1}}
+          {{attributes.dataCol1}}
         </p>
         <p>
-          {{dataCol2}}
+          {{attributes.dataCol2}}
         </p>
       </div>
     </div>

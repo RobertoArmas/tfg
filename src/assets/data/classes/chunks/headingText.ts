@@ -1,6 +1,4 @@
 export class HeadingText implements Chunk {
-    type: string;
-    id: string;
     headingData: string;
     textData: string;
     paddingTop: number;

@@ -2,6 +2,6 @@
   [style.paddingTop]="paddingTop"
   [style.paddingBottom]="paddingBottom"
   [style.background-color]="backgroundColor">
-  <app-chunk-subheading [data]="subheadingData"></app-chunk-subheading>
-  <app-chunk-text [data]="textData" [paddingTop]="0" [paddingBottom]="0"></app-chunk-text>
+  <app-chunk-subheading [attributes]="getHeadingAttributes()"></app-chunk-subheading>
+  <app-chunk-text [attributes]="getTextAttributes()"></app-chunk-text>
 </div>

@@ -8,6 +8,10 @@ import { ChunkComponent } from '../../../assets/data/classes/chunkComponent';
 import { ComponentDef } from '../../../../node_modules/@angular/core/src/render3';
 import { ComponentType } from '../../../../node_modules/@angular/cdk/portal';
 import { ChunkTextComponent } from '../../common/text/chunk-text/chunk-text.component';
+import { ChunkSubheadingComponent } from '../../common/text/chunk-subheading/chunk-subheading.component';
+import { ChunkTwoColumnComponent } from '../../common/text/chunk-two-column/chunk-two-column.component';
+import { ChunkHeadingTextComponent } from '../../common/text/chunk-heading-text/chunk-heading-text.component';
+import { ChunkSubheadingTextComponent } from '../../common/text/chunk-subheading-text/chunk-subheading-text.component';
 
 @Component({
   selector: 'app-lesson-detail',
@@ -35,8 +39,8 @@ export class LessonDetailComponent implements OnInit {
             this.lesson = lesson[0];
             const viewContainerRef = this.chunkHost.viewContainerRef;
             viewContainerRef.clear();
-            for (let chunk of this.lesson.chunks) {
-              let chunkComponent = this.createComponent(chunk);
+            for (const chunk of this.lesson.chunks) {
+              const chunkComponent = this.createComponent(chunk);
               this.loadComponent(chunkComponent);
             }
           }
@@ -47,11 +51,24 @@ export class LessonDetailComponent implements OnInit {
   createComponent(chunkItem): ChunkComponent {
     let component: any;
     switch (chunkItem.type) {
-      case 'ChunkHeadingComponent':
+      case 'heading':
         component = ChunkHeadingComponent;
+        break;
+      case 'subheading':
+        component = ChunkSubheadingComponent;
         break;
       case 'text':
         component = ChunkTextComponent;
+        break;
+      case 'twoColumn':
+        component = ChunkTwoColumnComponent;
+        break;
+      case 'headingText':
+        component = ChunkHeadingTextComponent;
+        break;
+      case 'subheadingText':
+        component = ChunkSubheadingTextComponent;
+        break;
       default:
         break;
     }

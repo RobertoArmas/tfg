@@ -25,7 +25,7 @@
             "chunks": [
                 {
                     "id": "c0-s1-l1-ch1",
-                    "type": "ChunkHeadingComponent",
+                    "type": "heading",
                     "attributes": {
                         "data": "Introducción al curso demo de la aplicación"
                     }
@@ -34,7 +34,52 @@
                     "id": "c0-s1-l1-ch2",
                     "type": "text",
                     "attributes": {
+                        "data": "En esta demo se mostrarán los 'Chunks' implementados y las posibilidades de personalización de los mismos. El primer Chunk que encontramos es el de cabecera, todas las lecciones contienen un Chunk de cabecera que permite al usuario identificar rápidamente dónde está y el título de la lección que va a aprender. El segundo Chunk que encontramos es un Heading, sirve para introducir un nuevo concepto dentro de la lección. Seguidamente encontramos este mismo Chunk, se trata de un Chunk de tipo texto en el que se puede escribir texto plano para explicar algún concepto."
+                    }
+                },
+                {
+                    "id": "c0-s1-l1-ch3",
+                    "type": "subheading",
+                    "attributes": {
+                        "data": "También se pueden crear apartados con Subheadings"
+                    }
+                },
+                {
+                    "id": "c0-s1-l1-ch4",
+                    "type": "text",
+                    "attributes": {
                         "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ullamcorper non nisi sit amet rutrum. Nullam risus arcu, imperdiet nec risus vitae, ultricies malesuada dui. Mauris in massa congue, luctus ipsum quis, tempor diam. Donec consequat vulputate arcu, sed finibus diam maximus in. Praesent rhoncus odio ante, in molestie neque facilisis nec. Quisque nec tellus volutpat, viverra lectus quis, semper metus. Vivamus sit amet ultrices arcu, eu auctor enim. Suspendisse eleifend lectus eu risus volutpat porttitor. Vivamus pulvinar, turpis ac congue sodales, augue leo sodales quam, in luctus eros lectus sed dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin posuere, metus tristique maximus sagittis, sem lectus cursus ipsum, in hendrerit mi dui ac ipsum. Aenean eu odio ultrices, tristique libero vel, faucibus nisl. Etiam quis magna id ipsum feugiat molestie ac eget nisi. Vestibulum euismod, tortor et mattis vestibulum, velit dui pharetra lectus, ut tempor urna leo accumsan nibh. Integer ultrices metus non feugiat lacinia. "
+                    }
+                },
+                {
+                    "id": "c0-s1-l1-ch5",
+                    "type": "twoColumn",
+                    "attributes": {
+                        "dataCol1": "Otra manera de mostrar los datos de tipo texto es mediante el Chunk 'Two-column'.",
+                        "dataCol2": "Este Chunk permite dividir el contenido en dos columnas, mostrar los datos de forma distinta puede captar la atención del alumno si se hace con sentido."
+                    }
+                },
+                {
+                    "id": "c0-s1-l1-ch6",
+                    "type": "headingText",
+                    "attributes": {
+                        "headingData": "Existe un Chunk especial que combina un Heading y un Text",
+                        "textData": "Este chunk es muy práctico cuando la información del Text está directamente relacionada con el título (Heading) o a modo de introducción del apartado."
+                    }
+                },
+                {
+                    "id": "c0-s1-l1-ch7",
+                    "type": "text",
+                    "attributes": {
+                        "data": "Curabitur nec erat et nisl lacinia venenatis. Duis aliquet justo in porttitor placerat. Aliquam ut orci elementum, euismod erat ac, maximus neque. Nullam consectetur est nec nisi fringilla pulvinar. Nulla ac laoreet tortor. Maecenas nec tellus et ipsum porta semper scelerisque interdum purus. Mauris dapibus ultrices velit non accumsan. Aenean in felis in risus mollis gravida sit amet vitae massa. Aenean vitae tincidunt ex, ut porta dolor. Curabitur aliquam iaculis sem vel tristique. Pellentesque ac elit sed nibh blandit imperdiet. "
+                    }
+                },
+                {
+                    "id": "c0-s1-l1-ch8",
+                    "type": "subheadingText",
+                    "attributes": {
+                        "headingData": "Subheading + Text",
+                        "textData": "Y como no, este Chunk también está disponible en su versión con subheading."
                     }
                 }
             ]
@@ -46,7 +91,7 @@
             "chunks": [
                 {
                     "id": "c0-s1-l2-ch1",
-                    "type": "ChunkHeadingComponent",
+                    "type": "heading",
                     "attributes": {
                         "data": "Pruebas de todos los elementos de texto"
                     }
@@ -70,13 +115,6 @@
                         "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ullamcorper non nisi sit amet rutrum. Nullam risus arcu, imperdiet nec risus vitae, ultricies malesuada dui. Mauris in massa congue, luctus ipsum quis, tempor diam. Donec consequat vulputate arcu, sed finibus diam maximus in. Praesent rhoncus odio ante, in molestie neque facilisis nec. Quisque nec tellus volutpat, viverra lectus quis, semper metus. Vivamus sit amet ultrices arcu, eu auctor enim. Suspendisse eleifend lectus eu risus volutpat porttitor. Vivamus pulvinar, turpis ac congue sodales, augue leo sodales quam, in luctus eros lectus sed dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin posuere, metus tristique maximus sagittis, sem lectus cursus ipsum, in hendrerit mi dui ac ipsum. Aenean eu odio ultrices, tristique libero vel, faucibus nisl. Etiam quis magna id ipsum feugiat molestie ac eget nisi. Vestibulum euismod, tortor et mattis vestibulum, velit dui pharetra lectus, ut tempor urna leo accumsan nibh. Integer ultrices metus non feugiat lacinia. ",
                         "backgroundColor": "#e1f5fe"
                     }
-                },
-                {
-                    "id": "c0-s1-l2-ch5",
-                    "type": "two-column",
-                    "dataCol1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum enim urna, ac rutrum lorem vulputate condimentum. Vestibulum finibus, urna id pharetra hendrerit, metus mi cursus felis, sit amet dapibus odio felis nec ligula. Aliquam id pulvinar metus. Suspendisse potenti. Donec eu sapien vitae diam mollis malesuada vel sed metus. Vivamus mi enim, gravida sit amet suscipit vel, lacinia a purus. Nunc luctus malesuada felis, id efficitur felis auctor quis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam et enim sit amet elit auctor vehicula eget sit amet ipsum. Ut bibendum iaculis arcu, non accumsan magna consectetur nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; ",
-                    "dataCol2": "Duis vitae convallis nunc, ut varius est. Fusce a massa purus. Nunc et leo fermentum, dictum orci quis, convallis turpis. Nullam vestibulum porttitor blandit. Donec posuere augue eget augue posuere auctor in vel lectus. Cras convallis facilisis tellus. Nulla sed luctus nunc. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin vel dapibus lectus. Ut ac rhoncus ex, at dictum ligula. Ut sem tortor, egestas ac commodo quis, placerat non risus. ",
-                    "paddingTop": 50
                 }
             ]
         },
@@ -87,8 +125,8 @@
             "chunks": [
                 {
                     "id": "c0-s2-l1-ch1",
-                    "type": "ChunkHeadingComponent-text",
-                    "headingData": "Aquí se presentan los componentes de ChunkHeadingComponent + texto",
+                    "type": "",
+                    "headingData": "Aquí se presentan los componentes de heading + texto",
                     "textData": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum enim urna, ac rutrum lorem vulputate condimentum. Vestibulum finibus, urna id pharetra hendrerit, metus mi cursus felis, sit amet dapibus odio felis nec ligula. Aliquam id pulvinar metus. Suspendisse potenti. Donec eu sapien vitae diam mollis malesuada vel sed metus. Vivamus mi enim, gravida sit amet suscipit vel, lacinia a purus. Nunc luctus malesuada felis, id efficitur felis auctor quis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam et enim sit amet elit auctor vehicula eget sit amet ipsum. Ut bibendum iaculis arcu, non accumsan magna consectetur nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; "
                 },
                 {

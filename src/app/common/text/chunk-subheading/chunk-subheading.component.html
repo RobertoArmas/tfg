@@ -1,12 +1,12 @@
 
 <div>
     <div fxLayout="row" fxLayoutAlign="center center"
-      [style.background-color]="backgroundColor">
+      [style.background-color]="attributes.backgroundColor">
       <div class="chunk-subheading"
-        [style.padding-top.px]="paddingTop"
-        [style.padding-bottom.px]="paddingBottom">
+        [style.padding-top.px]="attributes.paddingTop"
+        [style.padding-bottom.px]="attributes.paddingBottom">
         <h3>
-          <strong>{{data}}</strong>
+          <strong>{{attributes.data}}</strong>
         </h3>
       </div>
     </div>

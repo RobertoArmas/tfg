@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Basic } from '../../../../assets/data/classes/chunks/basic';
 
 @Component({
   selector: 'app-chunk-heading',
@@ -6,20 +7,18 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./chunk-heading.component.css']
 })
 export class ChunkHeadingComponent implements OnInit {
-  @Input() data: string;
-  @Input() paddingTop: number;
-  @Input() paddingBottom: number;
-  @Input() backgroundColor: string;
-  @Input() attributes: any;
+  @Input() attributes: Basic;
 
   constructor() {
-    this.data = 'Heading';
-    this.paddingTop = 30;
-    this.paddingBottom = 0;
-    this.backgroundColor = '#ffffff';
+    this.attributes = new Basic();
   }
 
   ngOnInit() {
+    if (this.attributes.data === undefined) { this.attributes.data = 'Heading'; }
+    if (this.attributes.paddingTop === undefined) { this.attributes.paddingTop = 30; }
+    if (this.attributes.paddingBottom === undefined) { this.attributes.paddingBottom = 0; }
+    if (this.attributes.backgroundColor === undefined) { this.attributes.backgroundColor = '#ffffff'; }
+
   }
 
 }

@@ -6,5 +6,19 @@
             ],
             "url": "./src/assets/data/schemas/main.schema.json"
         }
-    ]
+    ],
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.js": {"when": "$(basename).ts"},
+        "**/*.js.map": true
+    },
+    "git.autofetch": true,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "workbench.iconTheme": "vscode-simpler-icons",
+    "explorer.autoReveal": false,
+    "workbench.editor.closeEmptyGroups": false,
 }

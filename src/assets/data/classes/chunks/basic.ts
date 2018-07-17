@@ -1,7 +1,5 @@
 
 export class Basic implements Chunk {
-    type: string;
-    id: string;
     data: string;
     paddingTop: number;
     paddingBottom: number;
