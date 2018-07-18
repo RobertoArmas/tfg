@@ -97,6 +97,6 @@ export class LessonDetailComponent implements OnInit {
   }
 
   setNextLessonRoute() {
-    // TODO
+    // TODO(jorge)
   }
 }
