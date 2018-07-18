@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+/**
+ * Página de inicio de la aplicación
+ */
+
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',

@@ -12,34 +12,43 @@ import { Lesson } from '../lesson-detail/Lesson';
 export class CourseNavComponent implements OnInit {
   course: Course = new Course();
   sections: Section[] = [];
-  lessons: Lesson[] = [];
 
   constructor(private courseDataService: CourseDataService) { }
 
   ngOnInit() {
-    this.courseDataService
-      .getCourseAttributes()
-      .subscribe(
-        (course) => {
-          this.course = course;
-        }
-      );
+    this.getCourseData();
+    this.getSectionsData();
+  }
 
+  getCourseData() {
     this.courseDataService
-      .getAllSections()
-      .subscribe(
-        (sections) => {
-          sections.map((section) => {
-            this.courseDataService.getSectionLessons(section.id)
-            .subscribe(
-              (lessons) => {
-                section.lessons = lessons;
-              }
-            );
+    .getCourseAttributes()
+    .subscribe(
+      (course) => {
+        this.course = course;
+      }
+    );
+  }
 
-          });
-          this.sections = sections;
-        }
-      );
+  getSectionsData() {
+    this.courseDataService
+    .getAllSections()
+    .subscribe(
+      (sections) => {
+        sections.map((section) => {
+          this.getSectionLessons(section);
+        });
+        this.sections = sections;
+      }
+    );
+  }
+
+  getSectionLessons(section: Section) {
+    this.courseDataService.getSectionLessons(section.id)
+    .subscribe(
+      (lessons) => {
+        section.lessons = lessons;
+      }
+    );
   }
 }

@@ -12,6 +12,10 @@ import { ChunkHeadingTextComponent } from '../../common/text/chunk-heading-text/
 import { ChunkSubheadingTextComponent } from '../../common/text/chunk-subheading-text/chunk-subheading-text.component';
 import { ChunkCheckboxListComponent } from '../../common/interactive/chunk-checkbox-list/chunk-checkbox-list.component';
 
+/**
+ * Se encarga de renderizar los componentes de los Chunks de cada lección
+ */
+
 @Component({
   selector: 'app-lesson-detail',
   templateUrl: './lesson-detail.component.html',
@@ -19,7 +23,9 @@ import { ChunkCheckboxListComponent } from '../../common/interactive/chunk-check
 })
 export class LessonDetailComponent implements OnInit {
   @ViewChild(ChunkDirective) chunkHost: ChunkDirective;
-  lesson: Lesson;
+  currentLesson: Lesson;
+
+  // Id de la lección extraída de la ruta del navegador
   id: string;
   nextLessonId: string;
   isLastLesson: boolean;
@@ -29,30 +35,74 @@ export class LessonDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private componentFactoryResolver: ComponentFactoryResolver
   ) {
+    // Predicción: esta no es la última lección
     this.isLastLesson = false;
   }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.id = params['id'];
-      this.courseDataService
-        .getLesson(this.id)
-        .subscribe(
-          (lesson) => {
-            this.lesson = lesson[0];
-            const viewContainerRef = this.chunkHost.viewContainerRef;
-            viewContainerRef.clear();
-            for (const chunk of this.lesson.chunks) {
-              const chunkComponent = this.createComponent(chunk);
-              this.loadComponent(chunkComponent);
-            }
-            this.setNextLessonId();
-          }
-        );
+      this.getLessonData();
     });
   }
 
-  createComponent(chunkItem): ChunkComponent {
+  getLessonData() {
+    this.courseDataService
+    .getLesson(this.id)
+    .subscribe(
+      (lesson) => {
+        this.currentLesson = lesson[0];
+
+        // Hasta que no se han obtenido los datos de la lección no se pueden crear los componentes dinámicamente
+        this.clearViewContainerRef();
+        this.createDynamicComponents();
+        this.setNextLessonId();
+      }
+    );
+  }
+
+  // Necesario para que no se queden los Chunks de la lección anterior en la vista
+  clearViewContainerRef() {
+    this.chunkHost.viewContainerRef.clear();
+  }
+
+  createDynamicComponents() {
+    for (const chunk of this.currentLesson.chunks) {
+      const chunkComponent = this.createComponentFromJSON(chunk);
+      this.loadComponentIntoAnchor(chunkComponent);
+    }
+  }
+
+  /**
+   * TODO: buscar una forma más eficiente de capturar la siguiente lección
+   * (no teniendo que volver a traer los datos de todas las lecciones)
+   */
+  setNextLessonId() {
+    this.courseDataService.getAllLessons()
+      .subscribe(
+        (lessons) => {
+          const currentLessonIndex = lessons.findIndex(lesson => lesson.id === this.id);
+          try {
+            this.nextLessonId = lessons[currentLessonIndex + 1].id;
+            if (this.isLastLesson) { this.isLastLesson = false; }
+          } catch (noNextIndexError) {
+            this.isLastLesson = true;
+          }
+        }
+      );
+  }
+
+  loadComponentIntoAnchor(chunkComponent: ChunkComponent) {
+    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(chunkComponent.type);
+    const viewContainerRef = this.chunkHost.viewContainerRef;
+    const componentRef = viewContainerRef.createComponent(componentFactory);
+    (<ChunkComponent>componentRef.instance).attributes = chunkComponent.attributes;
+  }
+
+  /**
+   * TODO: refactorizar este switch a otra estructura porque se va a hacer mega-mastodóntica
+   */
+  createComponentFromJSON(chunkItem): ChunkComponent {
     let component: any;
     switch (chunkItem.type) {
       case 'heading':
@@ -80,38 +130,5 @@ export class LessonDetailComponent implements OnInit {
         break;
     }
     return new ChunkComponent(component, chunkItem.attributes);
-  }
-
-
-
-
-  loadComponent(chunkComponent: ChunkComponent) {
-    // chunkComponent = new ChunkComponent(ChunkHeadingComponent, {data: 'Introduction to dynamic components'});
-    // console.log(chunkComponent);
-
-
-    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(chunkComponent.type);
-    const viewContainerRef = this.chunkHost.viewContainerRef;
-
-    // viewContainerRef.clear();
-
-    const componentRef = viewContainerRef.createComponent(componentFactory);
-    // tslint:disable-next-line:no-unused-expression
-    (<ChunkComponent>componentRef.instance).attributes = chunkComponent.attributes;
-  }
-
-  setNextLessonId() {
-    this.courseDataService.getAllLessons()
-      .subscribe(
-        (lessons) => {
-          const currentLessonIndex = lessons.findIndex(lesson => lesson.id === this.id);
-          try {
-            this.nextLessonId = lessons[currentLessonIndex + 1].id;
-            if (this.isLastLesson) { this.isLastLesson = false; }
-          } catch (noNextIndexError) {
-            this.isLastLesson = true;
-          }
-        }
-      );
   }
 }

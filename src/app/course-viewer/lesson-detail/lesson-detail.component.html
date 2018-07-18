@@ -1,10 +1,12 @@
 
 <div class="lesson-detail">
-    <app-page-header [title]="lesson.title"></app-page-header>
+    <app-page-header [title]="currentLesson.title"></app-page-header>
+
+    <!-- En este tag se hace un append de todos los componentes generados dinámicamente -->
     <ng-template chunk-host></ng-template>
 </div>
 
-<div class="next-lesson-container">
+<div class="navigation-next-lesson">
     <div class="next-lesson" routerLink="/course/{{nextLessonId}}" *ngIf="!isLastLesson" fxLayout="row" fxLayoutAlign="center center">
         <div fxLayout="column" fxLayoutAlign="space-evenly center">
             <span>

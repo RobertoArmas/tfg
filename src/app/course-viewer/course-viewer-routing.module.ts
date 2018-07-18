@@ -5,6 +5,10 @@ import { LessonDetailComponent } from './lesson-detail/lesson-detail.component';
 import { CourseNavComponent } from './course-nav/course-nav.component';
 import { CourseViewerHomeComponent } from './course-viewer-home/course-viewer-home.component';
 
+/**
+ * Routing específico para los componentes del Container CourseViewer
+ */
+
 const courseViewerRoutes: Routes = [
     {
         path: 'course',
@@ -29,7 +33,7 @@ const courseViewerRoutes: Routes = [
 
 @NgModule({
     imports: [
-        RouterModule.forChild(courseViewerRoutes)
+        RouterModule.forChild(courseViewerRoutes) // <-- No incluye el Router Service
     ],
     exports: [
         RouterModule

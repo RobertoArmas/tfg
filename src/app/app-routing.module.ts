@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { CourseViewerComponent } from './course-viewer/course-viewer.component';
+
+/**
+ * Rutas de la aplicación a nivel global
+ */
 
 const appRoutes: Routes = [
     { path: 'welcome', component: WelcomeComponent },
@@ -13,7 +16,7 @@ const appRoutes: Routes = [
     imports: [
         RouterModule.forRoot(
             appRoutes,
-            { enableTracing: false } // <-- debugging purposes only
+            { enableTracing: true } // <-- debugging purposes only
         )
     ],
     exports: [

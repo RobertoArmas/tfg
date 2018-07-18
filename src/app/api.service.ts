@@ -7,6 +7,11 @@ import { Course } from './course-viewer/Course';
 import { Lesson } from './course-viewer/lesson-detail/Lesson';
 import { Section } from './course-viewer/Section';
 
+/**
+ * API REST de conexión con el backend
+ * Ref: https://www.sitepoint.com/angular-rxjs-create-api-service-rest-backend/
+ */
+
 const API_URL = environment.apiUrl;
 
 @Injectable({

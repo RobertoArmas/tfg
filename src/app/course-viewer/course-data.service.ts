@@ -5,6 +5,11 @@ import { Course } from './Course';
 import { Section } from './Section';
 import { Lesson } from './lesson-detail/Lesson';
 
+/**
+ * Servicio intermediario entre el API REST y la aplicación
+ * Los componentes de la aplicación solo pueden obtener datos a través de este servicio.
+ */
+
 @Injectable({
   providedIn: 'root'
 })

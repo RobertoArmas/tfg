@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ChildInteractionService } from '../child-interaction.service';
 import { Subscription } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
+
+/**
+ * Contenedor de las vistas de presentación del curso
+ */
 
 @Component({
   templateUrl: './course-viewer.component.html',
@@ -13,22 +16,19 @@ export class CourseViewerComponent implements OnInit {
   startSidenavSubscription: Subscription;
   endSidenavSubscription: Subscription;
 
+
   constructor(private childInteractionService: ChildInteractionService) {
     this.startSidenavOpen = true;
     this.endSidenavOpen = false;
+
     this.startSidenavSubscription = childInteractionService.sartSidenavToggled$.subscribe(
-      toggle => {
-        this.startSidenavOpen = !this.startSidenavOpen;
-      }
+      toggle => this.startSidenavOpen = !this.startSidenavOpen
     );
     this.endSidenavSubscription = childInteractionService.endSidenavToggled$.subscribe(
-      toggle => {
-        this.endSidenavOpen = !this.endSidenavOpen;
-      }
+      toggle => this.endSidenavOpen = !this.endSidenavOpen
     );
   }
 
   ngOnInit() {
-    
   }
 }

@@ -31,9 +31,10 @@ import { CourseViewerHomeComponent } from './course-viewer/course-viewer-home/co
 import { ChunkDirective } from './course-viewer/lesson-detail/chunk-directive.directive';
 import { ChunkCheckboxListComponent } from './common/interactive/chunk-checkbox-list/chunk-checkbox-list.component';
 
-/**GUÍA MUY COMPLETA SOBRE ANGULAR 2 (SERVICIOS, COMPONENTES, ETC.)
+/**
+ * GUÍA MUY COMPLETA SOBRE ANGULAR 2 (SERVICIOS, COMPONENTES, ETC.)
  * https://www.sitepoint.com/angular-2-tutorial/
-*/
+ */
 
 @NgModule({
   declarations: [
@@ -76,7 +77,7 @@ import { ChunkCheckboxListComponent } from './common/interactive/chunk-checkbox-
     MatProgressSpinnerModule,
     AppRoutingModule
   ],
-  entryComponents: [
+  entryComponents: [  // <-- Hay que declarar los componentes que se van a generar dinámicamente https://angular.io/guide/entry-components
     ChunkHeadingComponent,
     ChunkSubheadingComponent,
     ChunkTextComponent,
@@ -89,13 +90,3 @@ import { ChunkCheckboxListComponent } from './common/interactive/chunk-checkbox-
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-
-/**
- * TODO: Hay que mirar implementar un BackendService que se encargue de obtener
- * los datos, después el course service lo que va a hacer es coger todo el objeto
- * y extraer un objeto en el que solo estén el título del curso, los títulos de las
- * secciones y los títulos de las lecciones.
- *
- * Después
- */
