@@ -4,11 +4,13 @@
     <ng-template chunk-host></ng-template>
 </div>
 
-<a (click)="goToNextLesson()" class="next-lesson" fxLayout="row" fxLayoutAlign="center center">
-    <div fxLayout="column" fxLayoutAlign="space-evenly center">
-        <span>
-            <b>Siguiente lección</b>
-        </span>
-        <mat-icon>trending_up</mat-icon>
+<div class="next-lesson-container">
+    <div class="next-lesson" routerLink="/course/{{nextLessonId}}" *ngIf="!isLastLesson" fxLayout="row" fxLayoutAlign="center center">
+        <div fxLayout="column" fxLayoutAlign="space-evenly center">
+            <span>
+                <b>Siguiente lección</b>
+            </span>
+            <mat-icon>trending_up</mat-icon>
+        </div>
     </div>
-</a>
+</div>

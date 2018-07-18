@@ -21,12 +21,16 @@ export class LessonDetailComponent implements OnInit {
   @ViewChild(ChunkDirective) chunkHost: ChunkDirective;
   lesson: Lesson;
   id: string;
+  nextLessonId: string;
+  isLastLesson: boolean;
 
   constructor(
     private courseDataService: CourseDataService,
     private route: ActivatedRoute,
     private componentFactoryResolver: ComponentFactoryResolver
-  ) { }
+  ) {
+    this.isLastLesson = false;
+  }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -42,7 +46,7 @@ export class LessonDetailComponent implements OnInit {
               const chunkComponent = this.createComponent(chunk);
               this.loadComponent(chunkComponent);
             }
-            setNextLessonRoute();
+            this.setNextLessonId();
           }
         );
     });
@@ -96,7 +100,18 @@ export class LessonDetailComponent implements OnInit {
     (<ChunkComponent>componentRef.instance).attributes = chunkComponent.attributes;
   }
 
-  setNextLessonRoute() {
-    // TODO(jorge)
+  setNextLessonId() {
+    this.courseDataService.getAllLessons()
+      .subscribe(
+        (lessons) => {
+          const currentLessonIndex = lessons.findIndex(lesson => lesson.id === this.id);
+          try {
+            this.nextLessonId = lessons[currentLessonIndex + 1].id;
+            if (this.isLastLesson) { this.isLastLesson = false; }
+          } catch (noNextIndexError) {
+            this.isLastLesson = true;
+          }
+        }
+      );
   }
 }
