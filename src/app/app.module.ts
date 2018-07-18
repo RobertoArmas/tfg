@@ -26,7 +26,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { CourseViewerRoutingModule } from './course-viewer/course-viewer-routing.module';
 import { LessonDetailComponent } from './course-viewer/lesson-detail/lesson-detail.component';
 import { CourseNavComponent } from './course-viewer/course-nav/course-nav.component';
-import { CourseListComponent } from './course-viewer/course-list/course-list.component';
 import { CourseViewerHomeComponent } from './course-viewer/course-viewer-home/course-viewer-home.component';
 import { ChunkDirective } from './course-viewer/lesson-detail/chunk-directive.directive';
 import { ChunkCheckboxListComponent } from './common/interactive/chunk-checkbox-list/chunk-checkbox-list.component';
@@ -51,7 +50,6 @@ import { ChunkCheckboxListComponent } from './common/interactive/chunk-checkbox-
     WelcomeComponent,
     CourseViewerComponent,
     LessonDetailComponent,
-    CourseListComponent,
     CourseViewerHomeComponent,
     ChunkDirective,
     ChunkCheckboxListComponent,
