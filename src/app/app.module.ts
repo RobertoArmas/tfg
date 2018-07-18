@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpModule } from '@angular/http';
+
 // tslint:disable-next-line:max-line-length
 import { MatSidenavModule, MatCheckboxModule, MatToolbarModule, MatButtonModule, MatCardModule, MatTabsModule, MatListModule, MatProgressBarModule, MatExpansionModule, MatIconModule, MatProgressSpinnerModule } from '@angular/material';
 
@@ -18,7 +19,7 @@ import { ChunkSubheadingTextComponent } from './common/text/chunk-subheading-tex
 import { ChunkTwoColumnComponent } from './common/text/chunk-two-column/chunk-two-column.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './api.service';
-import { CourseDataService } from './course-data.service';
+import { CourseDataService } from './course-viewer/course-data.service';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { CourseViewerComponent } from './course-viewer/course-viewer.component';
 import { AppRoutingModule } from './app-routing.module';

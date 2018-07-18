@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
 
-  // URL dela API de desarrollo 'json-server'
+  // URL de la API de desarrollo 'json-server'
   apiUrl: 'http://localhost:3000'
 };
 

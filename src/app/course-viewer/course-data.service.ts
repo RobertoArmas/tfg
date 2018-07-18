@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import { ApiService } from './api.service';
-import { Course } from './course-viewer/Course';
-import { Observable } from 'rxjs';
-import { Lesson } from './course-viewer/lesson-detail/Lesson';
-import { Section } from './course-viewer/Section';
+import { Injectable } from '../../../node_modules/@angular/core';
+import { ApiService } from '../api.service';
+import { Observable } from '../../../node_modules/rxjs';
+import { Course } from './Course';
+import { Section } from './Section';
+import { Lesson } from './lesson-detail/Lesson';
 
 @Injectable({
   providedIn: 'root'

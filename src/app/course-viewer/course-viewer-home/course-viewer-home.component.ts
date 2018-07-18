@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '../../../../node_modules/@angular/router';
-import { CourseDataService } from '../../course-data.service';
+import { Router } from '@angular/router';
+import { CourseDataService } from '../course-data.service';
 
 @Component({
   selector: 'app-course-viewer-home',

@@ -14,3 +14,8 @@ a,abbr,acronym,address,applet,article,aside,audio,big,blockquote,body,canvas,cap
     font: inherit;
     vertical-align: baseline;
 }
+
+.app-name {
+    color:white;
+    text-decoration: none;
+}

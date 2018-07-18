@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CourseDataService } from '../../course-data.service';
+import { CourseDataService } from '../course-data.service';
 import { Course } from '../Course';
 import { Section } from '../Section';
 import { Lesson } from '../lesson-detail/Lesson';

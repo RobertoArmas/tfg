@@ -1,0 +1,29 @@
+
+@import '../../../node_modules/@angular/material/_theming.scss';
+
+
+// Sobreescritura de los estilos del elemento checkbox para poder dividir el texto en lineas
+.mat-checkbox-layout {
+  white-space: normal !important;
+}
+
+.mat-checkbox-label {
+  margin-left: 55px !important;
+}
+
+
+// Estilos comunes de Angular Material
+@include mat-core();
+
+
+// Definición de las paletas del tema utilizando las paletas de Material Design en palette.scss
+$basic-app-primary: mat-palette($mat-indigo);
+$basic-app-accent:  mat-palette($mat-deep-orange, A200, A100, A400);
+$basic-app-warn:    mat-palette($mat-red);
+
+
+// Crea el objeto Theme (Map Sass que contiene todas las paletas)
+$basic-app-theme: mat-light-theme($basic-app-primary, $basic-app-accent, $basic-app-warn);
+
+
+@include angular-material-theme($basic-app-theme);

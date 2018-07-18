@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChildInteractionService } from '../child-interaction.service';
 import { Subscription } from 'rxjs';
-import { ActivatedRoute } from '../../../node_modules/@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   templateUrl: './course-viewer.component.html',
