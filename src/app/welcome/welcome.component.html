@@ -5,7 +5,9 @@
           <div fxLayout="column" fxLayoutAlign="space-evenly center" fxFill>
             <div class="author">Nombre del autor del curso</div>
             <div class="title">Course demo</div>
-            <div class="controls">Start course</div>
+            <div class="controls">
+              <button mat-raised-button color="primary" routerLink="/course" (click)="sendStartStatement()">IR AL CURSO</button>
+            </div>
           </div>
       </div>
     </div>

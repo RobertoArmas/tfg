@@ -28,9 +28,7 @@
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26",
     "hammerjs": "^2.0.8",
-    "@angular/flex-layout": "^6.0.0-beta.16",
-    "tincanjs": "^0.50.0",
-    "xhr2": "^0.1.4"
+    "@angular/flex-layout": "^6.0.0-beta.16"
   },
   "devDependencies": {
     "@angular/compiler-cli": "^6.0.2",

@@ -29,6 +29,7 @@ import { CourseNavComponent } from './course-viewer/course-nav/course-nav.compon
 import { CourseViewerHomeComponent } from './course-viewer/course-viewer-home/course-viewer-home.component';
 import { ChunkDirective } from './course-viewer/lesson-detail/chunk-directive.directive';
 import { ChunkCheckboxListComponent } from './common/interactive/chunk-checkbox-list/chunk-checkbox-list.component';
+import { XapiService } from './xapi.service';
 
 /**
  * GUÍA MUY COMPLETA SOBRE ANGULAR 2 (SERVICIOS, COMPONENTES, ETC.)
@@ -84,7 +85,7 @@ import { ChunkCheckboxListComponent } from './common/interactive/chunk-checkbox-
     ChunkSubheadingTextComponent,
     ChunkCheckboxListComponent
   ],
-  providers: [ ApiService, CourseDataService ],
+  providers: [ ApiService, CourseDataService, XapiService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

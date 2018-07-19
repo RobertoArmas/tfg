@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { XapiService } from '../xapi.service';
 
 /**
  * Página de inicio de la aplicación
@@ -11,9 +12,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WelcomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private xapi: XapiService) { }
 
   ngOnInit() {
   }
 
+  sendStartStatement() {
+    // this.xapi.started(new Date());
+    console.log('I started');
+  }
 }

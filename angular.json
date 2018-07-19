@@ -25,7 +25,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "vendor/xapiwrapper.min.js"
+            ]
           },
           "configurations": {
             "production": {
