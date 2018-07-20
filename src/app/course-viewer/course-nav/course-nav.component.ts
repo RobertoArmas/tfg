@@ -3,6 +3,7 @@ import { CourseDataService } from '../course-data.service';
 import { Course } from '../Course';
 import { Section } from '../Section';
 import { Lesson } from '../lesson-detail/Lesson';
+import { XapiService } from '../../xapi.service';
 
 @Component({
   selector: 'app-course-nav',
@@ -13,7 +14,10 @@ export class CourseNavComponent implements OnInit {
   course: Course = new Course();
   sections: Section[] = [];
 
-  constructor(private courseDataService: CourseDataService) { }
+  constructor(
+    private courseDataService: CourseDataService,
+    private xapi: XapiService
+  ) { }
 
   ngOnInit() {
     this.getCourseData();
@@ -50,5 +54,10 @@ export class CourseNavComponent implements OnInit {
         section.lessons = lessons;
       }
     );
+  }
+
+  navigateToLesson(lesson: Lesson) {
+    const lessonInfo: string = lesson.id + ' - ' + lesson.title;
+    this.xapi.navigatedTo(lessonInfo);
   }
 }

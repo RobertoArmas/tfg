@@ -133,7 +133,7 @@ export class LessonDetailComponent implements OnInit {
 
   navigateBack() {
     const previousLessonInfo: string = this.previousLessonTrimmed.id + ' - ' + this.previousLessonTrimmed.title;
-    this.xapi.navigateBack(previousLessonInfo);
+    this.xapi.navigatedBack(previousLessonInfo);
   }
 
   /**

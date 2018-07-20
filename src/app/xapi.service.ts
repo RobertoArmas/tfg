@@ -126,7 +126,7 @@ export class XapiService {
     });
   }
 
-  navigateBack(lessonInfo: string) {
+  navigatedBack(lessonInfo: string) {
     const statement: Statement = this.getBase();
 
     statement.verb = {
@@ -146,6 +146,30 @@ export class XapiService {
     statement.timestamp = (new Date()).toISOString();
     statement.context.registration = this.course.attemptGUID;
 
+    ADL.XAPIWrapper.sendStatement(statement, (resp: any) => {
+      ADL.XAPIWrapper.log(resp.status + ' - statement id: ' + resp.response);
+    });
+  }
+
+  navigatedTo(lessonInfo: string) {
+    const statement: Statement = this.getBase();
+
+    statement.verb = {
+      id: this.course.baseuri + Verbs.navigatedTo,
+      display: { 'es-ES': 'ha navegado a' }
+    };
+
+    statement.object = {
+      id: this.course.baseuri + '/lesson',
+      definition: {
+        name: { 'es-ES': lessonInfo },
+        description: { 'es-ES': 'Representa una lección en el curso' },
+        type: ObjectTypes.slide
+      }
+    };
+
+    statement.timestamp = (new Date()).toISOString();
+    statement.context.registration = this.course.attemptGUID;
     ADL.XAPIWrapper.sendStatement(statement, (resp: any) => {
       ADL.XAPIWrapper.log(resp.status + ' - statement id: ' + resp.response);
     });
