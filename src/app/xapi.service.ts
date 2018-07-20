@@ -3,6 +3,8 @@ import { XapiCourse } from '../assets/types/xapiCourse.js';
 import { Statement } from '../assets/types/statement.js';
 import { Verbs } from '../assets/types/verbs.js';
 
+import '../assets/types/adl';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,50 +17,54 @@ export class XapiService {
   }
 
   launchLrsConnection() {
+    ADL.XAPIWrapper.log.debug = true;
+
     ADL.launch((error, launchdata, wrapper) => {
 
-      // Conexión con xAPI Launch Server
+      // Cuando consigue conectar con el xAPI Launch Server
       if (!error) {
         ADL.XAPIWrapper = wrapper;
         this.course.baseuri = launchdata.customData.content;
 
-        console.log('--- contenido lanzado mediante xAPI Launch --\n', ADL.XAPIWrapper.lrs, '\n', launchdata);
-      } else {
-
-        // Valores por defecto para conectar la aplicación al LRS
+        ADL.XAPIWrapper.log('--- contenido lanzado mediante xAPI Launch --\n');
+        ADL.XAPIWrapper.log(ADL.XAPIWrapper.lrs);
+        ADL.XAPIWrapper.log(launchdata);
+      } else { // <-- Valores por defecto para conectar la aplicación al LRS
         ADL.XAPIWrapper.changeConfig({
           'endpoint': 'https://cloud.scorm.com/tc/USCLE7C6OK/sandbox/',
           'user': 'jespinosa@atnova.com',
           'password': 'pedag0g1c0'
         });
 
-        this.course.baseuri = 'http://e-learning.course/event/course/non-launch';
+        this.course.baseuri = 'http://e-learning.course/event/course';
 
         launchdata = {
           actor: {
             account: {
               homePage: 'http://e-learning.course/server',
-              name: 'Jorge E.'
+              name: 'Jorge'
             },
-            name: 'Jorge E.'
+            name: 'Jorge'
           }
         };
-        console.log('--- contenido no lanzado --- \n', ADL.XAPIWrapper.lrs);
+
+        ADL.XAPIWrapper.log('--- contenido no lanzado --- \n');
+        ADL.XAPIWrapper.log(ADL.XAPIWrapper.lrs);
       }
 
-      this.buildCourse(launchdata.actor);
-      // Aquí debe empezar la aplicación
+      this.buildCourseBaseStatement(launchdata.actor);
+
     }, true);
   }
 
-  buildCourse(actor) {
+  buildCourseBaseStatement(actor) {
     this.course.statement = {
       actor: actor,
       object: {
-        id: this.course.baseuri + '/curso-Elearning',
+        id: this.course.baseuri + '/no-accesible',
         definition: {
-          name: { 'es-ES': 'Curso e-learning' },
-          description: { 'es-ES': 'Primera versión de un curso e-learning utilizando xAPI' },
+          name: { 'es-ES': 'Curso e-learning no accesible' },
+          description: { 'es-ES': 'Primera versión del curso e-learning no accesible utilizando xAPI' },
           type: 'http://adlnet.gov/expapi/activities/course'
         }
       },
@@ -90,24 +96,16 @@ export class XapiService {
     statement.context.registration = this.course.attemptGUID;
 
     ADL.XAPIWrapper.sendStatement(statement, (resp: any) => {
-      console.log(resp.status + ' - statement id: ' + resp.response);
+      ADL.XAPIWrapper.log(resp.status + ' - statement id: ' + resp.response);
     });
   }
 
-  initialized() {
-    this.course.attemptGUID = ADL.ruuid();
+  progressed(startTime: Date) {
     const statement: Statement = this.getBase();
 
     statement.verb = {
-      id: Verbs.started,
-      display: { 'es-ES': 'ha empezado' }
-    };
-
-    statement.context.registration = this.course.attemptGUID;
-
-    ADL.XAPIWrapper.sendStatement(statement, (resp: any) => {
-      console.log(resp.status + ' - statement id: ' + resp.response);
-    });
+      id: 'http://adlnet.gov/expapi/verbs/progressed',
+      display: { 'es-Es': 'ha pasado a' }
+    }
   }
-
 }

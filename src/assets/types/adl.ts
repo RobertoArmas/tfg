@@ -1,4 +1,3 @@
-
 // Type definitions for xAPI Wrapper
 // Project: https://github.com/adlnet/xAPIWrapper
 // Definitions by: Jorge Espinosa
@@ -12,24 +11,21 @@
 declare var ADL: {
     launch: (callback: (error: string, launchdata: any, xAPIWrapper: any) => void, launch: boolean) => void;
 
-    XAPIWrapper: any;
+    XAPIWrapper: XapiWrapperClass;
 
     ruuid: any;
+};
+
+class XapiWrapperClass {
+    changeConfig: any;
+    lrs: any;
+    sendStatement: any;
+    log: XapiWrapperLog;
+
+    constructor() {}
 }
 
-// class XapiWrapperClass {
-//     log: XapiLogger;
-
-//     constructor(values: Object = {}) {
-//         Object.assign(this, values);
-//     }
-// }
-
-// class XapiLogger {
-//     private message: string;
-//     debug: boolean;
-
-//     constructor(msg: string) {
-//         this.message = msg;
-//     }
-// }
+interface XapiWrapperLog {
+    (message: any): any ;
+    debug: boolean;
+}
