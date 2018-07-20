@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import * as ADL from '../../vendor/xapiwrapper.min.js';
 import { XapiCourse } from '../assets/types/xapiCourse.js';
 import { Statement } from '../assets/types/statement.js';
 import { Verbs } from '../assets/types/verbs.js';
@@ -16,46 +15,40 @@ export class XapiService {
   }
 
   launchLrsConnection() {
+    ADL.launch((error, launchdata, wrapper) => {
 
-    console.log('Launch service');
+      // Conexión con xAPI Launch Server
+      if (!error) {
+        ADL.XAPIWrapper = wrapper;
+        this.course.baseuri = launchdata.customData.content;
 
-    // ADL.launch((err, launchdata, xAPIWrapper) => {
-    //   console.log('launch app');
-    // }, true);
+        console.log('--- contenido lanzado mediante xAPI Launch --\n', ADL.XAPIWrapper.lrs, '\n', launchdata);
+      } else {
 
+        // Valores por defecto para conectar la aplicación al LRS
+        ADL.XAPIWrapper.changeConfig({
+          'endpoint': 'https://cloud.scorm.com/tc/USCLE7C6OK/sandbox/',
+          'user': 'jespinosa@atnova.com',
+          'password': 'pedag0g1c0'
+        });
 
+        this.course.baseuri = 'http://e-learning.course/event/course/non-launch';
 
-    // ADL.launch((error, launchdata, wrapper) => {
-    //   if (!error) {
-    //     ADL.XAPIWrapper = wrapper;
-    //     this.course.baseuri = launchdata.customData.content;
+        launchdata = {
+          actor: {
+            account: {
+              homePage: 'http://e-learning.course/server',
+              name: 'Jorge E.'
+            },
+            name: 'Jorge E.'
+          }
+        };
+        console.log('--- contenido no lanzado --- \n', ADL.XAPIWrapper.lrs);
+      }
 
-    //     console.log('--- contenido lanzado mediante xAPI Launch --\n', ADL.XAPIWrapper.lrs, '\n', launchdata);
-    //   } else {
-    //     // Valores por defecto para conectar la aplicación al LRS
-    //     ADL.XAPIWrapper.changeConfig({
-    //       'endpoint': 'https://cloud.scorm.com/tc/USCLE7C6OK/sandbox/',
-    //       'user': 'jespinosa@atnova.com',
-    //       'password': 'pedag0g1c0'
-    //     });
-
-    //     this.course.baseuri = 'http://e-learning.course/event/course/non-launch';
-
-    //     launchdata = {
-    //       actor: {
-    //         account: {
-    //           homePage: 'http://e-learning.course/server',
-    //           name: 'Jorge E.'
-    //         },
-    //         name: 'Jorge E.'
-    //       }
-    //     };
-    //     console.log('--- contenido no lanzado --- \n', ADL.XAPIWrapper.lrs);
-    //   }
-
-    //   this.buildCourse(launchdata.actor);
-    //   // Aquí debe empezar la aplicación
-    // }, true);
+      this.buildCourse(launchdata.actor);
+      // Aquí debe empezar la aplicación
+    }, true);
   }
 
   buildCourse(actor) {
@@ -94,6 +87,22 @@ export class XapiService {
     };
 
     statement.timestamp = startTime.toISOString();
+    statement.context.registration = this.course.attemptGUID;
+
+    ADL.XAPIWrapper.sendStatement(statement, (resp: any) => {
+      console.log(resp.status + ' - statement id: ' + resp.response);
+    });
+  }
+
+  initialized() {
+    this.course.attemptGUID = ADL.ruuid();
+    const statement: Statement = this.getBase();
+
+    statement.verb = {
+      id: Verbs.started,
+      display: { 'es-ES': 'ha empezado' }
+    };
+
     statement.context.registration = this.course.attemptGUID;
 
     ADL.XAPIWrapper.sendStatement(statement, (resp: any) => {

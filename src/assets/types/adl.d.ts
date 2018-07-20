@@ -1,20 +1,35 @@
+
 // Type definitions for xAPI Wrapper
 // Project: https://github.com/adlnet/xAPIWrapper
 // Definitions by: Jorge Espinosa
 // TypeScript Version: 2.9.2
 
-declare var ADL: ADL.IAdlStatic;
+/**
+ * Si explota:
+ * Ver: https://www.bennadel.com/blog/3169-adding-custom-typings-files-d-ts-in-an-angular-2-typescript-application.htm
+ */
 
-declare global {
-    interface Function {
-        $inject?: ReadonlyArray<string>;
-    }
+declare var ADL: {
+    launch: (callback: (error: string, launchdata: any, xAPIWrapper: any) => void, launch: boolean) => void;
+
+    XAPIWrapper: any;
+
+    ruuid: any;
 }
 
-export as namespace ADL;
+// class XapiWrapperClass {
+//     log: XapiLogger;
 
-export = ADL;
+//     constructor(values: Object = {}) {
+//         Object.assign(this, values);
+//     }
+// }
 
-declare namespace ADL {
-    interface IAdlStatic {}
-}
+// class XapiLogger {
+//     private message: string;
+//     debug: boolean;
+
+//     constructor(msg: string) {
+//         this.message = msg;
+//     }
+// }
