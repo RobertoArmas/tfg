@@ -4,6 +4,7 @@ import { Statement } from '../assets/types/statement.js';
 import { Verbs } from '../assets/types/verbs.js';
 
 import '../assets/types/adl';
+import { ObjectTypes } from '../assets/types/object-types.js';
 
 @Injectable({
   providedIn: 'root'
@@ -100,12 +101,53 @@ export class XapiService {
     });
   }
 
-  progressed(startTime: Date) {
+  progressed(lessonInfo: string) {
     const statement: Statement = this.getBase();
 
     statement.verb = {
-      id: 'http://adlnet.gov/expapi/verbs/progressed',
-      display: { 'es-Es': 'ha pasado a' }
-    }
+      id: Verbs.progressed,
+      display: { 'es-Es': 'ha avanzado a' }
+    };
+
+    statement.object = {
+      id: this.course.baseuri + '/lesson',
+      definition: {
+        name: { 'es-ES': lessonInfo },
+        description: { 'es-ES': 'Representa una lección en el curso' },
+        type: ObjectTypes.slide
+      }
+    };
+
+    statement.timestamp = (new Date()).toISOString();
+    statement.context.registration = this.course.attemptGUID;
+
+    ADL.XAPIWrapper.sendStatement(statement, (resp: any) => {
+      ADL.XAPIWrapper.log(resp.status + ' - statement id: ' + resp.response);
+    });
+  }
+
+  navigateBack(lessonInfo: string) {
+    const statement: Statement = this.getBase();
+
+    statement.verb = {
+      id: this.course.baseuri + Verbs.navigatedBack,
+      display: { 'es-ES': 'ha vuelto a' }
+    };
+
+    statement.object = {
+      id: this.course.baseuri + '/lesson',
+      definition: {
+        name: { 'es-ES': lessonInfo },
+        description: { 'es-ES': 'Representa una lección en el curso' },
+        type: ObjectTypes.slide
+      }
+    };
+
+    statement.timestamp = (new Date()).toISOString();
+    statement.context.registration = this.course.attemptGUID;
+
+    ADL.XAPIWrapper.sendStatement(statement, (resp: any) => {
+      ADL.XAPIWrapper.log(resp.status + ' - statement id: ' + resp.response);
+    });
   }
 }
