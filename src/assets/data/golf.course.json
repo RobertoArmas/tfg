@@ -1,0 +1,446 @@
+{
+    "course": {
+        "id": "c1",
+        "title": "Golf Example"
+    },
+    "sections": [
+        {
+            "id": "c1-s1",
+            "title": "Playing"
+        },
+        {
+            "id": "c1-s2",
+            "title": "Etiquette"
+        },
+        {
+            "id": "c1-s3",
+            "title": "Handicapping"
+        }
+    ],
+    "lessons": [
+        {
+            "id": "c1-s1-l1",
+            "title": "Play of the game",
+            "sectionId": "c1-s1",
+            "chunks": [
+                {
+                    "id": "c1-s1-l1-ch1",
+                    "type": "text",
+                    "attributes": {
+                        "data": "Every round of golf is based on playing a number of holes in a given order. A round typically consists of 18 holes that are played in the order determined by the course layout. On a nine-hole course, a standard round consists of two successive nine-hole rounds. Playing a hole on the golf course consists of hitting a ball from a tee on the teeing box (a marked area designated for the first shot of a hole, a tee shot), and once the ball comes to rest, striking it again. This process is repeated until the ball is in the cup. Once the ball is on the green (an area of finely cut grass) the ball is usually putted (hit along the ground) into the hole. The goal of resting the ball in the hole in as few strokes as possible may be impeded by hazards, such as bunkers and water hazards. In most typical forms of gameplay, each player plays his or her ball from the tee until it is holed."
+                    }
+                },
+                {
+                    "id": "c1-s1-l1-ch2",
+                    "type": "text",
+                    "attributes": {
+                        "data": "Players can walk or drive in motorized carts over the course, either singly or in groups of two, three, or four, sometimes accompanied by caddies who carry and manage the players' equipment and give them advice."
+                    }
+                },
+                {
+                    "id": "c1-s1-l1-ch3",
+                    "type": "text",
+                    "attributes": {
+                        "data": "In stroke play, the score consists of the number of strokes played plus any penalty strokes incurred. Penalty strokes are not actually strokes but penalty points that are added to the score for violations of rules or utilizing relief procedures."
+                    }
+                }
+            ]
+        },
+        {
+            "id": "c1-s1-l2",
+            "sectionId": "c1-s1",
+            "title": "Par",
+            "chunks": [
+                {
+                    "id": "c1-s1-l2-ch1",
+                    "type": "text",
+                    "attributes": {
+                        "data": "A hole is classified by its par, the number of strokes a skilled golfer should require to complete play of the hole. For example, a skilled golfer expects to reach the green on a par-four hole in two strokes (This would be considered a Green in Regulation or GIR): one from the tee (the 'drive') and another, second, stroke to the green (the 'approach'); and then roll the ball into the hole in two putts for par. Traditionally, a golf hole is either a par-three, -four or -five."
+                    }
+                },
+                {
+                    "id": "c1-s1-l2-ch2",
+                    "type": "text",
+                    "attributes": {
+                        "data": "Primarily, but not exclusively, the par of a hole is determined by the tee-to-green distance. A typical length for a par-three hole ranges between 91 and 224 meters (100 - 250 yd), for a par-four hole, between 225 and 434 meters (251 - 475 yd). Typically, par-five holes are at between 435 and 630 meters (476 - 690 yd). These distances are not absolute rules; for example, it is possible that a 450 meter (492 yd) hole could be classed as a par-four hole, since the par for a hole is determined by its 'effective playing length'. If the tee-to-green distance on a hole is predominantly downhill, it will play shorter than its physical length and may be given a lower par rating. Par ratings are also affected by factors affecting difficulty; the placement of hazards or the shape of the hole for example can sometimes affect the play of a hole such that it requires an extra stroke to avoid playing into the hazard or out-of-bounds."
+                    }
+                },
+                {
+                    "id": "c1-s1-l2-ch3",
+                    "type": "text",
+                    "attributes": {
+                        "data": "Eighteen hole courses may have four par-three, ten par-four, and four par-five holes, though other combinations exist and are not less worthy than courses of par 72. Many major championships are contested on courses playing to a par of 70, 71, or 72. In some countries, courses are classified, in addition to the course's par, with a course classification describing the play difficulty of a course and may be used to calculate a golfer's playing handicap for that given course."
+                    }
+                }
+            ]
+        },
+        {
+            "id": "c1-s1-l3",
+            "sectionId": "c1-s1",
+            "title": "Scoring",
+            "chunks": [
+                {
+                    "id": "c1-s1-l3-ch1",
+                    "type": "subheading",
+                    "attributes": {
+                        "data": "The two basic forms of playing golf are match play and stroke play."
+                    }
+                },
+                {
+                    "id": "c1-s1-l3-ch2",
+                    "type": "twoColumn",
+                    "attributes": {
+                        "dataCol1": "In match play, two players (or two teams) play each hole as a separate contest against each other. The party with the lower score wins that hole, or if the scores of both players or teams are equal the hole is 'halved' (drawn). The game is won by the party that wins more holes than the other. In the case that one team or player has taken a lead that cannot be overcome in the number of holes remaining to be played, the match is deemed to be won by the party in the lead, and the remainder of the holes are not played. For example, if one party already has a lead of six holes, and only five holes remain to be played on the course, the match is over. At any given point, if the lead is equal to the number of holes remaining, the match is said to be 'dormie', and is continued until the leader increases the lead by one hole, thereby winning the match, or until the match ends in a tie. When the game is tied after the predetermined number of holes have been played, it may be continued until one side takes a one-hole lead.",
+                        "dataCol2": "In stroke play the score achieved for each and every hole of the round or tournament is added to produce the total score, and the player with the lowest score wins (Stroke play is the game most usually played by professional golfers)."
+                    }
+                },
+                {
+                    "id": "c1-s1-l3-ch3",
+                    "type":  "text",
+                    "attributes": {
+                        "data": "There are variations of these basic principles, including skins, stableford scoring, and team games including foursome and four-ball games."
+                    }
+                }
+            ]
+        },
+        {
+            "id": "c1-s1-l4",
+            "sectionId": "c1-s1",
+            "title": "Other Scoring System",
+            "chunks": [
+                {
+                    "id": "c1-s1-l4-ch1",
+                    "type": "headingText",
+                    "attributes": {
+                        "headingData": "Skins",
+                        "textData": "In a skins game, golfers compete on each hole, as a separate contest. Played for prize money on the professional level or as a means of a wager for amateurs, a skin, or the prize money assigned to each hole, carries over to subsequent holes if the hole is tied (or halved). If you come to the end of the round and there are still skins left over, play continues until the final skin has been decided."
+                    }
+                },
+                {
+                    "id": "c1-s1-l4-ch2",
+                    "type": "headingText",
+                    "attributes": {
+                        "headingData": "Stableford scoring",
+                        "textData": "In stableford points play (originated by Dr Frank Stableford, 1870-1959, was first used on 16 May 1932 at Wallasey Golf Club, Cheshire, England) the player gains points for the score achieved on each hole of the round or tournament (1 point for a bogey, 2 points for a par, 3 points for a birdie, 4 points for an eagle). The points achieved for each hole of the round or tournament is added to produce the total points score, and the player with the highest score wins."
+                    }
+                },
+                {
+                    "id": "c1-s1-l4-ch3",
+                    "type": "heading",
+                    "attributes": {
+                        "data": "Team play"
+                    }
+                },
+                {
+                    "id": "c1-s1-l4-ch4",
+                    "type": "twoColumn",
+                    "attributes": {
+                        "dataCol1": "A foursome (defined in Rule 29) is played between two teams of two players each, in which each team has only one ball and players alternate playing it. For example, if players A and B form a team, A tees off on the first hole, B will play the second shot, A the third, and so on until the hole is finished. On the second hole, B will tee off (regardless who played the last putt on the first hole), then A plays the second shot, and so on. Foursomes can be played as match play or stroke play.",
+                        "dataCol2": "A four-ball (Rules 30 and 31) is also played between two teams of two players each, but every player plays his own ball and for each team, the lower score on each hole is counted. Four-balls can be played as match play or stroke play."
+                    }
+                },
+                {
+                    "id": "c1-s1-l4-ch5",
+                    "type": "subheading",
+                    "attributes": {
+                        "data": "There are also popular unofficial variations on team play:"
+                    }
+                },
+                {
+                    "id": "c1-s1-l4-ch6",
+                    "type": "checkboxList",
+                    "attributes": {
+                        "items": [
+                            "In a scramble (also known as Ambrose), each player in a team tees off on each hole, and the players decide which shot was best. Every player then plays his second shot from within a clublength of where the best ball has come to rest, and the procedure is repeated until the hole is finished. In a champagne scramble, each player in a team tees off on each hole. The best drive is used and all players play their own ball from this spot. In best ball, each player plays the hole as normal, but the lowest score of all the players on the team counts as the team's score.",
+                            "In a greensome, also called modified alternate shot, both players tee off, and then pick the best shot as in a scramble. The player who did not shoot the best first shot plays the second shot. The play then alternates as in a foursome.",
+                            "A variant of greensome is sometimes played where the opposing team chooses which of their opponent's tee shots the opponents should use. The player who did not shoot the chosen first shot plays the second shot. Play then continues as a greensome.",
+                            "There is also a form of starting called 'shotgun', which is mainly used for tournament play. A 'shotgun start' consists of groups starting on different holes, allowing for all players to start and end their round at the same time."
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "c1-s1-l5",
+            "sectionId": "c1-s1",
+            "title": "The Rules of Golf",
+            "chunks": [
+                {
+                    "id": "c1-s1-l5-ch1",
+                    "type": "text",
+                    "attributes": {
+                        "data": "The Rules of Golf are standardized procedures in which the game of golf should be played."
+                    }
+                },
+                {
+                    "id": "c1-s1-l5-ch2",
+                    "type": "text",
+                    "attributes": {
+                        "data": "A central principle, although not one of the numbered rules, is found on the R&A rule book's cover:"
+                    }
+                },
+                {
+                    "id": "c1-s1-l5-ch3",
+                    "type": "text",
+                    "attributes": {
+                        "data": "Play the ball as it lies, play the course as you find it, and if you canot do either, do what is fair. But to do what is fair, you need to know the Rules of Golf."
+                    }
+                },
+                {
+                    "id": "c1-s1-l5-ch4",
+                    "type": "headingText",
+                    "attributes": {
+                        "headingData": "The Rules of Golf (book)",
+                        "textData": "The Rules of Golf and the Rules of Amateur Status is published every four years by the governing bodies of golf (R&A/USGA) to define how the game is to be played. The Rules have been published jointly in this manner since 1952, although the code was not completely uniform until 2000 (with mostly minor revisions to Appendix I). The Rules Committee of the Royal and Ancient Golf Club of St Andrews (R&A) has responsibility for upkeep and application of the rules worldwide except in the United States and Mexico, which are the responsibility of the United States Golf Association (USGA)."
+                    }
+                },
+                {
+                    "id": "c1-s1-l5-ch5",
+                    "type": "subheading",
+                    "attributes": {
+                        "data": "The term 'Rules' can be said to include the following:"
+                    }
+                },
+                {
+                    "id": "c1-s1-l5-ch6",
+                    "type": "checkboxList",
+                    "attributes": {
+                        "items": [
+                            "Decisions on the Rules of Golf, a book published every 2 years by the USGA and R&A to clarify questions and queries raised by the Rules.",
+                            "Local rules set by the Committee of a golf club, for example to denote the method used to define the boundaries of the course, ball drops, environmentally sensitive areas (ESAs), etc.",
+                            "Rules of etiquette, covered by the main book, define the proper behaviour of those playing the game.",
+                            "Rules often adopted in competitions, for example the prohibition on using automotive transportation during a round and Rules related to Temporary Immovable Obstructions (TIOs).",
+                            "Rules governing the size, shape and performance of golf equipment (clubs and balls) as defined by the R&A/USGA (Appendices I and II).",
+                            "Rules governing golfers with disabilities who play in accordance with A Modification of the Rules of Golf for Golfers with Disabilities as published by the R&A and USGA."
+                        ]
+                    }
+                },
+                {
+                    "id": "c1-s1-l5-ch7",
+                    "type": "text",
+                    "attributes": {
+                        "data": "Note that while the USGA defines its own Handicapping and Course Rating system, the R&A defers this responsibility to each respective national governing body."
+                    }
+                },
+                {
+                    "id": "c1-s1-l5-ch8",
+                    "type": "text",
+                    "attributes": {
+                        "data": "The R&A is a private golf club run for the benefit of its members. As such, since 2004 it has passed responsibility of publishing the rules to a private company, R&A Rules Ltd, operating under the stewardship of the R&A."
+                    }
+                }
+            ]
+        },
+        {
+            "id": "c1-s2-l1",
+            "sectionId": "c1-s2",
+            "title": "Care For the Course",
+            "chunks": [
+                {
+                    "id": "c1-s2-l1-ch1",
+                    "type": "headingText",
+                    "attributes": {
+                        "headingData": "Golf carts",
+                        "textData": "Golf carts are considered a convenience, a luxury even, and should not be used to annoy or distract other players. The cart should be parked on the cart path when at the tee box or putting green. Carts should normally stay only on the paths, and are required to do so on many courses. When a golfer gets out to walk to the ball, they should take a few extra clubs along to save an extra trip should a different club be needed, thereby keeping the pace of play moving along."
+                    }
+                },
+                {
+                    "id": "c1-s2-l1-ch2",
+                    "type": "text",
+                    "attributes": {
+                        "data": "Should carts be permitted off the paths, golfers should observe the '90 degree rule': make a 90 degree turn off the path towards the fairway to a given ball, and return straight back to the path, not along the path of greatest convenience. Carts inflict wear and tear on the course, and can be accidentally driven over another player's ball. Golfers should keep the noise of backing up to a minimum and must always set the brake when leaving the cart."
+                    }
+                },
+                {
+                    "id": "c1-s2-l1-ch3",
+                    "type": "text",
+                    "attributes": {
+                        "data": "Moderate speed should be maintained when driving a golf cart. Experienced drivers are the best choice to drive a cart first; more inexperienced drivers should observe before attempting to drive. Drivers should remain alert for other people or structures, and should observe signs or lines indicating areas that are not to be crossed by a golf cart."
+                    }
+                },
+                {
+                    "id": "c1-s2-l1-ch4",
+                    "type": "headingText",
+                    "attributes": {
+                        "headingData": "Fairway divots",
+                        "textData": "Divots are part of the game, and should always be repaired to keep the game enjoyable for all those playing the course. A golfer should have buckets of sand used for repairing divots. A suggestion is that golfers should carry a divot tool to help fit the new sand in. Regardless, golfers should fix any damage inflicted on the course."
+                    }
+                },
+                {
+                    "id": "c1-s2-l1-ch5",
+                    "type": "headingText",
+                    "attributes": {
+                        "headingData": "Pitch marks on the green",
+                        "textData": "A ball hitting the green often leaves an indentation, a pitch mark, where it strikes the ground. These need to be repaired to keep the green in good condition. After golfers have arrived at the green, they should make a point to find pitch marks and repair them. The process is simple, fast, and painless."
+                    }
+                },
+                {
+                    "id": "c1-s2-l1-ch6",
+                    "type": "text",
+                    "attributes": {
+                        "data": "The golfer should insert a turf tool into the ground on the high side of the pitch mark, then press the tool forward to push the soil back into place, not backward. A backward motion pulls the roots loose and further destroys the grass. If needed, the process should be repeated on the other side of the mark, redistributing the soil evenly. The golfer should finish by gently tapping the spot with the putter."
+                    }
+                },
+                {
+                    "id": "c1-s2-l1-ch7",
+                    "type": "headingText",
+                    "attributes": {
+                        "headingData": "Bunkers",
+                        "textData": "According to the rules of golf, a player is not allowed to 'ground' the club in any type of hazard. This means that a player getting ready for a shot cannot allow the club to touch the ground, sand, water, or anything else during a practice swing. A player is allowed to thrash as much sand, water, etc., as necessary during the actual shot."
+                    }
+                },
+                {
+                    "id": "1-s2-l1-ch8",
+                    "type": "text",
+                    "attributes": {
+                        "data": "A player should always enter and leave a bunker from the low side. After the shot, a player should rake the sand smooth again to leave a fresh surface for other players. Normally, the rake should be replaced alongside the bunker, not inside it."
+                    }
+                },
+                {
+                    "id": "1-s2-l1-ch9",
+                    "type": "text",
+                    "attributes": {
+                        "data": "An important rule is that loose impediments inside hazards cannot be touched or removed. Sticks, grass, leaves and the like must remain. Rakes and debris such as cigarette butts or beer cans are considered movable obstructions and can be removed. Should the ball have landed in casual water within a bunker, a player is permitted to move the ball to a dry area of the bunker, provided it is not moved closer to the hole."
+                    }
+                },
+                {
+                    "id": "1-s2-l1-ch10",
+                    "type": "text",
+                    "attributes": {
+                        "data": "A golfer should always be aware of their pace of play. In informal play, if a golfer has attempted two or three times to get the ball out of the sand and failed, they should surrender to the hazard. The golfer should pick up the ball and drop it outside the bunker for further play. While not allowed under tournament conditions, this will help move the game along in informal play."
+                    }
+                }
+            ]
+        },
+        {
+            "id": "c1-s2-l2",
+            "sectionId": "c1-s2",
+            "title": "Avoiding distraction",
+            "chunks": [
+                {
+                    "id": "c1-s2-l2-ch1",
+                    "type": "headingText",
+                    "attributes": {
+                        "headingData": "Line of sight",
+                        "textData": "In the tee box, other players should stand alongside the person playing, safely out of the way and not behind the player getting ready to swing. Golfers should never take practice swings when other people are nearby, to avoid hitting other persons with the club or with flying rocks and grass. Golfers should accept bad shots calmly, in practice or actual play, and should avoid inappropriate language or the throwing of golf clubs."
+                    }
+                },
+                {
+                    "id": "c1-s2-l2-ch2",
+                    "type": "text",
+                    "attributes": {
+                        "data": "While another golfer is playing, playing partners should not select a club or replace one in the bag, cough, sneeze, or make other noise and distractions. Even small movements are frowned upon, as they might be seen in the player's peripheral vision. Should the player about to play the ball ask his partners to move, the request should be honored. In fact, the USGA recommends: 'Players should not stand close to or directly behind the ball, or directly behind the hole, when a player is addressing the ball or making a stroke.'"
+                    }
+                },
+                {
+                    "id": "c1-s2-l2-ch3",
+                    "type": "text",
+                    "attributes": {
+                        "data": "When getting ready to swing, a golfer should make sure that no one is behind them, or in the path of the swing. A golfer should remember to pick up the tee after a drive."
+                    }
+                },
+                {
+                    "id": "c1-s2-l2-ch4",
+                    "type": "headingText",
+                    "attributes": {
+                        "headingData": "Putting lines",
+                        "textData": "On the green a golfer should be aware of many things. One of them is the putting line of each player. Every ball is connected to the cup by an imaginary line, the path the ball will (hopefully) travel into the cup. Walking, standing, or stepping on these lines creates footprints that can deflect the ball off its path toward the cup. Golfers should note each player's putting line, and avoid stepping on it as they play on the green. The through-line is the extension of the line beyond the hole. It is also considered good form to avoid stepping on another player's through-line since if the player misses their putt they will have to putt back along that line. A golfer should walk around the lines or step over them."
+                    }
+                },
+                {
+                    "id": "c1-s2-l2-ch5",
+                    "type": "text",
+                    "attributes": {
+                        "data": "A second but related concern involves the hole itself. A golfer should avoid stepping within at least a one-foot radius of the hole. Golf instructor Dave Pelz, among others, has described a 'doughnut effect' around the hole caused by players� footsteps pressing down the ground around the cup, especially when a player goes to retrieve a ball. While subtle, these footsteps interfere with the path of the ball and can cause missed putts."
+                    }
+                },
+                {
+                    "id": "c1-s2-l2-ch",
+                    "type": "text",
+                    "attributes": {
+                        "data": "Thirdly, one should not stand on a line of sight, that is, in the line of sight either ahead or behind a player who is attempting to putt. Standing in this position puts you in the peripheral vision of your playing partner and for some this is very distracting. If you notice that you are standing in one of these positions you can discretely and quietly move to one side."
+                    }
+                },
+                {
+                    "id": "c1-s2-l2-ch",
+                    "type": "headingText",
+                    "attributes": {
+                        "headingData": "Silence",
+                        "textData": "Golf requires concentration, so silence is recommended on the golf course during actual play. Speaking among golfers should be conducted in as low a tone of voice as possible. Golfers should refrain from talking to other players when they are about to hit the ball. Cell phones should not be used on the course. A loud tone of voice is recommended only to warn people of imminent danger, such as an errant golf shot."
+                    }
+                },
+                {
+                    "id": "c1-s2-l2-ch",
+                    "type": "headingText",
+                    "attributes": {
+                        "headingData": "Walking",
+                        "textData": "Golf demands concentration, so noise should be minimized on the golf course. Golfers should not run during play, which can be annoying and distracting to other players and may cause damage to the course. Golfers should walk quickly but lightly during play."
+                    }
+                }
+            ]
+        },
+        {
+            "id": "c1-s3-l1",
+            "sectionId": "c1-s3",
+            "title": "Handicapping",
+            "chunks": [
+                {
+                    "id": "c1-s3-l1-ch1",
+                    "type": "text",
+                    "attributes": {
+                        "data": "A golf handicap is a numerical measure of an amateur golfer's playing ability. It can be used to calculate a net score from the number of strokes actually played, thus allowing players of different proficiency to play against each other on somewhat equal terms. Handicaps are administered by golf clubs or national golf associations. Exact rules relating to handicaps can vary from country to country."
+                    }
+                },
+                {
+                    "id": "c1-s3-l1-ch",
+                    "type": "text",
+                    "attributes": {
+                        "data": "Handicap systems are not used in professional golf."
+                    }
+                },
+                {
+                    "id": "c1-s3-l1-ch",
+                    "type": "text",
+                    "attributes": {
+                        "data": "A handicap is calculated with a specific arithmetic formula that approximates how many strokes more than par a player should be able to play. The R&A (now a separate organization from the Royal and Ancient Golf Club), based in St Andrews, Scotland, is responsible for the authorization of handicap systems in all golf playing countries except the United States and Mexico, where United States Golf Association rules apply. The administration of handicapping systems in countries affiliated to the R&A is the responsibility of the national golf associations, which are affiliated to the R&A. The two governing bodies specify slightly different ways to perform this calculation for players. The details of these calculations are presented below."
+                    }
+                },
+                {
+                    "id": "c1-s3-l1-ch",
+                    "type": "text",
+                    "attributes": {
+                        "data": "A golfer's net score is determined by subtracting the player's handicap from the gross score (the number of strokes actually taken). The net scores of all the competing golfers are compared and (generally) the lowest score wins."
+                    }
+                },
+                {
+                    "id": "c1-s3-l1-ch",
+                    "type": "text",
+                    "attributes": {
+                        "data": "A player's handicap is intended to show a player's potential, not his average score, as is the common belief. A player will play to his handicap less than 25% of the time. The USGA refers to this as the 'average best' method. So in a large, handicapped competition, the golfer who shoots the best with respect to his abilities and the normal variations of the score should win."
+                    }
+                },
+                {
+                    "id": "c1-s3-l1-ch",
+                    "type": "text",
+                    "attributes": {
+                        "data": "While there are many variations in detail, handicap systems are generally based on calculating an individual player's playing ability from his recent history of rounds. Therefore, a handicap is not fixed but is regularly adjusted to increases or decreases in a player's scoring."
+                    }
+                },
+                {
+                    "id": "c1-s3-l1-ch",
+                    "type": "text",
+                    "attributes": {
+                        "data": "A golfer whose handicap is zero is called a 'scratch golfer.' A golfer whose handicap is 18 is called a 'bogey golfer.' It is possible to have a handicap below 0; these are referred to as 'plus' handicaps, and at the end of the round, a 'plus' handicap golfer must add his handicap to his score. A professional golfer plays off scratch, but has no actual handicap."
+                    }
+                },
+                {
+                    "id": "c1-s3-l1-ch",
+                    "type": "text",
+                    "attributes": {
+                        "data": "In the United States, handicaps are calculated using several variables: The player's scores from his most recent rounds, and the course rating and slope from those rounds. A 'handicap differential' is calculated from the scores, using the course slope and rating, and the player's handicap differentials are used to calculate the player's handicap."
+                    }
+                }
+            ]
+        }
+    ]
+}

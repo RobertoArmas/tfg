@@ -124,6 +124,7 @@ export class LessonDetailComponent implements OnInit {
     const viewContainerRef = this.chunkHost.viewContainerRef;
     const componentRef = viewContainerRef.createComponent(componentFactory);
     (<ChunkComponent>componentRef.instance).attributes = chunkComponent.attributes;
+    (<ChunkComponent>componentRef.instance).id = chunkComponent.id;
   }
 
   progressLesson() {
@@ -166,6 +167,6 @@ export class LessonDetailComponent implements OnInit {
       default:
         break;
     }
-    return new ChunkComponent(component, chunkItem.attributes);
+    return new ChunkComponent(component, chunkItem.attributes, chunkItem.id);
   }
 }

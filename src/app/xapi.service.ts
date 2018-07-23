@@ -32,9 +32,9 @@ export class XapiService {
         ADL.XAPIWrapper.log(launchdata);
       } else { // <-- Valores por defecto para conectar la aplicación al LRS
         ADL.XAPIWrapper.changeConfig({
-          'endpoint': 'https://cloud.scorm.com/tc/USCLE7C6OK/sandbox/',
-          'user': 'jespinosa@atnova.com',
-          'password': 'pedag0g1c0'
+          'endpoint': 'https://cloud.scorm.com/tc/L2ID7I0E29/sandbox/',
+          'user': 'jec21@alu.ua.es',
+          'password': 'WG0JJZUI'
         });
 
         this.course.baseuri = 'http://e-learning.course/event/course';

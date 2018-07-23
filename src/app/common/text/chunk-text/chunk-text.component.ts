@@ -8,6 +8,7 @@ import { Basic } from '../Basic';
 })
 export class ChunkTextComponent implements OnInit {
   @Input() attributes: Basic;
+  @Input() id: string;
 
   constructor() {
     this.attributes = new Basic();
@@ -19,6 +20,31 @@ export class ChunkTextComponent implements OnInit {
     if (this.attributes.paddingTop === undefined) { this.attributes.paddingTop = 30; }
     if (this.attributes.paddingBottom === undefined) { this.attributes.paddingBottom = 30; }
     if (this.attributes.backgroundColor === undefined) { this.attributes.backgroundColor = '#ffffff'; }
+    if(this.id === undefined) { this.id = 'notAlone' }
+  }
+  
+  ngAfterViewInit() {
+    this.createObserver();
+  }
+
+  createObserver() {
+    let options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 1.0
+    }
+
+    let observer: IntersectionObserver = new IntersectionObserver(((entries) => {
+      entries.forEach(entry => {
+        if(entry.intersectionRatio == 1) {
+          console.log('Visitado ' + this.id);
+        }
+      });
+    }), options);
+
+    let target = document.querySelector('#'+this.id);
+    observer.observe(target);
+
   }
 
 }

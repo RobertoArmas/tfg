@@ -19,6 +19,5 @@ export class WelcomeComponent implements OnInit {
 
   sendStartStatement() {
     this.xapi.started(new Date());
-    console.log('I started');
   }
 }
