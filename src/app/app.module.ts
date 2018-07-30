@@ -30,7 +30,7 @@ import { CourseViewerHomeComponent } from './course-viewer/course-viewer-home/co
 import { ChunkDirective } from './course-viewer/lesson-detail/chunk-directive.directive';
 import { ChunkCheckboxListComponent } from './common/interactive/chunk-checkbox-list/chunk-checkbox-list.component';
 import { XapiService } from './xapi.service';
-
+import { IntersectionObserverService } from './common/intersection-observer.service';
 /**
  * GUÍA MUY COMPLETA SOBRE ANGULAR 2 (SERVICIOS, COMPONENTES, ETC.)
  * https://www.sitepoint.com/angular-2-tutorial/
@@ -85,7 +85,7 @@ import { XapiService } from './xapi.service';
     ChunkSubheadingTextComponent,
     ChunkCheckboxListComponent
   ],
-  providers: [ ApiService, CourseDataService, XapiService ],
+  providers: [ ApiService, CourseDataService, XapiService, IntersectionObserverService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

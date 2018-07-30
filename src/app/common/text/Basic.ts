@@ -4,6 +4,7 @@ export class Basic implements Chunk {
     paddingTop: number;
     paddingBottom: number;
     backgroundColor: string;
+    reviewed: boolean;
 
     constructor(values: Object = {}) {
         Object.assign(this, values);

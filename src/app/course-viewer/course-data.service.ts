@@ -1,6 +1,6 @@
-import { Injectable } from '../../../node_modules/@angular/core';
+import { Injectable } from '@angular/core';
 import { ApiService } from '../api.service';
-import { Observable } from '../../../node_modules/rxjs';
+import { Observable } from 'rxjs';
 import { Course } from './Course';
 import { Section } from './Section';
 import { Lesson } from './lesson-detail/Lesson';

@@ -3,7 +3,7 @@ import { XapiCourse } from '../assets/types/xapiCourse.js';
 import { Statement } from '../assets/types/statement.js';
 import { Verbs } from '../assets/types/verbs.js';
 
-import '../assets/types/adl';
+import '../assets/types/adl.js';
 import { ObjectTypes } from '../assets/types/object-types.js';
 
 @Injectable({
@@ -32,9 +32,9 @@ export class XapiService {
         ADL.XAPIWrapper.log(launchdata);
       } else { // <-- Valores por defecto para conectar la aplicación al LRS
         ADL.XAPIWrapper.changeConfig({
-          'endpoint': 'https://cloud.scorm.com/tc/L2ID7I0E29/sandbox/',
-          'user': 'jec21@alu.ua.es',
-          'password': 'WG0JJZUI'
+          'endpoint': 'https://cloud.scorm.com/tc/USCLE7C6OK/sandbox/',
+          'user': 'jespinosa@atnova.com',
+          'password': 'pedag0g1c0'
         });
 
         this.course.baseuri = 'http://e-learning.course/event/course';
@@ -169,6 +169,52 @@ export class XapiService {
     };
 
     statement.timestamp = (new Date()).toISOString();
+    statement.context.registration = this.course.attemptGUID;
+    ADL.XAPIWrapper.sendStatement(statement, (resp: any) => {
+      ADL.XAPIWrapper.log(resp.status + ' - statement id: ' + resp.response);
+    });
+  }
+
+  acknowledged(chunkInfo) {
+    const statement: Statement = this.getBase();
+
+    statement.verb = {
+      id: this.course.baseuri + Verbs.acknowledged,
+      display: { 'es-Es': 'ha investigado' }
+    };
+
+    statement.object = {
+      id: this.course.baseuri + '/chunk',
+      definition: {
+        name: { 'es-Es': chunkInfo },
+        description: { 'es-Es': 'Representa un chunk dentro de una lección' },
+        type: ObjectTypes.chunk
+      }
+    };
+
+    statement.context.registration = this.course.attemptGUID;
+    ADL.XAPIWrapper.sendStatement(statement, (resp: any) => {
+      ADL.XAPIWrapper.log(resp.status + ' - statement id: ' + resp.response);
+    });
+  }
+
+  reviewed(chunkInfo) {
+    const statement: Statement = this.getBase();
+
+    statement.verb = {
+      id: this.course.baseuri + Verbs.reviewed,
+      display: { 'es-Es': 'ha revisado' }
+    };
+
+    statement.object = {
+      id: this.course.baseuri + '/chunk',
+      definition: {
+        name: { 'es-Es': chunkInfo },
+        description: { 'es-Es': 'Representa un chunk dentro de una lección' },
+        type: ObjectTypes.chunk
+      }
+    };
+
     statement.context.registration = this.course.attemptGUID;
     ADL.XAPIWrapper.sendStatement(statement, (resp: any) => {
       ADL.XAPIWrapper.log(resp.status + ' - statement id: ' + resp.response);
