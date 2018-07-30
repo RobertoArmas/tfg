@@ -402,7 +402,10 @@
                     "id": "c1-s3-l1-ch",
                     "type": "text",
                     "attributes": {
-                        "data": "A handicap is calculated with a specific arithmetic formula that approximates how many strokes more than par a player should be able to play. The R&A (now a separate organization from the Royal and Ancient Golf Club), based in St Andrews, Scotland, is responsible for the authorization of handicap systems in all golf playing countries except the United States and Mexico, where United States Golf Association rules apply. The administration of handicapping systems in countries affiliated to the R&A is the responsibility of the national golf associations, which are affiliated to the R&A. The two governing bodies specify slightly different ways to perform this calculation for players. The details of these calculations are presented below."
+                        "data": "A handicap is calculated with a specific arithmetic formula that approximates how many strokes more than par a player should be able to play. The R&A (now a separate organization from the Royal and Ancient Golf Club), based in St Andrews, Scotland, is responsible for the authorization of handicap systems in all golf playing countries except the United States and Mexico, where United States Golf Association rules apply. The administration of handicapping systems in countries affiliated to the R&A is the responsibility of the national golf associations, which are affiliated to the R&A. The two governing bodies specify slightly different ways to perform this calculation for players. The details of these calculations are presented below.",
+                        "backgroundColor": "#fff8e1",
+                        "paddingBottom": 80,
+                        "paddingTop": 80
                     }
                 },
                 {
