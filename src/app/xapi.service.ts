@@ -18,7 +18,7 @@ export class XapiService {
   }
 
   launchLrsConnection() {
-    ADL.XAPIWrapper.log.debug = true;
+    ADL.XAPIWrapper.log.debug = false;
 
     ADL.launch((error, launchdata, wrapper) => {
 

@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewChild, ComponentFactoryResolver, Type } from '@angular/core';
+import { Component, OnInit, ViewChild, ComponentFactoryResolver } from '@angular/core';
 import { Lesson } from './Lesson';
 import { CourseDataService } from '../course-data.service';
-import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { ChunkDirective } from './chunk-directive.directive';
 import { ChunkHeadingComponent } from '../../common/text/chunk-heading/chunk-heading.component';
 import { ChunkComponent } from '../../common/ChunkComponent';
@@ -36,7 +36,6 @@ export class LessonDetailComponent implements OnInit {
   constructor(
     private courseDataService: CourseDataService,
     private route: ActivatedRoute,
-    private router: Router,
     private componentFactoryResolver: ComponentFactoryResolver,
     private xapi: XapiService
   ) {
@@ -57,17 +56,17 @@ export class LessonDetailComponent implements OnInit {
 
   getLessonData() {
     this.courseDataService
-    .getLesson(this.id)
-    .subscribe(
-      (lesson) => {
-        this.currentLesson = lesson[0];
+      .getLesson(this.id)
+      .subscribe(
+        (lesson) => {
+          this.currentLesson = lesson[0];
 
-        // Hasta que no se han obtenido los datos de la lección no se pueden crear los componentes dinámicamente
-        this.clearViewContainerRef();
-        this.createDynamicComponents();
-        this.setAroundLessonsIds();
-      }
-    );
+          // Hasta que no se han obtenido los datos de la lección no se pueden crear los componentes dinámicamente
+          this.clearViewContainerRef();
+          this.createDynamicComponents();
+          this.setAroundLessonsIds();
+        }
+      );
   }
 
   // Necesario para que no se queden los Chunks de la lección anterior en la vista
