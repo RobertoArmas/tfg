@@ -180,7 +180,7 @@ export class XapiService {
 
     statement.verb = {
       id: this.course.baseuri + Verbs.acknowledged,
-      display: { 'es-Es': 'ha investigado' }
+      display: { 'es-Es': 'ha observado' }
     };
 
     statement.object = {

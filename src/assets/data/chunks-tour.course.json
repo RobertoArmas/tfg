@@ -27,14 +27,16 @@
                     "id": "c0-s1-l1-ch1",
                     "type": "heading",
                     "attributes": {
-                        "data": "Introducción al curso demo de la aplicación"
+                        "data": "Introducción al curso demo de la aplicación",
+                        "reviewed": false
                     }
                 },
                 {
                     "id": "c0-s1-l1-ch2",
                     "type": "text",
                     "attributes": {
-                        "data": "En esta demo se mostrarán los 'Chunks' implementados y las posibilidades de personalización de los mismos. El primer Chunk que encontramos es el de cabecera, todas las lecciones contienen un Chunk de cabecera que permite al usuario identificar rápidamente dónde está y el título de la lección que va a aprender. El segundo Chunk que encontramos es un Heading, sirve para introducir un nuevo concepto dentro de la lección. Seguidamente encontramos este mismo Chunk, se trata de un Chunk de tipo texto en el que se puede escribir texto plano para explicar algún concepto."
+                        "data": "En esta demo se mostrarán los 'Chunks' implementados y las posibilidades de personalización de los mismos. El primer Chunk que encontramos es el de cabecera, todas las lecciones contienen un Chunk de cabecera que permite al usuario identificar rápidamente dónde está y el título de la lección que va a aprender. El segundo Chunk que encontramos es un Heading, sirve para introducir un nuevo concepto dentro de la lección. Seguidamente encontramos este mismo Chunk, se trata de un Chunk de tipo texto en el que se puede escribir texto plano para explicar algún concepto.",
+                        "reviewed": false
                     }
                 },
                 {
@@ -53,14 +55,16 @@
                     "id": "c0-s1-l1-ch4",
                     "type": "subheading",
                     "attributes": {
-                        "data": "También se pueden crear apartados con Subheadings"
+                        "data": "También se pueden crear apartados con Subheadings",
+                        "reviewed": false
                     }
                 },
                 {
                     "id": "c0-s1-l1-ch5",
                     "type": "text",
                     "attributes": {
-                        "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ullamcorper non nisi sit amet rutrum. Nullam risus arcu, imperdiet nec risus vitae, ultricies malesuada dui. Mauris in massa congue, luctus ipsum quis, tempor diam. Donec consequat vulputate arcu, sed finibus diam maximus in. Praesent rhoncus odio ante, in molestie neque facilisis nec. Quisque nec tellus volutpat, viverra lectus quis, semper metus. Vivamus sit amet ultrices arcu, eu auctor enim. Suspendisse eleifend lectus eu risus volutpat porttitor. Vivamus pulvinar, turpis ac congue sodales, augue leo sodales quam, in luctus eros lectus sed dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin posuere, metus tristique maximus sagittis, sem lectus cursus ipsum, in hendrerit mi dui ac ipsum. Aenean eu odio ultrices, tristique libero vel, faucibus nisl. Etiam quis magna id ipsum feugiat molestie ac eget nisi. Vestibulum euismod, tortor et mattis vestibulum, velit dui pharetra lectus, ut tempor urna leo accumsan nibh. Integer ultrices metus non feugiat lacinia. "
+                        "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ullamcorper non nisi sit amet rutrum. Nullam risus arcu, imperdiet nec risus vitae, ultricies malesuada dui. Mauris in massa congue, luctus ipsum quis, tempor diam. Donec consequat vulputate arcu, sed finibus diam maximus in. Praesent rhoncus odio ante, in molestie neque facilisis nec. Quisque nec tellus volutpat, viverra lectus quis, semper metus. Vivamus sit amet ultrices arcu, eu auctor enim. Suspendisse eleifend lectus eu risus volutpat porttitor. Vivamus pulvinar, turpis ac congue sodales, augue leo sodales quam, in luctus eros lectus sed dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin posuere, metus tristique maximus sagittis, sem lectus cursus ipsum, in hendrerit mi dui ac ipsum. Aenean eu odio ultrices, tristique libero vel, faucibus nisl. Etiam quis magna id ipsum feugiat molestie ac eget nisi. Vestibulum euismod, tortor et mattis vestibulum, velit dui pharetra lectus, ut tempor urna leo accumsan nibh. Integer ultrices metus non feugiat lacinia. ",
+                        "reviewed": false
                     }
                 },
                 {
@@ -68,7 +72,8 @@
                     "type": "twoColumn",
                     "attributes": {
                         "dataCol1": "Otra manera de mostrar los datos de tipo texto es mediante el Chunk 'Two-column'.",
-                        "dataCol2": "Este Chunk permite dividir el contenido en dos columnas, mostrar los datos de forma distinta puede captar la atención del alumno si se hace con sentido."
+                        "dataCol2": "Este Chunk permite dividir el contenido en dos columnas, mostrar los datos de forma distinta puede captar la atención del alumno si se hace con sentido.",
+                        "reviewed": false
                     }
                 },
                 {
@@ -76,14 +81,16 @@
                     "type": "headingText",
                     "attributes": {
                         "headingData": "Existe un Chunk especial que combina un Heading y un Text",
-                        "textData": "Este chunk es muy práctico cuando la información del Text está directamente relacionada con el título (Heading) o a modo de introducción del apartado."
+                        "textData": "Este chunk es muy práctico cuando la información del Text está directamente relacionada con el título (Heading) o a modo de introducción del apartado.",
+                        "reviewed": false
                     }
                 },
                 {
                     "id": "c0-s1-l1-ch8",
                     "type": "text",
                     "attributes": {
-                        "data": "El siguiente Chunk de texto estará más separado que el de arriba (heading + texto) por defecto."
+                        "data": "El siguiente Chunk de texto estará más separado que el de arriba (heading + texto) por defecto.",
+                        "reviewed": false
                     }
                 },
                 {
@@ -91,7 +98,8 @@
                     "type": "subheadingText",
                     "attributes": {
                         "headingData": "Subheading + Text",
-                        "textData": "Y como no, este Chunk también está disponible en su versión con subheading."
+                        "textData": "Y como no, este Chunk también está disponible en su versión con subheading.",
+                        "reviewed": false
                     }
                 }
             ]
@@ -105,14 +113,16 @@
                     "id": "c0-s1-l2-ch1",
                     "type": "text",
                     "attributes": {
-                        "data": "Cada Chunk tiene su propio ámbito independiente dentro de la aplicación. Esto va a permitir realizar personalizaciones sobre cada Chunk o sobre cada tipo de chunk, además de que va a permitir a xAPI identificar exactamente con qué tipos de Chunk interactúa el alumno, e incluso determinar si hay algun Chunk que sea especialmente difícil para todos los alumnos porque han pasado más tiempo del esperado interactuando con el, ya sea leyendolo o intentando resolver un Chunk de tipo 'Interactivo'."
+                        "data": "Cada Chunk tiene su propio ámbito independiente dentro de la aplicación. Esto va a permitir realizar personalizaciones sobre cada Chunk o sobre cada tipo de chunk, además de que va a permitir a xAPI identificar exactamente con qué tipos de Chunk interactúa el alumno, e incluso determinar si hay algun Chunk que sea especialmente difícil para todos los alumnos porque han pasado más tiempo del esperado interactuando con el, ya sea leyendolo o intentando resolver un Chunk de tipo 'Interactivo'.",
+                        "reviewed": false
                     }
                 },
                 {
                     "id": "c0-s1-l2-ch2",
                     "type": "heading",
                     "attributes": {
-                        "data": "Ámbito independiente"
+                        "data": "Ámbito independiente",
+                        "reviewed": false
                     }
                 },
                 {
@@ -120,7 +130,8 @@
                     "type": "text",
                     "attributes": {
                         "data": "Porque los Chunks tienen ámbito independiente se pueden personalizar, este por ejemplo tiene un color de fondo distinto que permite resaltar el texto del resto de Chunks de la lección",
-                        "backgroundColor": "#f1f8e9"
+                        "backgroundColor": "#f1f8e9",
+                        "reviewed": false
                     }
                 },
                 {
@@ -130,7 +141,8 @@
                         "headingData": "Detalles",
                         "textData": "Si te fijas, este Chunk subheading-text está un poco más separado de los demás, esto permite aislar partes de la lección para darles importancia.",
                         "paddingTop": 60,
-                        "paddingBottom": 60
+                        "paddingBottom": 60,
+                        "reviewed": false
                     }
                 },
                 {
@@ -140,7 +152,8 @@
                         "dataCol2": "Por último, también se pueden poner Chunks de tipo two-column con una sola columna, ¡Y además se pueden combinar las opciones de personalización!",
                         "backgroundColor": "#f9fbe7",
                         "paddingTop":  60,
-                        "paddingBottom": 30
+                        "paddingBottom": 30,
+                        "reviewed": false
                     }
                 }
             ]

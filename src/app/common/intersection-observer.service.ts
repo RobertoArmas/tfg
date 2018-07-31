@@ -19,15 +19,15 @@ export class IntersectionObserverService {
     private xApiService: XapiService
   ) {}
 
-  createObserver(id: string, acknowledgedContent) {
+  createObserver(id: string, isAcknowledged) {
 
     // No se puede definir fuera como una función porque no obtiene el this.id correctamente
     const callback = (entries) => {
       entries.forEach(entry => {
         if (entry.intersectionRatio === 1) {
-          if (!acknowledgedContent) {
+          if (!isAcknowledged) {
             this.xApiService.acknowledged(id);
-            // TODO: Escribir en bd que reviewed = true
+            // TODO: Escribir en bd reviewed = true
 
           } else {
             this.xApiService.reviewed(id);

@@ -1,15 +1,19 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 import { TwoCol } from './TwoCol';
+import { IntersectionObserverService } from '../../intersection-observer.service';
 
 @Component({
   selector: 'app-chunk-two-column',
   templateUrl: './chunk-two-column.component.html',
   styleUrls: ['./chunk-two-column.component.css']
 })
-export class ChunkTwoColumnComponent implements OnInit {
+export class ChunkTwoColumnComponent implements OnInit, AfterViewInit {
   @Input() attributes: TwoCol;
+  @Input() id: string;
 
-  constructor() {
+  constructor(
+    private intersectionObserverService: IntersectionObserverService
+  ) {
     this.attributes = new TwoCol();
   }
 
@@ -22,4 +26,7 @@ export class ChunkTwoColumnComponent implements OnInit {
     if (this.attributes.backgroundColor === undefined) { this.attributes.backgroundColor = '#ffffff'; }
   }
 
+  ngAfterViewInit() {
+    this.intersectionObserverService.createObserver(this.id, this.attributes.reviewed);
+  }
 }

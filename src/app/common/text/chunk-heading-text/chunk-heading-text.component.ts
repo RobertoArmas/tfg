@@ -1,15 +1,19 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 import { HeadingText } from '../HeadingText';
+import { IntersectionObserverService } from '../../intersection-observer.service';
 
 @Component({
   selector: 'app-chunk-heading-text',
   templateUrl: './chunk-heading-text.component.html',
   styleUrls: ['./chunk-heading-text.component.css']
 })
-export class ChunkHeadingTextComponent implements OnInit {
+export class ChunkHeadingTextComponent implements OnInit, AfterViewInit {
   @Input() attributes: HeadingText;
+  @Input() id: string;
 
-  constructor() {
+  constructor(
+    private intersectionObserverService: IntersectionObserverService
+  ) {
     this.attributes = new HeadingText();
   }
 
@@ -36,4 +40,7 @@ export class ChunkHeadingTextComponent implements OnInit {
     };
   }
 
+  ngAfterViewInit() {
+      this.intersectionObserverService.createObserver(this.id, this.attributes.reviewed);
+  }
 }

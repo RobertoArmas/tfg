@@ -121,7 +121,8 @@
                     "type": "headingText",
                     "attributes": {
                         "headingData": "Skins",
-                        "textData": "In a skins game, golfers compete on each hole, as a separate contest. Played for prize money on the professional level or as a means of a wager for amateurs, a skin, or the prize money assigned to each hole, carries over to subsequent holes if the hole is tied (or halved). If you come to the end of the round and there are still skins left over, play continues until the final skin has been decided."
+                        "textData": "In a skins game, golfers compete on each hole, as a separate contest. Played for prize money on the professional level or as a means of a wager for amateurs, a skin, or the prize money assigned to each hole, carries over to subsequent holes if the hole is tied (or halved). If you come to the end of the round and there are still skins left over, play continues until the final skin has been decided.",
+                        "reviewed": false
                     }
                 },
                 {
@@ -129,7 +130,8 @@
                     "type": "headingText",
                     "attributes": {
                         "headingData": "Stableford scoring",
-                        "textData": "In stableford points play (originated by Dr Frank Stableford, 1870-1959, was first used on 16 May 1932 at Wallasey Golf Club, Cheshire, England) the player gains points for the score achieved on each hole of the round or tournament (1 point for a bogey, 2 points for a par, 3 points for a birdie, 4 points for an eagle). The points achieved for each hole of the round or tournament is added to produce the total points score, and the player with the highest score wins."
+                        "textData": "In stableford points play (originated by Dr Frank Stableford, 1870-1959, was first used on 16 May 1932 at Wallasey Golf Club, Cheshire, England) the player gains points for the score achieved on each hole of the round or tournament (1 point for a bogey, 2 points for a par, 3 points for a birdie, 4 points for an eagle). The points achieved for each hole of the round or tournament is added to produce the total points score, and the player with the highest score wins.",
+                        "reviewed": false
                     }
                 },
                 {
@@ -204,7 +206,8 @@
                     "type": "headingText",
                     "attributes": {
                         "headingData": "The Rules of Golf (book)",
-                        "textData": "The Rules of Golf and the Rules of Amateur Status is published every four years by the governing bodies of golf (R&A/USGA) to define how the game is to be played. The Rules have been published jointly in this manner since 1952, although the code was not completely uniform until 2000 (with mostly minor revisions to Appendix I). The Rules Committee of the Royal and Ancient Golf Club of St Andrews (R&A) has responsibility for upkeep and application of the rules worldwide except in the United States and Mexico, which are the responsibility of the United States Golf Association (USGA)."
+                        "textData": "The Rules of Golf and the Rules of Amateur Status is published every four years by the governing bodies of golf (R&A/USGA) to define how the game is to be played. The Rules have been published jointly in this manner since 1952, although the code was not completely uniform until 2000 (with mostly minor revisions to Appendix I). The Rules Committee of the Royal and Ancient Golf Club of St Andrews (R&A) has responsibility for upkeep and application of the rules worldwide except in the United States and Mexico, which are the responsibility of the United States Golf Association (USGA).",
+                        "reviewed": false
                     }
                 },
                 {
@@ -257,7 +260,8 @@
                     "type": "headingText",
                     "attributes": {
                         "headingData": "Golf carts",
-                        "textData": "Golf carts are considered a convenience, a luxury even, and should not be used to annoy or distract other players. The cart should be parked on the cart path when at the tee box or putting green. Carts should normally stay only on the paths, and are required to do so on many courses. When a golfer gets out to walk to the ball, they should take a few extra clubs along to save an extra trip should a different club be needed, thereby keeping the pace of play moving along."
+                        "textData": "Golf carts are considered a convenience, a luxury even, and should not be used to annoy or distract other players. The cart should be parked on the cart path when at the tee box or putting green. Carts should normally stay only on the paths, and are required to do so on many courses. When a golfer gets out to walk to the ball, they should take a few extra clubs along to save an extra trip should a different club be needed, thereby keeping the pace of play moving along.",
+                        "reviewed": false
                     }
                 },
                 {
@@ -281,7 +285,8 @@
                     "type": "headingText",
                     "attributes": {
                         "headingData": "Fairway divots",
-                        "textData": "Divots are part of the game, and should always be repaired to keep the game enjoyable for all those playing the course. A golfer should have buckets of sand used for repairing divots. A suggestion is that golfers should carry a divot tool to help fit the new sand in. Regardless, golfers should fix any damage inflicted on the course."
+                        "textData": "Divots are part of the game, and should always be repaired to keep the game enjoyable for all those playing the course. A golfer should have buckets of sand used for repairing divots. A suggestion is that golfers should carry a divot tool to help fit the new sand in. Regardless, golfers should fix any damage inflicted on the course.",
+                        "reviewed": false
                     }
                 },
                 {
@@ -289,7 +294,8 @@
                     "type": "headingText",
                     "attributes": {
                         "headingData": "Pitch marks on the green",
-                        "textData": "A ball hitting the green often leaves an indentation, a pitch mark, where it strikes the ground. These need to be repaired to keep the green in good condition. After golfers have arrived at the green, they should make a point to find pitch marks and repair them. The process is simple, fast, and painless."
+                        "textData": "A ball hitting the green often leaves an indentation, a pitch mark, where it strikes the ground. These need to be repaired to keep the green in good condition. After golfers have arrived at the green, they should make a point to find pitch marks and repair them. The process is simple, fast, and painless.",
+                        "reviewed": false
                     }
                 },
                 {
@@ -305,11 +311,12 @@
                     "type": "headingText",
                     "attributes": {
                         "headingData": "Bunkers",
-                        "textData": "According to the rules of golf, a player is not allowed to 'ground' the club in any type of hazard. This means that a player getting ready for a shot cannot allow the club to touch the ground, sand, water, or anything else during a practice swing. A player is allowed to thrash as much sand, water, etc., as necessary during the actual shot."
+                        "textData": "According to the rules of golf, a player is not allowed to 'ground' the club in any type of hazard. This means that a player getting ready for a shot cannot allow the club to touch the ground, sand, water, or anything else during a practice swing. A player is allowed to thrash as much sand, water, etc., as necessary during the actual shot.",
+                        "reviewed": false
                     }
                 },
                 {
-                    "id": "1-s2-l1-ch8",
+                    "id": "c1-s2-l1-ch8",
                     "type": "text",
                     "attributes": {
                         "data": "A player should always enter and leave a bunker from the low side. After the shot, a player should rake the sand smooth again to leave a fresh surface for other players. Normally, the rake should be replaced alongside the bunker, not inside it.",
@@ -317,7 +324,7 @@
                     }
                 },
                 {
-                    "id": "1-s2-l1-ch9",
+                    "id": "c1-s2-l1-ch9",
                     "type": "text",
                     "attributes": {
                         "data": "An important rule is that loose impediments inside hazards cannot be touched or removed. Sticks, grass, leaves and the like must remain. Rakes and debris such as cigarette butts or beer cans are considered movable obstructions and can be removed. Should the ball have landed in casual water within a bunker, a player is permitted to move the ball to a dry area of the bunker, provided it is not moved closer to the hole.",
@@ -325,7 +332,7 @@
                     }
                 },
                 {
-                    "id": "1-s2-l1-ch10",
+                    "id": "c1-s2-l1-ch10",
                     "type": "text",
                     "attributes": {
                         "data": "A golfer should always be aware of their pace of play. In informal play, if a golfer has attempted two or three times to get the ball out of the sand and failed, they should surrender to the hazard. The golfer should pick up the ball and drop it outside the bunker for further play. While not allowed under tournament conditions, this will help move the game along in informal play.",
@@ -344,7 +351,8 @@
                     "type": "headingText",
                     "attributes": {
                         "headingData": "Line of sight",
-                        "textData": "In the tee box, other players should stand alongside the person playing, safely out of the way and not behind the player getting ready to swing. Golfers should never take practice swings when other people are nearby, to avoid hitting other persons with the club or with flying rocks and grass. Golfers should accept bad shots calmly, in practice or actual play, and should avoid inappropriate language or the throwing of golf clubs."
+                        "textData": "In the tee box, other players should stand alongside the person playing, safely out of the way and not behind the player getting ready to swing. Golfers should never take practice swings when other people are nearby, to avoid hitting other persons with the club or with flying rocks and grass. Golfers should accept bad shots calmly, in practice or actual play, and should avoid inappropriate language or the throwing of golf clubs.",
+                        "reviewed": false
                     }
                 },
                 {
@@ -368,7 +376,8 @@
                     "type": "headingText",
                     "attributes": {
                         "headingData": "Putting lines",
-                        "textData": "On the green a golfer should be aware of many things. One of them is the putting line of each player. Every ball is connected to the cup by an imaginary line, the path the ball will (hopefully) travel into the cup. Walking, standing, or stepping on these lines creates footprints that can deflect the ball off its path toward the cup. Golfers should note each player's putting line, and avoid stepping on it as they play on the green. The through-line is the extension of the line beyond the hole. It is also considered good form to avoid stepping on another player's through-line since if the player misses their putt they will have to putt back along that line. A golfer should walk around the lines or step over them."
+                        "textData": "On the green a golfer should be aware of many things. One of them is the putting line of each player. Every ball is connected to the cup by an imaginary line, the path the ball will (hopefully) travel into the cup. Walking, standing, or stepping on these lines creates footprints that can deflect the ball off its path toward the cup. Golfers should note each player's putting line, and avoid stepping on it as they play on the green. The through-line is the extension of the line beyond the hole. It is also considered good form to avoid stepping on another player's through-line since if the player misses their putt they will have to putt back along that line. A golfer should walk around the lines or step over them.",
+                        "reviewed": false
                     }
                 },
                 {
@@ -392,7 +401,8 @@
                     "type": "headingText",
                     "attributes": {
                         "headingData": "Silence",
-                        "textData": "Golf requires concentration, so silence is recommended on the golf course during actual play. Speaking among golfers should be conducted in as low a tone of voice as possible. Golfers should refrain from talking to other players when they are about to hit the ball. Cell phones should not be used on the course. A loud tone of voice is recommended only to warn people of imminent danger, such as an errant golf shot."
+                        "textData": "Golf requires concentration, so silence is recommended on the golf course during actual play. Speaking among golfers should be conducted in as low a tone of voice as possible. Golfers should refrain from talking to other players when they are about to hit the ball. Cell phones should not be used on the course. A loud tone of voice is recommended only to warn people of imminent danger, such as an errant golf shot.",
+                        "reviewed": false
                     }
                 },
                 {
@@ -400,7 +410,8 @@
                     "type": "headingText",
                     "attributes": {
                         "headingData": "Walking",
-                        "textData": "Golf demands concentration, so noise should be minimized on the golf course. Golfers should not run during play, which can be annoying and distracting to other players and may cause damage to the course. Golfers should walk quickly but lightly during play."
+                        "textData": "Golf demands concentration, so noise should be minimized on the golf course. Golfers should not run during play, which can be annoying and distracting to other players and may cause damage to the course. Golfers should walk quickly but lightly during play.",
+                        "reviewed": false
                     }
                 }
             ]
