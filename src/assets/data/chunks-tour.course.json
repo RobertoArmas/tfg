@@ -163,7 +163,29 @@
             "sectionId": "c0-s2",
             "title": "Parte 2",
             "chunks": [
-                
+                {
+                    "id": "c0-s2-l1-ch1",
+                    "type": "text",
+                    "attributes": {
+                        "data": "Aquí se van a mostrar los tipos de ejercicios de test, el primero es un ejercicio de elección múltiple",
+                        "reviewed": false
+                    }
+                },
+                {
+                    "id": "c0-s2-l1-ch2",
+                    "type": "multipleChoice",
+                    "attributes": {
+                        "question": "¿Los Chunks son la cosa más molona del mundo?",
+                        "choices": [
+                            "Sí",
+                            "No",
+                            "Vestibulum maximus risus in sagittis molestie. Suspendisse euismod magna facilisis felis sagittis imperdiet. Nullam eget turpis lorem. Curabitur egestas sed massa sed interdum. Curabitur nulla justo, mattis non urna vitae, laoreet tristique erat. In hac habitasse platea dictumst. Morbi mollis elit et suscipit convallis. Proin dignissim dolor a molestie ornare. "
+                        ],
+                        "rightChoice": 0,
+                        "feedback": "Maecenas pellentesque nibh ac libero gravida euismod. Vivamus sed libero quis massa tincidunt iaculis. Integer mattis pretium aliquam. Aliquam sed massa massa. Phasellus cursus malesuada ante, et fringilla sapien varius at. In consequat tempus turpis, eu pretium odio. Aliquam pellentesque lorem vitae felis mattis tincidunt. ",
+                        "reviewed": false
+                    }
+                }
             ]
         }
     ]

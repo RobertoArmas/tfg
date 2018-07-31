@@ -64,7 +64,7 @@
 }
 
 .course-nav-container {
-    font-family: 'Lato', serif;
+    font-family: 'Lato', sans-serif;
     color: #313537;
     font-weight: 700 !important;
 }
@@ -80,7 +80,7 @@
 }
 
 .course-nav-container .mat-list-item {
-    font-family: 'Lato', serif;
+    font-family: 'Lato', sans-serif;
     color: #313537;
     font-size: 0.813rem;
     margin: 0 -1rem 0.5rem -0.5rem;

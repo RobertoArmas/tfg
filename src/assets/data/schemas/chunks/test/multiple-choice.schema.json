@@ -1,0 +1,66 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$id": "http://example.com/test/multiple-choice.schema.json",
+    "description": "Estructura de un Chunk de tipo selección múltiple",
+    "type": "object",
+    "required": [
+        "id",
+        "type",
+        "attributes"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "type": {
+            "enum": [
+                "multipleChoice"
+            ]
+        },
+        "id": {
+            "type": "string",
+            "description": "Indentificador único para el chunk"
+        },
+        "attributes": {
+            "type": "object",
+            "description": "Atributos de un chunk de tipo multiple choice",
+            "additionalProperties": false,
+            "required": [ "reviewed", "choices", "rightChoice" ],
+            "properties": {
+                "question": {
+                    "type": "string",
+                    "description": "Pregunta del ejercicio"
+                },
+                "choices": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "minItems": 1,
+                    "uniqueItems": true
+                },
+                "rightChoice": {
+                    "type": "integer"
+                },
+                "feedback": {
+                    "type": "string"
+                },
+                "paddingTop": {
+                    "type": "integer",
+                    "description": "Padding top del chunk"
+                },
+                "paddingBottom": {
+                    "type": "integer"
+                },
+                "backgroundColor": {
+                    "type": "string",
+                    "description": "Color del chunk en formato Hexadecimal",
+                    "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
+                },
+                "reviewed": {
+                    "type": "boolean",
+                    "description": "Determina si el chunk ya ha sido visto por el alumno",
+                    "default": false
+                }
+            }
+        }
+    }
+}

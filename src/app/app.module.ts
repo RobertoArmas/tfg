@@ -6,7 +6,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpModule } from '@angular/http';
 
 // tslint:disable-next-line:max-line-length
-import { MatSidenavModule, MatCheckboxModule, MatToolbarModule, MatButtonModule, MatCardModule, MatTabsModule, MatListModule, MatProgressBarModule, MatExpansionModule, MatIconModule, MatProgressSpinnerModule } from '@angular/material';
+import { MatSidenavModule, MatCheckboxModule, MatToolbarModule, MatButtonModule, MatCardModule, MatTabsModule, MatListModule, MatProgressBarModule, MatExpansionModule, MatIconModule, MatProgressSpinnerModule, MatRadioModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { ReviewTabsComponent } from './common/interactive/review-tabs/review-tabs.component';
@@ -31,6 +31,7 @@ import { ChunkDirective } from './course-viewer/lesson-detail/chunk-directive.di
 import { ChunkCheckboxListComponent } from './common/interactive/chunk-checkbox-list/chunk-checkbox-list.component';
 import { XapiService } from './xapi.service';
 import { IntersectionObserverService } from './common/intersection-observer.service';
+import { MultipleChoiceComponent } from './common/test/multiple-choice/multiple-choice.component';
 /**
  * GUÍA MUY COMPLETA SOBRE ANGULAR 2 (SERVICIOS, COMPONENTES, ETC.)
  * https://www.sitepoint.com/angular-2-tutorial/
@@ -54,6 +55,7 @@ import { IntersectionObserverService } from './common/intersection-observer.serv
     CourseViewerHomeComponent,
     ChunkDirective,
     ChunkCheckboxListComponent,
+    MultipleChoiceComponent,
   ],
   imports: [
     CourseViewerRoutingModule,
@@ -74,6 +76,7 @@ import { IntersectionObserverService } from './common/intersection-observer.serv
     MatExpansionModule,
     MatIconModule,
     MatProgressSpinnerModule,
+    MatRadioModule,
     AppRoutingModule
   ],
   entryComponents: [  // <-- Hay que declarar los componentes que se van a generar dinámicamente https://angular.io/guide/entry-components
@@ -83,7 +86,8 @@ import { IntersectionObserverService } from './common/intersection-observer.serv
     ChunkTwoColumnComponent,
     ChunkHeadingTextComponent,
     ChunkSubheadingTextComponent,
-    ChunkCheckboxListComponent
+    ChunkCheckboxListComponent,
+    MultipleChoiceComponent
   ],
   providers: [ ApiService, CourseDataService, XapiService, IntersectionObserverService ],
   bootstrap: [AppComponent]
