@@ -15,6 +15,6 @@ class StatementVerb {
     display: Object;
 }
 
-class Agent {
-    
+class Agent implements Object {
+    mbox: string;
 }

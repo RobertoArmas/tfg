@@ -41,7 +41,9 @@ export class XapiService {
 
         launchdata = {
           actor: {
-            ""
+            'mbox': 'mailto:jespinosa@atnova.com',
+            'name': 'Jorge',
+            'objectType': 'Agent'
           }
         };
 
