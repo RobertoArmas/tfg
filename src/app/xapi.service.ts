@@ -41,11 +41,7 @@ export class XapiService {
 
         launchdata = {
           actor: {
-            account: {
-              homePage: 'http://e-learning.course/server',
-              name: 'Jorge'
-            },
-            name: 'Jorge'
+            ""
           }
         };
 

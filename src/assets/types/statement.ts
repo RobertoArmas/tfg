@@ -1,5 +1,5 @@
 export class Statement {
-    actor?: any;
+    actor: Agent;
     object?: any;
     context?: any;
     verb?: StatementVerb;
@@ -13,4 +13,8 @@ export class Statement {
 class StatementVerb {
     id: string;
     display: Object;
+}
+
+class Agent {
+    
 }
