@@ -9,7 +9,6 @@ import { HttpModule } from '@angular/http';
 import { MatSidenavModule, MatCheckboxModule, MatToolbarModule, MatButtonModule, MatCardModule, MatTabsModule, MatListModule, MatProgressBarModule, MatExpansionModule, MatIconModule, MatProgressSpinnerModule, MatRadioModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { ReviewTabsComponent } from './common/interactive/review-tabs/review-tabs.component';
 import { PageHeaderComponent } from './common/page-header/page-header.component';
 import { ChunkTextComponent } from './common/text/chunk-text/chunk-text.component';
 import { ChunkHeadingComponent } from './common/text/chunk-heading/chunk-heading.component';
@@ -40,7 +39,6 @@ import { MultipleChoiceComponent } from './common/test/multiple-choice/multiple-
 @NgModule({
   declarations: [
     AppComponent,
-    ReviewTabsComponent,
     PageHeaderComponent,
     ChunkTextComponent,
     CourseNavComponent,
