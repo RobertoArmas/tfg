@@ -3,7 +3,9 @@ import { MultipleChoice } from './multiple-choice';
 import { IntersectionObserverService } from '../../intersection-observer.service';
 
 /**
- * Se utiliza para formatear la respuesta
+ * Se utiliza para formatear la respuesta.
+ * Este Chunk no tiene IntersectionObserver porque es muy grande.
+ * Los statements se obtienen de la interactuación con el usuario, no del scroll.
  */
 class Answer {
   icon: string;
@@ -20,7 +22,7 @@ class Answer {
   templateUrl: './multiple-choice.component.html',
   styleUrls: ['./multiple-choice.component.css']
 })
-export class MultipleChoiceComponent implements OnInit, AfterViewInit, DoCheck {
+export class MultipleChoiceComponent implements OnInit, DoCheck {
   @Input() attributes: MultipleChoice;
   @Input() id: string;
   defaultChoices: string[];
@@ -49,10 +51,7 @@ export class MultipleChoiceComponent implements OnInit, AfterViewInit, DoCheck {
     if (this.attributes.paddingTop === undefined) { this.attributes.paddingTop = 30; }
     if (this.attributes.paddingBottom === undefined) { this.attributes.paddingBottom = 30; }
     if (this.attributes.backgroundColor === undefined) { this.attributes.backgroundColor = '#ffffff'; }
-  }
-
-  ngAfterViewInit() {
-    this.intersectionObserverService.createObserver(this.id, this.attributes.reviewed);
+    if (this.attributes.answeredChoice !== undefined) { this.setAnsweredQuestion(); }
   }
 
   ngDoCheck() {
@@ -65,14 +64,29 @@ export class MultipleChoiceComponent implements OnInit, AfterViewInit, DoCheck {
     this.showAnswer = true;
     if (this.choice === this.getRightChoice()) {
       this.answer.icon = 'sentiment_very_satisfied';
-      this.answer.label = 'Correct';
+      this.answer.label = 'Correcto!';
     } else {
       this.answer.icon = 'sentiment_very_dissatisfied';
-      this.answer.label = 'Incorrect';
+      this.answer.label = 'Has fallado...';
     }
   }
 
   getRightChoice(): string {
     return this.attributes.choices[this.attributes.rightChoice];
+  }
+
+  restoreAnswers() {
+    this.showAnswer = false;
+    this.choice = '';
+  }
+
+  setAnsweredQuestion() {
+    this.showAnswer = true;
+    this.choice = this.getChoice(this.attributes.answeredChoice);
+    this.revealResult();
+  }
+
+  getChoice(index: number): string {
+    return this.attributes.choices[index];
   }
 }

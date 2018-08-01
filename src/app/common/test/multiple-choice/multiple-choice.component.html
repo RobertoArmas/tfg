@@ -33,7 +33,12 @@
                 {{attributes.feedback}}
               </p>
 
-              <!-- TODO: Botón reintentar -->
+              <div class="retry" fxLayout="row" fxLayoutAlign="center none">
+                <button mat-button (click)=restoreAnswers()> 
+                  <mat-icon>replay</mat-icon>
+                  INTENTAR DE NUEVO
+                </button>
+              </div>
             </div>
           </div>
       </mat-card>

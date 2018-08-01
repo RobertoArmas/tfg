@@ -43,6 +43,9 @@
                 "feedback": {
                     "type": "string"
                 },
+                "answeredChoice": {
+                    "type": "integer"
+                },
                 "paddingTop": {
                     "type": "integer",
                     "description": "Padding top del chunk"

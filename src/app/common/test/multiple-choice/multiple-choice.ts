@@ -3,6 +3,7 @@ export class MultipleChoice implements Chunk {
     question: string;
     choices: string[];
     rightChoice: number;
+    answeredChoice: number;
     feedback: string;
     paddingTop: number;
     paddingBottom: number;
