@@ -60,10 +60,10 @@ export class XapiService {
     this.course.statement = {
       actor: actor,
       object: {
-        id: this.course.baseuri + '/no-accesible',
+        id: this.course.baseuri,
         definition: {
-          name: { 'es-ES': 'Curso e-learning no accesible' },
-          description: { 'es-ES': 'Primera versión del curso e-learning no accesible utilizando xAPI' },
+          name: { 'es-ES': 'Curso e-learning' },
+          description: { 'es-ES': 'Primera versión del curso e-learning utilizando xAPI' },
           type: 'http://adlnet.gov/expapi/activities/course'
         }
       },
@@ -78,7 +78,7 @@ export class XapiService {
     };
   }
 
-  getBase() {
+  getBase(): Statement {
     return JSON.parse(JSON.stringify(this.course.statement));
   }
 
