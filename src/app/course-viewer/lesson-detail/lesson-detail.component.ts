@@ -11,7 +11,7 @@ import { ChunkTwoColumnComponent } from '../../common/text/chunk-two-column/chun
 import { ChunkHeadingTextComponent } from '../../common/text/chunk-heading-text/chunk-heading-text.component';
 import { ChunkSubheadingTextComponent } from '../../common/text/chunk-subheading-text/chunk-subheading-text.component';
 import { ChunkCheckboxListComponent } from '../../common/interactive/chunk-checkbox-list/chunk-checkbox-list.component';
-import { XapiService } from '../../xapi.service';
+import { XapiService } from '../../xapi/xapi.service';
 import { MultipleChoiceComponent } from '../../common/test/multiple-choice/multiple-choice.component';
 
 /**

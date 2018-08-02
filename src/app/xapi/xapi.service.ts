@@ -1,16 +1,19 @@
 import { Injectable } from '@angular/core';
-import { XapiCourse } from '../assets/types/xapiCourse.js';
-import { Statement } from '../assets/types/statement.js';
-import { Verbs } from '../assets/types/verbs.js';
+import { XapiCourse } from '../../assets/types/xapiCourse.js';
+import { Statement } from '../../assets/types/statement.js';
+import { Verbs } from './verbs.js';
 
-import '../assets/types/adl.js';
-import { ObjectTypes } from '../assets/types/object-types.js';
+import '../../assets/types/adl.js';
+import { ObjectTypes } from './object-types.js';
+import { AtnovaConfig, AtnovaBaseURI, AtnovaAgent } from './at-config.js';
+import { XapiAgent } from '../../assets/types/xapiAgent.js';
 
 @Injectable({
   providedIn: 'root'
 })
 export class XapiService {
   course: XapiCourse;
+  actor: XapiAgent;
 
   constructor() {
     this.course = new XapiCourse();
@@ -21,37 +24,16 @@ export class XapiService {
     ADL.XAPIWrapper.log.debug = true;
 
     ADL.launch((error, launchdata, wrapper) => {
+      ADL.XAPIWrapper.changeConfig(AtnovaConfig);
 
-      // Cuando consigue conectar con el xAPI Launch Server
-      if (!error) {
-        ADL.XAPIWrapper = wrapper;
-        this.course.baseuri = launchdata.customData.content;
+      this.course.baseuri = AtnovaBaseURI;
 
-        ADL.XAPIWrapper.log('--- contenido lanzado mediante xAPI Launch --\n');
-        ADL.XAPIWrapper.log(ADL.XAPIWrapper.lrs);
-        ADL.XAPIWrapper.log(launchdata);
-      } else { // <-- Valores por defecto para conectar la aplicación al LRS
-        ADL.XAPIWrapper.changeConfig({
-          'endpoint': 'https://cloud.scorm.com/tc/USCLE7C6OK/sandbox/',
-          'user': 'jespinosa@atnova.com',
-          'password': 'pedag0g1c0'
-        });
+      this.actor = AtnovaAgent;
 
-        this.course.baseuri = 'http://e-learning.course/event/course';
+      ADL.XAPIWrapper.log('--- configuración de LRS realizada con éxito --- \n');
+      ADL.XAPIWrapper.log(ADL.XAPIWrapper.lrs);
 
-        launchdata = {
-          actor: {
-            'mbox': 'mailto:jespinosa@atnova.com',
-            'name': 'Jorge',
-            'objectType': 'Agent'
-          }
-        };
-
-        ADL.XAPIWrapper.log('--- contenido no lanzado --- \n');
-        ADL.XAPIWrapper.log(ADL.XAPIWrapper.lrs);
-      }
-
-      this.buildCourseBaseStatement(launchdata.actor);
+      this.buildCourseBaseStatement(this.actor);
 
     }, true);
   }

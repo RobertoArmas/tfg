@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { XapiService } from '../xapi.service';
+import { XapiService } from '../xapi/xapi.service';
 import { IntersectionObserverOptions } from './intersection-observer-options';
 
 

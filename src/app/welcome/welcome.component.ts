@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { XapiService } from '../xapi.service';
+import { XapiService } from '../xapi/xapi.service';
 
 /**
  * Página de inicio de la aplicación

@@ -3,7 +3,7 @@ import { CourseDataService } from '../course-data.service';
 import { Course } from '../Course';
 import { Section } from '../Section';
 import { Lesson } from '../lesson-detail/Lesson';
-import { XapiService } from '../../xapi.service';
+import { XapiService } from '../../xapi/xapi.service';
 
 @Component({
   selector: 'app-course-nav',
