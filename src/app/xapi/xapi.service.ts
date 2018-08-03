@@ -16,6 +16,7 @@ import { Lesson } from '../course-viewer/lesson-detail/Lesson.js';
 export class XapiService {
   course: XapiCourse;
   actor: XapiAgent;
+  courseData: Course;
 
   constructor() {
     this.course = new XapiCourse();
@@ -50,8 +51,9 @@ export class XapiService {
   }
 
   started(courseData: Course) {
+    this.courseData = courseData;
     this.course.attemptGUID = ADL.ruuid();
-    this.course.baseuri = this.course.baseuri + courseData.URI;
+    this.course.baseuri = this.course.baseuri + this.courseData.URI;
     const statement: Statement = this.getBase();
 
     statement.verb = {
@@ -62,12 +64,14 @@ export class XapiService {
     statement.object = {
       id: this.course.baseuri,
       definition: {
-        name: { 'es-Es': courseData.title },
-        description: { 'es-Es': courseData.description },
+        name: { 'es-Es': this.courseData.title },
+        description: { 'es-Es': this.courseData.description },
         type: ActivityTypes.course
       },
       objectType: 'Activity'
     };
+
+    statement.timestamp = new Date();
 
     statement.context.registration = this.course.attemptGUID;
 
@@ -96,6 +100,18 @@ export class XapiService {
 
     statement.context.registration = this.course.attemptGUID;
 
+    statement.context.contextActivities = {
+      grouping: {
+        id: this.course.baseuri,
+        objectType: 'Activity',
+        definition: {
+          type: ActivityTypes.course,
+          name: { 'es-Es': this.courseData.title },
+          description: { 'es-Es': this.courseData.description }
+        }
+      }
+    };
+
     ADL.XAPIWrapper.sendStatement(statement, (resp: any) => {
       ADL.XAPIWrapper.log(resp.status + ' - statement id: ' + resp.response);
     });
@@ -118,7 +134,7 @@ export class XapiService {
     //   }
     // };
 
-    statement.timestamp = (new Date()).toISOString();
+    // statement.timestamp = (new Date()).toISOString();
     statement.context.registration = this.course.attemptGUID;
 
     ADL.XAPIWrapper.sendStatement(statement, (resp: any) => {
@@ -143,7 +159,7 @@ export class XapiService {
     //   }
     // };
 
-    statement.timestamp = (new Date()).toISOString();
+    // statement.timestamp = (new Date()).toISOString();
     statement.context.registration = this.course.attemptGUID;
     ADL.XAPIWrapper.sendStatement(statement, (resp: any) => {
       ADL.XAPIWrapper.log(resp.status + ' - statement id: ' + resp.response);
