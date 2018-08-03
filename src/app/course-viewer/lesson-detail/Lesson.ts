@@ -5,8 +5,10 @@ import { TwoCol } from '../../common/text/chunk-two-column/TwoCol';
 
 export class Lesson {
     id: string;
+    URI: string;
     sectionId: string;
     title: string;
+    description: string;
     chunks: Basic[] | HeadingText[] | TwoCol[];
 
     constructor(values: Object = {}) {

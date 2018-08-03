@@ -4,8 +4,8 @@
 // TypeScript Version: 2.9.2
 
 /**
- * Si explota:
- * Ver: https://www.bennadel.com/blog/3169-adding-custom-typings-files-d-ts-in-an-angular-2-typescript-application.htm
+ * Si explota ver:
+ * https://www.bennadel.com/blog/3169-adding-custom-typings-files-d-ts-in-an-angular-2-typescript-application.htm
  */
 
 declare var ADL: {

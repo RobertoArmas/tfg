@@ -102,6 +102,8 @@ export class LessonDetailComponent implements OnInit {
     try {
       this.nextLessonTrimmed.id = lessons[currentLessonIndex + 1].id;
       this.nextLessonTrimmed.title = lessons[currentLessonIndex + 1].title;
+      this.nextLessonTrimmed.URI = lessons[currentLessonIndex + 1].URI;
+      this.nextLessonTrimmed.description = lessons[currentLessonIndex + 1].description;
       if (this.isLastLesson) { this.isLastLesson = false; }
     } catch (noNextIndexError) {
       this.isLastLesson = true;
@@ -128,8 +130,7 @@ export class LessonDetailComponent implements OnInit {
   }
 
   progressLesson() {
-    const lessonInfo: string = this.nextLessonTrimmed.id + ' - ' + this.nextLessonTrimmed.title;
-    this.xapi.progressed(lessonInfo);
+    this.xapi.progressed(this.nextLessonTrimmed);
   }
 
   navigateBack() {

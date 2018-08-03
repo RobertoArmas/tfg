@@ -4,9 +4,11 @@ import { Statement } from '../../assets/types/statement.js';
 import { Verbs } from './verbs.js';
 
 import '../../assets/types/adl.js';
-import { ObjectTypes } from './object-types.js';
+import { ActivityTypes } from './activity-types.js';
 import { AtnovaConfig, AtnovaBaseURI, AtnovaAgent } from './at-config.js';
 import { XapiAgent } from '../../assets/types/xapiAgent.js';
+import { Course } from '../course-viewer/Course.js';
+import { Lesson } from '../course-viewer/lesson-detail/Lesson.js';
 
 @Injectable({
   providedIn: 'root'
@@ -25,9 +27,7 @@ export class XapiService {
 
     ADL.launch((error, launchdata, wrapper) => {
       ADL.XAPIWrapper.changeConfig(AtnovaConfig);
-
       this.course.baseuri = AtnovaBaseURI;
-
       this.actor = AtnovaAgent;
 
       ADL.XAPIWrapper.log('--- configuración de LRS realizada con éxito --- \n');
@@ -39,33 +39,19 @@ export class XapiService {
   }
 
   buildCourseBaseStatement(actor) {
-    this.course.statement = {
+    this.course.baseStatement = {
       actor: actor,
-      object: {
-        id: this.course.baseuri,
-        definition: {
-          name: { 'es-ES': 'Curso e-learning' },
-          description: { 'es-ES': 'Primera versión del curso e-learning utilizando xAPI' },
-          type: 'http://adlnet.gov/expapi/activities/course'
-        }
-      },
-      context: {
-        contextActivities: {
-          'grouping': [
-            { 'id': this.course.baseuri + '/dev/course' },
-            { 'id': this.course.baseuri }
-          ]
-        }
-      }
+      context: {}
     };
   }
 
   getBase(): Statement {
-    return JSON.parse(JSON.stringify(this.course.statement));
+    return JSON.parse(JSON.stringify(this.course.baseStatement));
   }
 
-  started(startTime: Date) {
+  started(courseData: Course) {
     this.course.attemptGUID = ADL.ruuid();
+    this.course.baseuri = this.course.baseuri + courseData.URI;
     const statement: Statement = this.getBase();
 
     statement.verb = {
@@ -73,7 +59,16 @@ export class XapiService {
       display: { 'es-ES': 'ha empezado' }
     };
 
-    statement.timestamp = startTime.toISOString();
+    statement.object = {
+      id: this.course.baseuri,
+      definition: {
+        name: { 'es-Es': courseData.title },
+        description: { 'es-Es': courseData.description },
+        type: ActivityTypes.course
+      },
+      objectType: 'Activity'
+    };
+
     statement.context.registration = this.course.attemptGUID;
 
     ADL.XAPIWrapper.sendStatement(statement, (resp: any) => {
@@ -81,24 +76,24 @@ export class XapiService {
     });
   }
 
-  progressed(lessonInfo: string) {
+  progressed(lesson: Lesson) {
     const statement: Statement = this.getBase();
 
     statement.verb = {
       id: Verbs.progressed,
-      display: { 'es-Es': 'ha avanzado a' }
+      display: { 'es-ES': 'ha avanzado a' }
     };
 
     statement.object = {
-      id: this.course.baseuri + '/lesson',
+      id: this.course.baseuri + '/lesson' + lesson.URI,
       definition: {
-        name: { 'es-ES': lessonInfo },
-        description: { 'es-ES': 'Representa una lección en el curso' },
-        type: ObjectTypes.slide
-      }
+        name: { 'es-ES': lesson.id + ' - ' + lesson.title },
+        description: { 'es-ES': lesson.description },
+        type: ActivityTypes.slide
+      },
+      objectType: 'Activity'
     };
 
-    statement.timestamp = (new Date()).toISOString();
     statement.context.registration = this.course.attemptGUID;
 
     ADL.XAPIWrapper.sendStatement(statement, (resp: any) => {
@@ -114,14 +109,14 @@ export class XapiService {
       display: { 'es-ES': 'ha vuelto a' }
     };
 
-    statement.object = {
-      id: this.course.baseuri + '/lesson',
-      definition: {
-        name: { 'es-ES': lessonInfo },
-        description: { 'es-ES': 'Representa una lección en el curso' },
-        type: ObjectTypes.slide
-      }
-    };
+    // statement.object = {
+    //   id: this.course.baseuri + '/lesson',
+    //   definition: {
+    //     name: { 'es-ES': lessonInfo },
+    //     description: { 'es-ES': 'Representa una lección en el curso' },
+    //     type: ObjectTypes.slide
+    //   }
+    // };
 
     statement.timestamp = (new Date()).toISOString();
     statement.context.registration = this.course.attemptGUID;
@@ -139,14 +134,14 @@ export class XapiService {
       display: { 'es-ES': 'ha navegado a' }
     };
 
-    statement.object = {
-      id: this.course.baseuri + '/lesson',
-      definition: {
-        name: { 'es-ES': lessonInfo },
-        description: { 'es-ES': 'Representa una lección en el curso' },
-        type: ObjectTypes.slide
-      }
-    };
+    // statement.object = {
+    //   id: this.course.baseuri + '/lesson',
+    //   definition: {
+    //     name: { 'es-ES': lessonInfo },
+    //     description: { 'es-ES': 'Representa una lección en el curso' },
+    //     type: ObjectTypes.slide
+    //   }
+    // };
 
     statement.timestamp = (new Date()).toISOString();
     statement.context.registration = this.course.attemptGUID;
@@ -163,14 +158,14 @@ export class XapiService {
       display: { 'es-Es': 'ha observado' }
     };
 
-    statement.object = {
-      id: this.course.baseuri + '/chunk',
-      definition: {
-        name: { 'es-Es': chunkInfo },
-        description: { 'es-Es': 'Representa un chunk dentro de una lección' },
-        type: ObjectTypes.chunk
-      }
-    };
+    // statement.object = {
+    //   id: this.course.baseuri + '/chunk',
+    //   definition: {
+    //     name: { 'es-Es': chunkInfo },
+    //     description: { 'es-Es': 'Representa un chunk dentro de una lección' },
+    //     type: ObjectTypes.chunk
+    //   }
+    // };
 
     statement.context.registration = this.course.attemptGUID;
     ADL.XAPIWrapper.sendStatement(statement, (resp: any) => {
@@ -186,14 +181,14 @@ export class XapiService {
       display: { 'es-Es': 'ha revisado' }
     };
 
-    statement.object = {
-      id: this.course.baseuri + '/chunk',
-      definition: {
-        name: { 'es-Es': chunkInfo },
-        description: { 'es-Es': 'Representa un chunk dentro de una lección' },
-        type: ObjectTypes.chunk
-      }
-    };
+    // statement.object = {
+    //   id: this.course.baseuri + '/chunk',
+    //   definition: {
+    //     name: { 'es-Es': chunkInfo },
+    //     description: { 'es-Es': 'Representa un chunk dentro de una lección' },
+    //     type: ObjectTypes.chunk
+    //   }
+    // };
 
     statement.context.registration = this.course.attemptGUID;
     ADL.XAPIWrapper.sendStatement(statement, (resp: any) => {

@@ -13,4 +13,4 @@ export const AtnovaAgent: XapiAgent = {
     mbox: 'mailto:jespinosa@atnova.com',
     name: 'Jorge Espinosa',
     objectType: 'Agent'
-}
+};

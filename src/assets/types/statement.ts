@@ -1,7 +1,7 @@
 export class Statement {
-    actor: Agent;
-    object?: any;
-    context?: any;
+    actor: StatementAgent;
+    object?: StatementObject;
+    context?: StatementContext;
     verb?: StatementVerb;
     timestamp?: any;
 
@@ -15,6 +15,22 @@ class StatementVerb {
     display: Object;
 }
 
-class Agent implements Object {
+class StatementAgent implements Object {
     mbox: string;
+}
+
+class StatementObject {
+    id: string;
+    definition: ObjectDefinition;
+    objectType: string;
+}
+
+class ObjectDefinition {
+    name: Object;
+    description: Object;
+    type: string;
+}
+
+class StatementContext {
+    registration?: string;
 }

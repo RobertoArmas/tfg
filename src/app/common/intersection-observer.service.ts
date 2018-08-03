@@ -22,23 +22,23 @@ export class IntersectionObserverService {
   createObserver(id: string, isAcknowledged) {
 
     // No se puede definir fuera como una función porque no obtiene el this.id correctamente
-    const callback = (entries) => {
-      entries.forEach(entry => {
-        if (entry.intersectionRatio === 1) {
-          if (!isAcknowledged) {
-            this.xApiService.acknowledged(id);
-            // TODO: Escribir en bd reviewed = true
+    // const callback = (entries) => {
+    //   entries.forEach(entry => {
+    //     if (entry.intersectionRatio === 1) {
+    //       if (!isAcknowledged) {
+    //         this.xApiService.acknowledged(id);
+    //         // TODO: Escribir en bd reviewed = true
 
-          } else {
-            this.xApiService.reviewed(id);
-          }
-        }
-      });
-    };
+    //       } else {
+    //         this.xApiService.reviewed(id);
+    //       }
+    //     }
+    //   });
+    // };
 
-    this.observer = new IntersectionObserver(callback, IntersectionObserverOptions);
+    // this.observer = new IntersectionObserver(callback, IntersectionObserverOptions);
 
-    const target = document.querySelector('#' + id);
-    this.observer.observe(target);
+    // const target = document.querySelector('#' + id);
+    // this.observer.observe(target);
   }
 }

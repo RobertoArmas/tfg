@@ -98,7 +98,8 @@
                     "type": "twoColumn",
                     "attributes": {
                         "dataCol1": "In match play, two players (or two teams) play each hole as a separate contest against each other. The party with the lower score wins that hole, or if the scores of both players or teams are equal the hole is 'halved' (drawn). The game is won by the party that wins more holes than the other. In the case that one team or player has taken a lead that cannot be overcome in the number of holes remaining to be played, the match is deemed to be won by the party in the lead, and the remainder of the holes are not played. For example, if one party already has a lead of six holes, and only five holes remain to be played on the course, the match is over. At any given point, if the lead is equal to the number of holes remaining, the match is said to be 'dormie', and is continued until the leader increases the lead by one hole, thereby winning the match, or until the match ends in a tie. When the game is tied after the predetermined number of holes have been played, it may be continued until one side takes a one-hole lead.",
-                        "dataCol2": "In stroke play the score achieved for each and every hole of the round or tournament is added to produce the total score, and the player with the lowest score wins (Stroke play is the game most usually played by professional golfers)."
+                        "dataCol2": "In stroke play the score achieved for each and every hole of the round or tournament is added to produce the total score, and the player with the lowest score wins (Stroke play is the game most usually played by professional golfers).",
+                        "reviewed": false
                     }
                 },
                 {
@@ -147,7 +148,8 @@
                     "type": "twoColumn",
                     "attributes": {
                         "dataCol1": "A foursome (defined in Rule 29) is played between two teams of two players each, in which each team has only one ball and players alternate playing it. For example, if players A and B form a team, A tees off on the first hole, B will play the second shot, A the third, and so on until the hole is finished. On the second hole, B will tee off (regardless who played the last putt on the first hole), then A plays the second shot, and so on. Foursomes can be played as match play or stroke play.",
-                        "dataCol2": "A four-ball (Rules 30 and 31) is also played between two teams of two players each, but every player plays his own ball and for each team, the lower score on each hole is counted. Four-balls can be played as match play or stroke play."
+                        "dataCol2": "A four-ball (Rules 30 and 31) is also played between two teams of two players each, but every player plays his own ball and for each team, the lower score on each hole is counted. Four-balls can be played as match play or stroke play.",
+                        "reviewed": false
                     }
                 },
                 {
