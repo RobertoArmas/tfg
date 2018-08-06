@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 import { CheckboxList } from './CheckboxList';
 import { IntersectionObserverService } from '../../intersection-observer.service';
+import { Lesson } from '../../../course-viewer/lesson-detail/Lesson';
 
 @Component({
   selector: 'app-chunk-checkbox-list',
@@ -10,6 +11,7 @@ import { IntersectionObserverService } from '../../intersection-observer.service
 export class ChunkCheckboxListComponent implements OnInit, AfterViewInit {
   @Input() attributes: CheckboxList;
   @Input() id: string;
+  @Input() parentLesson: Lesson;
   sampleItems: string[];
 
   constructor(
@@ -31,6 +33,7 @@ export class ChunkCheckboxListComponent implements OnInit, AfterViewInit {
     if (this.attributes.backgroundColor === undefined) { this.attributes.backgroundColor = '#ffffff'; }
   }
   ngAfterViewInit() {
-    this.intersectionObserverService.createObserver(this.id, this.attributes.reviewed);
+    this.attributes.statementData = this.attributes.items[0];
+    this.intersectionObserverService.createObserver(this.id, this.attributes, this.parentLesson);
   }
 }

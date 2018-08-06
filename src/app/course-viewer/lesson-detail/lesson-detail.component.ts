@@ -31,6 +31,7 @@ export class LessonDetailComponent implements OnInit {
   id: string;
   nextLessonTrimmed: Lesson;
   previousLessonTrimmed: Lesson;
+  currentLessonTrimmed: Lesson;
   isLastLesson: boolean;
   isFirstLesson: boolean;
 
@@ -115,6 +116,8 @@ export class LessonDetailComponent implements OnInit {
     try {
       this.previousLessonTrimmed.id = lessons[currentLessonIndex - 1].id;
       this.previousLessonTrimmed.title = lessons[currentLessonIndex - 1].title;
+      this.previousLessonTrimmed.URI = lessons[currentLessonIndex - 1].URI;
+      this.previousLessonTrimmed.description = lessons[currentLessonIndex - 1].description;
       if (this.isFirstLesson) { this.isFirstLesson = false; }
     } catch (noPreviousIndexError) {
       this.isFirstLesson = true;
@@ -127,6 +130,7 @@ export class LessonDetailComponent implements OnInit {
     const componentRef = viewContainerRef.createComponent(componentFactory);
     (<ChunkComponent>componentRef.instance).attributes = chunkComponent.attributes;
     (<ChunkComponent>componentRef.instance).id = chunkComponent.id;
+    (<ChunkComponent>componentRef.instance).parentLesson = this.currentLesson;
   }
 
   progressLesson() {
@@ -134,8 +138,7 @@ export class LessonDetailComponent implements OnInit {
   }
 
   navigateBack() {
-    const previousLessonInfo: string = this.previousLessonTrimmed.id + ' - ' + this.previousLessonTrimmed.title;
-    this.xapi.navigatedBack(previousLessonInfo);
+    this.xapi.navigatedBack(this.previousLessonTrimmed);
   }
 
   /**
@@ -171,6 +174,6 @@ export class LessonDetailComponent implements OnInit {
       default:
         break;
     }
-    return new ChunkComponent(component, chunkItem.attributes, chunkItem.id);
+    return new ChunkComponent(component, chunkItem.attributes, chunkItem.id, chunkItem.parentLesson);
   }
 }

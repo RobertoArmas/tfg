@@ -48,7 +48,11 @@ class ActivityDefinitionObject {
 }
 
 class StatementContext {
-    registration?: string;
+
+    // The registration that the Statement is associated with.
+    registration?: UUID;
+
+    // A map of the types of learning activity context that this Statement is related to.
     contextActivities?: ContextActivitiesObject;
 }
 
@@ -62,5 +66,7 @@ class ContextActivitiesObject {
 class IRI extends String {}
 
 class IRL extends String {}
+
+class UUID extends String {}
 
 class LanguageMap implements Object {}

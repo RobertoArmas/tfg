@@ -57,7 +57,6 @@ export class CourseNavComponent implements OnInit {
   }
 
   navigateToLesson(lesson: Lesson) {
-    const lessonInfo: string = lesson.id + ' - ' + lesson.title;
-    this.xapi.navigatedTo(lessonInfo);
+    this.xapi.navigatedTo(lesson);
   }
 }

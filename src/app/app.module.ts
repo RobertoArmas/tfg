@@ -55,7 +55,7 @@ import { MultipleChoiceComponent } from './common/test/multiple-choice/multiple-
     CourseViewerHomeComponent,
     ChunkDirective,
     ChunkCheckboxListComponent,
-    MultipleChoiceComponent,
+    MultipleChoiceComponent
   ],
   imports: [
     CourseViewerRoutingModule,

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 import { TwoCol } from './TwoCol';
 import { IntersectionObserverService } from '../../intersection-observer.service';
+import { Lesson } from '../../../course-viewer/lesson-detail/Lesson';
 
 @Component({
   selector: 'app-chunk-two-column',
@@ -10,6 +11,7 @@ import { IntersectionObserverService } from '../../intersection-observer.service
 export class ChunkTwoColumnComponent implements OnInit, AfterViewInit {
   @Input() attributes: TwoCol;
   @Input() id: string;
+  @Input() parentLesson: Lesson;
 
   constructor(
     private intersectionObserverService: IntersectionObserverService
@@ -27,6 +29,7 @@ export class ChunkTwoColumnComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.intersectionObserverService.createObserver(this.id, this.attributes.reviewed);
+    this.attributes.statementData = this.attributes.dataCol1;
+    this.intersectionObserverService.createObserver(this.id, this.attributes, this.parentLesson);
   }
 }

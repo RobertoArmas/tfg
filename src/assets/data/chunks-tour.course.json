@@ -166,7 +166,7 @@
         },
         {
             "id": "c0-s2-l1",
-            "URI": "parte2",
+            "URI": "/parte2",
             "sectionId": "c0-s2",
             "title": "Parte 2",
             "description": "se muestran los tipos de ejercicios de la aplicación",

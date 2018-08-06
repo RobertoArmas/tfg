@@ -1,6 +1,7 @@
 
 export class Basic implements Chunk {
     data: string;
+    statementData: string;
     paddingTop: number;
     paddingBottom: number;
     backgroundColor: string;
