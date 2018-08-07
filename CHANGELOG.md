@@ -3,7 +3,8 @@
 ### Features
 
 * [**xAPI:** notificar al LRS cuando un Chunk entra en el Viewport del usuario](https://trello.com/c/7nKOA0XQ)
-* [**chunks:** crear Chunk Multiple Choice (sin xAPI)](https://trello.com/c/fPKHMg3H)
+* [**chunks:** crear Chunk MultipleChoice (sin xAPI)](https://trello.com/c/fPKHMg3H)
+* [**chunks:** crear Chunk ImageCentered](https://trello.com/c/hPIt2Apz)
 
 ### Bugs
 
