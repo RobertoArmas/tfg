@@ -1,0 +1,11 @@
+<div id={{id}}>
+  <div fxLayout="row" fxLayoutAlign="center none" [style.background-color]="attributes.backgroundColor">
+    <div class="chunk-image-centered" [style.padding-top.px]="attributes.paddingTop" [style.padding-bottom.px]="attributes.paddingBottom">
+      <img src="{{attributes.url}}" alt="{{attributes.caption}}">
+      <div class="chunk-image-caption">
+          <p>{{attributes.caption}}</p>
+          <mat-divider></mat-divider>
+      </div>
+    </div>
+  </div>
+</div>

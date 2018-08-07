@@ -13,6 +13,7 @@ import { ChunkSubheadingTextComponent } from '../../common/text/chunk-subheading
 import { ChunkCheckboxListComponent } from '../../common/interactive/chunk-checkbox-list/chunk-checkbox-list.component';
 import { XapiService } from '../../xapi/xapi.service';
 import { MultipleChoiceComponent } from '../../common/test/multiple-choice/multiple-choice.component';
+import { ChunkImageCenteredComponent } from '../../common/image/chunk-image-centered/chunk-image-centered.component';
 
 /**
  * Se encarga de renderizar los componentes de los Chunks de cada lección
@@ -170,6 +171,9 @@ export class LessonDetailComponent implements OnInit {
         break;
       case 'multipleChoice':
         component = MultipleChoiceComponent;
+        break;
+      case 'imageCentered':
+        component = ChunkImageCenteredComponent;
         break;
       default:
         break;

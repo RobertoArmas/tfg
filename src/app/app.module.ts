@@ -31,6 +31,7 @@ import { ChunkCheckboxListComponent } from './common/interactive/chunk-checkbox-
 import { XapiService } from './xapi/xapi.service';
 import { IntersectionObserverService } from './common/intersection-observer.service';
 import { MultipleChoiceComponent } from './common/test/multiple-choice/multiple-choice.component';
+import { ChunkImageCenteredComponent } from './common/image/chunk-image-centered/chunk-image-centered.component';
 /**
  * GUÍA MUY COMPLETA SOBRE ANGULAR 2 (SERVICIOS, COMPONENTES, ETC.)
  * https://www.sitepoint.com/angular-2-tutorial/
@@ -53,7 +54,8 @@ import { MultipleChoiceComponent } from './common/test/multiple-choice/multiple-
     CourseViewerHomeComponent,
     ChunkDirective,
     ChunkCheckboxListComponent,
-    MultipleChoiceComponent
+    MultipleChoiceComponent,
+    ChunkImageCenteredComponent
   ],
   imports: [
     CourseViewerRoutingModule,
@@ -85,7 +87,8 @@ import { MultipleChoiceComponent } from './common/test/multiple-choice/multiple-
     ChunkHeadingTextComponent,
     ChunkSubheadingTextComponent,
     ChunkCheckboxListComponent,
-    MultipleChoiceComponent
+    MultipleChoiceComponent,
+    ChunkImageCenteredComponent
   ],
   providers: [ ApiService, CourseDataService, XapiService, IntersectionObserverService ],
   bootstrap: [AppComponent]

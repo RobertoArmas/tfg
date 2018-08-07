@@ -195,6 +195,32 @@
                     }
                 }
             ]
+        },
+        {
+            "id": "c0-s3-l1",
+            "URI": "/imagenes",
+            "sectionId": "c0-s3",
+            "title": "Tratamiento de imagenes",
+            "description": "Se muestran los chunks de tipo imagen y sus posibilidades",
+            "chunks": [
+                {
+                    "id": "c0-s3-l1-ch1",
+                    "type": "heading",
+                    "attributes": {
+                        "data": "A continuación se muestra el tratamiento de imagenes con Chunks",
+                        "reviewed": false
+                    }
+                },
+                {
+                    "id": "c0-s3-l1-ch2",
+                    "type": "imageCentered",
+                    "attributes": {
+                        "url": "/assets/images/bicycle.jpg",
+                        "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non vestibulum dui. Suspendisse rhoncus volutpat dolor, finibus rhoncus leo molestie hendrerit. Sed augue quam, faucibus mollis nibh a, bibendum tincidunt augue. Curabitur suscipit dolor quis ex sagittis, ac rhoncus sapien elementum. Cras aliquet hendrerit tincidunt. Pellentesque elit lorem, dapibus eu orci ac, hendrerit elementum sem. Quisque in tempus justo, a cursus dolor. Sed commodo maximus velit id pulvinar. Integer a risus tempus, elementum ex at, semper ante. Vivamus varius ex sit amet sapien sollicitudin tempor. Sed quis fermentum justo, ut consectetur sapien.",
+                        "reviewed": false
+                    }
+                }
+            ]
         }
     ]
 }
