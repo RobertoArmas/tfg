@@ -3,7 +3,7 @@
     "$id": "http://example.com/course.schema.json",
     "title": "Course",
     "description": "Atributos generales del curso",
-    "required": [ "id", "title" ],
+    "required": [ "id", "title", "URI", "description" ],
     "additionalProperties": false,
     "type": "object",
     "properties": {
@@ -11,8 +11,16 @@
             "description": "Identificador único para un curso",
             "type": "string"
         },
+        "URI": {
+            "description": "Porción URI que se utilizará para la creación de statements",
+            "type": "string"
+        },
         "title": {
             "description": "Título del curso",
+            "type": "string"
+        },
+        "description": {
+            "description": "Descripción del tema del curso",
             "type": "string"
         }        
     }

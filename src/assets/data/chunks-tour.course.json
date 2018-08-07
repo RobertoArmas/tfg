@@ -1,7 +1,9 @@
 {
     "course": {
         "id": "c0",
-        "title": "Chunks tour"
+        "URI": "/chunksTour",
+        "title": "Chunks Tour",
+        "description": "Curso e-Learning en el que se muestran los tipos de Chunks disponibles para el autor"
     },
     "sections": [
         {
@@ -20,7 +22,9 @@
     "lessons": [
         {
             "id": "c0-s1-l1",
+            "URI": "/introduccion",
             "title": "Introducción",
+            "description": "Se muestran los tipos de Chunk básicos",
             "sectionId": "c0-s1",
             "chunks": [
                 {
@@ -106,8 +110,10 @@
         },
         {
             "id": "c0-s1-l2",
+            "URI": "/porQueHacerUnCursoConChunks",
             "sectionId": "c0-s1",
             "title": "¿Por qué hacer un curso con Chunks?",
+            "description": "Se muestran las posibilidades de edición de los Chunks",
             "chunks": [
                 {
                     "id": "c0-s1-l2-ch1",
@@ -160,8 +166,10 @@
         },
         {
             "id": "c0-s2-l1",
+            "URI": "/parte2",
             "sectionId": "c0-s2",
             "title": "Parte 2",
+            "description": "se muestran los tipos de ejercicios de la aplicación",
             "chunks": [
                 {
                     "id": "c0-s2-l1-ch1",

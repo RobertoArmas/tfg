@@ -1,6 +1,7 @@
 
 export class MultipleChoice implements Chunk {
     question: string;
+    statementData: string;
     choices: string[];
     rightChoice: number;
     answeredChoice: number;

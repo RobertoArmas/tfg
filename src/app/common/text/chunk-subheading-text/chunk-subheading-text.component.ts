@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 import { HeadingText } from '../HeadingText';
 import { IntersectionObserverService } from '../../intersection-observer.service';
+import { Lesson } from '../../../course-viewer/lesson-detail/Lesson';
 
 @Component({
   selector: 'app-chunk-subheading-text',
@@ -10,6 +11,7 @@ import { IntersectionObserverService } from '../../intersection-observer.service
 export class ChunkSubheadingTextComponent implements OnInit, AfterViewInit {
   @Input() attributes: HeadingText;
   @Input() id: string;
+  @Input() parentLesson: Lesson;
 
   constructor(
     private intersectionObserverService: IntersectionObserverService
@@ -41,7 +43,8 @@ export class ChunkSubheadingTextComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.intersectionObserverService.createObserver(this.id, this.attributes.reviewed);
+    this.attributes.statementData = this.attributes.headingData;
+    this.intersectionObserverService.createObserver(this.id, this.attributes, this.parentLesson);
 }
 
 }

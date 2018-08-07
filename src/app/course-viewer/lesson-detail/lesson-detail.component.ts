@@ -11,7 +11,7 @@ import { ChunkTwoColumnComponent } from '../../common/text/chunk-two-column/chun
 import { ChunkHeadingTextComponent } from '../../common/text/chunk-heading-text/chunk-heading-text.component';
 import { ChunkSubheadingTextComponent } from '../../common/text/chunk-subheading-text/chunk-subheading-text.component';
 import { ChunkCheckboxListComponent } from '../../common/interactive/chunk-checkbox-list/chunk-checkbox-list.component';
-import { XapiService } from '../../xapi.service';
+import { XapiService } from '../../xapi/xapi.service';
 import { MultipleChoiceComponent } from '../../common/test/multiple-choice/multiple-choice.component';
 
 /**
@@ -31,6 +31,7 @@ export class LessonDetailComponent implements OnInit {
   id: string;
   nextLessonTrimmed: Lesson;
   previousLessonTrimmed: Lesson;
+  currentLessonTrimmed: Lesson;
   isLastLesson: boolean;
   isFirstLesson: boolean;
 
@@ -102,6 +103,8 @@ export class LessonDetailComponent implements OnInit {
     try {
       this.nextLessonTrimmed.id = lessons[currentLessonIndex + 1].id;
       this.nextLessonTrimmed.title = lessons[currentLessonIndex + 1].title;
+      this.nextLessonTrimmed.URI = lessons[currentLessonIndex + 1].URI;
+      this.nextLessonTrimmed.description = lessons[currentLessonIndex + 1].description;
       if (this.isLastLesson) { this.isLastLesson = false; }
     } catch (noNextIndexError) {
       this.isLastLesson = true;
@@ -113,6 +116,8 @@ export class LessonDetailComponent implements OnInit {
     try {
       this.previousLessonTrimmed.id = lessons[currentLessonIndex - 1].id;
       this.previousLessonTrimmed.title = lessons[currentLessonIndex - 1].title;
+      this.previousLessonTrimmed.URI = lessons[currentLessonIndex - 1].URI;
+      this.previousLessonTrimmed.description = lessons[currentLessonIndex - 1].description;
       if (this.isFirstLesson) { this.isFirstLesson = false; }
     } catch (noPreviousIndexError) {
       this.isFirstLesson = true;
@@ -125,16 +130,15 @@ export class LessonDetailComponent implements OnInit {
     const componentRef = viewContainerRef.createComponent(componentFactory);
     (<ChunkComponent>componentRef.instance).attributes = chunkComponent.attributes;
     (<ChunkComponent>componentRef.instance).id = chunkComponent.id;
+    (<ChunkComponent>componentRef.instance).parentLesson = this.currentLesson;
   }
 
   progressLesson() {
-    const lessonInfo: string = this.nextLessonTrimmed.id + ' - ' + this.nextLessonTrimmed.title;
-    this.xapi.progressed(lessonInfo);
+    this.xapi.progressed(this.nextLessonTrimmed);
   }
 
   navigateBack() {
-    const previousLessonInfo: string = this.previousLessonTrimmed.id + ' - ' + this.previousLessonTrimmed.title;
-    this.xapi.navigatedBack(previousLessonInfo);
+    this.xapi.navigatedBack(this.previousLessonTrimmed);
   }
 
   /**
@@ -170,6 +174,6 @@ export class LessonDetailComponent implements OnInit {
       default:
         break;
     }
-    return new ChunkComponent(component, chunkItem.attributes, chunkItem.id);
+    return new ChunkComponent(component, chunkItem.attributes, chunkItem.id, chunkItem.parentLesson);
   }
 }

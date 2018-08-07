@@ -2,7 +2,7 @@ import { Statement } from './statement';
 
 export class XapiCourse {
     baseuri: string;
-    statement: Statement;
+    baseStatement: Statement;
     attemptGUID: any;
 
     constructor(values: Object = {}) {

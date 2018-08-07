@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { XapiService } from '../xapi.service';
+import { XapiService } from '../xapi/xapi.service';
 import { IntersectionObserverOptions } from './intersection-observer-options';
+import { Lesson } from '../course-viewer/lesson-detail/Lesson';
 
 
 /**
@@ -19,14 +20,14 @@ export class IntersectionObserverService {
     private xApiService: XapiService
   ) {}
 
-  createObserver(id: string, isAcknowledged) {
+  createObserver(id: string, attributes: Chunk, parentLesson: Lesson) {
 
     // No se puede definir fuera como una función porque no obtiene el this.id correctamente
     const callback = (entries) => {
       entries.forEach(entry => {
         if (entry.intersectionRatio === 1) {
-          if (!isAcknowledged) {
-            this.xApiService.acknowledged(id);
+          if (!attributes.reviewed) {
+            this.xApiService.acknowledged(id, attributes, parentLesson);
             // TODO: Escribir en bd reviewed = true
 
           } else {

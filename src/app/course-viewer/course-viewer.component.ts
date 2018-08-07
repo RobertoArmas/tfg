@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChildInteractionService } from '../child-interaction.service';
 import { Subscription } from 'rxjs';
-import { Router, NavigationEnd } from '../../../node_modules/@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
 /**

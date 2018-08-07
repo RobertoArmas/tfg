@@ -28,7 +28,7 @@ import { CourseNavComponent } from './course-viewer/course-nav/course-nav.compon
 import { CourseViewerHomeComponent } from './course-viewer/course-viewer-home/course-viewer-home.component';
 import { ChunkDirective } from './course-viewer/lesson-detail/chunk-directive.directive';
 import { ChunkCheckboxListComponent } from './common/interactive/chunk-checkbox-list/chunk-checkbox-list.component';
-import { XapiService } from './xapi.service';
+import { XapiService } from './xapi/xapi.service';
 import { IntersectionObserverService } from './common/intersection-observer.service';
 import { MultipleChoiceComponent } from './common/test/multiple-choice/multiple-choice.component';
 /**
@@ -53,7 +53,7 @@ import { MultipleChoiceComponent } from './common/test/multiple-choice/multiple-
     CourseViewerHomeComponent,
     ChunkDirective,
     ChunkCheckboxListComponent,
-    MultipleChoiceComponent,
+    MultipleChoiceComponent
   ],
   imports: [
     CourseViewerRoutingModule,

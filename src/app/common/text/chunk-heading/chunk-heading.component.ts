@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 import { Basic } from '../Basic';
 import { IntersectionObserverService } from '../../intersection-observer.service';
+import { Lesson } from '../../../course-viewer/lesson-detail/Lesson';
 
 @Component({
   selector: 'app-chunk-heading',
@@ -10,6 +11,7 @@ import { IntersectionObserverService } from '../../intersection-observer.service
 export class ChunkHeadingComponent implements OnInit, AfterViewInit {
   @Input() attributes: Basic;
   @Input() id: string;
+  @Input() parentLesson: Lesson;
 
   constructor(
     private intersectionObserverService: IntersectionObserverService
@@ -27,7 +29,8 @@ export class ChunkHeadingComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     if (this.id !== 'notIndividualChunk') {
-      this.intersectionObserverService.createObserver(this.id, this.attributes.reviewed);
+      this.attributes.statementData = this.attributes.data;
+      this.intersectionObserverService.createObserver(this.id, this.attributes, this.parentLesson);
     }
   }
 }
