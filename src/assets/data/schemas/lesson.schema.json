@@ -18,7 +18,8 @@
         },
         "URI": {
             "type": "string",
-            "description": "Porción URI que se utilizará para la creación de statements"
+            "description": "Porción URI que se utilizará para la creación de statements",
+            "pattern": "^(/[^/]+)+$"
         },
         "title": {
             "type": "string",
