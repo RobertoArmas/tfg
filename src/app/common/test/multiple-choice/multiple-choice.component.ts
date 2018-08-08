@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, AfterViewInit, DoCheck } from '@angular/core';
 import { MultipleChoice } from './multiple-choice';
-import { IntersectionObserverService } from '../../intersection-observer.service';
+import { XapiService } from '../../../xapi/xapi.service';
+import { Lesson } from '../../../course-viewer/lesson-detail/Lesson';
 
 /**
  * Se utiliza para formatear la respuesta.
@@ -25,6 +26,7 @@ class Answer {
 export class MultipleChoiceComponent implements OnInit, DoCheck {
   @Input() attributes: MultipleChoice;
   @Input() id: string;
+  @Input() parentLesson: Lesson;
   defaultChoices: string[];
   choice: string;
   answer: Answer;
@@ -32,7 +34,7 @@ export class MultipleChoiceComponent implements OnInit, DoCheck {
   noSelectedChoice: boolean;
 
   constructor(
-    private intersectionObserverService: IntersectionObserverService
+    private xApiService: XapiService
   ) {
     this.attributes = new MultipleChoice();
     this.noSelectedChoice = true;
@@ -69,6 +71,7 @@ export class MultipleChoiceComponent implements OnInit, DoCheck {
       this.answer.icon = 'sentiment_very_dissatisfied';
       this.answer.label = 'Has fallado...';
     }
+    this.xApiService.answered(this.id, this.attributes, this.parentLesson)
   }
 
   getRightChoice(): string {

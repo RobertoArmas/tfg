@@ -5,11 +5,11 @@ import { Verbs } from './verbs.js';
 
 import '../../assets/types/adl.js';
 import { ActivityTypes } from './activity-types.js';
-import { AtnovaConfig, AtnovaBaseURI, AtnovaAgent } from './at-config.js';
 import { XapiAgent } from '../../assets/types/xapiAgent.js';
 import { Course } from '../course-viewer/Course.js';
 import { Lesson } from '../course-viewer/lesson-detail/Lesson.js';
 import { UaConfig, UaBaseURI, UaAgent } from './config.js';
+import { MultipleChoice } from '../common/test/multiple-choice/multiple-choice.js';
 
 @Injectable({
   providedIn: 'root'
@@ -30,9 +30,9 @@ export class XapiService {
     ADL.XAPIWrapper.log.debug = true;
 
     ADL.launch((error, launchdata, wrapper) => {
-      ADL.XAPIWrapper.changeConfig(AtnovaConfig);
-      this.course.baseuri = AtnovaBaseURI;
-      this.actor = AtnovaAgent;
+      ADL.XAPIWrapper.changeConfig(UaConfig);
+      this.course.baseuri = UaBaseURI;
+      this.actor = UaAgent;
 
       ADL.XAPIWrapper.log('--- configuración de LRS realizada con éxito --- \n');
       ADL.XAPIWrapper.log(ADL.XAPIWrapper.lrs);
@@ -255,26 +255,98 @@ export class XapiService {
     });
   }
 
-  reviewed(chunkInfo) {
+  reviewed(chunkId: string, attributes: Chunk, lesson: Lesson) {
     const statement: Statement = this.getBase();
 
     statement.verb = {
-      id: this.course.baseuri + Verbs.reviewed,
+      id: Verbs.reviewed,
       display: { 'es-Es': 'ha revisado' }
     };
 
-    // statement.object = {
-    //   id: this.course.baseuri + '/chunk',
-    //   definition: {
-    //     name: { 'es-Es': chunkInfo },
-    //     description: { 'es-Es': 'Representa un chunk dentro de una lección' },
-    //     type: ObjectTypes.chunk
-    //   }
-    // };
+    statement.object = {
+      id: this.course.baseuri + '/chunk',
+      definition: {
+        name: { 'es-Es': chunkId + ' - ' + this.trimData(attributes) },
+        description: { 'es-Es': attributes.statementData },
+        type: ActivityTypes.chunk
+      },
+      objectType: 'Activity'
+    };
+
+    statement.context.contextActivities = {
+      parent: {
+        id: this.course.baseuri + '/lesson' + lesson.URI,
+        definition: {
+          name: { 'es-ES': lesson.id + ' - ' + lesson.title },
+          description: { 'es-ES': lesson.description },
+          type: ActivityTypes.slide
+        },
+        objectType: 'Activity'
+      },
+      grouping: {
+        id: this.course.baseuri,
+        objectType: 'Activity',
+        definition: {
+          type: ActivityTypes.course,
+          name: { 'es-Es': this.courseData.title },
+          description: { 'es-Es': this.courseData.description }
+        }
+      }
+    };
 
     statement.context.registration = this.course.attemptGUID;
+    statement.timestamp = new Date();
+
     ADL.XAPIWrapper.sendStatement(statement, (resp: any) => {
       ADL.XAPIWrapper.log(resp.status + ' - statement id: ' + resp.response);
     });
+  }
+
+  answered(chunkId: string, attributes: MultipleChoice, lesson: Lesson) {
+    const statement: Statement = this.getBase();
+
+    statement.verb = {
+      id: Verbs.answered,
+      display: { 'es-Es': 'ha contestado' }
+    };
+
+    statement.object = {
+      id: this.course.baseuri + '/chunk',
+      definition: {
+        name: { 'es-Es': chunkId + ' - ' + this.trimData(attributes) },
+        description: { 'es-Es': attributes.statementData },
+        type: ActivityTypes.chunk
+      },
+      objectType: 'Activity'
+    };
+
+    statement.context.contextActivities = {
+      parent: {
+        id: this.course.baseuri + '/lesson' + lesson.URI,
+        definition: {
+          name: { 'es-ES': lesson.id + ' - ' + lesson.title },
+          description: { 'es-ES': lesson.description },
+          type: ActivityTypes.slide
+        },
+        objectType: 'Activity'
+      },
+      grouping: {
+        id: this.course.baseuri,
+        objectType: 'Activity',
+        definition: {
+          type: ActivityTypes.course,
+          name: { 'es-Es': this.courseData.title },
+          description: { 'es-Es': this.courseData.description }
+        }
+      }
+    };
+
+    statement.result = {
+      success: attributes.answeredChoice === attributes.rightChoice,
+      completion: attributes.isAnswered(),
+      // extensions: {
+      //   previousAttempts: 
+      // }
+    }
   }
 }

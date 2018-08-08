@@ -6,6 +6,7 @@ export class MultipleChoice implements Chunk {
     rightChoice: number;
     answeredChoice: number;
     feedback: string;
+
     paddingTop: number;
     paddingBottom: number;
     backgroundColor: string;
@@ -13,5 +14,12 @@ export class MultipleChoice implements Chunk {
 
     constructor(values: Object = {}) {
         Object.assign(this, values);
+    }
+
+    isAnswered(): boolean {
+        if (this.answeredChoice !== null && this.answeredChoice >= 0) {
+            return true;
+        }
+        return false;
     }
 }

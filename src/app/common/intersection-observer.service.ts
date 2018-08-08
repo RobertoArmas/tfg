@@ -31,7 +31,7 @@ export class IntersectionObserverService {
             // TODO: Escribir en bd reviewed = true
 
           } else {
-            this.xApiService.reviewed(id);
+            this.xApiService.reviewed(id, attributes, parentLesson);
           }
         }
       });

@@ -4,6 +4,7 @@ export class Statement {
     context?: StatementContext;
     verb?: StatementVerb;
     timestamp?: Date;
+    result?: ResultObject;
 
     constructor(values: Object = {}) {
         Object.assign(this, values);
@@ -61,6 +62,30 @@ class ContextActivitiesObject {
     grouping?: Activity | Activity[];
     category?: Activity | Activity[];
     other?: Activity | Activity[];
+}
+
+class ResultObject {
+
+    // The score of the Agent in relation to the success or quality of the experience. 
+    // See: https://github.com/adlnet/xAPI-Spec/blob/master/xAPI-Data.md#Score
+    score?: Object;
+
+    // Indicates whether or not the attempt on the Activity was successful.
+    success?: boolean;
+
+    // Indicates whether or not the Activity was completed.
+    completion?: boolean;
+
+    // A response appropriately formatted for the given Activity.
+    response?: string;
+
+    // Period of time over which the Statement occurred.
+    // For type see: https://github.com/adlnet/xAPI-Spec/blob/master/xAPI-Data.md#durations
+    duration?: any;
+
+    // A map of other properties as needed.
+    // See: https://github.com/adlnet/xAPI-Spec/blob/master/xAPI-Data.md#miscext
+    extensions?: Object;
 }
 
 class IRI extends String {}

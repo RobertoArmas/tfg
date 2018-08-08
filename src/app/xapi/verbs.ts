@@ -4,5 +4,6 @@ export const Verbs = {
     navigatedBack: '/verbs/navigateback',
     navigatedTo: '/verbs/navigateto',
     acknowledged: 'http://activitystrea.ms/schema/1.0/acknowledge',
-    reviewed: 'http://id.tincanapi.com/verb/reviewed'
+    reviewed: 'http://id.tincanapi.com/verb/reviewed',
+    answered: 'http://adlnet.gov/expapi/verbs/answered'
 };
