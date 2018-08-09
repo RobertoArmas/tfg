@@ -18,6 +18,16 @@ class Answer {
   }
 }
 
+class Choice {
+  id: string;
+  description: Object;
+
+  constructor() {
+    this.id = 'sentiment_very_satisfied';
+    this.description = {};
+  }
+}
+
 @Component({
   selector: 'app-multiple-choice',
   templateUrl: './multiple-choice.component.html',
@@ -46,14 +56,11 @@ export class MultipleChoiceComponent implements OnInit, DoCheck {
 
   ngOnInit() {
     // tslint:disable-next-line:max-line-length
-    if (this.attributes.question === undefined) { this.attributes.question = 'Escribe una pregunta'; }
-    if (this.attributes.choices === undefined) { this.attributes.choices = this.defaultChoices; }
-    if (this.attributes.rightChoice === undefined) { this.attributes.rightChoice = 2; }
-    if (this.attributes.feedback === undefined) { this.attributes.feedback = 'Se puede añadir feedback a la respuesta si se necesita'; }
+    if (this.attributes.previousAttempts === undefined) { this.attributes.previousAttempts = 0; }
+
     if (this.attributes.paddingTop === undefined) { this.attributes.paddingTop = 30; }
     if (this.attributes.paddingBottom === undefined) { this.attributes.paddingBottom = 30; }
     if (this.attributes.backgroundColor === undefined) { this.attributes.backgroundColor = '#ffffff'; }
-    if (this.attributes.answeredChoice !== undefined) { this.setAnsweredQuestion(); }
   }
 
   ngDoCheck() {
@@ -64,29 +71,50 @@ export class MultipleChoiceComponent implements OnInit, DoCheck {
 
   revealResult() {
     this.showAnswer = true;
-    if (this.choice === this.getRightChoice()) {
+    if (this.isTheRightAnswer()) {
       this.answer.icon = 'sentiment_very_satisfied';
       this.answer.label = 'Correcto!';
     } else {
       this.answer.icon = 'sentiment_very_dissatisfied';
       this.answer.label = 'Has fallado...';
     }
-    this.xApiService.answered(this.id, this.attributes, this.parentLesson)
+    this.attributes.statementData = this.attributes.question;
+    this.attributes.statementChoices = this.formatStatementChoices();
+    this.attributes.statementSuccess = this.isTheRightAnswer();
+    this.attributes.statementResponse = this.choice;
+    this.xApiService.answered(this.id, this.attributes, this.parentLesson);
+    this.attributes.previousAttempts++;
   }
 
-  getRightChoice(): string {
-    return this.attributes.choices[this.attributes.rightChoice];
+  formatStatementChoices(): Object[] {
+    const choices: Object[] = [];
+
+    for (const choice of this.attributes.choices) {
+      const choiceObject = new Choice();
+
+      choiceObject.id = choice;
+      choiceObject.description = {
+        'es-ES': choice
+      };
+      choices.push(choiceObject);
+    }
+    return choices;
+  }
+
+  isTheRightAnswer(): boolean {
+    let answeredRight = false;
+
+    for (const response of this.attributes.correctResponsePattern) {
+      if (this.choice === response) {
+        answeredRight = true;
+      }
+    }
+    return answeredRight;
   }
 
   restoreAnswers() {
     this.showAnswer = false;
     this.choice = '';
-  }
-
-  setAnsweredQuestion() {
-    this.showAnswer = true;
-    this.choice = this.getChoice(this.attributes.answeredChoice);
-    this.revealResult();
   }
 
   getChoice(index: number): string {

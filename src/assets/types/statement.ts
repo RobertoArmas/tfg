@@ -46,6 +46,15 @@ class ActivityDefinitionObject {
 
     // A map of other properties as needed (see: https://github.com/adlnet/xAPI-Spec/blob/master/xAPI-Data.md#miscext)
     extensions?: Object;
+
+    // The type of interaction.
+    interactionType?: string;
+
+    // A pattern representing the correct response to the interaction. 
+    // The structure of this pattern varies depending on the interactionType.
+    correctResponsesPattern?: string[];
+
+    choices?: any;
 }
 
 class StatementContext {

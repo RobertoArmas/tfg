@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { XapiCourse } from '../../assets/types/xapiCourse.js';
-import { Statement } from '../../assets/types/statement.js';
 import { Verbs } from './verbs.js';
 
 import '../../assets/types/adl.js';
@@ -10,6 +9,7 @@ import { Course } from '../course-viewer/Course.js';
 import { Lesson } from '../course-viewer/lesson-detail/Lesson.js';
 import { UaConfig, UaBaseURI, UaAgent } from './config.js';
 import { MultipleChoice } from '../common/test/multiple-choice/multiple-choice.js';
+import { Statement } from '../../assets/types/statement';
 
 @Injectable({
   providedIn: 'root'
@@ -315,7 +315,10 @@ export class XapiService {
       definition: {
         name: { 'es-Es': chunkId + ' - ' + this.trimData(attributes) },
         description: { 'es-Es': attributes.statementData },
-        type: ActivityTypes.chunk
+        type: ActivityTypes.interaction,
+        interactionType: attributes.interactionType,
+        correctResponsesPattern: attributes.correctResponsePattern,
+        choices: attributes.statementChoices
       },
       objectType: 'Activity'
     };
@@ -342,11 +345,15 @@ export class XapiService {
     };
 
     statement.result = {
-      success: attributes.answeredChoice === attributes.rightChoice,
-      completion: attributes.isAnswered(),
-      // extensions: {
-      //   previousAttempts: 
-      // }
-    }
+      success: attributes.statementSuccess,
+      response: attributes.statementResponse,
+      extensions: {
+        'https://www.ua.es/tfgJorgeEspinosa/extensions/previousAttempts':  attributes.previousAttempts
+      }
+    };
+
+    ADL.XAPIWrapper.sendStatement(statement, (resp: any) => {
+      ADL.XAPIWrapper.log(resp.status + ' - statement id: ' + resp.response);
+    });
   }
 }

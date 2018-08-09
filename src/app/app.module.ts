@@ -37,6 +37,10 @@ import { ChunkImageCenteredComponent } from './common/image/chunk-image-centered
  * https://www.sitepoint.com/angular-2-tutorial/
  */
 
+/**
+ * https://medium.com/dailyjs/angular-and-accessibility-8ae1f601803a
+ */
+
 @NgModule({
   declarations: [
     AppComponent,

@@ -183,14 +183,16 @@
                     "id": "c0-s2-l1-ch2",
                     "type": "multipleChoice",
                     "attributes": {
-                        "question": "¿Los Chunks son la cosa más molona del mundo?",
+                        "interactionType": "choice",
+                        "question": "¿Cuántos tipos de Chunks se podrían hacer?",
                         "choices": [
-                            "Sí",
-                            "No",
-                            "Vestibulum maximus risus in sagittis molestie. Suspendisse euismod magna facilisis felis sagittis imperdiet. Nullam eget turpis lorem. Curabitur egestas sed massa sed interdum. Curabitur nulla justo, mattis non urna vitae, laoreet tristique erat. In hac habitasse platea dictumst. Morbi mollis elit et suscipit convallis. Proin dignissim dolor a molestie ornare. "
+                            "5", "Más de 20", "Infinitos", "Menos de 20"
                         ],
-                        "rightChoice": 0,
-                        "feedback": "Maecenas pellentesque nibh ac libero gravida euismod. Vivamus sed libero quis massa tincidunt iaculis. Integer mattis pretium aliquam. Aliquam sed massa massa. Phasellus cursus malesuada ante, et fringilla sapien varius at. In consequat tempus turpis, eu pretium odio. Aliquam pellentesque lorem vitae felis mattis tincidunt. ",
+                        "correctResponsePattern": [
+                            "Más de 20",
+                            "Menos de 20"
+                        ],
+                        "feedback": "Se pueden hacer muchos tipos distintos de Chunks, pero hacer infinitos sería inviable ya que los autores tendrían tantas opciones de personalización que no sabrían ni por donde empezar",
                         "reviewed": false
                     }
                 }

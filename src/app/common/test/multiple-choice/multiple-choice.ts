@@ -2,10 +2,14 @@
 export class MultipleChoice implements Chunk {
     question: string;
     statementData: string;
+    interactionType: string;
     choices: string[];
-    rightChoice: number;
-    answeredChoice: number;
+    correctResponsePattern: string[];
     feedback: string;
+    statementChoices: Object[];
+    statementSuccess: boolean;
+    statementResponse: string;
+    previousAttempts: number;
 
     paddingTop: number;
     paddingBottom: number;
@@ -14,12 +18,5 @@ export class MultipleChoice implements Chunk {
 
     constructor(values: Object = {}) {
         Object.assign(this, values);
-    }
-
-    isAnswered(): boolean {
-        if (this.answeredChoice !== null && this.answeredChoice >= 0) {
-            return true;
-        }
-        return false;
     }
 }
