@@ -7,7 +7,7 @@ export const UaConfig: LRSConfig = {
     password: 'WG0JJZUI'
 };
 
-export const UaBaseURI = 'https://www.ua.es/tfgJorgeEspinosa/cursoNoAccesible';
+export const UaBaseURI = 'https://www.ua.es/tfgJorgeEspinosa';
 
 export const UaAgent: XapiAgent = {
     mbox: 'mailto:jec21@alu.ua.es',

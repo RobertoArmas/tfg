@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { XapiCourse } from '../../assets/types/xapiCourse.js';
-import { Verbs } from './verbs.js';
 
 import '../../assets/types/adl.js';
 import { ActivityTypes } from './activity-types.js';
@@ -9,7 +8,8 @@ import { Course } from '../course-viewer/Course.js';
 import { Lesson } from '../course-viewer/lesson-detail/Lesson.js';
 import { UaConfig, UaBaseURI, UaAgent } from './config.js';
 import { MultipleChoice } from '../common/test/multiple-choice/multiple-choice.js';
-import { Statement } from '../../assets/types/statement';
+import { verbs } from './statement-verbs.js';
+import { Statement } from './statement.model.js';
 
 @Injectable({
   providedIn: 'root'
@@ -29,17 +29,14 @@ export class XapiService {
     // Activa/desactiva el logging de xAPI
     ADL.XAPIWrapper.log.debug = true;
 
-    ADL.launch((error, launchdata, wrapper) => {
-      ADL.XAPIWrapper.changeConfig(UaConfig);
-      this.course.baseuri = UaBaseURI;
-      this.actor = UaAgent;
+    ADL.XAPIWrapper.changeConfig(UaConfig);
+    this.course.baseuri = UaBaseURI;
+    this.actor = UaAgent;
 
-      ADL.XAPIWrapper.log('--- configuración de LRS realizada con éxito --- \n');
-      ADL.XAPIWrapper.log(ADL.XAPIWrapper.lrs);
+    ADL.XAPIWrapper.log('--- configuración de LRS realizada con éxito --- \n');
+    ADL.XAPIWrapper.log(ADL.XAPIWrapper.lrs);
 
-      this.buildCourseBaseStatement(this.actor);
-
-    }, true);
+    this.buildCourseBaseStatement(this.actor);
   }
 
   buildCourseBaseStatement(actor) {
@@ -59,10 +56,7 @@ export class XapiService {
     this.course.baseuri = this.course.baseuri + this.courseData.URI;
     const statement: Statement = this.getBase();
 
-    statement.verb = {
-      id: Verbs.started,
-      display: { 'es-ES': 'ha empezado' }
-    };
+    statement.verb = verbs.started;
 
     statement.object = {
       id: this.course.baseuri,
@@ -85,10 +79,7 @@ export class XapiService {
   progressed(lesson: Lesson) {
     const statement: Statement = this.getBase();
 
-    statement.verb = {
-      id: Verbs.progressed,
-      display: { 'es-ES': 'ha avanzado a' }
-    };
+    statement.verb = verbs.progressed;
 
     statement.object = {
       id: this.course.baseuri + '/lesson' + lesson.URI,
@@ -123,10 +114,7 @@ export class XapiService {
   navigatedBack(lesson: Lesson) {
     const statement: Statement = this.getBase();
 
-    statement.verb = {
-      id: this.course.baseuri + Verbs.navigatedBack,
-      display: { 'es-ES': 'ha vuelto a' }
-    };
+    statement.verb = verbs.navigatedBack;
 
     statement.object = {
       id: this.course.baseuri + '/lesson' + lesson.URI,
@@ -162,10 +150,7 @@ export class XapiService {
   navigatedTo(lesson: Lesson) {
     const statement: Statement = this.getBase();
 
-    statement.verb = {
-      id: this.course.baseuri + Verbs.navigatedTo,
-      display: { 'es-ES': 'ha navegado a' }
-    };
+    statement.verb = verbs.navigatedTo;
 
     statement.object = {
       id: this.course.baseuri + '/lesson' + lesson.URI,
@@ -211,10 +196,7 @@ export class XapiService {
   acknowledged(chunkId: string, attributes: Chunk, lesson: Lesson) {
     const statement: Statement = this.getBase();
 
-    statement.verb = {
-      id: Verbs.acknowledged,
-      display: { 'es-Es': 'ha observado' }
-    };
+    statement.verb = verbs.acknowledged;
 
     statement.object = {
       id: this.course.baseuri + '/chunk',
@@ -258,10 +240,7 @@ export class XapiService {
   reviewed(chunkId: string, attributes: Chunk, lesson: Lesson) {
     const statement: Statement = this.getBase();
 
-    statement.verb = {
-      id: Verbs.reviewed,
-      display: { 'es-Es': 'ha revisado' }
-    };
+    statement.verb = verbs.reviewed;
 
     statement.object = {
       id: this.course.baseuri + '/chunk',
@@ -305,10 +284,7 @@ export class XapiService {
   answered(chunkId: string, attributes: MultipleChoice, lesson: Lesson) {
     const statement: Statement = this.getBase();
 
-    statement.verb = {
-      id: Verbs.answered,
-      display: { 'es-Es': 'ha contestado' }
-    };
+    statement.verb = verbs.answered;
 
     statement.object = {
       id: this.course.baseuri + '/chunk',

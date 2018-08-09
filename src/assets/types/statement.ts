@@ -50,7 +50,7 @@ class ActivityDefinitionObject {
     // The type of interaction.
     interactionType?: string;
 
-    // A pattern representing the correct response to the interaction. 
+    // A pattern representing the correct response to the interaction.
     // The structure of this pattern varies depending on the interactionType.
     correctResponsesPattern?: string[];
 
@@ -75,7 +75,7 @@ class ContextActivitiesObject {
 
 class ResultObject {
 
-    // The score of the Agent in relation to the success or quality of the experience. 
+    // The score of the Agent in relation to the success or quality of the experience.
     // See: https://github.com/adlnet/xAPI-Spec/blob/master/xAPI-Data.md#Score
     score?: Object;
 
