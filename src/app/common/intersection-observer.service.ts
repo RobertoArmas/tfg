@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { XapiService } from '../xapi/xapi.service';
-import { IntersectionObserverOptions } from './intersection-observer-options';
+import { IntersectionObserverOptions } from './intersection-observer.config';
 import { LessonData } from '../course-viewer/lesson-detail/lesson.model';
+import { ChunkData } from './chunk.model';
 
 
 /**
@@ -20,7 +21,7 @@ export class IntersectionObserverService {
     private xApiService: XapiService
   ) {}
 
-  createObserver(id: string, attributes: Chunk, parentLesson: LessonData) {
+  createObserver(id: string, attributes: ChunkData, parentLesson: LessonData) {
 
     // No se puede definir fuera como una función porque no obtiene el this.id correctamente
     const callback = (entries) => {

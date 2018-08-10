@@ -7,6 +7,7 @@ import { MultipleChoice } from '../common/test/multiple-choice/multiple-choice.j
 import { verbs } from './statement-verbs.js';
 import { Statement, StatementAgent } from './statement.model.js';
 import { Course, CourseData } from '../course-viewer/course.model.js';
+import { ChunkData } from '../common/chunk.model.js';
 
 @Injectable({
   providedIn: 'root'
@@ -178,7 +179,7 @@ export class XapiService {
     });
   }
 
-  trimData(attributes: Chunk): string {
+  trimData(attributes: ChunkData): string {
     let trimmedData: string = attributes.statementData;
     const charLimit = 60;
 
@@ -188,7 +189,7 @@ export class XapiService {
     return trimmedData;
   }
 
-  acknowledged(chunkId: string, attributes: Chunk, lesson: LessonData) {
+  acknowledged(chunkId: string, attributes: ChunkData, lesson: LessonData) {
     const statement: Statement = this.getBase();
 
     statement.verb = verbs.acknowledged;
@@ -232,7 +233,7 @@ export class XapiService {
     });
   }
 
-  reviewed(chunkId: string, attributes: Chunk, lesson: LessonData) {
+  reviewed(chunkId: string, attributes: ChunkData, lesson: LessonData) {
     const statement: Statement = this.getBase();
 
     statement.verb = verbs.reviewed;

@@ -1,5 +1,6 @@
+import { ChunkData } from '../../chunk.model';
 
-export class MultipleChoice implements Chunk {
+export class MultipleChoice implements ChunkData {
     question: string;
     statementData: string;
     interactionType: string;

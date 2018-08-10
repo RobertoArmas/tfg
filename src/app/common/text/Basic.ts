@@ -1,5 +1,6 @@
+import { ChunkData } from '../chunk.model';
 
-export class Basic implements Chunk {
+export class Basic implements ChunkData {
     data: string;
     statementData: string;
     paddingTop: number;

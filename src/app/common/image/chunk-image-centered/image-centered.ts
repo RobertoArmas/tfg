@@ -1,5 +1,6 @@
+import { ChunkData } from '../../chunk.model';
 
-export class ImageCentered implements Chunk {
+export class ImageCentered implements ChunkData {
     url: string;
     caption: string;
     statementData: string;

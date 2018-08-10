@@ -3,7 +3,6 @@ import { CourseDataService } from '../course-data.service';
 import { ActivatedRoute } from '@angular/router';
 import { ChunkDirective } from './chunk-directive.directive';
 import { ChunkHeadingComponent } from '../../common/text/chunk-heading/chunk-heading.component';
-import { ChunkComponent } from '../../common/ChunkComponent';
 import { ChunkTextComponent } from '../../common/text/chunk-text/chunk-text.component';
 import { ChunkSubheadingComponent } from '../../common/text/chunk-subheading/chunk-subheading.component';
 import { ChunkTwoColumnComponent } from '../../common/text/chunk-two-column/chunk-two-column.component';
@@ -14,6 +13,7 @@ import { XapiService } from '../../xapi/xapi.service';
 import { MultipleChoiceComponent } from '../../common/test/multiple-choice/multiple-choice.component';
 import { ChunkImageCenteredComponent } from '../../common/image/chunk-image-centered/chunk-image-centered.component';
 import { Lesson, LessonData } from './lesson.model';
+import { Chunk } from '../../common/chunk.model';
 
 /**
  * Se encarga de renderizar los componentes de los Chunks de cada lección
@@ -125,13 +125,13 @@ export class LessonDetailComponent implements OnInit {
     }
   }
 
-  loadComponentIntoAnchor(chunkComponent: ChunkComponent) {
+  loadComponentIntoAnchor(chunkComponent: Chunk) {
     const componentFactory = this.componentFactoryResolver.resolveComponentFactory(chunkComponent.type);
     const viewContainerRef = this.chunkHost.viewContainerRef;
     const componentRef = viewContainerRef.createComponent(componentFactory);
-    (<ChunkComponent>componentRef.instance).attributes = chunkComponent.attributes;
-    (<ChunkComponent>componentRef.instance).id = chunkComponent.id;
-    (<ChunkComponent>componentRef.instance).parentLesson = this.currentLesson;
+    (<Chunk>componentRef.instance).attributes = chunkComponent.attributes;
+    (<Chunk>componentRef.instance).id = chunkComponent.id;
+    (<Chunk>componentRef.instance).parentLesson = this.currentLesson;
   }
 
   progressLesson() {
@@ -145,7 +145,7 @@ export class LessonDetailComponent implements OnInit {
   /**
    * TODO: refactorizar este switch a otra estructura porque se va a hacer mega-mastodóntica
    */
-  createComponentFromJSON(chunkItem): ChunkComponent {
+  createComponentFromJSON(chunkItem): Chunk {
     let component: any;
     switch (chunkItem.type) {
       case 'heading':
@@ -178,6 +178,6 @@ export class LessonDetailComponent implements OnInit {
       default:
         break;
     }
-    return new ChunkComponent(component, chunkItem.attributes, chunkItem.id, chunkItem.parentLesson);
+    return new Chunk(component, chunkItem.attributes, chunkItem.id, chunkItem.parentLesson);
   }
 }

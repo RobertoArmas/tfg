@@ -1,5 +1,6 @@
+import { ChunkData } from '../../chunk.model';
 
-export class CheckboxList implements Chunk {
+export class CheckboxList implements ChunkData {
     items: string[];
     statementData: string;
     paddingTop: number;

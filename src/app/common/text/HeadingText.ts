@@ -1,4 +1,6 @@
-export class HeadingText implements Chunk {
+import { ChunkData } from '../chunk.model';
+
+export class HeadingText implements ChunkData {
     headingData: string;
     textData: string;
     statementData: string;

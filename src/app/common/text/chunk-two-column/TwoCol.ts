@@ -1,4 +1,6 @@
-export class TwoCol implements Chunk {
+import { ChunkData } from '../../chunk.model';
+
+export class TwoCol implements ChunkData {
     dataCol1: string;
     dataCol2: string;
     statementData: string;
