@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Observable } from 'rxjs';
-import { Section } from './Section';
 import { Lesson } from './lesson-detail/Lesson';
 import { CourseData } from './course.model';
+import { Section } from './section.model';
 
 /**
  * Servicio intermediario entre el API REST y la aplicación
