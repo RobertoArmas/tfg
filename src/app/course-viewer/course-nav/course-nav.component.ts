@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseDataService } from '../course-data.service';
-import { Section } from '../Section';
 import { Lesson } from '../lesson-detail/Lesson';
 import { XapiService } from '../../xapi/xapi.service';
 import { Course } from '../course.model';
+import { Section } from '../section.model';
 
 @Component({
   selector: 'app-course-nav',

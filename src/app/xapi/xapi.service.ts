@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import '../../assets/types/adl.js';
+// import '../../assets/types/adl.js';
 import { ActivityTypes } from './activity-types.js';
 import { Lesson } from '../course-viewer/lesson-detail/Lesson.js';
 import { UaConfig, UaBaseURI, UaAgent } from './config.js';
