@@ -1,15 +1,15 @@
-import { Lesson } from './lesson-detail/Lesson';
+import { LessonData } from './lesson-detail/lesson.model';
 
 export interface SectionData {
     id: string;
     title: string;
-    lessons: Lesson[];
+    lessons: LessonData[];
 }
 
 export class Section implements SectionData {
     id: string;
     title: string;
-    lessons: Lesson[];
+    lessons: LessonData[];
 
     constructor(values: Object = {}) {
         Object.assign(this, values);

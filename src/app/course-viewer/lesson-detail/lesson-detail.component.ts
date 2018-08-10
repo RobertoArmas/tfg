@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild, ComponentFactoryResolver } from '@angular/core';
-import { Lesson } from './Lesson';
 import { CourseDataService } from '../course-data.service';
 import { ActivatedRoute } from '@angular/router';
 import { ChunkDirective } from './chunk-directive.directive';
@@ -14,6 +13,7 @@ import { ChunkCheckboxListComponent } from '../../common/interactive/chunk-check
 import { XapiService } from '../../xapi/xapi.service';
 import { MultipleChoiceComponent } from '../../common/test/multiple-choice/multiple-choice.component';
 import { ChunkImageCenteredComponent } from '../../common/image/chunk-image-centered/chunk-image-centered.component';
+import { Lesson, LessonData } from './lesson.model';
 
 /**
  * Se encarga de renderizar los componentes de los Chunks de cada lección
@@ -100,7 +100,7 @@ export class LessonDetailComponent implements OnInit {
   }
 
   // Se necesitan todos los datos de la siguiente lección para enviar el report a xAPI
-  setNextLesson(lessons: Lesson[], currentLessonIndex: number) {
+  setNextLesson(lessons: LessonData[], currentLessonIndex: number) {
     try {
       this.nextLessonTrimmed.id = lessons[currentLessonIndex + 1].id;
       this.nextLessonTrimmed.title = lessons[currentLessonIndex + 1].title;
@@ -113,7 +113,7 @@ export class LessonDetailComponent implements OnInit {
   }
 
   // Se necesitan todos los datos de la lección anterior para enviar el report a xAPI
-  setPreviousLesson(lessons: Lesson[], currentLessonIndex: number) {
+  setPreviousLesson(lessons: LessonData[], currentLessonIndex: number) {
     try {
       this.previousLessonTrimmed.id = lessons[currentLessonIndex - 1].id;
       this.previousLessonTrimmed.title = lessons[currentLessonIndex - 1].title;

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, AfterViewInit, DoCheck } from '@angular/core';
 import { MultipleChoice } from './multiple-choice';
 import { XapiService } from '../../../xapi/xapi.service';
-import { Lesson } from '../../../course-viewer/lesson-detail/Lesson';
+import { LessonData } from '../../../course-viewer/lesson-detail/lesson.model';
 
 /**
  * Se utiliza para formatear la respuesta.
@@ -36,7 +36,7 @@ class Choice {
 export class MultipleChoiceComponent implements OnInit, DoCheck {
   @Input() attributes: MultipleChoice;
   @Input() id: string;
-  @Input() parentLesson: Lesson;
+  @Input() parentLesson: LessonData;
   defaultChoices: string[];
   choice: string;
   answer: Answer;

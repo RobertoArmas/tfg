@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 import { Basic } from '../Basic';
 import { IntersectionObserverService } from '../../intersection-observer.service';
-import { Lesson } from '../../../course-viewer/lesson-detail/Lesson';
+import { LessonData } from '../../../course-viewer/lesson-detail/lesson.model';
 
 @Component({
   selector: 'app-chunk-heading',
@@ -11,7 +11,7 @@ import { Lesson } from '../../../course-viewer/lesson-detail/Lesson';
 export class ChunkHeadingComponent implements OnInit, AfterViewInit {
   @Input() attributes: Basic;
   @Input() id: string;
-  @Input() parentLesson: Lesson;
+  @Input() parentLesson: LessonData;
 
   constructor(
     private intersectionObserverService: IntersectionObserverService

@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseDataService } from '../course-data.service';
-import { Lesson } from '../lesson-detail/Lesson';
 import { XapiService } from '../../xapi/xapi.service';
 import { Course } from '../course.model';
 import { Section } from '../section.model';
+import { LessonData } from '../lesson-detail/lesson.model';
+
 
 @Component({
   selector: 'app-course-nav',
@@ -56,7 +57,7 @@ export class CourseNavComponent implements OnInit {
     );
   }
 
-  navigateToLesson(lesson: Lesson) {
+  navigateToLesson(lesson: LessonData) {
     this.xapi.navigatedTo(lesson);
   }
 }

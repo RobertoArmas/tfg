@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 
-// import '../../assets/types/adl.js';
 import { ActivityTypes } from './activity-types.js';
-import { Lesson } from '../course-viewer/lesson-detail/Lesson.js';
+import { LessonData } from '../course-viewer/lesson-detail/lesson.model.js';
 import { UaConfig, UaBaseURI, UaAgent } from './config.js';
 import { MultipleChoice } from '../common/test/multiple-choice/multiple-choice.js';
 import { verbs } from './statement-verbs.js';
@@ -72,7 +71,7 @@ export class XapiService {
     });
   }
 
-  progressed(lesson: Lesson) {
+  progressed(lesson: LessonData) {
     const statement: Statement = this.getBase();
 
     statement.verb = verbs.progressed;
@@ -107,7 +106,7 @@ export class XapiService {
     });
   }
 
-  navigatedBack(lesson: Lesson) {
+  navigatedBack(lesson: LessonData) {
     const statement: Statement = this.getBase();
 
     statement.verb = verbs.navigatedBack;
@@ -143,7 +142,7 @@ export class XapiService {
     });
   }
 
-  navigatedTo(lesson: Lesson) {
+  navigatedTo(lesson: LessonData) {
     const statement: Statement = this.getBase();
 
     statement.verb = verbs.navigatedTo;
@@ -189,7 +188,7 @@ export class XapiService {
     return trimmedData;
   }
 
-  acknowledged(chunkId: string, attributes: Chunk, lesson: Lesson) {
+  acknowledged(chunkId: string, attributes: Chunk, lesson: LessonData) {
     const statement: Statement = this.getBase();
 
     statement.verb = verbs.acknowledged;
@@ -233,7 +232,7 @@ export class XapiService {
     });
   }
 
-  reviewed(chunkId: string, attributes: Chunk, lesson: Lesson) {
+  reviewed(chunkId: string, attributes: Chunk, lesson: LessonData) {
     const statement: Statement = this.getBase();
 
     statement.verb = verbs.reviewed;
@@ -277,7 +276,7 @@ export class XapiService {
     });
   }
 
-  answered(chunkId: string, attributes: MultipleChoice, lesson: Lesson) {
+  answered(chunkId: string, attributes: MultipleChoice, lesson: LessonData) {
     const statement: Statement = this.getBase();
 
     statement.verb = verbs.answered;

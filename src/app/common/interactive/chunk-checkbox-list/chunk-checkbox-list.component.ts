@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 import { CheckboxList } from './CheckboxList';
 import { IntersectionObserverService } from '../../intersection-observer.service';
-import { Lesson } from '../../../course-viewer/lesson-detail/Lesson';
+import { LessonData } from '../../../course-viewer/lesson-detail/lesson.model';
 
 @Component({
   selector: 'app-chunk-checkbox-list',
@@ -11,7 +11,7 @@ import { Lesson } from '../../../course-viewer/lesson-detail/Lesson';
 export class ChunkCheckboxListComponent implements OnInit, AfterViewInit {
   @Input() attributes: CheckboxList;
   @Input() id: string;
-  @Input() parentLesson: Lesson;
+  @Input() parentLesson: LessonData;
   sampleItems: string[];
 
   constructor(
