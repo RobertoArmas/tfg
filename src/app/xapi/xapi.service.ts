@@ -1,26 +1,23 @@
 import { Injectable } from '@angular/core';
-import { XapiCourse } from '../../assets/types/xapiCourse.js';
 
 import '../../assets/types/adl.js';
 import { ActivityTypes } from './activity-types.js';
-import { XapiAgent } from '../../assets/types/xapiAgent.js';
-import { Course } from '../course-viewer/Course.js';
 import { Lesson } from '../course-viewer/lesson-detail/Lesson.js';
 import { UaConfig, UaBaseURI, UaAgent } from './config.js';
 import { MultipleChoice } from '../common/test/multiple-choice/multiple-choice.js';
 import { verbs } from './statement-verbs.js';
-import { Statement } from './statement.model.js';
+import { Statement, StatementAgent } from './statement.model.js';
+import { Course, CourseData } from '../course-viewer/course.model.js';
 
 @Injectable({
   providedIn: 'root'
 })
 export class XapiService {
-  course: XapiCourse;
-  actor: XapiAgent;
-  courseData: Course;
+  course: Course;
+  actor: StatementAgent;
 
   constructor() {
-    this.course = new XapiCourse();
+    this.course = new Course();
     this.launchLrsConnection();
   }
 
@@ -30,7 +27,6 @@ export class XapiService {
     ADL.XAPIWrapper.log.debug = true;
 
     ADL.XAPIWrapper.changeConfig(UaConfig);
-    this.course.baseuri = UaBaseURI;
     this.actor = UaAgent;
 
     ADL.XAPIWrapper.log('--- configuración de LRS realizada con éxito --- \n');
@@ -50,19 +46,19 @@ export class XapiService {
     return JSON.parse(JSON.stringify(this.course.baseStatement));
   }
 
-  started(courseData: Course) {
-    this.courseData = courseData;
+  started(courseData: CourseData) {
+    this.course.setData(courseData);
+    this.course.URI = UaBaseURI + this.course.URI;
     this.course.attemptGUID = ADL.ruuid();
-    this.course.baseuri = this.course.baseuri + this.courseData.URI;
     const statement: Statement = this.getBase();
 
     statement.verb = verbs.started;
 
     statement.object = {
-      id: this.course.baseuri,
+      id: this.course.URI,
       definition: {
-        name: { 'es-Es': this.courseData.title },
-        description: { 'es-Es': this.courseData.description },
+        name: { 'es-Es': this.course.title },
+        description: { 'es-Es': this.course.description },
         type: ActivityTypes.course
       },
       objectType: 'Activity'
@@ -82,7 +78,7 @@ export class XapiService {
     statement.verb = verbs.progressed;
 
     statement.object = {
-      id: this.course.baseuri + '/lesson' + lesson.URI,
+      id: this.course.URI + '/lesson' + lesson.URI,
       definition: {
         name: { 'es-ES': lesson.id + ' - ' + lesson.title },
         description: { 'es-ES': lesson.description },
@@ -93,12 +89,12 @@ export class XapiService {
 
     statement.context.contextActivities = {
       grouping: {
-        id: this.course.baseuri,
+        id: this.course.URI,
         objectType: 'Activity',
         definition: {
           type: ActivityTypes.course,
-          name: { 'es-Es': this.courseData.title },
-          description: { 'es-Es': this.courseData.description }
+          name: { 'es-Es': this.course.title },
+          description: { 'es-Es': this.course.description }
         }
       }
     };
@@ -117,7 +113,7 @@ export class XapiService {
     statement.verb = verbs.navigatedBack;
 
     statement.object = {
-      id: this.course.baseuri + '/lesson' + lesson.URI,
+      id: this.course.URI + '/lesson' + lesson.URI,
       definition: {
         name: { 'es-ES': lesson.id + ' - ' + lesson.title },
         description: { 'es-ES': lesson.description },
@@ -128,12 +124,12 @@ export class XapiService {
 
     statement.context.contextActivities = {
       grouping: {
-        id: this.course.baseuri,
+        id: this.course.URI,
         objectType: 'Activity',
         definition: {
           type: ActivityTypes.course,
-          name: { 'es-Es': this.courseData.title },
-          description: { 'es-Es': this.courseData.description }
+          name: { 'es-Es': this.course.title },
+          description: { 'es-Es': this.course.description }
         }
       }
     };
@@ -153,7 +149,7 @@ export class XapiService {
     statement.verb = verbs.navigatedTo;
 
     statement.object = {
-      id: this.course.baseuri + '/lesson' + lesson.URI,
+      id: this.course.URI + '/lesson' + lesson.URI,
       definition: {
         name: { 'es-ES': lesson.id + ' - ' + lesson.title },
         description: { 'es-ES': lesson.description },
@@ -164,12 +160,12 @@ export class XapiService {
 
     statement.context.contextActivities = {
       grouping: {
-        id: this.course.baseuri,
+        id: this.course.URI,
         objectType: 'Activity',
         definition: {
           type: ActivityTypes.course,
-          name: { 'es-Es': this.courseData.title },
-          description: { 'es-Es': this.courseData.description }
+          name: { 'es-Es': this.course.title },
+          description: { 'es-Es': this.course.description }
         }
       }
     };
@@ -199,7 +195,7 @@ export class XapiService {
     statement.verb = verbs.acknowledged;
 
     statement.object = {
-      id: this.course.baseuri + '/chunk',
+      id: this.course.URI + '/chunk',
       definition: {
         name: { 'es-Es': chunkId + ' - ' + this.trimData(attributes) },
         description: { 'es-Es': attributes.statementData },
@@ -210,7 +206,7 @@ export class XapiService {
 
     statement.context.contextActivities = {
       parent: {
-        id: this.course.baseuri + '/lesson' + lesson.URI,
+        id: this.course.URI + '/lesson' + lesson.URI,
         definition: {
           name: { 'es-ES': lesson.id + ' - ' + lesson.title },
           description: { 'es-ES': lesson.description },
@@ -219,12 +215,12 @@ export class XapiService {
         objectType: 'Activity'
       },
       grouping: {
-        id: this.course.baseuri,
+        id: this.course.URI,
         objectType: 'Activity',
         definition: {
           type: ActivityTypes.course,
-          name: { 'es-Es': this.courseData.title },
-          description: { 'es-Es': this.courseData.description }
+          name: { 'es-Es': this.course.title },
+          description: { 'es-Es': this.course.description }
         }
       }
     };
@@ -243,7 +239,7 @@ export class XapiService {
     statement.verb = verbs.reviewed;
 
     statement.object = {
-      id: this.course.baseuri + '/chunk',
+      id: this.course.URI + '/chunk',
       definition: {
         name: { 'es-Es': chunkId + ' - ' + this.trimData(attributes) },
         description: { 'es-Es': attributes.statementData },
@@ -254,7 +250,7 @@ export class XapiService {
 
     statement.context.contextActivities = {
       parent: {
-        id: this.course.baseuri + '/lesson' + lesson.URI,
+        id: this.course.URI + '/lesson' + lesson.URI,
         definition: {
           name: { 'es-ES': lesson.id + ' - ' + lesson.title },
           description: { 'es-ES': lesson.description },
@@ -263,12 +259,12 @@ export class XapiService {
         objectType: 'Activity'
       },
       grouping: {
-        id: this.course.baseuri,
+        id: this.course.URI,
         objectType: 'Activity',
         definition: {
           type: ActivityTypes.course,
-          name: { 'es-Es': this.courseData.title },
-          description: { 'es-Es': this.courseData.description }
+          name: { 'es-Es': this.course.title },
+          description: { 'es-Es': this.course.description }
         }
       }
     };
@@ -287,7 +283,7 @@ export class XapiService {
     statement.verb = verbs.answered;
 
     statement.object = {
-      id: this.course.baseuri + '/chunk',
+      id: this.course.URI + '/chunk',
       definition: {
         name: { 'es-Es': chunkId + ' - ' + this.trimData(attributes) },
         description: { 'es-Es': attributes.statementData },
@@ -301,7 +297,7 @@ export class XapiService {
 
     statement.context.contextActivities = {
       parent: {
-        id: this.course.baseuri + '/lesson' + lesson.URI,
+        id: this.course.URI + '/lesson' + lesson.URI,
         definition: {
           name: { 'es-ES': lesson.id + ' - ' + lesson.title },
           description: { 'es-ES': lesson.description },
@@ -310,12 +306,12 @@ export class XapiService {
         objectType: 'Activity'
       },
       grouping: {
-        id: this.course.baseuri,
+        id: this.course.URI,
         objectType: 'Activity',
         definition: {
           type: ActivityTypes.course,
-          name: { 'es-Es': this.courseData.title },
-          description: { 'es-Es': this.courseData.description }
+          name: { 'es-Es': this.course.title },
+          description: { 'es-Es': this.course.description }
         }
       }
     };

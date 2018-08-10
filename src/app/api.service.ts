@@ -3,9 +3,9 @@ import { environment } from '../environments/environment';
 import { Http } from '@angular/http';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
-import { Course } from './course-viewer/Course';
 import { Lesson } from './course-viewer/lesson-detail/Lesson';
 import { Section } from './course-viewer/Section';
+import { Course } from './course-viewer/course.model';
 
 /**
  * API REST de conexión con el backend

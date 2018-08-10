@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Observable } from 'rxjs';
-import { Course } from './Course';
 import { Section } from './Section';
 import { Lesson } from './lesson-detail/Lesson';
+import { CourseData } from './course.model';
 
 /**
  * Servicio intermediario entre el API REST y la aplicación
@@ -17,7 +17,7 @@ export class CourseDataService {
 
   constructor(private api: ApiService) { }
 
-  getCourseAttributes(): Observable<Course> {
+  getCourseAttributes(): Observable<CourseData> {
     return this.api.getCourse();
   }
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { XapiService } from '../xapi/xapi.service';
 import { CourseDataService } from '../course-viewer/course-data.service';
-import { Course } from '../course-viewer/Course';
+import { CourseData } from '../course-viewer/course.model';
 
 /**
  * Página de inicio de la aplicación
@@ -13,7 +13,7 @@ import { Course } from '../course-viewer/Course';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
-  course: Course;
+  course: CourseData;
 
   constructor(private xapi: XapiService, private courseDataService: CourseDataService) { }
 
