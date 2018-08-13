@@ -4,32 +4,32 @@ import { MatSidenavModule, MatCheckboxModule, MatToolbarModule, MatButtonModule,
 
 @NgModule({
   imports: [
-    MatSidenavModule,
-    MatCheckboxModule,
-    MatToolbarModule,
     MatButtonModule,
     MatCardModule,
-    MatTabsModule,
-    MatListModule,
-    MatProgressBarModule,
+    MatCheckboxModule,
     MatExpansionModule,
     MatIconModule,
+    MatListModule,
+    MatProgressBarModule,
     MatProgressSpinnerModule,
     MatRadioModule,
+    MatSidenavModule,
+    MatTabsModule,
+    MatToolbarModule
   ],
   exports: [
-    MatSidenavModule,
-    MatCheckboxModule,
-    MatToolbarModule,
     MatButtonModule,
     MatCardModule,
-    MatTabsModule,
-    MatListModule,
-    MatProgressBarModule,
+    MatCheckboxModule,
     MatExpansionModule,
     MatIconModule,
+    MatListModule,
+    MatProgressBarModule,
     MatProgressSpinnerModule,
     MatRadioModule,
+    MatSidenavModule,
+    MatTabsModule,
+    MatToolbarModule
   ]
 })
 export class MaterialModule { }

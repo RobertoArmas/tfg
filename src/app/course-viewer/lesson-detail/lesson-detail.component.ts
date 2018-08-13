@@ -10,10 +10,10 @@ import { ChunkHeadingTextComponent } from '../../common/text/chunk-heading-text/
 import { ChunkSubheadingTextComponent } from '../../common/text/chunk-subheading-text/chunk-subheading-text.component';
 import { ChunkCheckboxListComponent } from '../../common/interactive/chunk-checkbox-list/chunk-checkbox-list.component';
 import { XapiService } from '../../xapi/xapi.service';
-import { MultipleChoiceComponent } from '../../common/test/multiple-choice/multiple-choice.component';
 import { ChunkImageCenteredComponent } from '../../common/image/chunk-image-centered/chunk-image-centered.component';
 import { Lesson, LessonData } from './lesson.model';
 import { Chunk } from '../../common/chunk.model';
+import { MultipleChoiceComponent } from '../../common/activity/multiple-choice/multiple-choice.component';
 
 /**
  * Se encarga de renderizar los componentes de los Chunks de cada lección

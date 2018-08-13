@@ -27,9 +27,9 @@ import { ChunkDirective } from './course-viewer/lesson-detail/chunk-directive.di
 import { ChunkCheckboxListComponent } from './common/interactive/chunk-checkbox-list/chunk-checkbox-list.component';
 import { XapiService } from './xapi/xapi.service';
 import { IntersectionObserverService } from './common/intersection-observer.service';
-import { MultipleChoiceComponent } from './common/test/multiple-choice/multiple-choice.component';
 import { ChunkImageCenteredComponent } from './common/image/chunk-image-centered/chunk-image-centered.component';
 import { MaterialModule } from './material.module';
+import { MultipleChoiceComponent } from './common/activity/multiple-choice/multiple-choice.component';
 /**
  * GUÍA MUY COMPLETA SOBRE ANGULAR 2 (SERVICIOS, COMPONENTES, ETC.)
  * https://www.sitepoint.com/angular-2-tutorial/
