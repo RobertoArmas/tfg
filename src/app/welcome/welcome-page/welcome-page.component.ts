@@ -1,18 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { XapiService } from '../xapi/xapi.service';
-import { CourseDataService } from '../course-viewer/course-data.service';
-import { CourseData } from '../course-viewer/course.model';
-
-/**
- * Página de inicio de la aplicación
- */
+import { CourseData } from '../../course-viewer/course.model';
+import { XapiService } from '../../xapi/xapi.service';
+import { CourseDataService } from '../../course-viewer/course-data.service';
 
 @Component({
-  selector: 'app-welcome',
-  templateUrl: './welcome.component.html',
-  styleUrls: ['./welcome.component.css']
+  selector: 'app-welcome-page',
+  templateUrl: './welcome-page.component.html',
+  styleUrls: ['./welcome-page.component.css']
 })
-export class WelcomeComponent implements OnInit {
+export class WelcomePageComponent implements OnInit {
+
   course: CourseData;
 
   constructor(private xapi: XapiService, private courseDataService: CourseDataService) { }
@@ -34,4 +31,5 @@ export class WelcomeComponent implements OnInit {
   sendStartStatement() {
     this.xapi.started(this.course);
   }
+
 }

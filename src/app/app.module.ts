@@ -16,7 +16,6 @@ import { ChunkSubheadingTextComponent } from './common/text/chunk-subheading-tex
 import { ChunkTwoColumnComponent } from './common/text/chunk-two-column/chunk-two-column.component';
 import { ApiService } from './api.service';
 import { CourseDataService } from './course-viewer/course-data.service';
-import { WelcomeComponent } from './welcome/welcome.component';
 import { CourseViewerComponent } from './course-viewer/course-viewer.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CourseViewerRoutingModule } from './course-viewer/course-viewer-routing.module';
@@ -55,7 +54,6 @@ import { MultipleChoiceComponent } from './common/activity/multiple-choice/multi
     ChunkHeadingTextComponent,
     ChunkSubheadingTextComponent,
     ChunkTwoColumnComponent,
-    WelcomeComponent,
     CourseViewerComponent,
     LessonDetailComponent,
     CourseViewerHomeComponent,
