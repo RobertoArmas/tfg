@@ -1,4 +1,11 @@
-# 1.1.0 (12-08-2018)
+# 0.3.0 refactorization-modulation (19-08-2018)
+
+### BREAKING CHANGES
+
+* [**app:** refactorizar la aplicación en módulos](https://trello.com/c/g7FU9T1x)
+
+
+# 0.2.0 (12-08-2018)
 
 ### Features
 
@@ -13,7 +20,7 @@
 ### BREAKING CHANGES
 * [**xAPI:** refactorizar la creación de Statements para adaptarse al estándar](https://trello.com/c/GiJIpgC4)
 
-# 1.0.0 accesibility-reinforcement (01-08-2018)
+# 0.1.0 accesibility-reinforcement (01-08-2018)
 
 ### Features
 
