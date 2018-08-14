@@ -7,6 +7,7 @@ import { CourseData } from '../course-viewer/course.model';
 import { Section } from '../course-viewer/section.model';
 import { LessonData } from '../course-viewer/lesson.model';
 import { ApiService } from './api.service';
+import { FirebaseApiService } from './firebase-api.service';
 
 /**
  * Servicio intermediario entre el API REST y la aplicación
@@ -15,8 +16,13 @@ import { ApiService } from './api.service';
 
 @Injectable()
 export class CourseDataService {
+  private courseId: '3uKy1rPWk6OB8w0FART7';
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService, private firebaseApiService: FirebaseApiService) { }
+
+  getCourseData(): Observable<any> {
+    return this.firebaseApiService.getCourseData(this.courseId);
+  }
 
   getCourseAttributes(): Observable<CourseData> {
     return this.api.getCourse();

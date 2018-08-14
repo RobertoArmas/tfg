@@ -16,17 +16,26 @@ export class WelcomePageComponent implements OnInit {
   constructor(private xapi: XapiService, private courseDataService: CourseDataService) { }
 
   ngOnInit() {
-    this.getCourseAttributes();
+    this.getCourseData();
   }
 
-  getCourseAttributes() {
+  getCourseData() {
+    // this.courseDataService
+    // .getCourseAttributes()
+    // .subscribe(
+    //   (course) => {
+    //     this.course = course;
+    //   }
+    // );
+
     this.courseDataService
-    .getCourseAttributes()
-    .subscribe(
-      (course) => {
-        this.course = course;
-      }
-    );
+      .getCourseData()
+      .subscribe(
+        (course) => {
+          this.course = course;
+          console.log(this.course);
+        }
+      );
   }
 
   sendStartStatement() {

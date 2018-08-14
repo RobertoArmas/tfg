@@ -23,8 +23,11 @@
             "type": "object",
             "description": "Atributos de un chunk de tipo multiple choice",
             "additionalProperties": false,
-            "required": [ "reviewed", "choices", "rightChoice" ],
+            "required": [ "reviewed", "choices" ],
             "properties": {
+                "interactionType": {
+                    "type": "string"
+                },
                 "question": {
                     "type": "string",
                     "description": "Pregunta del ejercicio"
@@ -37,8 +40,11 @@
                     "minItems": 1,
                     "uniqueItems": true
                 },
-                "rightChoice": {
-                    "type": "integer"
+                "correctResponsePattern": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "feedback": {
                     "type": "string"

@@ -42,7 +42,7 @@
                     { "$ref": "chunks\\text\\two-col.schema.json" },
                     { "$ref": "chunks\\text\\heading-text.schema.json" },
                     { "$ref": "chunks\\interactive\\checkbox-list.schema.json" },
-                    { "$ref": "chunks\\test\\multiple-choice.schema.json" },
+                    { "$ref": "chunks\\activity\\multiple-choice.schema.json" },
                     { "$ref": "chunks\\image\\image-centered.schema.json" }
                 ]
             }
