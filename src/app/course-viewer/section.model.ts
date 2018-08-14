@@ -1,4 +1,5 @@
-import { LessonData } from './lesson-detail/lesson.model';
+import { LessonData } from './lesson.model';
+
 
 export interface SectionData {
     id: string;

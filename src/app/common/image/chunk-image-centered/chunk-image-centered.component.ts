@@ -2,7 +2,7 @@ import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 import { ImageCentered } from './image-centered';
 
 import { IntersectionObserverService } from '../../intersection-observer.service';
-import { Lesson } from '../../../course-viewer/lesson-detail/lesson.model';
+import { Lesson } from '../../../course-viewer/lesson.model';
 
 @Component({
   selector: 'app-chunk-image-centered',

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, AfterViewInit, DoCheck } from '@angular/core';
 import { MultipleChoice } from './multiple-choice';
 import { XapiService } from '../../../xapi/xapi.service';
-import { LessonData } from '../../../course-viewer/lesson-detail/lesson.model';
+import { LessonData } from '../../../course-viewer/lesson.model';
 
 /**
  * Se utiliza para formatear la respuesta.

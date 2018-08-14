@@ -5,7 +5,7 @@ import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { Course } from './course-viewer/course.model';
 import { Section } from './course-viewer/section.model';
-import { Lesson } from './course-viewer/lesson-detail/lesson.model';
+import { Lesson } from './course-viewer/lesson.model';
 
 /**
  * API REST de conexión con el backend

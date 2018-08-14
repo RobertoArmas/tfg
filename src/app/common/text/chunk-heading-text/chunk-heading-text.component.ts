@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 import { HeadingText } from '../HeadingText';
 import { IntersectionObserverService } from '../../intersection-observer.service';
-import { LessonData } from '../../../course-viewer/lesson-detail/lesson.model';
+import { LessonData } from '../../../course-viewer/lesson.model';
 
 @Component({
   selector: 'app-chunk-heading-text',

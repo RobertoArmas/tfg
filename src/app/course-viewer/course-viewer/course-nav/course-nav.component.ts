@@ -1,28 +1,32 @@
 import { Component, OnInit } from '@angular/core';
-import { CourseDataService } from '../course-data.service';
-import { XapiService } from '../../xapi/xapi.service';
-import { Course } from '../course.model';
-import { Section } from '../section.model';
-import { LessonData } from '../lesson-detail/lesson.model';
 
+import { Course } from '../../course.model';
+import { Section } from '../../section.model';
+import { CourseDataService } from '../../../course-data.service';
+import { XapiService } from '../../../xapi/xapi.service';
+import { LessonData } from '../../lesson.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-course-nav',
   templateUrl: './course-nav.component.html',
-  styleUrls: ['./course-nav.component.css'],
+  styleUrls: ['./course-nav.component.css']
 })
 export class CourseNavComponent implements OnInit {
+
   course: Course = new Course();
   sections: Section[] = [];
 
   constructor(
     private courseDataService: CourseDataService,
-    private xapi: XapiService
+    private xapi: XapiService,
+    private router: Router
   ) { }
 
   ngOnInit() {
     this.getCourseData();
     this.getSectionsData();
+    this.redirectToFirstLesson();
   }
 
   getCourseData() {
@@ -60,4 +64,15 @@ export class CourseNavComponent implements OnInit {
   navigateToLesson(lesson: LessonData) {
     this.xapi.navigatedTo(lesson);
   }
+
+  redirectToFirstLesson() {
+    let firstLessonId: string;
+    this.courseDataService.getAllLessons().subscribe(
+      (lessons) => {
+        firstLessonId = lessons[0].id;
+        this.router.navigate(['/course/' + firstLessonId]);
+      }
+    );
+  }
+
 }

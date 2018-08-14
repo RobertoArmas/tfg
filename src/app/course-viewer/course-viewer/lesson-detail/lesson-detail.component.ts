@@ -1,23 +1,19 @@
 import { Component, OnInit, ViewChild, ComponentFactoryResolver } from '@angular/core';
-import { CourseDataService } from '../course-data.service';
+import { ChunkDirective } from './chunk.directive';
+import { Lesson, LessonData } from '../../lesson.model';
+import { CourseDataService } from '../../../course-data.service';
 import { ActivatedRoute } from '@angular/router';
-import { ChunkDirective } from './chunk-directive.directive';
-import { ChunkHeadingComponent } from '../../common/text/chunk-heading/chunk-heading.component';
-import { ChunkTextComponent } from '../../common/text/chunk-text/chunk-text.component';
-import { ChunkSubheadingComponent } from '../../common/text/chunk-subheading/chunk-subheading.component';
-import { ChunkTwoColumnComponent } from '../../common/text/chunk-two-column/chunk-two-column.component';
-import { ChunkHeadingTextComponent } from '../../common/text/chunk-heading-text/chunk-heading-text.component';
-import { ChunkSubheadingTextComponent } from '../../common/text/chunk-subheading-text/chunk-subheading-text.component';
-import { ChunkCheckboxListComponent } from '../../common/interactive/chunk-checkbox-list/chunk-checkbox-list.component';
-import { XapiService } from '../../xapi/xapi.service';
-import { ChunkImageCenteredComponent } from '../../common/image/chunk-image-centered/chunk-image-centered.component';
-import { Lesson, LessonData } from './lesson.model';
-import { Chunk } from '../../common/chunk.model';
-import { MultipleChoiceComponent } from '../../common/activity/multiple-choice/multiple-choice.component';
-
-/**
- * Se encarga de renderizar los componentes de los Chunks de cada lección
- */
+import { XapiService } from '../../../xapi/xapi.service';
+import { Chunk } from '../../../common/chunk.model';
+import { ChunkHeadingComponent } from '../../../common/text/chunk-heading/chunk-heading.component';
+import { ChunkSubheadingComponent } from '../../../common/text/chunk-subheading/chunk-subheading.component';
+import { ChunkTextComponent } from '../../../common/text/chunk-text/chunk-text.component';
+import { ChunkTwoColumnComponent } from '../../../common/text/chunk-two-column/chunk-two-column.component';
+import { ChunkHeadingTextComponent } from '../../../common/text/chunk-heading-text/chunk-heading-text.component';
+import { ChunkSubheadingTextComponent } from '../../../common/text/chunk-subheading-text/chunk-subheading-text.component';
+import { ChunkCheckboxListComponent } from '../../../common/interactive/chunk-checkbox-list/chunk-checkbox-list.component';
+import { MultipleChoiceComponent } from '../../../common/activity/multiple-choice/multiple-choice.component';
+import { ChunkImageCenteredComponent } from '../../../common/image/chunk-image-centered/chunk-image-centered.component';
 
 @Component({
   selector: 'app-lesson-detail',
@@ -25,6 +21,7 @@ import { MultipleChoiceComponent } from '../../common/activity/multiple-choice/m
   styleUrls: ['./lesson-detail.component.css']
 })
 export class LessonDetailComponent implements OnInit {
+
   @ViewChild(ChunkDirective) chunkHost: ChunkDirective;
   currentLesson: Lesson;
 
@@ -180,4 +177,5 @@ export class LessonDetailComponent implements OnInit {
     }
     return new Chunk(component, chunkItem.attributes, chunkItem.id, chunkItem.parentLesson);
   }
+
 }

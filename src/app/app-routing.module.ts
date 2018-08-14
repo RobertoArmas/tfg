@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const appRoutes: Routes = [
     { path: 'welcome', loadChildren: './welcome/welcome.module#WelcomeModule' },
+    { path: 'course', loadChildren: './course-viewer/course-viewer.module#CourseViewerModule' },
     { path: '', redirectTo: '/welcome', pathMatch: 'full' },
     { path: '**', redirectTo: '/welcome' }
 ];

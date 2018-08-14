@@ -1,4 +1,4 @@
-import { LessonData } from '../course-viewer/lesson-detail/lesson.model';
+import { LessonData } from '../course-viewer/lesson.model';
 
 export interface ChunkData {
     paddingTop: number;
