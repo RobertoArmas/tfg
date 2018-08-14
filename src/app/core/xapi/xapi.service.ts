@@ -6,8 +6,8 @@ import { verbs } from './statement-verbs.js';
 import { Statement, StatementAgent } from './statement.model.js';
 import { Course, CourseData } from '../../course-viewer/course.model.js';
 import { LessonData } from '../../course-viewer/lesson.model.js';
-import { ChunkData } from '../../common/chunk.model.js';
-import { MultipleChoice } from '../../common/activity/multiple-choice/multiple-choice.js';
+import { ChunkData } from '../../chunks/chunk.model.js';
+import { ChunkMultipleChoice } from '../../chunks/activity/chunk-multiple-choice/chunk-multiple-choice.js';
 
 
 @Injectable()
@@ -276,7 +276,7 @@ export class XapiService {
     });
   }
 
-  answered(chunkId: string, attributes: MultipleChoice, lesson: LessonData) {
+  answered(chunkId: string, attributes: ChunkMultipleChoice, lesson: LessonData) {
     const statement: Statement = this.getBase();
 
     statement.verb = verbs.answered;

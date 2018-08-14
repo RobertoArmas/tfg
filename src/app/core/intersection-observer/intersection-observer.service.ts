@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IntersectionObserverOptions } from './intersection-observer.config';
-import { ChunkData } from '../../common/chunk.model';
+import { ChunkData } from '../../chunks/chunk.model';
 import { LessonData } from '../../course-viewer/lesson.model';
 import { XapiService } from '../xapi/xapi.service';
 
