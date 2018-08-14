@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { XapiService } from '../xapi/xapi.service';
 import { IntersectionObserverOptions } from './intersection-observer.config';
-import { ChunkData } from './chunk.model';
-import { LessonData } from '../course-viewer/lesson.model';
+import { ChunkData } from '../../common/chunk.model';
+import { LessonData } from '../../course-viewer/lesson.model';
+import { XapiService } from '../xapi/xapi.service';
 
 
 /**
@@ -11,9 +11,7 @@ import { LessonData } from '../course-viewer/lesson.model';
  * seguir el orden previsto de aprendizaje.
  */
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class IntersectionObserverService {
   observer: IntersectionObserver;
 

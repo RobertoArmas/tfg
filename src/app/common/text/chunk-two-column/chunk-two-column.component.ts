@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 import { TwoCol } from './TwoCol';
-import { IntersectionObserverService } from '../../intersection-observer.service';
+import { IntersectionObserverService } from '../../../core/intersection-observer/intersection-observer.service';
 import { LessonData } from '../../../course-viewer/lesson.model';
 
 

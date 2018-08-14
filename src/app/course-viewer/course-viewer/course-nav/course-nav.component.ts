@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 import { Course } from '../../course.model';
 import { Section } from '../../section.model';
-import { CourseDataService } from '../../../course-data.service';
-import { XapiService } from '../../../xapi/xapi.service';
+import { CourseDataService } from '../../../core/course-data.service';
 import { LessonData } from '../../lesson.model';
 import { Router } from '@angular/router';
+import { XapiService } from '../../../core/xapi/xapi.service';
 
 @Component({
   selector: 'app-course-nav',

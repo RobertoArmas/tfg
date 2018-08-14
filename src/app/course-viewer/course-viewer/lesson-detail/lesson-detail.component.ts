@@ -1,9 +1,8 @@
 import { Component, OnInit, ViewChild, ComponentFactoryResolver } from '@angular/core';
 import { ChunkDirective } from './chunk.directive';
 import { Lesson, LessonData } from '../../lesson.model';
-import { CourseDataService } from '../../../course-data.service';
+import { CourseDataService } from '../../../core/course-data.service';
 import { ActivatedRoute } from '@angular/router';
-import { XapiService } from '../../../xapi/xapi.service';
 import { Chunk } from '../../../common/chunk.model';
 import { ChunkHeadingComponent } from '../../../common/text/chunk-heading/chunk-heading.component';
 import { ChunkSubheadingComponent } from '../../../common/text/chunk-subheading/chunk-subheading.component';
@@ -14,6 +13,7 @@ import { ChunkSubheadingTextComponent } from '../../../common/text/chunk-subhead
 import { ChunkCheckboxListComponent } from '../../../common/interactive/chunk-checkbox-list/chunk-checkbox-list.component';
 import { MultipleChoiceComponent } from '../../../common/activity/multiple-choice/multiple-choice.component';
 import { ChunkImageCenteredComponent } from '../../../common/image/chunk-image-centered/chunk-image-centered.component';
+import { XapiService } from '../../../core/xapi/xapi.service';
 
 @Component({
   selector: 'app-lesson-detail',

@@ -4,14 +4,13 @@ import { ActivityTypes } from './activity-types.js';
 import { UaConfig, UaBaseURI, UaAgent } from './config.js';
 import { verbs } from './statement-verbs.js';
 import { Statement, StatementAgent } from './statement.model.js';
-import { Course, CourseData } from '../course-viewer/course.model.js';
-import { ChunkData } from '../common/chunk.model.js';
-import { MultipleChoice } from '../common/activity/multiple-choice/multiple-choice.js';
-import { LessonData } from '../course-viewer/lesson.model.js';
+import { Course, CourseData } from '../../course-viewer/course.model.js';
+import { LessonData } from '../../course-viewer/lesson.model.js';
+import { ChunkData } from '../../common/chunk.model.js';
+import { MultipleChoice } from '../../common/activity/multiple-choice/multiple-choice.js';
 
-@Injectable({
-  providedIn: 'root'
-})
+
+@Injectable()
 export class XapiService {
   course: Course;
   actor: StatementAgent;
