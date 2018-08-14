@@ -1,7 +1,7 @@
-import { Component, OnInit, Input, AfterViewInit, DoCheck } from '@angular/core';
-import { MultipleChoice } from './multiple-choice';
+import { Component, OnInit, Input, DoCheck } from '@angular/core';
 import { LessonData } from '../../../course-viewer/lesson.model';
 import { XapiService } from '../../../core/xapi/xapi.service';
+import { ChunkMultipleChoice } from './chunk-multiple-choice';
 
 /**
  * Se utiliza para formatear la respuesta.
@@ -29,12 +29,12 @@ class Choice {
 }
 
 @Component({
-  selector: 'app-multiple-choice',
-  templateUrl: './multiple-choice.component.html',
-  styleUrls: ['./multiple-choice.component.css']
+  selector: 'app-chunk-multiple-choice',
+  templateUrl: './chunk-multiple-choice.component.html',
+  styleUrls: ['./chunk-multiple-choice.component.css']
 })
-export class MultipleChoiceComponent implements OnInit, DoCheck {
-  @Input() attributes: MultipleChoice;
+export class ChunkMultipleChoiceComponent implements OnInit, DoCheck {
+  @Input() attributes: ChunkMultipleChoice;
   @Input() id: string;
   @Input() parentLesson: LessonData;
   defaultChoices: string[];
@@ -46,7 +46,7 @@ export class MultipleChoiceComponent implements OnInit, DoCheck {
   constructor(
     private xApiService: XapiService
   ) {
-    this.attributes = new MultipleChoice();
+    this.attributes = new ChunkMultipleChoice();
     this.noSelectedChoice = true;
     this.choice = null;
     this.defaultChoices = ['Opción 1', 'Opción 2', 'Opción 3', 'Opción 4'];
