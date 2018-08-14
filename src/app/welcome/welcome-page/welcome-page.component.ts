@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseData } from '../../course-viewer/course.model';
-import { XapiService } from '../../xapi/xapi.service';
-import { CourseDataService } from '../../course-data.service';
+import { CourseDataService } from '../../core/course-data.service';
+import { XapiService } from '../../core/xapi/xapi.service';
 
 
 @Component({

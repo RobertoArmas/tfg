@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { environment } from '../environments/environment';
 import { Http } from '@angular/http';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
-import { Course } from './course-viewer/course.model';
-import { Section } from './course-viewer/section.model';
-import { Lesson } from './course-viewer/lesson.model';
+import { environment } from '../../environments/environment';
+import { Course } from '../course-viewer/course.model';
+import { Section } from '../course-viewer/section.model';
+import { Lesson } from '../course-viewer/lesson.model';
+
 
 /**
  * API REST de conexión con el backend
@@ -14,9 +15,7 @@ import { Lesson } from './course-viewer/lesson.model';
 
 const API_URL = environment.apiUrl;
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ApiService {
 
   constructor( private http: Http ) { }

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 import { ImageCentered } from './image-centered';
 
-import { IntersectionObserverService } from '../../intersection-observer.service';
+import { IntersectionObserverService } from '../../../core/intersection-observer/intersection-observer.service';
 import { Lesson } from '../../../course-viewer/lesson.model';
 
 @Component({

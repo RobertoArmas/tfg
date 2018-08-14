@@ -1,4 +1,5 @@
-import { Statement } from '../xapi/statement.model';
+import { Statement } from '../core/xapi/statement.model';
+
 
 export interface CourseData {
     id: string;

@@ -2,19 +2,18 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 
+
+import { CourseData } from '../course-viewer/course.model';
+import { Section } from '../course-viewer/section.model';
+import { LessonData } from '../course-viewer/lesson.model';
 import { ApiService } from './api.service';
-import { CourseData } from './course-viewer/course.model';
-import { Section } from './course-viewer/section.model';
-import { LessonData } from './course-viewer/lesson.model';
 
 /**
  * Servicio intermediario entre el API REST y la aplicación
  * Los componentes de la aplicación solo pueden obtener datos a través de este servicio.
  */
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class CourseDataService {
 
   constructor(private api: ApiService) { }
