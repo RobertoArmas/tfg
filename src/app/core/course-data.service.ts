@@ -16,12 +16,12 @@ import { FirebaseApiService } from './firebase-api.service';
 
 @Injectable()
 export class CourseDataService {
-  private courseId: '3uKy1rPWk6OB8w0FART7';
+  private courseId = '3uKy1rPWk6OB8w0FART7';
 
   constructor(private api: ApiService, private firebaseApiService: FirebaseApiService) { }
 
-  getCourseData(): Observable<any> {
-    return this.firebaseApiService.getCourseData(this.courseId);
+  getCourseInformation(): Observable<any> {
+    return this.firebaseApiService.getCourseInformation(this.courseId);
   }
 
   getCourseAttributes(): Observable<CourseData> {
