@@ -8,8 +8,9 @@ export class FirebaseApiService {
 
   constructor(private afs: AngularFirestore) { }
 
-  getCourseData(id: string): Observable<any> {
-    return this.afs.collection('courses').snapshotChanges();
-    // return this.afs.doc('courses/0').valueChanges();
+  getCourseInformation(id: string): Observable<CourseData> {
+    return this.afs.collection('courses').doc<CourseData>(id).valueChanges();
   }
+
+
 }
