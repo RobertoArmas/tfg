@@ -16,22 +16,24 @@ export class CourseNavComponent implements OnInit {
 
   course: Course = new Course();
   sections: Section[] = [];
+  redirectedToFirstLesson: boolean;
 
   constructor(
     private courseDataService: CourseDataService,
     private xapi: XapiService,
     private router: Router
-  ) { }
-
-  ngOnInit() {
-    this.getCourseData();
-    this.getSectionsData();
-    this.redirectToFirstLesson();
+  ) {
+    this.redirectedToFirstLesson = false;
   }
 
-  getCourseData() {
+  ngOnInit() {
+    this.getCourseInformation();
+    this.getCourseSections();
+  }
+
+  getCourseInformation() {
     this.courseDataService
-    .getCourseAttributes()
+    .getCourseInformation()
     .subscribe(
       (course) => {
         this.course = course;
@@ -39,40 +41,40 @@ export class CourseNavComponent implements OnInit {
     );
   }
 
-  getSectionsData() {
+  getCourseSections() {
     this.courseDataService
-    .getAllSections()
-    .subscribe(
-      (sections) => {
-        sections.map((section) => {
-          this.getSectionLessons(section);
-        });
-        this.sections = sections;
-      }
-    );
+      .getCourseSections()
+      .subscribe(
+        (sections) => {
+          sections.map((section) => {
+            this.getSectionLessons(section);
+          });
+          this.sections = sections;
+        }
+      );
   }
 
   getSectionLessons(section: Section) {
-    this.courseDataService.getSectionLessons(section.id)
+    this.courseDataService
+    .getSectionLessons(section.id)
     .subscribe(
       (lessons) => {
         section.lessons = lessons;
+        if (!this.redirectedToFirstLesson) {
+          this.redirectToFirstLesson(section.id, lessons[0].id);
+        }
       }
     );
   }
 
-  navigateToLesson(lesson: LessonData) {
+  navigateToLesson(lesson: LessonData, sectionId: string) {
+    this.router.navigate(['/course-viewer/section/' + sectionId + '/lesson/' + lesson.id]);
     this.xapi.navigatedTo(lesson);
   }
 
-  redirectToFirstLesson() {
-    let firstLessonId: string;
-    this.courseDataService.getAllLessons().subscribe(
-      (lessons) => {
-        firstLessonId = lessons[0].id;
-        this.router.navigate(['/course/' + firstLessonId]);
-      }
-    );
+  redirectToFirstLesson(sectionId: string, lessonId: string) {
+    this.router.navigate(['/course-viewer/section/' + sectionId + '/lesson/' + lessonId]);
+    this.redirectedToFirstLesson = true;
   }
 
 }

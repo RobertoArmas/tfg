@@ -48,7 +48,6 @@ export class CourseViewerComponent implements OnInit {
         } , 100);
       } else {
         window.scroll({ top: 0, left: 0, behavior: 'smooth' });
-        console.log('rollme');
       }
     });
   }
