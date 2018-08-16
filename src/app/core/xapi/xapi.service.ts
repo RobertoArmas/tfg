@@ -23,7 +23,7 @@ export class XapiService {
   launchLrsConnection() {
 
     // Activa/desactiva el logging de xAPI
-    ADL.XAPIWrapper.log.debug = true;
+    ADL.XAPIWrapper.log.debug = false;
 
     ADL.XAPIWrapper.changeConfig(UaConfig);
     this.actor = UaAgent;
