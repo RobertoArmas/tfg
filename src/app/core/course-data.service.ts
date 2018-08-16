@@ -6,7 +6,6 @@ import { Observable } from 'rxjs';
 import { CourseData } from '../course-viewer/course.model';
 import { Section, SectionData } from '../course-viewer/section.model';
 import { LessonData } from '../course-viewer/lesson.model';
-import { ApiService } from './api.service';
 import { FirebaseApiService } from './firebase-api.service';
 import { ChunkData } from '../chunks/chunk.model';
 
@@ -19,7 +18,7 @@ import { ChunkData } from '../chunks/chunk.model';
 export class CourseDataService {
   private courseId = 'c1';
 
-  constructor(private api: ApiService, private firebaseApiService: FirebaseApiService) { }
+  constructor(private firebaseApiService: FirebaseApiService) { }
 
   getCourseInformation(): Observable<CourseData> {
     return this.firebaseApiService.getCourseInformation(this.courseId);
@@ -39,26 +38,5 @@ export class CourseDataService {
 
   getLessonChunks(sectionId: string, lessonId: string): Observable<ChunkData[]> {
     return this.firebaseApiService.getLessonChunks(this.courseId, sectionId, lessonId);
-  }
-
-
-
-
-
-  getCourseAttributes(): Observable<CourseData> {
-    return this.api.getCourse();
-  }
-
-  getAllSections(): Observable<Section[]> {
-    return this.api.getAllSections();
-  }
-
-  getAllLessons(): Observable<LessonData[]> {
-    return this.api.getAllLessons();
-  }
-
-
-  getLesson(lessonId: string): Observable<LessonData> {
-    return this.api.getLesson(lessonId);
   }
 }
