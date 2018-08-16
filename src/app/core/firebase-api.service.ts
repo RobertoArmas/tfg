@@ -59,8 +59,15 @@ export class FirebaseApiService {
     .collection('courses').doc(courseId)
     .collection('sections').doc(sectionId)
     .collection('lessons').doc(lessonId)
-    .collection<ChunkData>('chunks')
-    .valueChanges();
+    .collection('chunks')
+    .snapshotChanges()
+    .pipe(
+      map(actions => actions.map(action => {
+        const data = action.payload.doc.data() as ChunkData;
+        const id = action.payload.doc.id;
+        return { id, ...data };
+      }))
+    );
   }
 
 }
