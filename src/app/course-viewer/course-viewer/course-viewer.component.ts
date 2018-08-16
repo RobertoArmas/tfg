@@ -18,7 +18,7 @@ export class CourseViewerComponent implements OnInit {
 
 
   constructor(private childInteractionService: ChildInteractionService, private router: Router) {
-    this.startSidenavOpen = true;
+    this.startSidenavOpen = false;
     this.endSidenavOpen = false;
 
     this.startSidenavSubscription = childInteractionService.sartSidenavToggled$.subscribe(
