@@ -9,7 +9,7 @@ const routes: Routes = [
     component: CourseViewerComponent,
     children: [
       {
-        path: ':id',
+        path: ':sectionId/lesson/:lessonId',
         component: LessonDetailComponent
       }
     ]

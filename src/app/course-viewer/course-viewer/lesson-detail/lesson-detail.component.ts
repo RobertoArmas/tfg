@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ComponentFactoryResolver } from '@angular
 import { ChunkDirective } from './chunk.directive';
 import { Lesson, LessonData } from '../../lesson.model';
 import { CourseDataService } from '../../../core/course-data.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Chunk } from '../../../chunks/chunk.model';
 import { XapiService } from '../../../core/xapi/xapi.service';
 import { ChunkHeadingComponent } from '../../../chunks/text/chunk-heading/chunk-heading.component';
@@ -14,6 +14,7 @@ import { ChunkSubheadingTextComponent } from '../../../chunks/text/chunk-subhead
 import { ChunkCheckboxListComponent } from '../../../chunks/interactive/chunk-checkbox-list/chunk-checkbox-list.component';
 import { ChunkImageCenteredComponent } from '../../../chunks/image/chunk-image-centered/chunk-image-centered.component';
 import { ChunkMultipleChoiceComponent } from '../../../chunks/activity/chunk-multiple-choice/chunk-multiple-choice.component';
+import { Section } from '../../section.model';
 
 @Component({
   selector: 'app-lesson-detail',
@@ -26,21 +27,24 @@ export class LessonDetailComponent implements OnInit {
   currentLesson: Lesson;
 
   // Id de la lección extraída de la ruta del navegador
-  id: string;
-  nextLessonTrimmed: Lesson;
-  previousLessonTrimmed: Lesson;
+  lessonId: string;
+  sectionId: string;
+  nextLesson: LessonData;
+  previousLesson: LessonData;
   currentLessonTrimmed: Lesson;
   isLastLesson: boolean;
   isFirstLesson: boolean;
+  currentLessonIndex: number;
 
   constructor(
     private courseDataService: CourseDataService,
     private route: ActivatedRoute,
     private componentFactoryResolver: ComponentFactoryResolver,
-    private xapi: XapiService
+    private xapi: XapiService,
+    private router: Router
   ) {
-    this.nextLessonTrimmed = new Lesson();
-    this.previousLessonTrimmed = new Lesson();
+    this.nextLesson = new Lesson();
+    this.previousLesson = new Lesson();
 
     // Predicción: esta no es ni la primera ni la última lección
     this.isLastLesson = false;
@@ -49,17 +53,29 @@ export class LessonDetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.id = params['id'];
-      this.getLessonData();
+      this.lessonId = params['lessonId'];
+      this.sectionId = params['sectionId'];
+      this.getLessonInformation();
     });
   }
 
-  getLessonData() {
+  getLessonInformation() {
     this.courseDataService
-      .getLesson(this.id)
+      .getLessonInformation(this.sectionId, this.lessonId)
       .subscribe(
         (lesson) => {
-          this.currentLesson = lesson[0];
+          this.currentLesson = lesson;
+          this.getLessonChunks();
+        }
+      );
+  }
+
+  getLessonChunks() {
+    this.courseDataService
+      .getLessonChunks(this.sectionId, this.lessonId)
+      .subscribe(
+        (chunks) => {
+          this.currentLesson.chunks = chunks;
 
           // Hasta que no se han obtenido los datos de la lección no se pueden crear los componentes dinámicamente
           this.clearViewContainerRef();
@@ -81,45 +97,63 @@ export class LessonDetailComponent implements OnInit {
     }
   }
 
-  /**
-   * TODO: buscar una forma más eficiente de capturar las lecciones anterior y siguiente
-   * (no teniendo que volver a traer los datos de todas las lecciones)
-   */
   setAroundLessonsIds() {
-    this.courseDataService.getAllLessons()
+    this.getAllLessons();
+  }
+
+  getAllLessons() {
+    this.getCourseSections();
+  }
+
+  getCourseSections() {
+    const lessonsBundle: LessonData[] = [];
+
+    this.courseDataService
+      .getCourseSections()
       .subscribe(
-        (lessons) => {
-          const currentLessonIndex = lessons.findIndex(lesson => lesson.id === this.id);
-          this.setNextLesson(lessons, currentLessonIndex);
-          this.setPreviousLesson(lessons, currentLessonIndex);
+        (sections) => {
+          sections.map((section) => {
+            this.getSectionLessons(section, lessonsBundle);
+          });
         }
       );
   }
 
-  // Se necesitan todos los datos de la siguiente lección para enviar el report a xAPI
-  setNextLesson(lessons: LessonData[], currentLessonIndex: number) {
-    try {
-      this.nextLessonTrimmed.id = lessons[currentLessonIndex + 1].id;
-      this.nextLessonTrimmed.title = lessons[currentLessonIndex + 1].title;
-      this.nextLessonTrimmed.URI = lessons[currentLessonIndex + 1].URI;
-      this.nextLessonTrimmed.description = lessons[currentLessonIndex + 1].description;
-      if (this.isLastLesson) { this.isLastLesson = false; }
-    } catch (noNextIndexError) {
-      this.isLastLesson = true;
-    }
+  getSectionLessons(section: Section, lessonsBundle: LessonData[]) {
+    this.courseDataService
+      .getSectionLessons(section.id)
+      .subscribe(
+        (lessons) => {
+          lessons.forEach((lesson) => {
+            lessonsBundle.push({ sectionId: section.id, ...lesson });
+          });
+          this.currentLessonIndex = lessonsBundle.findIndex(
+            lesson => lesson.sectionId === this.sectionId && lesson.id === this.lessonId
+          );
+          this.setNextLesson(this.currentLessonIndex, lessonsBundle);
+          this.setPreviousLesson(this.currentLessonIndex, lessonsBundle);
+        }
+      );
   }
 
-  // Se necesitan todos los datos de la lección anterior para enviar el report a xAPI
-  setPreviousLesson(lessons: LessonData[], currentLessonIndex: number) {
-    try {
-      this.previousLessonTrimmed.id = lessons[currentLessonIndex - 1].id;
-      this.previousLessonTrimmed.title = lessons[currentLessonIndex - 1].title;
-      this.previousLessonTrimmed.URI = lessons[currentLessonIndex - 1].URI;
-      this.previousLessonTrimmed.description = lessons[currentLessonIndex - 1].description;
-      if (this.isFirstLesson) { this.isFirstLesson = false; }
-    } catch (noPreviousIndexError) {
-      this.isFirstLesson = true;
-    }
+  setNextLesson(currentLessonIndex: number, lessonsBundle: LessonData[]) {
+    this.nextLesson = lessonsBundle[currentLessonIndex + 1];
+    if (this.nextLesson === undefined) { this.isLastLesson = true; } else { this.isLastLesson = false; }
+  }
+
+  setPreviousLesson(currentLessonIndex: number, lessonsBundle: LessonData[]) {
+    this.previousLesson = lessonsBundle[currentLessonIndex - 1];
+    if (this.previousLesson === undefined) { this.isFirstLesson = true; } else { this.isFirstLesson = false; }
+  }
+
+  progressLesson() {
+    this.router.navigate(['/course-viewer/section/' + this.nextLesson.sectionId + '/lesson/' + this.nextLesson.id]);
+    this.xapi.progressed(this.nextLesson);
+  }
+
+  navigateBack() {
+    this.router.navigate(['/course-viewer/section/' + this.previousLesson.sectionId + '/lesson/' + this.previousLesson.id]);
+    this.xapi.navigatedBack(this.previousLesson);
   }
 
   loadComponentIntoAnchor(chunkComponent: Chunk) {
@@ -131,13 +165,6 @@ export class LessonDetailComponent implements OnInit {
     (<Chunk>componentRef.instance).parentLesson = this.currentLesson;
   }
 
-  progressLesson() {
-    this.xapi.progressed(this.nextLessonTrimmed);
-  }
-
-  navigateBack() {
-    this.xapi.navigatedBack(this.previousLessonTrimmed);
-  }
 
   /**
    * TODO: refactorizar este switch a otra estructura porque se va a hacer mega-mastodóntica
