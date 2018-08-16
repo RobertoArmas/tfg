@@ -3,6 +3,7 @@ import { ImageCentered } from './image-centered';
 
 import { IntersectionObserverService } from '../../../core/intersection-observer/intersection-observer.service';
 import { Lesson } from '../../../course-viewer/lesson.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-chunk-image-centered',
@@ -13,6 +14,7 @@ export class ChunkImageCenteredComponent implements OnInit, AfterViewInit {
   @Input() attributes: ImageCentered;
   @Input() id: string;
   @Input() parentLesson: Lesson;
+  profileUrl: Observable<string | null>;
 
   constructor(
     private intersectionObserverService: IntersectionObserverService
@@ -21,8 +23,6 @@ export class ChunkImageCenteredComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    if (this.attributes.url === undefined) {this.attributes.url = '/assets/images/bicycle.jpg'; }
-    if (this.attributes.caption === undefined) {this.attributes.caption = 'Pie de foto por defecto'; }
     if (this.attributes.paddingTop === undefined) { this.attributes.paddingTop = 30; }
     if (this.attributes.paddingBottom === undefined) { this.attributes.paddingBottom = 30; }
     if (this.attributes.backgroundColor === undefined) { this.attributes.backgroundColor = '#ffffff'; }
