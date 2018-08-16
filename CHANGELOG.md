@@ -3,6 +3,7 @@
 ### BREAKING CHANGES
 
 * [**app:** refactorizar la aplicación en módulos](https://trello.com/c/g7FU9T1x)
+* [**app:** conectar el backend a Firebase](https://trello.com/c/8NCy7F87)
 
 
 # 0.2.0 (12-08-2018)
