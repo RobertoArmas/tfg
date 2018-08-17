@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { filter } from 'rxjs/operators';
-import { Subscription } from 'rxjs';
-import { ChildInteractionService } from '../../child-interaction.service';
 import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
@@ -13,24 +11,23 @@ export class CourseViewerComponent implements OnInit {
 
   startSidenavOpen: boolean;
   endSidenavOpen: boolean;
-  startSidenavSubscription: Subscription;
-  endSidenavSubscription: Subscription;
 
 
-  constructor(private childInteractionService: ChildInteractionService, private router: Router) {
+  constructor( private router: Router) {
     this.startSidenavOpen = false;
     this.endSidenavOpen = false;
-
-    this.startSidenavSubscription = childInteractionService.sartSidenavToggled$.subscribe(
-      toggle => this.startSidenavOpen = !this.startSidenavOpen
-    );
-    this.endSidenavSubscription = childInteractionService.endSidenavToggled$.subscribe(
-      toggle => this.endSidenavOpen = !this.endSidenavOpen
-    );
   }
 
   ngOnInit() {
     this.subscribeToRouteChanges();
+  }
+
+  toggleStartSidenav() {
+    this.startSidenavOpen = !this.startSidenavOpen;
+  }
+
+  toggleEndSidenav() {
+    this.endSidenavOpen = !this.endSidenavOpen;
   }
 
   /**
