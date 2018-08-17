@@ -4,13 +4,14 @@ import { CourseDataService } from './course-data.service';
 import { XapiService } from './xapi/xapi.service';
 import { IntersectionObserverService } from './intersection-observer/intersection-observer.service';
 import { FirebaseApiService } from './firebase-api.service';
+import { AuthGuard } from './auth-guard.service';
 
 @NgModule({
   imports: [
     CommonModule
   ],
   declarations: [],
-  providers: [CourseDataService, XapiService, IntersectionObserverService, FirebaseApiService]
+  providers: [CourseDataService, XapiService, IntersectionObserverService, FirebaseApiService, AuthGuard]
 })
 export class CoreModule {
   constructor (@Optional() @SkipSelf() parentModule: CoreModule) {
