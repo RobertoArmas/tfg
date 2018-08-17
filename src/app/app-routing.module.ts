@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
+import { AuthGuard } from './core/auth-guard.service';
 
 /**
  * Rutas de la aplicación a nivel global
@@ -7,7 +8,10 @@ import { RouterModule, Routes } from '@angular/router';
 
 const appRoutes: Routes = [
     { path: 'welcome', loadChildren: './welcome/welcome.module#WelcomeModule' },
-    { path: 'course-viewer/section', loadChildren: './course-viewer/course-viewer.module#CourseViewerModule' },
+    {
+        path: 'course-viewer/section',
+        loadChildren: './course-viewer/course-viewer.module#CourseViewerModule'
+     },
     { path: '', redirectTo: '/welcome', pathMatch: 'full' },
     { path: '**', redirectTo: '/welcome' }
 ];
@@ -18,6 +22,7 @@ const appRoutes: Routes = [
             appRoutes,
             {
                 enableTracing: false, // <-- debugging purposes only
+                preloadingStrategy: PreloadAllModules
             }
         )
     ],
