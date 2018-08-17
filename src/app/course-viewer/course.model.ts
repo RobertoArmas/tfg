@@ -1,4 +1,5 @@
 import { Statement } from '../core/xapi/statement.model';
+import { SafeStyle } from '@angular/platform-browser';
 
 
 export interface CourseData {
@@ -9,6 +10,8 @@ export interface CourseData {
     description: string;
 
     URI: string;
+
+    imageUrl: string | SafeStyle;
 
     setData: (data: CourseData) => void;
 }
@@ -28,6 +31,8 @@ export class Course implements CourseData {
 
     // GUID de la sesión del curso que se ha lanzado
     attemptGUID?: string;
+
+    imageUrl: string | SafeStyle;
 
     constructor(values: Object = {}) {
         Object.assign(this, values);
