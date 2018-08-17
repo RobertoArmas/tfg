@@ -11,8 +11,14 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       {
-        path: ':sectionId/lesson/:lessonId',
-        component: LessonDetailComponent
+        path: '',
+        canActivateChild: [AuthGuard],
+        children: [
+          {
+            path: ':sectionId/lesson/:lessonId',
+            component: LessonDetailComponent
+          }
+        ]
       }
     ]
   }
