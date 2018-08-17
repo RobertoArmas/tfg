@@ -30,3 +30,15 @@
     font-family: 'Merriweather', serif;
     word-wrap: break-word;
 }
+
+.app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.app-name {
+    color:white;
+    text-decoration: none;
+}
