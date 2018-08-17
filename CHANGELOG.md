@@ -1,4 +1,20 @@
+### Presets de tipos de cambio
+
+* [**navigation:** ]()
+* [**chunks:** ]()
+* [**app:** ]()
+
+
+
+
+
 # 0.3.0 refactorization-modulation (19-08-2018)
+
+### Features
+* [**chunks:** cargar placeholder cuando se descargan los datos de imagenes](https://trello.com/c/bgKZiLLk)
+* [**navigation:** Implementar Guards para evitar el acceso a rutas restringidas](https://trello.com/c/8KZ2IEjx)
+* [**navigation:** Implementar Guards para retrasar la carga de módulos que no son necesarios cuando se inicia la aplicación](https://trello.com/c/8KZ2IEjx)
+* [**app:** Implementar servicios de Login (el inicio de sesión por Google está en desarrollo)](https://trello.com/c/oc5vTFPU)
 
 ### BREAKING CHANGES
 
