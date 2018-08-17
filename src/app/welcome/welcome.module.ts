@@ -5,6 +5,7 @@ import { WelcomeRoutingModule } from './welcome-routing.module';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { FlexLayoutModule } from '../../../node_modules/@angular/flex-layout';
 import { MaterialModule } from '../material.module';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   imports: [
@@ -13,6 +14,6 @@ import { MaterialModule } from '../material.module';
     FlexLayoutModule,
     MaterialModule
   ],
-  declarations: [WelcomePageComponent]
+  declarations: [WelcomePageComponent, LoginComponent]
 })
 export class WelcomeModule { }
