@@ -15,11 +15,13 @@ export class ChunkImageCenteredComponent implements OnInit, AfterViewInit {
   @Input() id: string;
   @Input() parentLesson: Lesson;
   profileUrl: Observable<string | null>;
+  isLoaded: boolean;
 
   constructor(
     private intersectionObserverService: IntersectionObserverService
   ) {
     this.attributes = new ImageCentered();
+    this.isLoaded = false;
   }
 
   ngOnInit() {
@@ -31,5 +33,9 @@ export class ChunkImageCenteredComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     this.attributes.statementData = this.attributes.caption;
     this.intersectionObserverService.createObserver(this.id, this.attributes, this.parentLesson);
+  }
+
+  removePlaceholder() {
+    this.isLoaded = true;
   }
 }
