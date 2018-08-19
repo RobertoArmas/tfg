@@ -1,0 +1,27 @@
+.next-lesson {
+    height: 70px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border-top: 1px solid #ddd;
+    margin-top: 80px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.navigation-next-lesson {
+    position: relative;
+    height: 190px;
+}
+
+.previous-lesson {
+    height: 70px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+}
+
+.navigation-previous-lesson {
+    height: 70px;
+}

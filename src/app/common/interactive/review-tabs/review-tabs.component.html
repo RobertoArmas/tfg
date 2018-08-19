@@ -1,9 +1,0 @@
-<mat-card>
-  <mat-tab-group (selectedTabChange)="reportTabChange($event)">
-    <mat-tab *ngFor="let tab of tabs" label="{{tab.label}}">
-      <p *ngFor="let paragraph of tab.content">
-        {{paragraph}}
-      </p>
-    </mat-tab>
-  </mat-tab-group>
-</mat-card>

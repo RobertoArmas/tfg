@@ -11,6 +11,11 @@
   margin-left: 55px !important;
 }
 
+.mat-radio-label-content {
+  white-space: normal !important;
+  padding-left: 50px !important;
+}
+
 
 // Estilos comunes de Angular Material
 @include mat-core();

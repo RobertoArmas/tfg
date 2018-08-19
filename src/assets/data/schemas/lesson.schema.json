@@ -6,7 +6,9 @@
     "required": [
         "id",
         "title",
-        "sectionId"
+        "sectionId",
+        "URI",
+        "description"
     ],
     "additionalProperties": false,
     "properties": {
@@ -14,9 +16,18 @@
             "type": "string",
             "description": "Identificador único para la lección"
         },
+        "URI": {
+            "type": "string",
+            "description": "Porción URI que se utilizará para la creación de statements",
+            "pattern": "^(/[^/]+)+$"
+        },
         "title": {
             "type": "string",
             "description": "Título de la lección"
+        },
+        "description": {
+            "type": "string",
+            "description": "Resume de forma breve que se va a ver en la lección"
         },
         "sectionId": {
             "type": "string",
@@ -30,7 +41,9 @@
                     { "$ref": "chunks\\text\\basic.schema.json" },
                     { "$ref": "chunks\\text\\two-col.schema.json" },
                     { "$ref": "chunks\\text\\heading-text.schema.json" },
-                    { "$ref": "chunks\\interactive\\checkbox-list.schema.json" }
+                    { "$ref": "chunks\\interactive\\checkbox-list.schema.json" },
+                    { "$ref": "chunks\\activity\\multiple-choice.schema.json" },
+                    { "$ref": "chunks\\image\\image-centered.schema.json" }
                 ]
             }
         }

@@ -1,0 +1,27 @@
+<mat-toolbar class="app-header mat-elevation-z6" color="primary" fxLayout="row" fxLayoutAlign="space-between center">
+    <button mat-icon-button (click)="toggleStartSidenav()">
+        <i class="material-icons">timeline</i>
+    </button>
+
+    <a routerLink="/welcome" class="app-name"><b>App</b></a>
+
+    <button mat-icon-button (click)="toggleEndSidenav()">
+        <i class="material-icons">menu</i>
+    </button>
+</mat-toolbar>
+
+<mat-sidenav-container class="app-container">
+    <mat-sidenav class="course-info-sidenav" mode="side" [(opened)]="startSidenavOpen">
+        <app-course-nav></app-course-nav>
+    </mat-sidenav>
+
+    <mat-sidenav class="settings-sidenav" mode="side" position="end" [(opened)]="endSidenavOpen">End content</mat-sidenav>
+
+    <mat-sidenav-content class="mat-elevation-z8 lesson-content">
+        <div class="page-content">
+            <section class="course-lesson">
+                <router-outlet></router-outlet>
+            </section>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

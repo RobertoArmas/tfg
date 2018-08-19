@@ -1,0 +1,47 @@
+
+<div id = {{id}}>
+  <div fxLayout="row" fxLayoutAlign="center center"
+    [style.background-color]="attributes.backgroundColor">
+    <div class="chunk-multiple-choice"
+      [style.padding-top.px]="attributes.paddingTop"
+      [style.padding-bottom.px]="attributes.paddingBottom">
+      <mat-card class="multiple-choice-container">
+
+        <div class="question-text">
+          {{attributes.question}}
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <mat-radio-group class="choices-radio-group" [disabled]='showAnswer' [(ngModel)]="choice" fxLayout="column" fxLayoutAlign="space-evenly start">
+            <mat-radio-button class="choice-radio-button" *ngFor="let choice of attributes.choices" [value]="choice">
+              {{choice}}
+            </mat-radio-button>
+          </mat-radio-group>
+
+          <div fxLayout="row" fxLayoutAlign="center none" *ngIf="!showAnswer">
+            <button mat-flat-button color="primary" [disabled]="noSelectedChoice" (click)=revealResult()>ENVIAR</button>
+          </div>
+
+          <div fxLayout="column" fxLayoutAlign="center center" *ngIf="showAnswer">
+            <div class="sentiment" fxLayout="column" fxLayoutAlign="center center">
+              <mat-icon>{{answer.icon}}</mat-icon>
+              <label>{{answer.label}}</label>
+            </div>
+            <div class="multiple-choice-result">
+              <p>
+                {{attributes.feedback}}
+              </p>
+
+              <div class="retry" fxLayout="row" fxLayoutAlign="center none">
+                <button mat-button (click)=restoreAnswers()> 
+                  <mat-icon>replay</mat-icon>
+                  INTENTAR DE NUEVO
+                </button>
+              </div>
+            </div>
+          </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

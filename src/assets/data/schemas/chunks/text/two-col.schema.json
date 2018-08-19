@@ -19,6 +19,7 @@
             "type": "object",
             "description": "Atributos de un chunk de tipo two-column",
             "additionalProperties": false,
+            "required": [ "reviewed" ],
             "properties": {
                 "dataCol1": {
                     "type": "string",
@@ -39,6 +40,11 @@
                     "type": "string",
                     "description": "Color del chunk en formato Hexadecimal",
                     "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
+                },
+                "reviewed": {
+                    "type": "boolean",
+                    "description": "Determina si el chunk ya ha sido visto por el alumno",
+                    "default": false
                 }
             }
         }
