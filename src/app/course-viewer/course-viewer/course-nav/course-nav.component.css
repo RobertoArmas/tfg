@@ -1,0 +1,91 @@
+.course-nav-header {
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+    padding: 5rem 3rem 0rem 2rem;
+    overflow: hidden;
+    vertical-align: baseline;
+    color: white;
+    width: 280px;
+    min-height: 200px;
+    margin-bottom: 45px;
+}
+
+.course-nav-header-background {
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/e-learning-ua.appspot.com/o/agriculture-countryside-crop-1137338.jpg?alt=media&token=d7ce6f31-3ab2-4dda-9cf0-3bcb5cdb5e6a");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    max-height: 230px;
+}
+
+.course-nav-header-title {
+    margin: 0;
+}
+
+.overview-info {
+    height: 100%;
+    width: 80%;
+}
+
+.course-nav-overview {
+    height: 100%;
+}
+
+.course-nav-header-progress {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .12rem;
+    font-size: .7rem;
+}
+.overview-progress {
+    margin-bottom: 10px;
+}
+
+.course-nav-header-overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.overview-span {
+    height: 30px;
+}
+
+.mat-progress-spinner {
+    float: right;
+}
+
+.course-nav-container {
+    font-family: 'Lato', sans-serif;
+    color: #313537;
+    font-weight: 700 !important;
+}
+
+.course-nav-container .section-title {
+    text-transform: uppercase;
+    padding: 0 3rem 0 2rem;
+    font-size: 0.625rem;
+    font-weight: 700;
+    letter-spacing: .04rem;
+    cursor: pointer;
+    line-height: 1.4rem;
+}
+
+.course-nav-container .mat-list-item {
+    font-family: 'Lato', sans-serif;
+    color: #313537;
+    font-size: 0.813rem;
+    margin: 0 -1rem 0.5rem -0.5rem;
+}
+
+.lessons-list-item {
+    cursor: pointer;
+}

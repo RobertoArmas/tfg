@@ -1,0 +1,18 @@
+<div id={{id}}>
+  <div fxLayout="row" fxLayoutAlign="center none" [style.background-color]="attributes.backgroundColor">
+    <div class="chunk-image-centered" [style.padding-top.px]="attributes.paddingTop" [style.padding-bottom.px]="attributes.paddingBottom">
+
+        <div class="ph-item" *ngIf="!isLoaded">
+            <div class="ph-col-12">
+                <div class="ph-picture"></div>
+            </div>
+          </div>
+
+      <img src="{{attributes.url}}" (load)="removePlaceholder()" alt="{{attributes.caption}}">
+      <div class="chunk-image-caption">
+          <p>{{attributes.caption}}</p>
+          <mat-divider></mat-divider>
+      </div>
+    </div>
+  </div>
+</div>

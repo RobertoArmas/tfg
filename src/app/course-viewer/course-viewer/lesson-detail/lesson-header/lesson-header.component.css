@@ -1,0 +1,59 @@
+/* .page-header {
+    padding-top: 3.125rem;
+} */
+
+.page-header-container {
+    max-width: 47.61rem;
+    box-sizing: content-box;
+    color: #313537;
+}
+
+.lesson-header {
+    width: 47.61rem;
+    float: left;
+}
+
+.lesson-header-counter {
+    font-family: 'Merriweather', serif;
+    font-size: 0.75rem;
+    line-height: 1.312rem;
+    font-style: italic;
+}
+
+.lesson-header-title {
+    font-family: 'Lato', sans-serif;
+    font-size: 2.625rem;
+    font-weight: 700;
+    line-height: 2.625rem;
+    margin-bottom: 1.25rem;
+}
+
+.lesson-header-title p {
+    margin: 0;
+}
+
+span.title-underline {
+    display: block;
+    height: 1px;
+    width: 160px;
+    border: 0;
+    margin: 1em 0;
+    padding: 0;
+    /* border-bottom: 6px solid #3f51b5; */
+    border-bottom: 6px solid #ff9800;
+}
+
+span.page-header-divider {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-bottom: 2px solid #3f51b5;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.page-header .mat-progress-bar {
+    margin-top: 45px;
+    margin-bottom: 50px;
+    height: 2px;
+}

@@ -1,91 +1,49 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpModule } from '@angular/http';
-
-// tslint:disable-next-line:max-line-length
-import { MatSidenavModule, MatCheckboxModule, MatToolbarModule, MatButtonModule, MatCardModule, MatTabsModule, MatListModule, MatProgressBarModule, MatExpansionModule, MatIconModule, MatProgressSpinnerModule } from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
-import { ReviewTabsComponent } from './common/interactive/review-tabs/review-tabs.component';
-import { PageHeaderComponent } from './common/page-header/page-header.component';
-import { ChunkTextComponent } from './common/text/chunk-text/chunk-text.component';
-import { ChunkHeadingComponent } from './common/text/chunk-heading/chunk-heading.component';
-import { ChunkSubheadingComponent } from './common/text/chunk-subheading/chunk-subheading.component';
-import { ChunkHeadingTextComponent } from './common/text/chunk-heading-text/chunk-heading-text.component';
-import { ChunkSubheadingTextComponent } from './common/text/chunk-subheading-text/chunk-subheading-text.component';
-import { ChunkTwoColumnComponent } from './common/text/chunk-two-column/chunk-two-column.component';
-import { HttpClientModule } from '@angular/common/http';
-import { ApiService } from './api.service';
-import { CourseDataService } from './course-viewer/course-data.service';
-import { WelcomeComponent } from './welcome/welcome.component';
-import { CourseViewerComponent } from './course-viewer/course-viewer.component';
+import { MaterialModule } from './material.module';
 import { AppRoutingModule } from './app-routing.module';
-import { CourseViewerRoutingModule } from './course-viewer/course-viewer-routing.module';
-import { LessonDetailComponent } from './course-viewer/lesson-detail/lesson-detail.component';
-import { CourseNavComponent } from './course-viewer/course-nav/course-nav.component';
-import { CourseViewerHomeComponent } from './course-viewer/course-viewer-home/course-viewer-home.component';
-import { ChunkDirective } from './course-viewer/lesson-detail/chunk-directive.directive';
-import { ChunkCheckboxListComponent } from './common/interactive/chunk-checkbox-list/chunk-checkbox-list.component';
-import { XapiService } from './xapi.service';
-
+import { CoreModule } from './core/core.module';
+import { ChunksModule } from './chunks/chunks.module';
 /**
  * GUÍA MUY COMPLETA SOBRE ANGULAR 2 (SERVICIOS, COMPONENTES, ETC.)
  * https://www.sitepoint.com/angular-2-tutorial/
  */
 
+/**
+ * https://medium.com/dailyjs/angular-and-accessibility-8ae1f601803a
+ */
+
+ /**
+  * Cambio de css a scss:
+  * https://stackoverflow.com/questions/36220256/angular-cli-sass-options
+  */
+
 @NgModule({
   declarations: [
     AppComponent,
-    ReviewTabsComponent,
-    PageHeaderComponent,
-    ChunkTextComponent,
-    CourseNavComponent,
-    ChunkHeadingComponent,
-    ChunkSubheadingComponent,
-    ChunkHeadingTextComponent,
-    ChunkSubheadingTextComponent,
-    ChunkTwoColumnComponent,
-    WelcomeComponent,
-    CourseViewerComponent,
-    LessonDetailComponent,
-    CourseViewerHomeComponent,
-    ChunkDirective,
-    ChunkCheckboxListComponent,
   ],
   imports: [
-    CourseViewerRoutingModule,
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     HttpModule,
-    BrowserAnimationsModule,
-    FormsModule,
+    AppRoutingModule,
+    CoreModule,
+    ChunksModule,
     FlexLayoutModule,
-    MatSidenavModule,
-    MatCheckboxModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatCardModule,
-    MatTabsModule,
-    MatListModule,
-    MatProgressBarModule,
-    MatExpansionModule,
-    MatIconModule,
-    MatProgressSpinnerModule,
-    AppRoutingModule
+    MaterialModule
   ],
-  entryComponents: [  // <-- Hay que declarar los componentes que se van a generar dinámicamente https://angular.io/guide/entry-components
-    ChunkHeadingComponent,
-    ChunkSubheadingComponent,
-    ChunkTextComponent,
-    ChunkTwoColumnComponent,
-    ChunkHeadingTextComponent,
-    ChunkSubheadingTextComponent,
-    ChunkCheckboxListComponent
-  ],
-  providers: [ ApiService, CourseDataService, XapiService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

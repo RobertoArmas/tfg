@@ -1,0 +1,44 @@
+.app-container {
+    position: absolute;
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1 !important; 
+}
+
+.course-info-sidenav {
+    z-index: -1 !important;
+}
+
+.settings-sidenav {
+    z-index: -1 !important;
+}
+
+.mat-sidenav {
+    background: #fafafa;
+    width: 280px;
+}
+
+.lesson-content {
+    background: #f5f5f5;
+}
+
+.course-lesson {
+    background: #fff;
+    display: block;
+    font-family: 'Merriweather', serif;
+    word-wrap: break-word;
+}
+
+.app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.app-name {
+    color:white;
+    text-decoration: none;
+}

@@ -1,22 +1,29 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { WelcomeComponent } from './welcome/welcome.component';
+import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
+import { AuthGuard } from './core/auth-guard.service';
 
 /**
  * Rutas de la aplicación a nivel global
  */
 
 const appRoutes: Routes = [
-    { path: 'welcome', component: WelcomeComponent },
+    { path: 'welcome', loadChildren: './welcome/welcome.module#WelcomeModule' },
+    {
+        path: 'course-viewer/section',
+        loadChildren: './course-viewer/course-viewer.module#CourseViewerModule'
+     },
     { path: '', redirectTo: '/welcome', pathMatch: 'full' },
-    { path: '**', component: WelcomeComponent }
+    { path: '**', redirectTo: '/welcome' }
 ];
 
 @NgModule({
     imports: [
         RouterModule.forRoot(
             appRoutes,
-            { enableTracing: false } // <-- debugging purposes only
+            {
+                enableTracing: false, // <-- debugging purposes only
+                preloadingStrategy: PreloadAllModules
+            }
         )
     ],
     exports: [
