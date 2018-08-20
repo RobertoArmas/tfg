@@ -8,7 +8,7 @@
             </div>
           </div>
 
-      <img src="{{attributes.url}}" (load)="removePlaceholder()" alt="{{attributes.caption}}">
+      <img [hidden]="!isLoaded" src="{{attributes.url}}" (load)="removePlaceholder()" alt="{{attributes.caption}}">
       <div class="chunk-image-caption">
           <p>{{attributes.caption}}</p>
           <mat-divider></mat-divider>
