@@ -5,7 +5,7 @@ import { tap, delay } from 'rxjs/operators';
 @Injectable()
 export class AuthService {
 
-  isLoggedIn = false;
+  isLoggedIn = true;
 
   // Almacena la URL para redireccionar donde el usuario quería acceder
   redirectUrl: string;

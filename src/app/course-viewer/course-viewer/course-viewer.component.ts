@@ -38,16 +38,14 @@ export class CourseViewerComponent implements OnInit {
     this.router.events.pipe(
       filter((event: Event) => event instanceof NavigationEnd)
     ).subscribe(() => {
-      const contentContainer = document.querySelector('.mat-sidenav-content');
-      if (contentContainer) {
         setTimeout(() => {
           try {
-            document.querySelector('.mat-sidenav-content').scroll({ top: 70, left: 0, behavior: 'smooth' });
-          } catch (error) {}
-        } , 100);
-      } else {
-        window.scroll({ top: 0, left: 0, behavior: 'smooth' });
-      }
+            window.scroll({ top: 70, left: 0, behavior: 'smooth' });
+            console.log('scrolled');
+          } catch (error) {
+            window.scroll({ top: 70, left: 0, behavior: 'smooth' });
+          }
+        } , 200);
     });
   }
 
