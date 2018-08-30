@@ -1,0 +1,16 @@
+@import "src/variables.scss";
+
+.chunk-text {
+    .text {
+        width: 44%;
+        font-family: $textFont;
+        font-weight: 400;
+        p {
+            color: #313537;
+            font-size: 17px;
+            line-height: 33px;
+            margin: 0;
+            word-spacing: 0.8px;
+        }
+    }
+}

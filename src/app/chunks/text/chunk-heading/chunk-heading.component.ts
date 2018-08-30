@@ -6,7 +6,7 @@ import { Basic } from '../Basic';
 @Component({
   selector: 'app-chunk-heading',
   templateUrl: './chunk-heading.component.html',
-  styleUrls: ['./chunk-heading.component.css']
+  styleUrls: ['./chunk-heading.component.scss']
 })
 export class ChunkHeadingComponent implements OnInit, AfterViewInit {
   @Input() attributes: Basic;
@@ -20,7 +20,6 @@ export class ChunkHeadingComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    if (this.attributes.data === undefined) { this.attributes.data = 'Heading'; }
     if (this.attributes.paddingTop === undefined) { this.attributes.paddingTop = 30; }
     if (this.attributes.paddingBottom === undefined) { this.attributes.paddingBottom = 0; }
     if (this.attributes.backgroundColor === undefined) { this.attributes.backgroundColor = '#ffffff'; }
