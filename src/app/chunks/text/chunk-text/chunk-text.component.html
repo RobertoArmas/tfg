@@ -1,13 +1,9 @@
 
-<div id={{id}}>
-  <div fxLayout="row" fxLayoutAlign="center center"
-    [style.background-color]="attributes.backgroundColor">
-    <div class="chunk-text"
+<div id={{id}} class="chunk-text" fxFlexLayout="row" 
+  [style.background-color]="attributes.backgroundColor">
+    <div class="text" fxFlexOffset="30%"
       [style.padding-top.px]="attributes.paddingTop"
       [style.padding-bottom.px]="attributes.paddingBottom">
-      <p>
-        {{attributes.data}}
-      </p>
+        <p> {{attributes.data}} </p>
     </div>
-  </div>
 </div>

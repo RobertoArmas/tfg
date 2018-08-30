@@ -41,11 +41,10 @@ export class CourseViewerComponent implements OnInit {
         setTimeout(() => {
           try {
             window.scroll({ top: 70, left: 0, behavior: 'smooth' });
-            console.log('scrolled');
           } catch (error) {
             window.scroll({ top: 70, left: 0, behavior: 'smooth' });
           }
-        } , 200);
+        } , 350);
     });
   }
 
