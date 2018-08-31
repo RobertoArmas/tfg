@@ -1,0 +1,9 @@
+@import "src/variables.scss";
+
+p {
+    font-family: $textFont;
+    font-size: 17px;
+    line-height: 33px;
+    margin: 0;
+    word-spacing: 0.8px;
+}
