@@ -1,15 +1,8 @@
 @import "src/variables.scss";
 
-.chunk-heading {
-    .heading {
-        width: 44%;
-        font-family: $titleFont;
-        font-weight: 700;
-        h2 {
-            color: #313537;
-            font-size: 32px;
-            line-height: 40px;
-            margin: 0;
-        }
-    }
+h2 {
+    font-family: $titleFont;
+    font-size: 32px;
+    line-height: 40px;
+    margin: 0;
 }
