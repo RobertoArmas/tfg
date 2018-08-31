@@ -1,26 +1,11 @@
-
-// .chunk-image-centered {
-//     max-width: 57.625rem;
-// }
-
-// .chunk-image-centered img {
-//     width: 100%;
-// }
-
-// .chunk-image-caption {
-//     margin-left: 75px;
-//     max-width: 47.875rem;
-//     padding-top: 13px;
-//     padding-bottom: 13px;
-//     font-family: 'Merriweather', serif !important;
-//     font-size: 0.8rem;
-//     line-height: 1.15rem;
-// }
-
-// .ph-picture {
-//     height: 612px;
-// }
+@import "src/variables.scss";
 
 img {
     width: 100%;
+}
+
+.caption {
+    font-family: $textFont;
+    font-size: 12px;
+    line-height: 18px;
 }

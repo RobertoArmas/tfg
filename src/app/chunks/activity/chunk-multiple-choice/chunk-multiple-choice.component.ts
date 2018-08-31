@@ -31,7 +31,7 @@ class Choice {
 @Component({
   selector: 'app-chunk-multiple-choice',
   templateUrl: './chunk-multiple-choice.component.html',
-  styleUrls: ['./chunk-multiple-choice.component.css']
+  styleUrls: ['./chunk-multiple-choice.component.scss']
 })
 export class ChunkMultipleChoiceComponent implements OnInit, DoCheck {
   @Input() attributes: ChunkMultipleChoice;

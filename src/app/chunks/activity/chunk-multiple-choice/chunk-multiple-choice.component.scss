@@ -1,0 +1,54 @@
+@import "src/variables.scss";
+
+.mat-card {
+    // padding: 65px 60px 40px 60px !important;
+    .choices {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        p {
+            font-family: $textFont;
+            font-size: 15px;
+            line-height: 22.5px;
+        }
+    }
+    p {
+        font-family: $textFont;
+        font-size: 17px;
+        line-height: 34px;
+    }
+    .feedback {
+        background-color: #f8f8f8;
+        .sentiment {
+            font-family: $titleFont;
+            font-size: 12px;
+            font-weight: 700;
+            .mat-icon {
+                height: 60px;
+                width: 60px;
+                font-size: 60px;
+            }
+        }
+        p {
+            margin-top: 20px;
+            font-family: $textFont;
+            font-size: 14px;
+            line-height: 23.8px;
+            text-align: center;
+        }
+    }
+    .retry {
+        margin-top: 50px;
+        .mat-button {
+            font-family: $titleFont;
+            font-size: 10px;
+            letter-spacing: 0.8px;
+            .mat-icon {
+                height: 16px;
+                width: 16px;
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+    

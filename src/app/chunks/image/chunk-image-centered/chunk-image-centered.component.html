@@ -21,11 +21,13 @@
 
 <div id={{id}} [style.background-color]="attributes.backgroundColor"> 
     <div fxLayout="row" fxLayoutAlign="center none" [style.padding-top.px]="attributes.paddingTop" [style.padding-bottom.px]="attributes.paddingBottom">
-        <div fxFlex="90" fxFlex.gt-md="761.667px">
+        <div fxFlex="90" fxFlex.gt-md="920px">
             <img [hidden]="!isLoaded" src="{{attributes.url}}" (load)="removePlaceholder()" alt="{{attributes.caption}}">
-            <div class="chunk-image-caption">
-                <p>{{attributes.caption}}</p>
-                <mat-divider></mat-divider>
+            <div fxLayout="row" fxLayoutAlign="center none">
+                <div class="caption" fxFlex="85" fxFlex.gt-md="761.667px">
+                    <p>{{attributes.caption}}</p>
+                    <mat-divider></mat-divider>
+                </div>
             </div>
         </div>
     </div>
