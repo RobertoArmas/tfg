@@ -1,0 +1,21 @@
+@import "src/variables.scss";
+
+.lesson-counter {
+    font-family: $textFont;
+    font-size: 12px;
+    margin: 14px 0;
+    font-style: italic;
+}
+
+
+h1 {
+    font-family: $titleFont;
+    font-size: 42px;
+    line-height: 42px;
+    margin: 0;
+}
+
+.lesson-underline {
+    margin-top: 50px;
+    width: 160px;
+}

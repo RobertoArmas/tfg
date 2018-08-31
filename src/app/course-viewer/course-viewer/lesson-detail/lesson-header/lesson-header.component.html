@@ -1,20 +1,12 @@
-<div class="page-header">
-  <div fxLayout="row" fxLayoutAlign="center center">
-    <div class="page-header-container">
-      <div class="lesson-header">
-        <div class="lesson-header-counter">
-          <p>
-            Lección {{currentLesson}} de {{totalLessons}}
-          </p>
-        </div>
-        <div class="lesson-header-title">
-          <p>
-            {{title}}
-          </p>
-          <span class="title-underline"></span>
-        </div>
+
+<div>
+  <div fxLayout="row" fxLayoutAlign="center none">
+    <div fxFlex="90" fxFlex.gt-md="761.667px">
+      <p class="lesson-counter"> Lección {{currentLesson}} de {{totalLessons}} </p>
+      <h1> {{title}} </h1>
+      <div class="lesson-underline">
+        <mat-progress-bar mode="determinate" value="100"></mat-progress-bar>
       </div>
     </div>
   </div>
-  <mat-progress-bar mode="determinate" value="70"></mat-progress-bar>
 </div>

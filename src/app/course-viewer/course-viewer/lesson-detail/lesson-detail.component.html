@@ -13,6 +13,8 @@
 <div class="lesson-detail">
   <app-lesson-header [title]="currentLesson?.title"></app-lesson-header>
 
+  <mat-progress-bar mode="determinate" value="70"></mat-progress-bar>
+
   <!-- En este tag se hace un append de todos los componentes generados dinámicamente -->
   <ng-template chunk-host></ng-template>
 </div>
