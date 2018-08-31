@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-chunk-image-centered',
   templateUrl: './chunk-image-centered.component.html',
-  styleUrls: ['./chunk-image-centered.component.css']
+  styleUrls: ['./chunk-image-centered.component.scss']
 })
 export class ChunkImageCenteredComponent implements OnInit, AfterViewInit {
   @Input() attributes: ImageCentered;
