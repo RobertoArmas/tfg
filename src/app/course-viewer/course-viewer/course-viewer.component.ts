@@ -31,13 +31,13 @@ export class CourseViewerComponent implements OnInit {
   }
 
   // Devuelve el modo en el que se abre el sidenav en función del tamaño de pantalla
-  isLargeScreen(): boolean {
+  isLargeScreen(): string {
     // Tipo de widths según dispositivo
     const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     if (width > 1280) {
-      return true;
+      return 'side';
     } else {
-      return false;
+      return 'push';
     }
   }
 
