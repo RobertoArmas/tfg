@@ -10,8 +10,8 @@
     </button>
 </mat-toolbar>
 
-<mat-sidenav-container class="app-container">
-    <mat-sidenav mode="side" fixedInViewport="true" fixedTopGap="56" [(opened)]="startSidenavOpen">
+<mat-sidenav-container class="app-container" hasBackdrop="false">
+    <mat-sidenav [mode]="isLargeScreen()" fixedInViewport="true" fixedTopGap="56" [(opened)]="startSidenavOpen">
         <app-course-nav></app-course-nav>
     </mat-sidenav>
 
