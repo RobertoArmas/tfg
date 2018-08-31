@@ -1,9 +1,9 @@
 
-<div id={{id}} class="chunk-subheading" fxFlexLayout="row" 
-  [style.background-color]="attributes.backgroundColor">
-    <div class="subheading" fxFlexOffset="30%"
-      [style.padding-top.px]="attributes.paddingTop"
-      [style.padding-bottom.px]="attributes.paddingBottom">
-        <h3> {{attributes.data}} </h3>
+<div id={{id}} [style.background-color]="attributes.backgroundColor"> 
+  <div fxLayout="row" fxLayoutAlign="center none" [style.padding-top.px]="attributes.paddingTop" [style.padding-bottom.px]="attributes.paddingBottom">
+    <div fxFlex="90" fxFlex.gt-md="761.667px">
+      <h3> {{attributes.data}} </h3>
     </div>
+  </div>
 </div>
+  

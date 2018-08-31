@@ -1,8 +1,7 @@
 
-<div id={{id}} class="chunk-subheading-text" 
-  [style.padding-top.px]="attributes.paddingTop" 
-  [style.padding-bottom.px]="attributes.paddingBottom"
-  [style.background-color]="attributes.backgroundColor">
-  <app-chunk-subheading [attributes]="getHeadingAttributes()"></app-chunk-subheading>
-  <app-chunk-text [attributes]="getTextAttributes()"></app-chunk-text>
+<div id={{id}} [style.background-color]="attributes.backgroundColor"> 
+  <div fxLayout="column" fxLayoutAlign="center none" [style.padding-top.px]="attributes.paddingTop" [style.padding-bottom.px]="attributes.paddingBottom">
+    <app-chunk-subheading [attributes]="getHeadingAttributes()"></app-chunk-subheading>
+    <app-chunk-text [attributes]="getTextAttributes()"></app-chunk-text>
+  </div>
 </div>
