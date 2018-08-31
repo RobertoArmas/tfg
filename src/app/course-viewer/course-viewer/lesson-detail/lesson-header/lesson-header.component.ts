@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'app-lesson-header',
   templateUrl: './lesson-header.component.html',
-  styleUrls: ['./lesson-header.component.css']
+  styleUrls: ['./lesson-header.component.scss']
 })
 export class LessonHeaderComponent {
 

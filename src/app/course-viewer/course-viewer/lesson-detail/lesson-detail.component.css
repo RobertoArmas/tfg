@@ -25,3 +25,9 @@
 .navigation-previous-lesson {
     height: 70px;
 }
+
+.mat-progress-bar {
+    margin-top: 90px;
+    margin-bottom: 50px;
+    height: 2px;
+}
