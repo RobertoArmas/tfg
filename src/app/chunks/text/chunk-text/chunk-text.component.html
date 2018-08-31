@@ -1,9 +1,8 @@
 
-<div id={{id}} class="chunk-text" fxFlexLayout="row" 
-  [style.background-color]="attributes.backgroundColor">
-    <div class="text" fxFlex="95" fxFlex.gt-xs="94" fxFlex.gt-md="44" fxFlexOffset="2" fxFlexOffset.gt-xs="3" fxFlexOffset.gt-md="30"  
-      [style.padding-top.px]="attributes.paddingTop"
-      [style.padding-bottom.px]="attributes.paddingBottom">
-        <p> {{attributes.data}} </p>
+<div id={{id}} [style.background-color]="attributes.backgroundColor"> 
+  <div class="chunk-text" fxLayout="row" fxLayoutAlign="center none" [style.padding-top.px]="attributes.paddingTop" [style.padding-bottom.px]="attributes.paddingBottom">
+    <div fxFlex="90" fxFlex.gt-md="761.667px">
+      <p> {{attributes.data}} </p>
     </div>
+  </div>
 </div>

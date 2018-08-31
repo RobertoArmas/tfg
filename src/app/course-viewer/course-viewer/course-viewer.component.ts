@@ -5,7 +5,7 @@ import { Router, NavigationEnd } from '@angular/router';
 @Component({
   selector: 'app-course-viewer',
   templateUrl: './course-viewer.component.html',
-  styleUrls: ['./course-viewer.component.css']
+  styleUrls: ['./course-viewer.component.scss']
 })
 export class CourseViewerComponent implements OnInit {
 
@@ -13,7 +13,7 @@ export class CourseViewerComponent implements OnInit {
   endSidenavOpen: boolean;
 
 
-  constructor( private router: Router) {
+  constructor(private router: Router) {
     this.startSidenavOpen = false;
     this.endSidenavOpen = false;
   }
@@ -30,6 +30,17 @@ export class CourseViewerComponent implements OnInit {
     this.endSidenavOpen = !this.endSidenavOpen;
   }
 
+  // Devuelve el modo en el que se abre el sidenav en función del tamaño de pantalla
+  isLargeScreen(): boolean {
+    // Tipo de widths según dispositivo
+    const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    if (width > 1280) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   /**
    * Hace scroll al principio de la lección cuando se cambia de ruta (siguiente, anterior o desde el sidenav)
    * No se muy bien por qué hay que poner un Timeout, pero si se quita no funciona.
@@ -38,13 +49,13 @@ export class CourseViewerComponent implements OnInit {
     this.router.events.pipe(
       filter((event: Event) => event instanceof NavigationEnd)
     ).subscribe(() => {
-        setTimeout(() => {
-          try {
-            window.scroll({ top: 70, left: 0, behavior: 'smooth' });
-          } catch (error) {
-            window.scroll({ top: 70, left: 0, behavior: 'smooth' });
-          }
-        } , 350);
+      setTimeout(() => {
+        try {
+          window.scroll({ top: 70, left: 0, behavior: 'smooth' });
+        } catch (error) {
+          window.scroll({ top: 70, left: 0, behavior: 'smooth' });
+        }
+      }, 350);
     });
   }
 
