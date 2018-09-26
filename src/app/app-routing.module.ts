@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
-import { AuthGuard } from './core/auth-guard.service';
 
 /**
  * Rutas de la aplicación a nivel global
