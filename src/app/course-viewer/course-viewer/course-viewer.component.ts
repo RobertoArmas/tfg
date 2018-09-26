@@ -46,16 +46,14 @@ export class CourseViewerComponent implements OnInit {
    * No se muy bien por qué hay que poner un Timeout, pero si se quita no funciona.
    */
   subscribeToRouteChanges() {
-    this.router.events.pipe(
-      filter((event: Event) => event instanceof NavigationEnd)
-    ).subscribe(() => {
+    this.router.events.subscribe(() => {
       setTimeout(() => {
         try {
           window.scroll({ top: 70, left: 0, behavior: 'smooth' });
         } catch (error) {
           window.scroll({ top: 70, left: 0, behavior: 'smooth' });
         }
-      }, 350);
+      }, 300);
     });
   }
 
