@@ -5,6 +5,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { environment } from '../environments/environment';
 
@@ -33,8 +34,9 @@ import { ChunksModule } from './chunks/chunks.module';
   ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
     AngularFirestoreModule,
+    AngularFireAuthModule,
     BrowserAnimationsModule,
     HttpClientModule,
     HttpModule,
