@@ -1,0 +1,347 @@
+{
+  "__collections__": {
+    "courses": {
+      "c1": {
+        "imageUrl": "    background-image: url(\"https://firebasestorage.googleapis.com/v0/b/e-learning-ua.appspot.com/o/agriculture-countryside-crop-1137338.jpg?alt=media&token=d7ce6f31-3ab2-4dda-9cf0-3bcb5cdb5e6a\");",
+        "URI": "/chunksTour",
+        "title": "Chunks Tour",
+        "description": "Curso de pruebas donde se muestran todos los Chunks implementados para poder crear cursos",
+        "__collections__": {
+          "sections": {
+            "s1": {
+              "title": "Introducción",
+              "__collections__": {
+                "lessons": {
+                  "l1": {
+                    "URI": "/introduccion",
+                    "title": "Introducción",
+                    "description": "Se explica el objetivo del curso",
+                    "__collections__": {
+                      "chunks": {
+                        "c1": {
+                          "type": "text",
+                          "attributes": {
+                            "data": "El objetivo de este curso es explicar detalladamente todos los tipos de Chunk que se han utilizado para el desarrollo del curso final."
+                          },
+                          "__collections__": {}
+                        },
+                        "c2": {
+                          "type": "text",
+                          "attributes": {
+                            "data": "A primera vista la aplicación parece muy sencilla, y ese es el objetivo, que el usuario esté totalmente centrado en el contenido del curso y tenga el menor número de distracciones posible."
+                          },
+                          "__collections__": {}
+                        },
+                        "c3": {
+                          "type": "text",
+                          "attributes": {
+                            "data": "Un diseño simple también previene a los usuarios con déficit de atención de distraerse nada mas empezar el curso."
+                          },
+                          "__collections__": {}
+                        },
+                        "c4": {
+                          "type": "subheadingText",
+                          "attributes": {
+                            "textData": "Para navegar a través de las lecciones es preferible utilizar los botones de navegación al principio y al final de cada lección ya que son los que contarán para el progreso del curso.",
+                            "headingData": "Navegación"
+                          },
+                          "__collections__": {}
+                        },
+                        "c5": {
+                          "attributes": {
+                            "data": "La barra de navegación también se puede utilizar pero es preferible que tan solo sea para repasar el contenido."
+                          },
+                          "type": "text",
+                          "__collections__": {}
+                        },
+                        "c6": {
+                          "attributes": {
+                            "headingData": "Usuarios",
+                            "textData": "Actualmente tan solo están implementados los servicios de login sin usuarios. En la próxima iteración se espera haber podido implementar login mediante cuentas de Google y almacenar el progreso de los usuarios."
+                          },
+                          "type": "subheadingText",
+                          "__collections__": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "s2": {
+              "title": "Tipos de Chunk",
+              "__collections__": {
+                "lessons": {
+                  "l1": {
+                    "URI": "/texto",
+                    "title": "Chunks de tipo texto",
+                    "description": "Se muestran los Chunks básicos de tipo texto",
+                    "__collections__": {
+                      "chunks": {
+                        "c1": {
+                          "type": "heading",
+                          "attributes": {
+                            "data": "Los Chunks de tipo texto son muy simples, esto es un título de primer nivel."
+                          },
+                          "__collections__": {}
+                        },
+                        "c2": {
+                          "type": "text",
+                          "attributes": {
+                            "data": "Este Chunk es de tipo texto, en el se ponen la mayoría de descripciones. Un Chunk de tipo texto podría compararse con un párrafo de una lección."
+                          },
+                          "__collections__": {}
+                        },
+                        "c3": {
+                          "type": "text",
+                          "attributes": {
+                            "data": "También se pueden concatenar estos Chunks para seguir explicando los conceptos deseados."
+                          },
+                          "__collections__": {}
+                        },
+                        "c4": {
+                          "attributes": {
+                            "data": "Este Chunk es un encabezado de segundo nivel"
+                          },
+                          "type": "subheading",
+                          "__collections__": {}
+                        },
+                        "c5": {
+                          "type": "text",
+                          "attributes": {
+                            "data": "El encabezado de segundo nivel sirve para separar sub-secciones dentro de la misma lección."
+                          },
+                          "__collections__": {}
+                        },
+                        "c6": {
+                          "type": "twoColumn",
+                          "attributes": {
+                            "dataCol1": "El Chunk de tipo texto de dos columnas sirve para dividir los datos dentro de una misma fila.",
+                            "dataCol2": "Así se puede mostrar un poco más de dinamismo a la hora de presentar el contenido."
+                          },
+                          "__collections__": {}
+                        },
+                        "c7": {
+                          "type": "headingText",
+                          "attributes": {
+                            "textData": "Este tipo de Chunk tiene por defecto el texto más cerca del encabezado, este texto se puede utilizar como introducción al apartado que se va a explicar debido a su cercanía al encabezado.",
+                            "headingData": "Chunk de tipo Heading-Text"
+                          },
+                          "__collections__": {}
+                        },
+                        "c8": {
+                          "attributes": {
+                            "textData": "Este Chunk tiene la misma funcionalidad que el chunk de tipo Heading-text pero con los sub-apartados.",
+                            "headingData": "Chunk de tipo Subheading-Text"
+                          },
+                          "type": "subheadingText",
+                          "__collections__": {}
+                        }
+                      }
+                    }
+                  },
+                  "l2": {
+                    "URI": "/chunksInteractivos",
+                    "title": "Chunks Interactivos",
+                    "description": "En esta lección se muestran los Chunks de tipo interactivo",
+                    "__collections__": {
+                      "chunks": {
+                        "c1": {
+                          "attributes": {
+                            "data": "Checkbox"
+                          },
+                          "type": "heading",
+                          "__collections__": {}
+                        },
+                        "c2": {
+                          "type": "text",
+                          "attributes": {
+                            "data": "El Chunk Checkbox se puede utilizar para comprobar que el usuario ha entendido los conceptos presentados, hasta que no se marquen todas las 'boxes' no se podrá avanzar de lección."
+                          },
+                          "__collections__": {}
+                        },
+                        "c3": {
+                          "type": "checkboxList",
+                          "attributes": {
+                            "items": [
+                              "Encabezados",
+                              "Subencabezados",
+                              "Texto plano (párrafos)",
+                              "Dos columnas de texto",
+                              "Hasta que no estén todos los campos marcados no se podrá avanzar de lección (por implementar)"
+                            ]
+                          },
+                          "__collections__": {}
+                        }
+                      }
+                    }
+                  },
+                  "l3": {
+                    "URI": "/ejercicios",
+                    "title": "Chunks de tipo ejercicio",
+                    "description": "En esta lección se muestran los Chunks de tipo ejercicio.",
+                    "__collections__": {
+                      "chunks": {
+                        "c1": {
+                          "type": "heading",
+                          "attributes": {
+                            "data": "Ejercicio de selección múltiple"
+                          },
+                          "__collections__": {}
+                        },
+                        "c2": {
+                          "type": "text",
+                          "attributes": {
+                            "data": "En el ejercicio de selección múltiple se puede marcar una única solución, aunque puede haber varias respuestas correctas y se mostrará un feedback genérico para todas las respuestas."
+                          },
+                          "__collections__": {}
+                        },
+                        "c3": {
+                          "type": "multipleChoice",
+                          "attributes": {
+                            "interactionType": "choice",
+                            "feedback": "Hasta ahora solo se han repasado los Chunks de tipo Dos columnas y Encabezado de primer nivel, por lo que cualquiera de las dos opciones es correcta",
+                            "question": "¿Cuál de los siguientes tipos de Chunks hemos visto hasta ahora?",
+                            "choices": [
+                              "Dos columnas",
+                              "Audio",
+                              "Imagen",
+                              "Video",
+                              "Encabezado de primer nivel",
+                              "Arquitectura de una aplicación Angular. Los bloques principales son módulos, componentes, templates, metadatos, data binding, directivas, servicios e inyección de dependencias."
+                            ],
+                            "correctResponsePattern": [
+                              "Dos columnas",
+                              "Encabezado de primer nivel"
+                            ]
+                          },
+                          "__collections__": {}
+                        }
+                      }
+                    }
+                  },
+                  "l4": {
+                    "description": "En esta lección se muestran los Chunks de tipo imagen",
+                    "URI": "/imagenes",
+                    "title": "Chunks de tipo imagen",
+                    "__collections__": {
+                      "chunks": {
+                        "c1": {
+                          "type": "heading",
+                          "attributes": {
+                            "data": "Imagen centrada"
+                          },
+                          "__collections__": {}
+                        },
+                        "c2": {
+                          "type": "imageCentered",
+                          "attributes": {
+                            "caption": "La descripción de la imagen complementa a la misma, por eso se integra dentro del mismo Chunk. Esta imagen por ejemplo es de una bicicleta de montaña.",
+                            "url": "https://firebasestorage.googleapis.com/v0/b/e-learning-ua.appspot.com/o/bicycle.jpg?alt=media&token=9f2e048e-9946-4a47-a3bc-ff8fba8349ba"
+                          },
+                          "__collections__": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "s3": {
+              "title": "Personalización de Chunks",
+              "__collections__": {
+                "lessons": {
+                  "l1": {
+                    "description": "En esta lección se muestran las opciones de personalización de color de fondo",
+                    "URI": "/colores",
+                    "title": "Color de fondo",
+                    "__collections__": {
+                      "chunks": {
+                        "c1": {
+                          "type": "text",
+                          "attributes": {
+                            "data": "El color de fondo puede ayudar a destacar texto que sea más importante, cualquier color es admitido, pero se recomienda el uso de los colores más claros de la paleta de colores de Material Design."
+                          },
+                          "__collections__": {}
+                        },
+                        "c2": {
+                          "type": "twoColumn",
+                          "attributes": {
+                            "dataCol1": "Este Chunk destaca sobre los demás.",
+                            "dataCol2": "El color utilizado tampoco es lo suficientemente intrusivo como para que no pueda ser leído por el usuario.",
+                            "backgroundColor": "#fffde7"
+                          },
+                          "__collections__": {}
+                        }
+                      }
+                    }
+                  },
+                  "l2": {
+                    "URI": "/separacionDeChunks",
+                    "title": "Separación",
+                    "description": "En esta lección se muestran las opciones de separación entre Chunks",
+                    "__collections__": {
+                      "chunks": {
+                        "c1": {
+                          "type": "text",
+                          "attributes": {
+                            "data": "La separación entre Chunks también puede ayudar a la comprensión del alumno, por ejemplo los dos siguientes Chunks tienen una separación mínima, por lo que da a entender que hablan de lo mismo."
+                          },
+                          "__collections__": {}
+                        },
+                        "c2": {
+                          "type": "text",
+                          "attributes": {
+                            "paddingBottom": 10,
+                            "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut tortor lacinia, semper dui quis, lobortis dolor. Cras lacinia erat id ligula egestas, id lobortis metus venenatis. Cras dapibus ipsum porta, varius magna id, feugiat erat. Donec aliquam eu sapien a laoreet. Aenean lacinia finibus nulla, vitae euismod dui viverra dictum. Phasellus a sollicitudin leo, quis iaculis dui. Vivamus tellus nibh, porta eu tincidunt nec, fermentum quis metus. Cras a dictum magna. Nam a ligula et odio ornare porttitor eu in odio. Proin mattis ullamcorper libero vitae pulvinar. Proin at arcu ac mauris porta ultrices non eu lacus. Ut dapibus risus lacus, at pellentesque sapien accumsan eu. Cras lacinia leo leo, a mattis odio fermentum at. "
+                          },
+                          "__collections__": {}
+                        },
+                        "c3": {
+                          "type": "text",
+                          "attributes": {
+                            "data": "Praesent dapibus ex non augue semper, vitae fringilla mi lobortis. Praesent posuere neque id erat varius, sed condimentum neque aliquam. Fusce vestibulum quam vel nisl accumsan volutpat eu id dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pellentesque porta tellus, sit amet finibus eros fermentum ac. In sed finibus ex. Pellentesque eget fermentum lectus. ",
+                            "paddingTop": 10
+                          },
+                          "__collections__": {}
+                        },
+                        "c4": {
+                          "type": "text",
+                          "attributes": {
+                            "data": "Los dos siguientes Chunks tienen una mayor separación por lo que se da a entender que no están tan relacionados como los anteriores."
+                          },
+                          "__collections__": {}
+                        },
+                        "c5": {
+                          "type": "text",
+                          "attributes": {
+                            "paddingBottom": "150",
+                            "data": "Nulla blandit id ipsum eu sagittis. Etiam turpis augue, maximus nec accumsan in, faucibus ac nisi. Sed et condimentum dui. Aenean suscipit fringilla justo, vel finibus enim tempus in. Quisque ultrices facilisis nunc. Aenean tempor eleifend elementum. Sed ut mauris vel diam convallis tempus. Morbi hendrerit lacus id mauris molestie, vitae fermentum tellus lacinia. Sed in mauris arcu. Ut fermentum lobortis erat nec convallis. Proin at velit et neque rhoncus venenatis vel vel diam. Cras ut posuere nisl. Fusce eu ipsum augue. Morbi eget sapien et ligula auctor rutrum in scelerisque tortor. Duis non sapien vitae enim rhoncus egestas. Mauris bibendum consectetur condimentum. "
+                          },
+                          "__collections__": {}
+                        },
+                        "c6": {
+                          "type": "checkboxList",
+                          "attributes": {
+                            "items": [
+                              "Los Chunks se pueden separar.",
+                              "Los Chunks se pueden juntar.",
+                              "Se pueden combinar las dos opciones de personalización (separación y color de fondo)"
+                            ],
+                            "backgroundColor": "#e8f5e9",
+                            "paddingTop": "200"
+                          },
+                          "__collections__": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
