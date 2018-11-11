@@ -1,45 +1,35 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { tap, delay } from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
-import { auth } from 'firebase/app';
-import { Router } from '@angular/router';
+import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class AuthService {
 
-  private user: Observable<firebase.User>;
-  private userDetails: firebase.User = null;
   redirectUrl: string;
 
-  constructor(private firebaseAuth: AngularFireAuth, private router: Router) {
-    this.user = this.firebaseAuth.authState;
+  constructor(private fbsAuth: AngularFireAuth) { }
 
-    this.user.subscribe(
-      user => {
-        if (user) {
-          this.userDetails = user;
-          console.log(this.userDetails);
-        }
-        else {
-          this.userDetails = null;
-        }
-      }
+  get uid(): Observable<string> {
+    return this.fbsAuth.user.pipe(
+      map(user => {return user.uid})
     );
   }
 
   signInWithGoogle() {
-    return this.firebaseAuth.auth.signInWithPopup(
+    return this.fbsAuth.auth.signInWithPopup(
       new firebase.auth.GoogleAuthProvider()
     )
   }
 
+  // FIXME: No funciona
   isLoggedIn(): boolean {
-    return this.userDetails === null ? false : true;
+    return true;
+    // return this.userDetails === null ? false : true;
   }
 
   logout() {
-    this.firebaseAuth.auth.signOut();
+    this.fbsAuth.auth.signOut();
   }
 }
