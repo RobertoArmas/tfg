@@ -168,6 +168,7 @@ export class LessonDetailComponent implements OnInit {
 
   /**
    * TODO: refactorizar este switch a otra estructura porque se va a hacer mega-mastodóntica
+   * por ejemplo un servicio ChunkService que se encargue de devolver el tipo de Chunk a cargar
    */
   createComponentFromJSON(chunkItem): Chunk {
     let component: any;

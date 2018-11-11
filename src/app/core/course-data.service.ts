@@ -18,25 +18,25 @@ import { ChunkData } from '../chunks/chunk.model';
 export class CourseDataService {
   private courseId = 'c1';
 
-  constructor(private firebaseApiService: FirebaseApiService) { }
+  constructor(private fbsApiService: FirebaseApiService) { }
 
   getCourseInformation(): Observable<CourseData> {
-    return this.firebaseApiService.getCourseInformation(this.courseId);
+    return this.fbsApiService.getCourseInformation(this.courseId);
   }
 
   getCourseSections(): Observable<SectionData[]> {
-    return this.firebaseApiService.getCourseSections(this.courseId);
+    return this.fbsApiService.getCourseSections(this.courseId);
   }
 
   getSectionLessons(sectionId: string): Observable<LessonData[]> {
-    return this.firebaseApiService.getSectionLessons(this.courseId, sectionId);
+    return this.fbsApiService.getSectionLessons(this.courseId, sectionId);
   }
 
   getLessonInformation(sectionId: string, lessonId: string): Observable<LessonData> {
-    return this.firebaseApiService.getLessonInformation(this.courseId, sectionId, lessonId);
+    return this.fbsApiService.getLessonInformation(this.courseId, sectionId, lessonId);
   }
 
   getLessonChunks(sectionId: string, lessonId: string): Observable<ChunkData[]> {
-    return this.firebaseApiService.getLessonChunks(this.courseId, sectionId, lessonId);
+    return this.fbsApiService.getLessonChunks(this.courseId, sectionId, lessonId);
   }
 }

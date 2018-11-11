@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { filter } from 'rxjs/operators';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router } from '@angular/router';
+import { ProgressService } from 'src/app/core/progress.service';
 
 @Component({
   selector: 'app-course-viewer',
@@ -13,13 +13,17 @@ export class CourseViewerComponent implements OnInit {
   endSidenavOpen: boolean;
 
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private progressStore: ProgressService
+    ) {
     this.startSidenavOpen = false;
     this.endSidenavOpen = false;
   }
 
   ngOnInit() {
     this.subscribeToRouteChanges();
+    this.redirectToCurrentUserLesson();
   }
 
   toggleStartSidenav() {
@@ -55,6 +59,14 @@ export class CourseViewerComponent implements OnInit {
         }
       }, 300);
     });
+  }
+ 
+  redirectToCurrentUserLesson() {
+    this.progressStore.progress.subscribe(
+      progress => {
+        this.router.navigate(['/course-viewer/section/' + progress.currentLesson.sectionId + '/lesson/' + progress.currentLesson.lessonId]);
+      }
+    );
   }
 
 }

@@ -60,9 +60,6 @@ export class CourseNavComponent implements OnInit {
     .subscribe(
       (lessons) => {
         section.lessons = lessons;
-        if (!this.redirectedToFirstLesson) {
-          this.redirectToFirstLesson(section.id, lessons[0].id);
-        }
       }
     );
   }
@@ -71,10 +68,4 @@ export class CourseNavComponent implements OnInit {
     this.router.navigate(['/course-viewer/section/' + sectionId + '/lesson/' + lesson.id]);
     this.xapi.navigatedTo(lesson);
   }
-
-  redirectToFirstLesson(sectionId: string, lessonId: string) {
-    this.router.navigate(['/course-viewer/section/' + sectionId + '/lesson/' + lessonId]);
-    this.redirectedToFirstLesson = true;
-  }
-
 }
