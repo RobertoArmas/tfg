@@ -3,7 +3,7 @@ import { FirebaseApiService } from './firebase-api.service';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 import { CourseProgress } from './progress.model';
-import { map, switchMap } from 'rxjs/operators';
+import { switchMap } from 'rxjs/operators';
 
 @Injectable()
 export class ProgressService {
