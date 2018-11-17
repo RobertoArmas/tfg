@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
-import { map } from 'rxjs/operators';
+import { map, take } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { User } from 'firebase/app';
 import { Router } from '@angular/router';
@@ -25,8 +25,16 @@ export class AuthService {
 
   get uid(): Observable<string> {
     return this.fbsAuth.user.pipe(
+      take(1),
       map(user => {return user.uid})
     );
+  }
+
+  get name(): Observable<string> {
+    return this.fbsAuth.user.pipe(
+      take(1),
+      map(user => {return user.displayName})
+    )
   }
 
   checkLogin(): Observable<boolean> {

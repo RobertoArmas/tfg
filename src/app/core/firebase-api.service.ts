@@ -7,7 +7,7 @@ import { CourseData } from '../course-viewer/course.model';
 import { SectionData } from '../course-viewer/section.model';
 import { LessonData, Lesson } from '../course-viewer/lesson.model';
 import { ChunkData } from '../chunks/chunk.model';
-import { CourseProgress } from './progress.model';
+import { CourseProgress, UserProgress } from './progress.model';
 
 @Injectable()
 export class FirebaseApiService {
@@ -83,5 +83,18 @@ export class FirebaseApiService {
               progress => progress[0]
             )
           );
+  }
+
+  createUserProgress(user: UserProgress) {
+
+    // Primero se identifica la id del documento que se va a crear junto con la sub-collection 'courses'
+    let newUserProgressRef =  this.afs.firestore.collection('users').doc(user.uid);
+
+    // Crea un documento con una sub-collection que tiene el curso y el progreso correspondiente
+    newUserProgressRef.set({uid: user.uid, name: user.name}).then(
+      () => {
+        newUserProgressRef.collection('courses').doc(user.progress.courseId).set(user.progress)
+      }
+    );
   }
 }

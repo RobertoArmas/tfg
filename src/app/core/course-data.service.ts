@@ -16,7 +16,13 @@ import { ChunkData } from '../chunks/chunk.model';
 
 @Injectable()
 export class CourseDataService {
-  private courseId = 'c1';
+  private _courseId = 'c1';
+  public get courseId() {
+    return this._courseId;
+  }
+  public set courseId(value) {
+    this._courseId = value;
+  }
 
   constructor(private fbsApiService: FirebaseApiService) { }
 
