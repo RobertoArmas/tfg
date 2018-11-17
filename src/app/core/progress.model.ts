@@ -9,7 +9,7 @@ export interface CourseProgress {
     currentLesson: currentLessonProgress
 }
 
-interface currentLessonProgress {
+export interface currentLessonProgress {
     isFinished: boolean;
     lessonId: string;
     sectionId: string;

@@ -3,8 +3,9 @@ import { FirebaseApiService } from './firebase-api.service';
 import { Observable, forkJoin } from 'rxjs';
 import { AuthService } from './auth.service';
 import { CourseProgress, UserProgress } from './progress.model';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, take, flatMap, concat, timeout } from 'rxjs/operators';
 import { CourseDataService } from './course-data.service';
+import { LessonData } from '../course-viewer/lesson.model';
 
 @Injectable()
 export class ProgressService {
@@ -18,7 +19,8 @@ export class ProgressService {
     return this.authService.uid.pipe(
       switchMap(uid => {
         return this.fbsApi.getUserProgress(uid);
-      })
+      }),
+      take(1)
     );
   }
 
@@ -48,5 +50,16 @@ export class ProgressService {
         sectionId: 's1'
       }
     }
+  }
+
+  public updateProgress(currentLessonId: string, currentSectionId: string, nextLesson: LessonData) {
+
+    forkJoin([this.authService.uid, this.progress]).subscribe(
+      ([uid, progress]) => {
+        if(progress.currentLesson.lessonId === currentLessonId && progress.currentLesson.sectionId === currentSectionId) {
+          this.fbsApi.updateUserCurrentLesson(uid, nextLesson.id, nextLesson.sectionId);
+        }
+      }
+    );
   }
 }
