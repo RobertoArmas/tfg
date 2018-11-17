@@ -7,7 +7,7 @@ import { CourseData } from '../course-viewer/course.model';
 import { SectionData } from '../course-viewer/section.model';
 import { LessonData, Lesson } from '../course-viewer/lesson.model';
 import { ChunkData } from '../chunks/chunk.model';
-import { CourseProgress, UserProgress } from './progress.model';
+import { CourseProgress, UserProgress, currentLessonProgress } from './progress.model';
 
 @Injectable()
 export class FirebaseApiService {
@@ -95,6 +95,18 @@ export class FirebaseApiService {
       () => {
         newUserProgressRef.collection('courses').doc(user.progress.courseId).set(user.progress)
       }
+    );
+  }
+
+  updateUserCurrentLesson(uid: string, id: string, sectionId: string) {
+    let newCurrentLesson: currentLessonProgress = {
+      isFinished: false,
+      lessonId: id,
+      sectionId: sectionId
+    }
+
+    this.afs.collection('users').doc(uid).collection('courses').doc(this.currentCourse).update(
+      { "currentLesson": newCurrentLesson }
     );
   }
 }

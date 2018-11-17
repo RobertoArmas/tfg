@@ -15,6 +15,7 @@ import { ChunkCheckboxListComponent } from '../../../chunks/interactive/chunk-ch
 import { ChunkImageCenteredComponent } from '../../../chunks/image/chunk-image-centered/chunk-image-centered.component';
 import { ChunkMultipleChoiceComponent } from '../../../chunks/activity/chunk-multiple-choice/chunk-multiple-choice.component';
 import { Section } from '../../section.model';
+import { ProgressService } from 'src/app/core/progress.service';
 
 @Component({
   selector: 'app-lesson-detail',
@@ -41,7 +42,8 @@ export class LessonDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private componentFactoryResolver: ComponentFactoryResolver,
     private xapi: XapiService,
-    private router: Router
+    private router: Router,
+    private progressStore: ProgressService
   ) {
     this.nextLesson = new Lesson();
     this.previousLesson = new Lesson();
@@ -147,6 +149,7 @@ export class LessonDetailComponent implements OnInit {
   }
 
   progressLesson() {
+    this.progressStore.updateProgress(this.lessonId, this.sectionId, this.nextLesson);
     this.router.navigate(['/course-viewer/section/' + this.nextLesson.sectionId + '/lesson/' + this.nextLesson.id]);
     this.xapi.progressed(this.nextLesson);
   }
