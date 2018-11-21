@@ -164,7 +164,9 @@ export class LessonDetailComponent implements OnInit {
     const viewContainerRef = this.chunkHost.viewContainerRef;
     const componentRef = viewContainerRef.createComponent(componentFactory);
     (<Chunk>componentRef.instance).attributes = chunkComponent.attributes;
-    (<Chunk>componentRef.instance).id = chunkComponent.id;
+
+    // Se crea una ID completa del Chunk para poder gestionar las respuestas en Firebase
+    (<Chunk>componentRef.instance).id = this.sectionId + this.lessonId + chunkComponent.id;
     (<Chunk>componentRef.instance).parentLesson = this.currentLesson;
   }
 

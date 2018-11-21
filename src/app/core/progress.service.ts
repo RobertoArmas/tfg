@@ -3,9 +3,10 @@ import { FirebaseApiService } from './firebase-api.service';
 import { Observable, forkJoin } from 'rxjs';
 import { AuthService } from './auth.service';
 import { CourseProgress, UserProgress } from './progress.model';
-import { switchMap, take, flatMap, concat, timeout } from 'rxjs/operators';
+import { switchMap, take } from 'rxjs/operators';
 import { CourseDataService } from './course-data.service';
 import { LessonData } from '../course-viewer/lesson.model';
+import { InteractiveChunkAnswer } from '../chunks/interactive-chunk-answer.model';
 
 @Injectable()
 export class ProgressService {
@@ -25,7 +26,7 @@ export class ProgressService {
   }
 
   public createUserProgress() {
-    let initialProgress: CourseProgress = this.createInitialCourseProgress();
+    let initialProgress: CourseProgress = this.createDefaultCourseProgress();
 
     forkJoin(this.authService.uid, this.authService.name).subscribe(
       ([uid, name]) => {
@@ -41,7 +42,7 @@ export class ProgressService {
     );
   }
 
-  private createInitialCourseProgress(): CourseProgress {
+  private createDefaultCourseProgress(): CourseProgress {
     return {
       courseId: this.courseDataStore.courseId,
       currentLesson: {
@@ -61,5 +62,19 @@ export class ProgressService {
         }
       }
     );
+  }
+
+  /**
+   * Comprueba si un Chunk interactivo ha sido creado y/o respondido, si es así devuelve las respuestas, si no 
+   * crea un objeto vacío
+   * 
+   * Todas las respuestas de un curso se almacenan en una misma colección para que su acceso sea instantaneo
+   */
+  public checkAnswered(chunkId: string): Observable<InteractiveChunkAnswer> {
+    return this.fbsApi.checkAnswered(this.authService.userId, chunkId);
+  }
+
+  public setAnswer(chunkId: string, choice: any) {
+    this.fbsApi.setAnswer(this.authService.userId, chunkId, choice);
   }
 }

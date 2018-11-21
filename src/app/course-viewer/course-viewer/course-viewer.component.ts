@@ -67,7 +67,8 @@ export class CourseViewerComponent implements OnInit {
         if(!progress) {
           this.progressStore.createUserProgress();
         } else {
-          this.router.navigate(['/course-viewer/section/' + progress.currentLesson.sectionId + '/lesson/' + progress.currentLesson.lessonId]);
+          this.router.navigate(['/course-viewer/section/' + progress.currentLesson.sectionId + 
+          '/lesson/' + progress.currentLesson.lessonId]);
         }
       }
     );
