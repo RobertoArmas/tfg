@@ -8,6 +8,7 @@ import { SectionData } from '../course-viewer/section.model';
 import { LessonData, Lesson } from '../course-viewer/lesson.model';
 import { ChunkData } from '../chunks/chunk.model';
 import { CourseProgress, UserProgress, currentLessonProgress } from './progress.model';
+import { InteractiveChunkAnswer } from '../chunks/interactive-chunk-answer.model';
 
 @Injectable()
 export class FirebaseApiService {
@@ -108,5 +109,21 @@ export class FirebaseApiService {
     this.afs.collection('users').doc(uid).collection('courses').doc(this.currentCourse).update(
       { "currentLesson": newCurrentLesson }
     );
+  }
+
+  checkAnswered(uid: string, chunkId: string): Observable<InteractiveChunkAnswer> {
+    return this.afs.collection('users').doc(uid)
+      .collection('courses').doc(this.currentCourse)
+      .collection('answeredChunks').doc<InteractiveChunkAnswer>(chunkId)
+      .valueChanges();
+  }
+
+  setAnswer(uid: string, chunkId: string, choice: string) {
+    this.afs.collection('users').doc(uid)
+      .collection('courses').doc(this.currentCourse)
+      .collection('answeredChunks').doc(chunkId)
+      .set({
+        answer: choice
+      });
   }
 }

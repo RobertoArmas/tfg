@@ -10,17 +10,28 @@ import { Router } from '@angular/router';
 export class AuthService {
 
   redirectUrl: string;
+  private _userId: string; // Usar la userid resuelta para evitar ForkJoins
 
   constructor(private fbsAuth: AngularFireAuth, private router: Router) {
+    this.uid.subscribe(
+      uid => {
+        this._userId = uid;
+      }
+    )
 
     // Cuando el usuario logea correctamente redirecciona a la url que quería activar
     this.fbsAuth.auth.onAuthStateChanged(
       user => {
         if(user) {
           this.router.navigate([this.redirectUrl]);
+          this._userId = user.uid;
         }
       }
     );
+  }
+
+  get userId() {
+    return this._userId;
   }
 
   get uid(): Observable<string> {
