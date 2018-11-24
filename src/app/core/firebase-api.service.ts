@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, from, zip, combineLatest, forkJoin } from 'rxjs';
+import { map, flatMap, switchMap, mergeMap, tap, toArray, combineAll, merge, concat, pairwise, concatAll, mergeAll, concatMap } from 'rxjs/operators';
 
 import { CourseData } from '../course-viewer/course.model';
 import { SectionData } from '../course-viewer/section.model';
@@ -125,5 +125,33 @@ export class FirebaseApiService {
       .set({
         answer: choice
       });
+  }
+
+  getLessonsArray(): Observable<any> {
+    let sections = this.getCourseSections(this.currentCourse);
+
+    // return sections.pipe(
+    //   switchMap(sections => from(sections)),
+    //   mergeMap(section => this.getSectionLessons(this.currentCourse, section.id)
+    //     .pipe(
+    //       map(lessons => (
+    //         {section, lessons}
+    //         ))
+    //     )),
+    //   tap(data => data.section.lessons = data.lessons),
+    //   map(data => data.section)
+    // )
+
+    return sections.pipe(
+      switchMap(sections => from(sections)),
+      flatMap(section => this.getSectionLessons(this.currentCourse, section.id)
+        .pipe(
+          switchMap(lessons => from(lessons)),
+          map(lesson => (section.id + lesson.id)
+        )
+      )
+    )
+
+    // return zip(lessonCompleteIds)
   }
 }
