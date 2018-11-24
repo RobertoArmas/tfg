@@ -8,6 +8,7 @@ import { Section, SectionData } from '../course-viewer/section.model';
 import { LessonData } from '../course-viewer/lesson.model';
 import { FirebaseApiService } from './firebase-api.service';
 import { ChunkData } from '../chunks/chunk.model';
+import { combineAll } from 'rxjs/operators';
 
 /**
  * Servicio intermediario entre el API REST y la aplicación
@@ -44,5 +45,9 @@ export class CourseDataService {
 
   getLessonChunks(sectionId: string, lessonId: string): Observable<ChunkData[]> {
     return this.fbsApiService.getLessonChunks(this.courseId, sectionId, lessonId);
+  }
+  
+  getLessonsArray(): any {
+    return this.fbsApiService.getLessonsArray();
   }
 }
