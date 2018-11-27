@@ -6,7 +6,9 @@ export interface UserProgress {
 }
 export interface CourseProgress {
     courseId: string;
-    currentLesson: currentLessonProgress
+    currentLesson: currentLessonProgress;
+
+    unlockedLessons: string[];
 }
 
 export interface currentLessonProgress {
