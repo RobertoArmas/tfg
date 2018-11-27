@@ -43,8 +43,11 @@ export class ProgressService {
   }
 
   private createDefaultCourseProgress(): CourseProgress {
+    let defaultFirstLessonId = 's1l1';
+
     return {
       courseId: this.courseDataStore.courseId,
+      unlockedLessons: [defaultFirstLessonId],
       currentLesson: {
         isFinished: false,
         lessonId: 'l1',
@@ -54,11 +57,16 @@ export class ProgressService {
   }
 
   public updateProgress(currentLessonId: string, currentSectionId: string, nextLesson: LessonData) {
+    let completeLessonId = currentSectionId + currentLessonId;
 
     forkJoin([this.authService.uid, this.progress]).subscribe(
       ([uid, progress]) => {
         if(progress.currentLesson.lessonId === currentLessonId && progress.currentLesson.sectionId === currentSectionId) {
           this.fbsApi.updateUserCurrentLesson(uid, nextLesson.id, nextLesson.sectionId);
+
+          // Se desbloquea la lección desde la que se le da al botón siguiente para poder seguir accediendo a ella
+          // en el futuro
+          this.fbsApi.unlockLesson(uid, completeLessonId);
         }
       }
     );

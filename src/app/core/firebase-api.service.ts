@@ -10,6 +10,9 @@ import { ChunkData } from '../chunks/chunk.model';
 import { CourseProgress, UserProgress, currentLessonProgress } from './progress.model';
 import { InteractiveChunkAnswer } from '../chunks/interactive-chunk-answer.model';
 
+
+import * as firebase from 'firebase/app';
+
 @Injectable()
 export class FirebaseApiService {
   currentCourse: string;
@@ -130,6 +133,9 @@ export class FirebaseApiService {
   getLessonsArray(): Observable<any> {
     let sections = this.getCourseSections(this.currentCourse);
 
+    /**
+     * No borrar este código porque obtiene los objetos sección con los objetos lección dentro
+     */
     // return sections.pipe(
     //   switchMap(sections => from(sections)),
     //   mergeMap(section => this.getSectionLessons(this.currentCourse, section.id)
@@ -148,10 +154,14 @@ export class FirebaseApiService {
         .pipe(
           switchMap(lessons => from(lessons)),
           map(lesson => (section.id + lesson.id)
-        )
-      )
-    )
+        ))))
+  }
 
-    // return zip(lessonCompleteIds)
+  unlockLesson(uid: string, completeLessonId: string) {
+    this.afs.collection('users').doc(uid)
+      .collection('courses').doc(this.currentCourse)
+      .update({
+        unlockedLessons: firebase.firestore.FieldValue.arrayUnion(completeLessonId)
+      })
   }
 }
