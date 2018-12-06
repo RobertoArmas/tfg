@@ -6,6 +6,7 @@ import { CourseDataService } from '../../../core/course-data.service';
 import { LessonData } from '../../lesson.model';
 import { Router } from '@angular/router';
 import { XapiService } from '../../../core/xapi/xapi.service';
+import { MatAccordion } from '@angular/material';
 
 @Component({
   selector: 'app-course-nav',
@@ -65,7 +66,6 @@ export class CourseNavComponent implements OnInit {
   }
 
   navigateToLesson(lesson: LessonData, sectionId: string) {
-    this.router.navigate(['/course-viewer/section/' + sectionId + '/lesson/' + lesson.id]);
     this.xapi.navigatedTo(lesson);
   }
 }
