@@ -21,14 +21,19 @@
 <!-- Secciones y lecciones -->
 <div class="course-nav-container">
   <mat-accordion multi="true">
-    <mat-expansion-panel *ngFor="let section of sections">
+    <mat-expansion-panel *ngFor="let section of sections" [expanded]="true">
       <mat-expansion-panel-header>
         <div class="section-title">
           {{section.title}}
         </div>
       </mat-expansion-panel-header>
       <mat-list>
-        <mat-list-item (click)="navigateToLesson(lesson, section.id)" class="lessons-list-item" *ngFor="let lesson of section.lessons">
+        <mat-list-item
+        [routerLink]="['/course-viewer/section', section.id, 'lesson', lesson.id]"
+        routerLinkActive="active-lesson"
+        (click)="navigateToLesson(lesson, section.id)" 
+        class="lessons-list-item" 
+        *ngFor="let lesson of section.lessons">
           <mat-icon mat-list-icon>notes</mat-icon>
           <p mat-line> {{lesson.title}} </p>
           <mat-progress-spinner [diameter]="21" [value]="70"></mat-progress-spinner>
