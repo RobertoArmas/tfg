@@ -3,7 +3,7 @@ import { FirebaseApiService } from './firebase-api.service';
 import { Observable, forkJoin } from 'rxjs';
 import { AuthService } from './auth.service';
 import { CourseProgress, UserProgress } from './progress.model';
-import { switchMap, take } from 'rxjs/operators';
+import { switchMap, take, filter, map } from 'rxjs/operators';
 import { CourseDataService } from './course-data.service';
 import { LessonData } from '../course-viewer/lesson.model';
 import { InteractiveChunkAnswer } from '../chunks/interactive-chunk-answer.model';
@@ -84,5 +84,16 @@ export class ProgressService {
 
   public setAnswer(chunkId: string, choice: any) {
     this.fbsApi.setAnswer(this.authService.userId, chunkId, choice);
+  }
+
+  public checkUnlockedLesson(completeLessonId: string): Observable<boolean> {
+    return this.fbsApi.getUnlockedLessons(this.authService.userId)
+    .pipe(
+      map(
+        unlockedLessons => {
+          return unlockedLessons.indexOf(completeLessonId) != -1 ? true : false;
+        }
+      )
+    );
   }
 }

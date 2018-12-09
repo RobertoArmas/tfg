@@ -17,7 +17,7 @@ export class CourseViewerComponent implements OnInit {
     private router: Router,
     private progressStore: ProgressService
     ) {
-    this.startSidenavOpen = false;
+    this.startSidenavOpen = true;
     this.endSidenavOpen = false;
   }
 
