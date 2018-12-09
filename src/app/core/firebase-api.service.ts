@@ -164,4 +164,15 @@ export class FirebaseApiService {
         unlockedLessons: firebase.firestore.FieldValue.arrayUnion(completeLessonId)
       })
   }
+
+  getUnlockedLessons(uid: string): Observable<string[]> {
+    return this.afs.collection('users').doc(uid)
+      .collection('courses').doc<CourseProgress>(this.currentCourse)
+      .valueChanges()
+      .pipe(
+        map(course => {
+          return course.unlockedLessons;
+        })
+      );
+  }
 }

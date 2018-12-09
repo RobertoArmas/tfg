@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CourseViewerComponent } from './course-viewer/course-viewer.component';
 import { LessonDetailComponent } from './course-viewer/lesson-detail/lesson-detail.component';
 import { AuthGuard } from '../core/auth-guard.service';
+import { LessonsGuard } from './lessons.guard';
 
 const routes: Routes = [
   {
@@ -16,7 +17,8 @@ const routes: Routes = [
         children: [
           {
             path: ':sectionId/lesson/:lessonId',
-            component: LessonDetailComponent
+            component: LessonDetailComponent,
+            canActivate: [LessonsGuard]
           }
         ]
       }

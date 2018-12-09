@@ -32,7 +32,8 @@
         [routerLink]="['/course-viewer/section', section.id, 'lesson', lesson.id]"
         routerLinkActive="active-lesson"
         (click)="navigateToLesson(lesson, section.id)" 
-        class="lessons-list-item" 
+        class="lessons-list-item"
+        [ngClass] = "{'disabled': false}" 
         *ngFor="let lesson of section.lessons">
           <mat-icon mat-list-icon>notes</mat-icon>
           <p mat-line> {{lesson.title}} </p>

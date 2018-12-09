@@ -68,4 +68,6 @@ export class CourseNavComponent implements OnInit {
   navigateToLesson(lesson: LessonData, sectionId: string) {
     this.xapi.navigatedTo(lesson);
   }
+
+  
 }
