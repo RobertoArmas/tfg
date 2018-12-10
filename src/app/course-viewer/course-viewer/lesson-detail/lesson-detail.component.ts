@@ -150,6 +150,8 @@ export class LessonDetailComponent implements OnInit {
 
   progressLesson() {
     this.progressStore.updateProgress(this.lessonId, this.sectionId, this.nextLesson);
+
+    // Si se quita esta linea no se navega a través del botón cuando ya se ha desbloqueado la lección
     this.router.navigate(['/course-viewer/section/' + this.nextLesson.sectionId + '/lesson/' + this.nextLesson.id]);
     this.xapi.progressed(this.nextLesson);
   }

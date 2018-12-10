@@ -33,11 +33,11 @@
         routerLinkActive="active-lesson"
         (click)="navigateToLesson(lesson, section.id)" 
         class="lessons-list-item"
-        [ngClass] = "{'disabled': false}" 
+        [ngClass] = "{'disabled': unlockedLessons$.indexOf(section.id + lesson.id) === -1}" 
         *ngFor="let lesson of section.lessons">
           <mat-icon mat-list-icon>notes</mat-icon>
           <p mat-line> {{lesson.title}} </p>
-          <mat-progress-spinner [diameter]="21" [value]="70"></mat-progress-spinner>
+          <mat-progress-spinner [diameter]="21" [value]="70" *ngIf="unlockedLessons$.indexOf(section.id + lesson.id) !== -1"></mat-progress-spinner>
         </mat-list-item>
       </mat-list>
     </mat-expansion-panel>

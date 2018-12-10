@@ -12,12 +12,13 @@ import { InteractiveChunkAnswer } from '../chunks/interactive-chunk-answer.model
 
 
 import * as firebase from 'firebase/app';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class FirebaseApiService {
   currentCourse: string;
 
-  constructor(private afs: AngularFirestore) { }
+  constructor(private afs: AngularFirestore, private router: Router) { }
 
   getCourseInformation(id: string): Observable<CourseData> {
     this.currentCourse = id;
@@ -157,12 +158,16 @@ export class FirebaseApiService {
         ))))
   }
 
-  unlockLesson(uid: string, completeLessonId: string) {
+  unlockLesson(uid: string, sectionId: string, lessonId: string) {
+    let completeLessonId = sectionId + lessonId;
+
     this.afs.collection('users').doc(uid)
       .collection('courses').doc(this.currentCourse)
       .update({
         unlockedLessons: firebase.firestore.FieldValue.arrayUnion(completeLessonId)
-      })
+      });
+
+    this.router.navigate(['/course-viewer/section/' + sectionId + '/lesson/' + lessonId]);
   }
 
   getUnlockedLessons(uid: string): Observable<string[]> {
