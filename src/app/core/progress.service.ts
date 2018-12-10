@@ -57,16 +57,15 @@ export class ProgressService {
   }
 
   public updateProgress(currentLessonId: string, currentSectionId: string, nextLesson: LessonData) {
-    let completeLessonId = currentSectionId + currentLessonId;
 
     forkJoin([this.authService.uid, this.progress]).subscribe(
       ([uid, progress]) => {
         if(progress.currentLesson.lessonId === currentLessonId && progress.currentLesson.sectionId === currentSectionId) {
-          this.fbsApi.updateUserCurrentLesson(uid, nextLesson.id, nextLesson.sectionId);
-
           // Se desbloquea la lección desde la que se le da al botón siguiente para poder seguir accediendo a ella
           // en el futuro
-          this.fbsApi.unlockLesson(uid, completeLessonId);
+          this.fbsApi.unlockLesson(uid, nextLesson.sectionId, nextLesson.id);
+
+          this.fbsApi.updateUserCurrentLesson(uid, nextLesson.id, nextLesson.sectionId);
         }
       }
     );
@@ -95,5 +94,9 @@ export class ProgressService {
         }
       )
     );
+  }
+
+  public getUnlockedLessons(): Observable<string[]> {
+    return this.fbsApi.getUnlockedLessons(this.authService.userId);
   }
 }
