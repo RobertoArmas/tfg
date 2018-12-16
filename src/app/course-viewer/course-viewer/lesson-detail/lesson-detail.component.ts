@@ -5,17 +5,9 @@ import { CourseDataService } from '../../../core/course-data.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Chunk } from '../../../chunks/chunk.model';
 import { XapiService } from '../../../core/xapi/xapi.service';
-import { ChunkHeadingComponent } from '../../../chunks/text/chunk-heading/chunk-heading.component';
-import { ChunkSubheadingComponent } from '../../../chunks/text/chunk-subheading/chunk-subheading.component';
-import { ChunkTextComponent } from '../../../chunks/text/chunk-text/chunk-text.component';
-import { ChunkTwoColumnComponent } from '../../../chunks/text/chunk-two-column/chunk-two-column.component';
-import { ChunkHeadingTextComponent } from '../../../chunks/text/chunk-heading-text/chunk-heading-text.component';
-import { ChunkSubheadingTextComponent } from '../../../chunks/text/chunk-subheading-text/chunk-subheading-text.component';
-import { ChunkCheckboxListComponent } from '../../../chunks/interactive/chunk-checkbox-list/chunk-checkbox-list.component';
-import { ChunkImageCenteredComponent } from '../../../chunks/image/chunk-image-centered/chunk-image-centered.component';
-import { ChunkMultipleChoiceComponent } from '../../../chunks/activity/chunk-multiple-choice/chunk-multiple-choice.component';
 import { Section } from '../../section.model';
 import { ProgressService } from 'src/app/core/progress.service';
+import { ChunkService } from 'src/app/chunks/chunk.service';
 
 @Component({
   selector: 'app-lesson-detail',
@@ -26,16 +18,15 @@ export class LessonDetailComponent implements OnInit {
 
   @ViewChild(ChunkDirective) chunkHost: ChunkDirective;
   currentLesson: Lesson;
-
-  // Id de la lección extraída de la ruta del navegador
   lessonId: string;
   sectionId: string;
-  nextLesson: LessonData;
-  previousLesson: LessonData;
+  nextLesson: LessonData = new Lesson();
+  previousLesson: LessonData = new Lesson();
   currentLessonTrimmed: Lesson;
-  isLastLesson: boolean;
-  isFirstLesson: boolean;
   currentLessonIndex: number;
+  isLastLesson: boolean = false;
+  isFirstLesson: boolean = false;
+  isComplete$: boolean = false;
 
   constructor(
     private courseDataService: CourseDataService,
@@ -43,15 +34,9 @@ export class LessonDetailComponent implements OnInit {
     private componentFactoryResolver: ComponentFactoryResolver,
     private xapi: XapiService,
     private router: Router,
-    private progressStore: ProgressService
-  ) {
-    this.nextLesson = new Lesson();
-    this.previousLesson = new Lesson();
-
-    // Predicción: esta no es ni la primera ni la última lección
-    this.isLastLesson = false;
-    this.isFirstLesson = false;
-  }
+    private progressStore: ProgressService,
+    private chunkStore: ChunkService
+  ) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -59,6 +44,12 @@ export class LessonDetailComponent implements OnInit {
       this.sectionId = params['sectionId'];
       this.getLessonInformation();
     });
+
+    this.progressStore.checkLessonCompletion().subscribe(
+      isComplete => {
+        this.isComplete$ = isComplete;
+      }
+    )
   }
 
   getLessonInformation() {
@@ -94,7 +85,7 @@ export class LessonDetailComponent implements OnInit {
 
   createDynamicComponents() {
     for (const chunk of this.currentLesson.chunks) {
-      const chunkComponent = this.createComponentFromJSON(chunk);
+      const chunkComponent = this.chunkStore.createComponentFromJSON(chunk);
       this.loadComponentIntoAnchor(chunkComponent);
     }
   }
@@ -171,46 +162,4 @@ export class LessonDetailComponent implements OnInit {
     (<Chunk>componentRef.instance).id = this.sectionId + this.lessonId + chunkComponent.id;
     (<Chunk>componentRef.instance).parentLesson = this.currentLesson;
   }
-
-
-  /**
-   * TODO: refactorizar este switch a otra estructura porque se va a hacer mega-mastodóntica
-   * por ejemplo un servicio ChunkService que se encargue de devolver el tipo de Chunk a cargar
-   */
-  createComponentFromJSON(chunkItem): Chunk {
-    let component: any;
-    switch (chunkItem.type) {
-      case 'heading':
-        component = ChunkHeadingComponent;
-        break;
-      case 'subheading':
-        component = ChunkSubheadingComponent;
-        break;
-      case 'text':
-        component = ChunkTextComponent;
-        break;
-      case 'twoColumn':
-        component = ChunkTwoColumnComponent;
-        break;
-      case 'headingText':
-        component = ChunkHeadingTextComponent;
-        break;
-      case 'subheadingText':
-        component = ChunkSubheadingTextComponent;
-        break;
-      case 'checkboxList':
-        component = ChunkCheckboxListComponent;
-        break;
-      case 'multipleChoice':
-        component = ChunkMultipleChoiceComponent;
-        break;
-      case 'imageCentered':
-        component = ChunkImageCenteredComponent;
-        break;
-      default:
-        break;
-    }
-    return new Chunk(component, chunkItem.attributes, chunkItem.id, chunkItem.parentLesson);
-  }
-
 }

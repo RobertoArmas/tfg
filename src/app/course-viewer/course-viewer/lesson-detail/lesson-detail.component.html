@@ -19,7 +19,7 @@
   <ng-template chunk-host></ng-template>
 </div>
 
-<div class="navigation-next-lesson">
+<div class="navigation-next-lesson" *ngIf="isComplete$; else navigationLocked">
   <div class="next-lesson" *ngIf="!isLastLesson" (click)=progressLesson() fxLayout="row" fxLayoutAlign="center center">
       <div fxLayout="column" fxLayoutAlign="space-evenly center">
           <span>
@@ -29,3 +29,16 @@
       </div>
   </div>
 </div>
+
+<ng-template #navigationLocked>
+    <div class="navigation-next-lesson">
+        <div class="next-lesson locked" *ngIf="!isLastLesson" fxLayout="row" fxLayoutAlign="center center">
+            <div fxLayout="column" fxLayoutAlign="space-evenly center">
+                <span>
+                    <b>Completa la lección para desbloquear la siguiente</b>
+                </span>
+                <mat-icon>lock</mat-icon>
+            </div>
+        </div>
+    </div>
+</ng-template>
