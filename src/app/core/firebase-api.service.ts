@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
-import { Observable, from, zip, combineLatest, forkJoin } from 'rxjs';
+import { Observable, from, zip, combineLatest, forkJoin, of } from 'rxjs';
 import { map, flatMap, switchMap, mergeMap, tap, toArray, combineAll, merge, concat, pairwise, concatAll, mergeAll, concatMap } from 'rxjs/operators';
 
 import { CourseData } from '../course-viewer/course.model';
@@ -179,5 +179,9 @@ export class FirebaseApiService {
           return course.unlockedLessons;
         })
       );
+  }
+
+  isLessonCompleted(): Observable<boolean> {
+    return of(false);
   }
 }

@@ -99,4 +99,9 @@ export class ProgressService {
   public getUnlockedLessons(): Observable<string[]> {
     return this.fbsApi.getUnlockedLessons(this.authService.userId);
   }
+
+  public checkLessonCompletion(): Observable<boolean> {
+    return this.fbsApi.isLessonCompleted()
+  }
 }
+
