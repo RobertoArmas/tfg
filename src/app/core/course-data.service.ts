@@ -44,7 +44,7 @@ export class CourseDataService {
   }
 
   getLessonChunks(sectionId: string, lessonId: string): Observable<ChunkData[]> {
-    return this.fbsApiService.getLessonChunks(this.courseId, sectionId, lessonId);
+    return this.fbsApiService.getLessonChunks(sectionId, lessonId);
   }
   
   getLessonsArray(): any {

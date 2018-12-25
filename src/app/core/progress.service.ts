@@ -1,15 +1,26 @@
 import { Injectable } from '@angular/core';
 import { FirebaseApiService } from './firebase-api.service';
-import { Observable, forkJoin } from 'rxjs';
+import { Observable, forkJoin, Subject, of } from 'rxjs';
 import { AuthService } from './auth.service';
 import { CourseProgress, UserProgress } from './progress.model';
 import { switchMap, take, filter, map } from 'rxjs/operators';
 import { CourseDataService } from './course-data.service';
 import { LessonData } from '../course-viewer/lesson.model';
 import { InteractiveChunkAnswer } from '../chunks/interactive-chunk-answer.model';
+import { Chunk } from '../chunks/chunk.model';
 
 @Injectable()
 export class ProgressService {
+
+  private interactiveChunkAnsweredSource = new Subject<boolean>();
+
+  interactiveChunkAnswered$ = this.interactiveChunkAnsweredSource.asObservable();
+
+  answerInteractiveChunk(answered: boolean) {
+    this.interactiveChunkAnsweredSource.next(answered);
+  }
+
+
   constructor(
     private fbsApi: FirebaseApiService,
     private authService: AuthService,
@@ -100,8 +111,25 @@ export class ProgressService {
     return this.fbsApi.getUnlockedLessons(this.authService.userId);
   }
 
-  public checkLessonCompletion(): Observable<boolean> {
-    return this.fbsApi.isLessonCompleted()
+  public checkLessonCompletion(sectionId: string, lessonId: string, chunks: any[]): Observable<boolean> {
+    let interactiveChunks: boolean[] = [];
+    if(chunks) {
+      for (const chunk of chunks) {
+        let completeChunkId = sectionId + lessonId + chunk.id;
+        this.fbsApi.isChunkAnswered(this.authService.userId, completeChunkId)
+          .subscribe(
+            // meterlos en alguna estructura para devolver o algo y luego hacer la comprobación en la lección
+            // Sería (true, true, true, false) se van generando los valores y en base a eso se actualiza o no la variable
+            // en el lesson component no?
+            isAnswered => {
+              interactiveChunks.push(isAnswered);
+              console.log(interactiveChunks);
+              return interactiveChunks.every(() => true);
+            }
+          )
+      }
+    } else {
+      return of(false);
+    }
   }
 }
-

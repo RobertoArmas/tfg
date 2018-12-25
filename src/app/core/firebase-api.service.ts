@@ -6,7 +6,7 @@ import { map, flatMap, switchMap, mergeMap, tap, toArray, combineAll, merge, con
 import { CourseData } from '../course-viewer/course.model';
 import { SectionData } from '../course-viewer/section.model';
 import { LessonData, Lesson } from '../course-viewer/lesson.model';
-import { ChunkData } from '../chunks/chunk.model';
+import { ChunkData, Chunk } from '../chunks/chunk.model';
 import { CourseProgress, UserProgress, currentLessonProgress } from './progress.model';
 import { InteractiveChunkAnswer } from '../chunks/interactive-chunk-answer.model';
 
@@ -63,9 +63,9 @@ export class FirebaseApiService {
       .valueChanges();
   }
 
-  getLessonChunks(courseId: string, sectionId: string, lessonId: string): Observable<ChunkData[]> {
+  getLessonChunks(sectionId: string, lessonId: string): Observable<ChunkData[]> {
     return this.afs
-      .collection('courses').doc(courseId)
+      .collection('courses').doc(this.currentCourse)
       .collection('sections').doc(sectionId)
       .collection('lessons').doc(lessonId)
       .collection('chunks')
@@ -181,7 +181,32 @@ export class FirebaseApiService {
       );
   }
 
-  isLessonCompleted(): Observable<boolean> {
-    return of(false);
+  isLessonCompleted(sectionId: string, lessonId: string, chunks: any[]): Observable<boolean> {
+    return of(true);
+  }
+
+  isChunkAnswered(uid: string, completeChunkId): Observable<boolean> {
+    return this.afs.collection('users').doc(uid)
+      .collection('courses').doc(this.currentCourse)
+      .collection('answeredChunks')
+      .doc<{answer}>(completeChunkId)
+      .valueChanges()
+      .pipe(
+        map(
+          value => {
+            if(value) {
+              console.log(value);
+              if(value.answer === "") {
+                return false;
+              }
+              else {
+                return true;
+              }
+            } else {  // Si no encuentra un documento es que el Chunk no es interactivo: default = true
+              return true;
+            }
+          }
+        )
+      )
   }
 }
