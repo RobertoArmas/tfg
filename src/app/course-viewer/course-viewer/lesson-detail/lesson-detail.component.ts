@@ -36,7 +36,13 @@ export class LessonDetailComponent implements OnInit {
     private router: Router,
     private progressStore: ProgressService,
     private chunkStore: ChunkService
-  ) { }
+  ) {
+    this.progressStore.interactiveChunkAnswered$.subscribe(
+      answered => {
+        this.checkCompleted();
+      }
+    );
+   }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -44,12 +50,6 @@ export class LessonDetailComponent implements OnInit {
       this.sectionId = params['sectionId'];
       this.getLessonInformation();
     });
-
-    this.progressStore.checkLessonCompletion().subscribe(
-      isComplete => {
-        this.isComplete$ = isComplete;
-      }
-    )
   }
 
   getLessonInformation() {
@@ -161,5 +161,13 @@ export class LessonDetailComponent implements OnInit {
     // Se crea una ID completa del Chunk para poder gestionar las respuestas en Firebase
     (<Chunk>componentRef.instance).id = this.sectionId + this.lessonId + chunkComponent.id;
     (<Chunk>componentRef.instance).parentLesson = this.currentLesson;
+  }
+
+  checkCompleted() {
+    this.progressStore.checkLessonCompletion(this.sectionId, this.lessonId, this.currentLesson.chunks).subscribe(
+      isComplete => {
+        this.isComplete$ = isComplete;
+      }
+    )
   }
 }

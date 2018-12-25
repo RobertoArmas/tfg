@@ -95,6 +95,7 @@ export class ChunkMultipleChoiceComponent implements OnInit, DoCheck, AfterViewI
   revealResult() {
     this.progressStore.setAnswer(this.id, this.choice);
     this.displayResult();
+    this.progressStore.answerInteractiveChunk(true);
     
     this.attributes.statementData = this.attributes.question;
     this.attributes.statementChoices = this.formatStatementChoices();
@@ -142,6 +143,7 @@ export class ChunkMultipleChoiceComponent implements OnInit, DoCheck, AfterViewI
   }
 
   restoreAnswers() {
+    this.progressStore.answerInteractiveChunk(false);
     this.showAnswer = false;
     this.choice = "";
     this.progressStore.setAnswer(this.id, "");
