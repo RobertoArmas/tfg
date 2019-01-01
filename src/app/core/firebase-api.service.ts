@@ -202,7 +202,7 @@ export class FirebaseApiService {
               else {
                 return true;
               }
-            } else {  // Si no encuentra un documento es que el Chunk no es interactivo: default = true
+            } else {  // Si no encuentra un documento es que el Chunk no es interactivo y se da por completado
               return true;
             }
           }
