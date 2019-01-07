@@ -24,9 +24,9 @@ export class LessonDetailComponent implements OnInit {
   previousLesson: LessonData = new Lesson();
   currentLessonTrimmed: Lesson;
   currentLessonIndex: number;
-  isLastLesson: boolean = false;
-  isFirstLesson: boolean = false;
-  isComplete$: boolean = false;
+  isLastLesson = false;
+  isFirstLesson = false;
+  isComplete$ = false;
 
   constructor(
     private courseDataService: CourseDataService,
@@ -168,6 +168,6 @@ export class LessonDetailComponent implements OnInit {
       isComplete => {
         this.isComplete$ = isComplete;
       }
-    )
+    );
   }
 }

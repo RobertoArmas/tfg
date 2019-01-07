@@ -37,24 +37,23 @@ export class ProgressService {
   }
 
   public createUserProgress() {
-    let initialProgress: CourseProgress = this.createDefaultCourseProgress();
+    const initialProgress: CourseProgress = this.createDefaultCourseProgress();
 
     forkJoin(this.authService.uid, this.authService.name).subscribe(
       ([uid, name]) => {
-        let userProgress: UserProgress = {
-                name: name.split(" ")[0],
+        const userProgress: UserProgress = {
+                name: name.split(' ')[0],
                 uid: uid,
                 progress: initialProgress
-              }
-      
+              };
               this.fbsApi.createUserProgress(userProgress);
       },
-      err => console.log("Error accediendo a los datos del usuario")
+      err => console.log('Error accediendo a los datos del usuario')
     );
   }
 
   private createDefaultCourseProgress(): CourseProgress {
-    let defaultFirstLessonId = 's1l1';
+    const defaultFirstLessonId = 's1l1';
 
     return {
       courseId: this.courseDataStore.courseId,
@@ -64,14 +63,14 @@ export class ProgressService {
         lessonId: 'l1',
         sectionId: 's1'
       }
-    }
+    };
   }
 
   public updateProgress(currentLessonId: string, currentSectionId: string, nextLesson: LessonData) {
 
     forkJoin([this.authService.uid, this.progress]).subscribe(
       ([uid, progress]) => {
-        if(progress.currentLesson.lessonId === currentLessonId && progress.currentLesson.sectionId === currentSectionId) {
+        if (progress.currentLesson.lessonId === currentLessonId && progress.currentLesson.sectionId === currentSectionId) {
           // Se desbloquea la lección desde la que se le da al botón siguiente para poder seguir accediendo a ella
           // en el futuro
           this.fbsApi.unlockLesson(uid, nextLesson.sectionId, nextLesson.id);
@@ -83,9 +82,9 @@ export class ProgressService {
   }
 
   /**
-   * Comprueba si un Chunk interactivo ha sido creado y/o respondido, si es así devuelve las respuestas, si no 
+   * Comprueba si un Chunk interactivo ha sido creado y/o respondido, si es así devuelve las respuestas, si no
    * crea un objeto vacío
-   * 
+   *
    * Todas las respuestas de un curso se almacenan en una misma colección para que su acceso sea instantaneo
    */
   public checkAnswered(chunkId: string): Observable<InteractiveChunkAnswer> {
@@ -101,7 +100,7 @@ export class ProgressService {
     .pipe(
       map(
         unlockedLessons => {
-          return unlockedLessons.indexOf(completeLessonId) != -1 ? true : false;
+          return unlockedLessons.indexOf(completeLessonId) !== -1 ? true : false;
         }
       )
     );
@@ -112,10 +111,10 @@ export class ProgressService {
   }
 
   public checkLessonCompletion(sectionId: string, lessonId: string, chunks: any[]): Observable<boolean> {
-    let interactiveChunks: boolean[] = [];
-    if(chunks) {
+    const interactiveChunks: boolean[] = [];
+    if (chunks) {
       for (const chunk of chunks) {
-        let completeChunkId = sectionId + lessonId + chunk.id;
+        const completeChunkId = sectionId + lessonId + chunk.id;
         this.fbsApi.isChunkAnswered(this.authService.userId, completeChunkId)
           .subscribe(
             // meterlos en alguna estructura para devolver o algo y luego hacer la comprobación en la lección
@@ -126,7 +125,7 @@ export class ProgressService {
               console.log(interactiveChunks);
               return interactiveChunks.every(() => true);
             }
-          )
+          );
       }
     } else {
       return of(false);
