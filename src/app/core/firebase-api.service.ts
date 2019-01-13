@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
-import { Observable, from, zip, combineLatest, forkJoin, of } from 'rxjs';
-import { map, flatMap, switchMap, mergeMap, tap, toArray, combineAll, merge, concat, pairwise, concatAll, mergeAll, concatMap } from 'rxjs/operators';
+import { Observable, from, of } from 'rxjs';
+import { map, flatMap, switchMap } from 'rxjs/operators';
 
 import { CourseData } from '../course-viewer/course.model';
 import { SectionData } from '../course-viewer/section.model';
-import { LessonData, Lesson } from '../course-viewer/lesson.model';
-import { ChunkData, Chunk } from '../chunks/chunk.model';
+import { LessonData } from '../course-viewer/lesson.model';
+import { ChunkData } from '../chunks/chunk.model';
 import { CourseProgress, UserProgress, currentLessonProgress } from './progress.model';
 import { InteractiveChunkAnswer } from '../chunks/interactive-chunk-answer.model';
 
@@ -93,25 +93,25 @@ export class FirebaseApiService {
   createUserProgress(user: UserProgress) {
 
     // Primero se identifica la id del documento que se va a crear junto con la sub-collection 'courses'
-    let newUserProgressRef =  this.afs.firestore.collection('users').doc(user.uid);
+    const newUserProgressRef =  this.afs.firestore.collection('users').doc(user.uid);
 
     // Crea un documento con una sub-collection que tiene el curso y el progreso correspondiente
     newUserProgressRef.set({uid: user.uid, name: user.name}).then(
       () => {
-        newUserProgressRef.collection('courses').doc(user.progress.courseId).set(user.progress)
+        newUserProgressRef.collection('courses').doc(user.progress.courseId).set(user.progress);
       }
     );
   }
 
   updateUserCurrentLesson(uid: string, id: string, sectionId: string) {
-    let newCurrentLesson: currentLessonProgress = {
+    const newCurrentLesson: currentLessonProgress = {
       isFinished: false,
       lessonId: id,
       sectionId: sectionId
-    }
+    };
 
     this.afs.collection('users').doc(uid).collection('courses').doc(this.currentCourse).update(
-      { "currentLesson": newCurrentLesson }
+      { 'currentLesson': newCurrentLesson }
     );
   }
 
@@ -132,9 +132,17 @@ export class FirebaseApiService {
   }
 
   getLessonsArray(): Observable<any> {
-    let sections = this.getCourseSections(this.currentCourse);
+    const sections = this.getCourseSections(this.currentCourse);
 
-    /**
+    return sections.pipe(
+      switchMap(sections => from(sections)),
+      flatMap(section => this.getSectionLessons(this.currentCourse, section.id)
+        .pipe(
+          switchMap(lessons => from(lessons)),
+          map(lesson => (section.id + lesson.id)
+        ))));
+
+        /**
      * No borrar este código porque obtiene los objetos sección con los objetos lección dentro
      */
     // return sections.pipe(
@@ -148,18 +156,10 @@ export class FirebaseApiService {
     //   tap(data => data.section.lessons = data.lessons),
     //   map(data => data.section)
     // )
-
-    return sections.pipe(
-      switchMap(sections => from(sections)),
-      flatMap(section => this.getSectionLessons(this.currentCourse, section.id)
-        .pipe(
-          switchMap(lessons => from(lessons)),
-          map(lesson => (section.id + lesson.id)
-        ))))
   }
 
   unlockLesson(uid: string, sectionId: string, lessonId: string) {
-    let completeLessonId = sectionId + lessonId;
+    const completeLessonId = sectionId + lessonId;
 
     this.afs.collection('users').doc(uid)
       .collection('courses').doc(this.currentCourse)
@@ -185,28 +185,24 @@ export class FirebaseApiService {
     return of(true);
   }
 
-  isChunkAnswered(uid: string, completeChunkId): Observable<boolean> {
+  getAnsweredChunks(uid: string): Observable<{id: string, data: any}[]> {
     return this.afs.collection('users').doc(uid)
       .collection('courses').doc(this.currentCourse)
       .collection('answeredChunks')
-      .doc<{answer}>(completeChunkId)
-      .valueChanges()
+      .snapshotChanges()
       .pipe(
+        // map(actions => actions.map(action => {
+        //   const data = action.payload.doc.data() as SectionData;
+        //   const id = action.payload.doc.id;
+        //   return { id, ...data };
+        // })));
         map(
-          value => {
-            if(value) {
-              console.log(value);
-              if(value.answer === "") {
-                return false;
-              }
-              else {
-                return true;
-              }
-            } else {  // Si no encuentra un documento es que el Chunk no es interactivo y se da por completado
-              return true;
-            }
-          }
+          actions => actions.map(action => {
+            const id = action.payload.doc.id;
+            const data = action.payload.doc.data().answer;
+            return {id, data};
+          })
         )
-      )
+      );
   }
 }

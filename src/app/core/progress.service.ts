@@ -110,25 +110,26 @@ export class ProgressService {
     return this.fbsApi.getUnlockedLessons(this.authService.userId);
   }
 
+  /**
+   * Objetivo:
+   * 1. Obtener todos los Chunks interactivos con sus respuestas
+   * 2. Filtrar los Chunks que estén en mi chunks array
+   * 3. Comprobar si estos Chunks tienen respuesta y devolver false si no es así
+   * 4. Devolver true si no existe ningún Chunk interactivo
+   */
   public checkLessonCompletion(sectionId: string, lessonId: string, chunks: any[]): Observable<boolean> {
-    const interactiveChunks: boolean[] = [];
-    if (chunks) {
-      for (const chunk of chunks) {
-        const completeChunkId = sectionId + lessonId + chunk.id;
-        this.fbsApi.isChunkAnswered(this.authService.userId, completeChunkId)
-          .subscribe(
-            // meterlos en alguna estructura para devolver o algo y luego hacer la comprobación en la lección
-            // Sería (true, true, true, false) se van generando los valores y en base a eso se actualiza o no la variable
-            // en el lesson component no?
-            isAnswered => {
-              interactiveChunks.push(isAnswered);
-              console.log(interactiveChunks);
-              return interactiveChunks.every(() => true);
-            }
-          );
-      }
-    } else {
-      return of(false);
-    }
+    const completeChunkIds = chunks.map(chunk => sectionId + lessonId + chunk.id );
+
+    return this.fbsApi.getAnsweredChunks(this.authService.userId)
+      .pipe(
+        map(
+          answeredChunks => {
+            const interactiveLessonChunks = answeredChunks.filter(answeredChunk => {
+              return completeChunkIds.some(id => answeredChunk.id === id);
+            });
+            return interactiveLessonChunks.every(chunk => chunk.data !== '');
+          }
+        )
+      );
   }
 }
