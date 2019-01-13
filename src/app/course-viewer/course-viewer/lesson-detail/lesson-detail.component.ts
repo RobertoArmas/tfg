@@ -37,11 +37,6 @@ export class LessonDetailComponent implements OnInit {
     private progressStore: ProgressService,
     private chunkStore: ChunkService
   ) {
-    this.progressStore.interactiveChunkAnswered$.subscribe(
-      answered => {
-        this.checkCompleted();
-      }
-    );
    }
 
   ngOnInit() {
@@ -51,7 +46,6 @@ export class LessonDetailComponent implements OnInit {
       this.getLessonInformation();
     });
   }
-
   getLessonInformation() {
     this.courseDataService
       .getLessonInformation(this.sectionId, this.lessonId)
@@ -74,6 +68,7 @@ export class LessonDetailComponent implements OnInit {
           this.clearViewContainerRef();
           this.createDynamicComponents();
           this.setAroundLessonsIds();
+          this.checkCompleted();
         }
       );
   }
