@@ -39,7 +39,7 @@ export class ChunkMultipleChoiceComponent implements OnInit, DoCheck, AfterViewI
   @Input() id: string;
   @Input() parentLesson: LessonData;
   defaultChoices: string[];
-  choice: string = ""; // Necesario para que funcione Firebase (no existen los nulos)
+  choice = ''; // Necesario para que funcione Firebase (no existen los nulos)
   answer: Answer;
   showAnswer: boolean;
   noSelectedChoice: boolean;
@@ -71,13 +71,13 @@ export class ChunkMultipleChoiceComponent implements OnInit, DoCheck, AfterViewI
   ngAfterViewInit() {
     this.progressStore.checkAnswered(this.id).subscribe(
       progress => {
-        if(progress) {
+        if (progress) {
           this.choice = progress.answer;
-          if(this.choice !== "") {
+          if (this.choice !== '') {
             this.displayResult();
           }
         } else {
-          let emptyChoice: string = "";
+          const emptyChoice = '';
           this.progressStore.setAnswer(this.id, emptyChoice);
         }
       }
@@ -85,7 +85,7 @@ export class ChunkMultipleChoiceComponent implements OnInit, DoCheck, AfterViewI
   }
 
   ngDoCheck() {
-    if (this.choice !== "") {
+    if (this.choice !== '') {
       this.noSelectedChoice = false;
     } else {
       this.noSelectedChoice = true;
@@ -96,7 +96,7 @@ export class ChunkMultipleChoiceComponent implements OnInit, DoCheck, AfterViewI
     this.progressStore.setAnswer(this.id, this.choice);
     this.displayResult();
     this.progressStore.answerInteractiveChunk(true);
-    
+
     this.attributes.statementData = this.attributes.question;
     this.attributes.statementChoices = this.formatStatementChoices();
     this.attributes.statementSuccess = this.isTheRightAnswer();
@@ -145,8 +145,8 @@ export class ChunkMultipleChoiceComponent implements OnInit, DoCheck, AfterViewI
   restoreAnswers() {
     this.progressStore.answerInteractiveChunk(false);
     this.showAnswer = false;
-    this.choice = "";
-    this.progressStore.setAnswer(this.id, "");
+    this.choice = '';
+    this.progressStore.setAnswer(this.id, '');
   }
 
   getChoice(index: number): string {

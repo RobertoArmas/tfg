@@ -1,9 +1,11 @@
-
-<div id={{id}} [style.background-color]="attributes.backgroundColor"> 
-  <div fxLayout="row" fxLayoutAlign="center none" [style.padding-top.px]="attributes.paddingTop" [style.padding-bottom.px]="attributes.paddingBottom">
+<div id={{id}} [style.background-color]="attributes.backgroundColor">
+  <div fxLayout="row" fxLayoutAlign="center none" [style.padding-top.px]="attributes.paddingTop"
+    [style.padding-bottom.px]="attributes.paddingBottom">
     <div fxFlex="90" fxFlex.gt-md="761.667px">
       <div fxLayout="column" fxLayoutGap="30px">
-        <mat-checkbox *ngFor="let item of attributes.items">{{item}}</mat-checkbox>
+        <mat-checkbox *ngFor="let item of attributes.items" (change)="checkAllSelected(item)">
+          {{item}}
+        </mat-checkbox>
       </div>
     </div>
   </div>
