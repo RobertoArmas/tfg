@@ -90,13 +90,13 @@ export class FirebaseApiService {
           );
   }
 
-  createUserProgress(user: UserProgress) {
+  createUserProgress(user: UserProgress): Promise<void> {
 
     // Primero se identifica la id del documento que se va a crear junto con la sub-collection 'courses'
     const newUserProgressRef =  this.afs.firestore.collection('users').doc(user.uid);
 
     // Crea un documento con una sub-collection que tiene el curso y el progreso correspondiente
-    newUserProgressRef.set({uid: user.uid, name: user.name}).then(
+    return newUserProgressRef.set({uid: user.uid, name: user.name}).then(
       () => {
         newUserProgressRef.collection('courses').doc(user.progress.courseId).set(user.progress);
       }

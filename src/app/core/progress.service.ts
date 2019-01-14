@@ -3,11 +3,10 @@ import { FirebaseApiService } from './firebase-api.service';
 import { Observable, forkJoin, Subject, of } from 'rxjs';
 import { AuthService } from './auth.service';
 import { CourseProgress, UserProgress } from './progress.model';
-import { switchMap, take, filter, map } from 'rxjs/operators';
+import { switchMap, take, map } from 'rxjs/operators';
 import { CourseDataService } from './course-data.service';
 import { LessonData } from '../course-viewer/lesson.model';
 import { InteractiveChunkAnswer } from '../chunks/interactive-chunk-answer.model';
-import { Chunk } from '../chunks/chunk.model';
 
 @Injectable()
 export class ProgressService {
