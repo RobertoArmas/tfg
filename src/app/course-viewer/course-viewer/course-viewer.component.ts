@@ -60,15 +60,27 @@ export class CourseViewerComponent implements OnInit {
       }, 300);
     });
   }
- 
+
   redirectToCurrentUserLesson() {
     this.progressStore.progress.subscribe(
       progress => {
-        if(!progress) {
-          this.progressStore.createUserProgress();
-        } else {
+        if (progress) {
           this.router.navigate(['/course-viewer/section/' + progress.currentLesson.sectionId + 
           '/lesson/' + progress.currentLesson.lessonId]);
+        } else {
+          /**
+           * Se ha producido uno de los errores más graves, no existe el progreso de usuario y
+           * se ha accedido al curso con la sesión de Google ya iniciada, por lo tanto no se crea el
+           * progreso por primera vez
+           *
+           * SOLUCIÓN: Se vuelve a crear el progreso de usuario y pasado un tiempo se intenta redirigir al
+           * usuario
+           */
+          this.progressStore.createUserProgress();
+          setTimeout(() => {
+            this.subscribeToRouteChanges();
+            this.redirectToCurrentUserLesson();
+          }, 2000);
         }
       }
     );

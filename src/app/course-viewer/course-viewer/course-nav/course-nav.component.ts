@@ -5,6 +5,8 @@ import { Section } from '../../section.model';
 import { CourseDataService } from '../../../core/course-data.service';
 import { LessonData } from '../../lesson.model';import { XapiService } from '../../../core/xapi/xapi.service';
 import { ProgressService } from 'src/app/core/progress.service';
+import { retryWhen, delayWhen, tap } from 'rxjs/operators';
+import { timer } from 'rxjs';
 @Component({
   selector: 'app-course-nav',
   templateUrl: './course-nav.component.html',
@@ -14,7 +16,6 @@ export class CourseNavComponent implements OnInit {
 
   course: Course = new Course();
   sections: Section[] = [];
-  redirectedToFirstLesson: boolean;
   unlockedLessons$: string[];
 
   constructor(
@@ -22,12 +23,30 @@ export class CourseNavComponent implements OnInit {
     private xapi: XapiService,
     private progressStore: ProgressService
   ) {
-    this.redirectedToFirstLesson = false;
-    this.progressStore.getUnlockedLessons().subscribe(
-      unlockedLessons => {
-        this.unlockedLessons$ = unlockedLessons;
-      }
+
+    /**
+     * Mismo caso que en CourseViewer para recuperarse del error
+     * cuando un usuario accede por primera vez con la sesión de Google iniciada
+     */
+    this.progressStore.getUnlockedLessons()
+    .pipe(
+      retryWhen(errors => {
+        return errors
+                    .pipe(
+                        delayWhen(() => timer(2000)),
+                        tap(() => console.log('retrying...'))
+                    );
+      })
     )
+    .subscribe(
+      unlockedLessons => {
+        if (unlockedLessons) {
+          this.unlockedLessons$ = unlockedLessons;
+        } else {
+          this.progressStore.createUserProgress();
+        }
+      }
+    );
   }
 
   ngOnInit() {
