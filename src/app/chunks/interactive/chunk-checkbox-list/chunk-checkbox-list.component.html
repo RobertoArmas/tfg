@@ -3,7 +3,7 @@
     [style.padding-bottom.px]="attributes.paddingBottom">
     <div fxFlex="90" fxFlex.gt-md="761.667px">
       <div fxLayout="column" fxLayoutGap="30px">
-        <mat-checkbox *ngFor="let item of attributes.items" (change)="checkAllSelected(item)">
+        <mat-checkbox *ngFor="let item of attributes.items; let itemIndex=index" (change)="checkAllSelected(item)" [ngModel]="toggleItems" [disabled]="toggleItems">
           {{item}}
         </mat-checkbox>
       </div>
