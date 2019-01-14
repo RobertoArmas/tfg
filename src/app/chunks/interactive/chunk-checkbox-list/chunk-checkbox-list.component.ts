@@ -17,6 +17,9 @@ export class ChunkCheckboxListComponent implements OnInit, AfterViewInit {
   @Input() parentLesson: LessonData;
   selectedItems: string[] = [];
 
+  // Si el Chunk ha sido contestado hace un toggle de todas las opciones para marcarlas
+  toggleItems = false;
+
   constructor(
     private intersectionObserverService: IntersectionObserverService,
     private progressStore: ProgressService
@@ -46,6 +49,7 @@ export class ChunkCheckboxListComponent implements OnInit, AfterViewInit {
       progress => {
         if (progress && progress.answer !== '') {
           this.selectedItems = progress.answer;
+          this.toggleItems = true;
         } else {
           this.progressStore.setAnswer(this.id, '');
         }
