@@ -3,8 +3,7 @@ import { CheckboxList } from './CheckboxList';
 import { IntersectionObserverService } from '../../../core/intersection-observer/intersection-observer.service';
 import { LessonData } from '../../../course-viewer/lesson.model';
 import { ProgressService } from 'src/app/core/progress.service';
-import { catchError } from 'rxjs/operators';
-import { of, throwError } from 'rxjs';
+
 
 @Component({
   selector: 'app-chunk-checkbox-list',
