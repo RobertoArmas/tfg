@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProgressService } from 'src/app/core/progress.service';
+import { AuthService } from 'src/app/core/auth.service';
 
 @Component({
   selector: 'app-course-viewer',
@@ -15,7 +16,8 @@ export class CourseViewerComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private progressStore: ProgressService
+    private progressStore: ProgressService,
+    public authStore: AuthService
     ) {
     this.startSidenavOpen = true;
     this.endSidenavOpen = false;
