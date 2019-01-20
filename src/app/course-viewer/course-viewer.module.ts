@@ -9,13 +9,15 @@ import { CourseNavComponent } from './course-viewer/course-nav/course-nav.compon
 import { LessonDetailComponent } from './course-viewer/lesson-detail/lesson-detail.component';
 import { ChunkDirective } from './course-viewer/lesson-detail/chunk.directive';
 import { LessonHeaderComponent } from './course-viewer/lesson-detail/lesson-header/lesson-header.component';
+import { ContentLoaderModule } from '@netbasal/ngx-content-loader';
 
 @NgModule({
   imports: [
     CommonModule,
     CourseViewerRoutingModule,
     FlexLayoutModule,
-    MaterialModule
+    MaterialModule,
+    ContentLoaderModule
   ],
   declarations: [CourseViewerComponent, CourseNavComponent, LessonDetailComponent, ChunkDirective, LessonHeaderComponent]
 })
