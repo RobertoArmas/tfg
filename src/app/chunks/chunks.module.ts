@@ -14,13 +14,15 @@ import { ChunkCheckboxListComponent } from './interactive/chunk-checkbox-list/ch
 import { ChunkImageCenteredComponent } from './image/chunk-image-centered/chunk-image-centered.component';
 import { ChunkMultipleChoiceComponent } from './activity/chunk-multiple-choice/chunk-multiple-choice.component';
 import { ChunkService } from './chunk.service';
+import { ContentLoaderModule } from '@netbasal/ngx-content-loader';
 
 @NgModule({
   imports: [
     CommonModule,
     FlexLayoutModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    ContentLoaderModule
   ],
   declarations: [
     ChunkHeadingComponent,
