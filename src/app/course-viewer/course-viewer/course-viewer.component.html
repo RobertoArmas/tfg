@@ -7,7 +7,7 @@
 
     <div fxLayout="row">
         <a mat-button href="https://goo.gl/cXCr15">GitHub</a>
-    
+
         <img class="profile-picture" [src]="this.authStore.profilePicture" alt="ProfilePicture">
     </div>
 </mat-toolbar>
@@ -23,6 +23,15 @@
         <div class="page-content">
             <section class="course-lesson">
                 <router-outlet></router-outlet>
+
+                <content-loader height="900" width="600" *ngIf="!isProgressLoaded">
+                    <svg:rect x="150" y="10" rx="5" ry="5" height="50" width="300" />
+                    <svg:rect x="150" y="90" rx="5" ry="5" height="50" width="300" />
+                    <svg:rect x="150" y="180" rx="5" ry="5" height="100" width="300" />
+                    <svg:rect x="150" y="260" rx="5" ry="5" height="50" width="300" />
+                    <svg:rect x="150" y="340" rx="5" ry="5" height="50" width="300" />
+                    <svg:rect x="150" y="420" rx="5" ry="5" height="50" width="300" />
+                </content-loader>
             </section>
         </div>
     </mat-sidenav-content>
