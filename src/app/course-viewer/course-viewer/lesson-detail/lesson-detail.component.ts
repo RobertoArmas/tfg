@@ -18,7 +18,7 @@ export class LessonDetailComponent implements OnInit {
 
   @ViewChild(ChunkDirective) chunkHost: ChunkDirective;
   currentLesson: Lesson;
-  lessonId: string;
+  lessonId: string = "";
   sectionId: string;
   nextLesson: LessonData = new Lesson();
   previousLesson: LessonData = new Lesson();

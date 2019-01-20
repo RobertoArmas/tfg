@@ -13,6 +13,8 @@ export class CourseViewerComponent implements OnInit {
   startSidenavOpen: boolean;
   endSidenavOpen: boolean;
 
+  isProgressLoaded = false;
+
 
   constructor(
     private router: Router,
@@ -69,6 +71,7 @@ export class CourseViewerComponent implements OnInit {
         if (progress) {
           this.router.navigate(['/course-viewer/section/' + progress.currentLesson.sectionId + 
           '/lesson/' + progress.currentLesson.lessonId]);
+          this.isProgressLoaded = true;
         } else {
           /**
            * Se ha producido uno de los errores más graves, no existe el progreso de usuario y
@@ -82,6 +85,7 @@ export class CourseViewerComponent implements OnInit {
           setTimeout(() => {
             this.subscribeToRouteChanges();
             this.redirectToCurrentUserLesson();
+            this.isProgressLoaded = true;
           }, 2000);
         }
       }
