@@ -1,9 +1,12 @@
-
-<div id={{id}} [style.background-color]="attributes.backgroundColor"> 
-    <div fxLayout="row" fxLayoutAlign="center none" [style.padding-top.px]="attributes.paddingTop" [style.padding-bottom.px]="attributes.paddingBottom">
-      <div fxFlex="90" fxFlex.gt-md="761.667px" fxLayout="column" fxLayout.gt-md="row" fxLayoutAlign="center none">
-        <p> {{attributes.dataCol1}} </p>
-        <p> {{attributes.dataCol2}} </p>
-      </div>
+<div id={{id}} [style.background-color]="attributes.backgroundColor">
+  <div fxLayout="row" fxLayoutAlign="center none" [style.padding-top.px]="attributes.paddingTop"
+    [style.padding-bottom.px]="attributes.paddingBottom">
+    <div fxFlex="90" fxFlex.gt-md="761.667px" fxLayout="column" fxLayout.gt-md="row" fxLayoutAlign="center none">
+      <p> {{attributes.dataCol1}} </p>
+      <p> {{attributes.dataCol2}} </p>
     </div>
   </div>
+      <content-loader height="60">
+          <svg:rect x="105" y="0" rx="3" ry="3" height="3" width="90" />
+      </content-loader>
+</div>
