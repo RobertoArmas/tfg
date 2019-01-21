@@ -205,4 +205,20 @@ export class FirebaseApiService {
         )
       );
   }
+
+  completeCurrentLesson(uid: string) {
+    this.afs.collection('users').doc(uid)
+    .collection('courses').doc(this.currentCourse)
+    .update({
+      'currentLesson.isFinished': 'true'
+    });
+  }
+
+  uncompleteCurrentLesson(uid: string) {
+    this.afs.collection('users').doc(uid)
+    .collection('courses').doc(this.currentCourse)
+    .update({
+      'currentLesson.isFinished': 'false'
+    });
+  }
 }

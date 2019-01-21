@@ -3,7 +3,6 @@ import { ProgressService } from 'src/app/core/progress.service';
 import { CourseDataService } from 'src/app/core/course-data.service';
 import { zip, combineAll, merge, mergeAll, toArray } from 'rxjs/operators';
 import { combineChanges } from 'angularfire2/firestore';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-lesson-header',
@@ -17,16 +16,14 @@ export class LessonHeaderComponent implements OnChanges {
   @Input() title: string = 'Undefined';
 
   private mergedId: string;
-  currentLesson: number = 0;
-  totalLessons: number = 0;
+  currentLesson = 0;
+  totalLessons = 0;
   lessonsArray: string[] = [];
 
   constructor(
-    private courseStore: CourseDataService
-  ) {
-
-    
-  }
+    private courseStore: CourseDataService,
+    private progressStore: ProgressService
+  ) {  }
 
 
 
@@ -35,7 +32,7 @@ export class LessonHeaderComponent implements OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    this.setCurrentLessonIndex();    
+    this.setCurrentLessonIndex();
   }
 
   setCurrentLessonOfTotal() {
@@ -44,9 +41,10 @@ export class LessonHeaderComponent implements OnChanges {
       lessons => {
         this.lessonsArray.push(lessons);
         this.totalLessons = this.lessonsArray.length;
+        this.progressStore.totalLessons$ = this.lessonsArray.length;
         this.setCurrentLessonIndex();
       }
-    )
+    );
   }
 
   setCurrentLessonIndex() {

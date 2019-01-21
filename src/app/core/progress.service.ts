@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { FirebaseApiService } from './firebase-api.service';
-import { Observable, forkJoin, Subject, of } from 'rxjs';
+import { Observable, forkJoin, Subject, of, from } from 'rxjs';
 import { AuthService } from './auth.service';
 import { CourseProgress, UserProgress } from './progress.model';
-import { switchMap, take, map } from 'rxjs/operators';
+import { switchMap, take, map, toArray } from 'rxjs/operators';
 import { CourseDataService } from './course-data.service';
 import { LessonData } from '../course-viewer/lesson.model';
 import { InteractiveChunkAnswer } from '../chunks/interactive-chunk-answer.model';
@@ -12,6 +12,9 @@ import { InteractiveChunkAnswer } from '../chunks/interactive-chunk-answer.model
 export class ProgressService {
 
   private interactiveChunkAnsweredSource = new Subject<boolean>();
+
+  public totalLessons$ = 1;
+  public progress$ = '0';
 
   interactiveChunkAnswered$ = this.interactiveChunkAnsweredSource.asObservable();
 
@@ -24,7 +27,7 @@ export class ProgressService {
     private fbsApi: FirebaseApiService,
     private authService: AuthService,
     private courseDataStore: CourseDataService
-    ) { }
+  ) { }
 
   get progress(): Observable<CourseProgress> {
     return this.authService.uid.pipe(
@@ -41,11 +44,11 @@ export class ProgressService {
     forkJoin(this.authService.uid, this.authService.name).subscribe(
       ([uid, name]) => {
         const userProgress: UserProgress = {
-                name: name.split(' ')[0],
-                uid: uid,
-                progress: initialProgress
-              };
-              this.fbsApi.createUserProgress(userProgress);
+          name: name.split(' ')[0],
+          uid: uid,
+          progress: initialProgress
+        };
+        this.fbsApi.createUserProgress(userProgress);
       },
       err => console.log('Error accediendo a los datos del usuario')
     );
@@ -96,13 +99,13 @@ export class ProgressService {
 
   public checkUnlockedLesson(completeLessonId: string): Observable<boolean> {
     return this.fbsApi.getUnlockedLessons(this.authService.userId)
-    .pipe(
-      map(
-        unlockedLessons => {
-          return unlockedLessons.indexOf(completeLessonId) !== -1 ? true : false;
-        }
-      )
-    );
+      .pipe(
+        map(
+          unlockedLessons => {
+            return unlockedLessons.indexOf(completeLessonId) !== -1 ? true : false;
+          }
+        )
+      );
   }
 
   public getUnlockedLessons(): Observable<string[]> {
@@ -117,7 +120,7 @@ export class ProgressService {
    * 4. Devolver true si no existe ningún Chunk interactivo
    */
   public checkLessonCompletion(sectionId: string, lessonId: string, chunks: any[]): Observable<boolean> {
-    const completeChunkIds = chunks.map(chunk => sectionId + lessonId + chunk.id );
+    const completeChunkIds = chunks.map(chunk => sectionId + lessonId + chunk.id);
 
     return this.fbsApi.getAnsweredChunks(this.authService.userId)
       .pipe(
@@ -126,9 +129,32 @@ export class ProgressService {
             const interactiveLessonChunks = answeredChunks.filter(answeredChunk => {
               return completeChunkIds.some(id => answeredChunk.id === id);
             });
-            return interactiveLessonChunks.every(chunk => chunk.data !== '');
+            if (interactiveLessonChunks.every(chunk => chunk.data !== '')) {
+              this.fbsApi.completeCurrentLesson(this.authService.userId);
+              return true;
+            } else {
+              this.fbsApi.uncompleteCurrentLesson(this.authService.userId);
+              return false;
+            }
           }
         )
+      );
+  }
+
+  updateCourseProgress(isComplete: boolean) {
+    this.fbsApi.getUserProgress(this.authService.userId)
+      .subscribe(
+        progress => {
+          let completedLessons = 0;
+
+          if (isComplete) {
+            completedLessons = progress.unlockedLessons.length;
+          } else {
+            completedLessons = progress.unlockedLessons.length - 1;
+          }
+
+          this.progress$ = ((completedLessons / this.totalLessons$) * 100).toFixed();
+        }
       );
   }
 }
