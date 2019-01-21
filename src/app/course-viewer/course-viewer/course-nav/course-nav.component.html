@@ -8,8 +8,8 @@
           <span class="overview-span"></span>
           <h1 class="course-nav-header-title">{{course.title}}</h1>
           <div class="overview-progress">
-            <mat-progress-bar mode="determinate" value="70"></mat-progress-bar>
-            <h1 class="course-nav-header-progress">70% COMPLETADO</h1>
+            <mat-progress-bar mode="determinate" value="{{progressStore.progress$}}"></mat-progress-bar>
+            <h1 class="course-nav-header-progress"> {{progressStore.progress$}} % COMPLETADO</h1>
           </div>
         </div>
       </div>

@@ -18,7 +18,7 @@ export class LessonDetailComponent implements OnInit {
 
   @ViewChild(ChunkDirective) chunkHost: ChunkDirective;
   currentLesson: Lesson;
-  lessonId: string = "";
+  lessonId = '';
   sectionId: string;
   nextLesson: LessonData = new Lesson();
   previousLesson: LessonData = new Lesson();
@@ -162,6 +162,7 @@ export class LessonDetailComponent implements OnInit {
     this.progressStore.checkLessonCompletion(this.sectionId, this.lessonId, this.currentLesson.chunks).subscribe(
       isComplete => {
         this.isComplete$ = isComplete;
+        this.progressStore.updateCourseProgress(isComplete);
       }
     );
   }
