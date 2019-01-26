@@ -21,7 +21,7 @@ export class CourseNavComponent implements OnInit {
   constructor(
     private courseDataService: CourseDataService,
     private xapi: XapiService,
-    private progressStore: ProgressService
+    public progressStore: ProgressService
   ) {
 
     /**
