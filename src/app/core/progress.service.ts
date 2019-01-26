@@ -16,6 +16,8 @@ export class ProgressService {
   public totalLessons$ = 1;
   public progress$ = '0';
 
+  public courseComplete = false;
+
   interactiveChunkAnswered$ = this.interactiveChunkAnsweredSource.asObservable();
 
   answerInteractiveChunk(answered: boolean) {
@@ -154,6 +156,11 @@ export class ProgressService {
           }
 
           this.progress$ = ((completedLessons / this.totalLessons$) * 100).toFixed();
+          if (this.progress$ === '100') {
+            this.courseComplete = true;
+          } else {
+            this.courseComplete = false;
+          }
         }
       );
   }
