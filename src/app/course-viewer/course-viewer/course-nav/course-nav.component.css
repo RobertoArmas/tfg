@@ -8,6 +8,8 @@
     width: 280px;
     min-height: 200px;
     margin-bottom: 45px;
+    position: fixed;
+    z-index: 4;
 }
 
 .course-nav-header-background {
@@ -67,6 +69,9 @@
     font-family: 'Lato', sans-serif;
     color: #313537;
     font-weight: 700 !important;
+    overflow: hidden;
+    z-index: -1;
+    margin-top: 200px;
 }
 
 .course-nav-container .section-title {
