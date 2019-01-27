@@ -1,16 +1,15 @@
-
 <!-- Imagen y título del curso -->
 <div class="course-nav-header mat-elevation-z1">
   <div class="course-nav-header-background">
     <div class="course-nav-header-overlay">
-      
+
       <div class="course-nav-overview" fxLayout="row" fxLayoutAlign="center end">
         <div class="overview-info" fxLayout="column" fxLayoutAlign="space-between none">
           <span class="overview-span"></span>
           <h1 class="course-nav-header-title">{{course.title}}</h1>
           <div class="overview-progress">
-            <mat-progress-bar mode="determinate" value="70"></mat-progress-bar>
-            <h1 class="course-nav-header-progress">70% COMPLETADO</h1>
+            <mat-progress-bar mode="determinate" value="{{progressStore.progress$}}"></mat-progress-bar>
+            <h1 class="course-nav-header-progress"> {{progressStore.progress$}} % COMPLETADO</h1>
           </div>
         </div>
       </div>
@@ -21,19 +20,33 @@
 <!-- Secciones y lecciones -->
 <div class="course-nav-container">
   <mat-accordion multi="true">
-    <mat-expansion-panel *ngFor="let section of sections">
+    <mat-expansion-panel *ngFor="let section of sections" [expanded]="true">
       <mat-expansion-panel-header>
         <div class="section-title">
           {{section.title}}
         </div>
       </mat-expansion-panel-header>
-      <mat-list>
-        <mat-list-item (click)="navigateToLesson(lesson, section.id)" class="lessons-list-item" *ngFor="let lesson of section.lessons">
-          <mat-icon mat-list-icon>notes</mat-icon>
-          <p mat-line> {{lesson.title}} </p>
-          <mat-progress-spinner [diameter]="21" [value]="70"></mat-progress-spinner>
-        </mat-list-item>
-      </mat-list>
+      <content-loader height="300" width="250" *ngIf="!section.lessons; else showLessons">
+        <svg:rect x="5" y="10" rx="5" ry="5" height="50" width="240" />
+        <svg:rect x="5" y="70" rx="5" ry="5" height="50" width="240" />
+        <svg:rect x="5" y="130" rx="5" ry="5" height="50" width="240" />
+        <svg:rect x="5" y="190" rx="5" ry="5" height="50" width="240" />
+        <svg:rect x="5" y="250" rx="5" ry="5" height="50" width="240" />
+      </content-loader>
+      <ng-template #showLessons>
+      <mat-list>       
+          <mat-list-item [routerLink]="['/course-viewer/section', section.id, 'lesson', lesson.id]" routerLinkActive="active-lesson"
+            (click)="navigateToLesson(lesson, section.id)" class="lessons-list-item" [ngClass]="{'disabled': unlockedLessons$.indexOf(section.id + lesson.id) === -1}"
+            *ngFor="let lesson of section.lessons">
+            <mat-icon mat-list-icon>notes</mat-icon>
+            <p mat-line> {{lesson.title}} </p>
+            <!-- <mat-progress-spinner [diameter]="21" [value]="70" *ngIf="unlockedLessons$.indexOf(section.id + lesson.id) !== -1"></mat-progress-spinner> -->
+            <mat-icon color = "primary" *ngIf="(unlockedLessons$.indexOf(section.id + lesson.id) !== -1 && unlockedLessons$.indexOf(section.id + lesson.id) < (unlockedLessons$.length - 1)) || progressStore.courseComplete">check_circle</mat-icon>
+            <mat-icon color = "primary" *ngIf="(unlockedLessons$.indexOf(section.id + lesson.id) !== -1 && unlockedLessons$.indexOf(section.id + lesson.id) === (unlockedLessons$.length - 1)) && !progressStore.courseComplete">low_priority</mat-icon>
+
+          </mat-list-item>
+        </mat-list>
+      </ng-template>
     </mat-expansion-panel>
   </mat-accordion>
 </div>

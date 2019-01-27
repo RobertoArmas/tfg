@@ -22,6 +22,11 @@
 <div id={{id}} [style.background-color]="attributes.backgroundColor"> 
     <div fxLayout="row" fxLayoutAlign="center none" [style.padding-top.px]="attributes.paddingTop" [style.padding-bottom.px]="attributes.paddingBottom">
         <div fxFlex="90" fxFlex.gt-md="920px">
+
+            <content-loader height="615" width="920" *ngIf="!isLoaded">
+                <svg:rect x="0" y="15" rx="5" ry="5" height="615" width="920"/>
+            </content-loader>
+
             <img [hidden]="!isLoaded" src="{{attributes.url}}" (load)="removePlaceholder()" alt="{{attributes.caption}}">
             <div fxLayout="row" fxLayoutAlign="center none">
                 <div class="caption" fxFlex="85" fxFlex.gt-md="761.667px">

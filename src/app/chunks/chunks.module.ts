@@ -13,13 +13,16 @@ import { ChunkTwoColumnComponent } from './text/chunk-two-column/chunk-two-colum
 import { ChunkCheckboxListComponent } from './interactive/chunk-checkbox-list/chunk-checkbox-list.component';
 import { ChunkImageCenteredComponent } from './image/chunk-image-centered/chunk-image-centered.component';
 import { ChunkMultipleChoiceComponent } from './activity/chunk-multiple-choice/chunk-multiple-choice.component';
+import { ChunkService } from './chunk.service';
+import { ContentLoaderModule } from '@netbasal/ngx-content-loader';
 
 @NgModule({
   imports: [
     CommonModule,
     FlexLayoutModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    ContentLoaderModule
   ],
   declarations: [
     ChunkHeadingComponent,
@@ -55,6 +58,7 @@ import { ChunkMultipleChoiceComponent } from './activity/chunk-multiple-choice/c
     ChunkCheckboxListComponent,
     ChunkImageCenteredComponent,
     ChunkMultipleChoiceComponent
-  ]
+  ],
+  providers: [ChunkService]
 })
 export class ChunksModule { }
