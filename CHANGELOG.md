@@ -7,6 +7,13 @@
 
 
 
+# 0.3.1 (27-10-2018)
+
+### BREAKING CHANGES
+
+* [**app:** actualizar a Angular 7.0.0](https://trello.com/c/OcCrgN7j)
+* [**app:** implementar exportar/importar base de datos de Firestore a/desde ficheros JSON](https://trello.com/c/z6byYvXv)
+
 
 # 0.3.0 refactorization-modulation (19-08-2018)
 

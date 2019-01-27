@@ -1,20 +1,54 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, SimpleChange } from '@angular/core';
+import { ProgressService } from 'src/app/core/progress.service';
+import { CourseDataService } from 'src/app/core/course-data.service';
+import { zip, combineAll, merge, mergeAll, toArray } from 'rxjs/operators';
+import { combineChanges } from 'angularfire2/firestore';
 
 @Component({
   selector: 'app-lesson-header',
   templateUrl: './lesson-header.component.html',
   styleUrls: ['./lesson-header.component.scss']
 })
-export class LessonHeaderComponent {
+export class LessonHeaderComponent implements OnChanges {
 
-  @Input() currentLesson: number;
-  @Input() totalLessons: number;
-  @Input() title: string;
+  @Input() lessonId: string = 'Undefined';
+  @Input() sectionId: string = 'Undefined';
+  @Input() title: string = 'Undefined';
 
-  constructor() {
-    this.currentLesson = 1;
-    this.totalLessons = 1;
-    this.title = 'Lección 1';
+  private mergedId: string;
+  currentLesson = 0;
+  totalLessons = 0;
+  lessonsArray: string[] = [];
+
+  constructor(
+    private courseStore: CourseDataService,
+    private progressStore: ProgressService
+  ) {  }
+
+
+
+  ngAfterViewInit() {
+    this.setCurrentLessonOfTotal();
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    this.setCurrentLessonIndex();
+  }
+
+  setCurrentLessonOfTotal() {
+    this.courseStore.getLessonsArray()
+    .subscribe(
+      lessons => {
+        this.lessonsArray.push(lessons);
+        this.totalLessons = this.lessonsArray.length;
+        this.progressStore.totalLessons$ = this.lessonsArray.length;
+        this.setCurrentLessonIndex();
+      }
+    );
+  }
+
+  setCurrentLessonIndex() {
+    this.currentLesson = this.lessonsArray.indexOf(this.sectionId + this.lessonId) + 1;
   }
 
 }

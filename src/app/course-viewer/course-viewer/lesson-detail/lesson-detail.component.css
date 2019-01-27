@@ -10,6 +10,11 @@
     left: 0;
 }
 
+.next-lesson.locked {
+    cursor: not-allowed;
+    color: #707070;
+}
+
 .navigation-next-lesson {
     position: relative;
     height: 190px;

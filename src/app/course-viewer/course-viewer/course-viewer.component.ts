@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { filter } from 'rxjs/operators';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router } from '@angular/router';
+import { ProgressService } from 'src/app/core/progress.service';
+import { AuthService } from 'src/app/core/auth.service';
 
 @Component({
   selector: 'app-course-viewer',
@@ -12,14 +13,21 @@ export class CourseViewerComponent implements OnInit {
   startSidenavOpen: boolean;
   endSidenavOpen: boolean;
 
+  isProgressLoaded = false;
 
-  constructor(private router: Router) {
-    this.startSidenavOpen = false;
+
+  constructor(
+    private router: Router,
+    private progressStore: ProgressService,
+    public authStore: AuthService
+    ) {
+    this.startSidenavOpen = true;
     this.endSidenavOpen = false;
   }
 
   ngOnInit() {
     this.subscribeToRouteChanges();
+    this.redirectToCurrentUserLesson();
   }
 
   toggleStartSidenav() {
@@ -55,6 +63,33 @@ export class CourseViewerComponent implements OnInit {
         }
       }, 300);
     });
+  }
+
+  redirectToCurrentUserLesson() {
+    this.progressStore.progress.subscribe(
+      progress => {
+        if (progress) {
+          this.router.navigate(['/course-viewer/section/' + progress.currentLesson.sectionId + 
+          '/lesson/' + progress.currentLesson.lessonId]);
+          this.isProgressLoaded = true;
+        } else {
+          /**
+           * Se ha producido uno de los errores más graves, no existe el progreso de usuario y
+           * se ha accedido al curso con la sesión de Google ya iniciada, por lo tanto no se crea el
+           * progreso por primera vez
+           *
+           * SOLUCIÓN: Se vuelve a crear el progreso de usuario y pasado un tiempo se intenta redirigir al
+           * usuario
+           */
+          this.progressStore.createUserProgress();
+          setTimeout(() => {
+            this.subscribeToRouteChanges();
+            this.redirectToCurrentUserLesson();
+            this.isProgressLoaded = true;
+          }, 2000);
+        }
+      }
+    );
   }
 
 }
