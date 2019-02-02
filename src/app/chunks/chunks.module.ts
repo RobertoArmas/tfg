@@ -15,6 +15,7 @@ import { ChunkImageCenteredComponent } from './image/chunk-image-centered/chunk-
 import { ChunkMultipleChoiceComponent } from './activity/chunk-multiple-choice/chunk-multiple-choice.component';
 import { ChunkService } from './chunk.service';
 import { ContentLoaderModule } from '@netbasal/ngx-content-loader';
+import { ChunkVideoComponent } from './video/chunk-video/chunk-video.component';
 
 @NgModule({
   imports: [
@@ -33,7 +34,8 @@ import { ContentLoaderModule } from '@netbasal/ngx-content-loader';
     ChunkTwoColumnComponent,
     ChunkCheckboxListComponent,
     ChunkImageCenteredComponent,
-    ChunkMultipleChoiceComponent
+    ChunkMultipleChoiceComponent,
+    ChunkVideoComponent
   ],
   exports: [
     ChunkHeadingComponent,
@@ -57,7 +59,8 @@ import { ContentLoaderModule } from '@netbasal/ngx-content-loader';
     ChunkTwoColumnComponent,
     ChunkCheckboxListComponent,
     ChunkImageCenteredComponent,
-    ChunkMultipleChoiceComponent
+    ChunkMultipleChoiceComponent,
+    ChunkVideoComponent
   ],
   providers: [ChunkService]
 })
