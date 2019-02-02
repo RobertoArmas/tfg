@@ -9,6 +9,7 @@ import { ChunkSubheadingTextComponent } from './text/chunk-subheading-text/chunk
 import { ChunkCheckboxListComponent } from './interactive/chunk-checkbox-list/chunk-checkbox-list.component';
 import { ChunkMultipleChoiceComponent } from './activity/chunk-multiple-choice/chunk-multiple-choice.component';
 import { ChunkImageCenteredComponent } from './image/chunk-image-centered/chunk-image-centered.component';
+import { ChunkVideoComponent } from './video/chunk-video/chunk-video.component';
 
 @Injectable()
 export class ChunkService {
@@ -45,6 +46,9 @@ export class ChunkService {
         break;
       case 'imageCentered':
         component = ChunkImageCenteredComponent;
+        break;
+      case 'video':
+        component = ChunkVideoComponent;
         break;
       default:
         break;
