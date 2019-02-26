@@ -17,7 +17,7 @@ import { combineAll } from 'rxjs/operators';
 
 @Injectable()
 export class CourseDataService {
-  private _courseId = 'c1';
+  private _courseId = 'c01';
   public get courseId() {
     return this._courseId;
   }
