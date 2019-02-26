@@ -1,0 +1,19 @@
+# Exportar la BD a un fichero json
+
+firestore-export --accountCredentials course/tfg_credentials.json --backupFile course/tfg.json
+
+
+# Importar la BD a firestore
+
+firestore-import --accountCredentials course/tfg_credentials.json --backupFile course/tfg.json
+
+
+
+
+# Deployment
+
+https://scotch.io/tutorials/deploying-an-angular-cli-app-to-production-with-firebase
+
+ng build --prod
+
+firebase deploy
