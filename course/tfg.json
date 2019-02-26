@@ -1,0 +1,795 @@
+{
+    "__collections__": {
+        "courses": {
+            "c01": {
+                "imageUrl": "    background-image: url(\"https://firebasestorage.googleapis.com/v0/b/e-learning-ua.appspot.com/o/agriculture-countryside-crop-1137338.jpg?alt=media&token=d7ce6f31-3ab2-4dda-9cf0-3bcb5cdb5e6a\");",
+                "URI": "/chunksTour",
+                "title": "Chunks Tour",
+                "description": "Curso de pruebas donde se muestran todos los Chunks implementados para poder crear cursos",
+                "__collections__": {
+                    "sections": {
+                        "s01": {
+                            "id": "s01",
+                            "title": "Introducción",
+                            "__collections__": {
+                                "lessons": {
+                                    "l01": {
+                                        "description": "Se explica el objetivo del curso",
+                                        "URI": "/introduccion",
+                                        "title": "Introducción",
+                                        "__collections__": {
+                                            "chunks": {
+                                                "c01": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "El objetivo de este curso importado desde un archivo JSON es explicar detalladamente todos los tipos de Chunk que se han utilizado para el desarrollo del curso final."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c02": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "A primera vista la aplicación parece muy sencilla, y ese es el objetivo, que el usuario esté totalmente centrado en el contenido del curso y tenga el menor número de distracciones posible."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c03": {
+                                                    "attributes": {
+                                                        "data": "Un diseño simple también previene a los usuarios con déficit de atención de distraerse nada mas empezar el curso."
+                                                    },
+                                                    "type": "text",
+                                                    "__collections__": {}
+                                                },
+                                                "c04": {
+                                                    "type": "subheadingText",
+                                                    "attributes": {
+                                                        "textData": "Para navegar a través de las lecciones es preferible utilizar los botones de navegación al principio y al final de cada lección ya que son los que contarán para el progreso del curso.",
+                                                        "headingData": "Navegación"
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c05": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "La barra de navegación también se puede utilizar pero es preferible que tan solo sea para repasar el contenido."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c06": {
+                                                    "type": "subheadingText",
+                                                    "attributes": {
+                                                        "headingData": "Usuarios",
+                                                        "textData": "Cada usuario tiene un progreso en el curso personal y se va incrementando a medida que este avanza por el curso hasta finalizar todas las lecciones"
+                                                    },
+                                                    "__collections__": {}
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "s02": {
+                            "id": "s02",
+                            "title": "Tipos de Chunk",
+                            "__collections__": {
+                                "lessons": {
+                                    "l01": {
+                                        "description": "Se muestran los Chunks básicos de tipo texto",
+                                        "URI": "/texto",
+                                        "title": "Chunks de tipo texto",
+                                        "__collections__": {
+                                            "chunks": {
+                                                "c01": {
+                                                    "type": "heading",
+                                                    "attributes": {
+                                                        "data": "Los Chunks de tipo texto son muy simples, esto es un título de primer nivel."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c02": {
+                                                    "attributes": {
+                                                        "data": "Este Chunk es de tipo texto, en el se ponen la mayoría de descripciones. Un Chunk de tipo texto podría compararse con un párrafo de una lección."
+                                                    },
+                                                    "type": "text",
+                                                    "__collections__": {}
+                                                },
+                                                "c03": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "También se pueden concatenar estos Chunks para seguir explicando los conceptos deseados."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c04": {
+                                                    "type": "subheading",
+                                                    "attributes": {
+                                                        "data": "Este Chunk es un encabezado de segundo nivel"
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c05": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "El encabezado de segundo nivel sirve para separar sub-secciones dentro de la misma lección."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c06": {
+                                                    "type": "twoColumn",
+                                                    "attributes": {
+                                                        "dataCol2": "Así se puede mostrar un poco más de dinamismo a la hora de presentar el contenido.",
+                                                        "dataCol1": "El Chunk de tipo texto de dos columnas sirve para dividir los datos dentro de una misma fila."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c07": {
+                                                    "type": "headingText",
+                                                    "attributes": {
+                                                        "textData": "Este tipo de Chunk tiene por defecto el texto más cerca del encabezado, este texto se puede utilizar como introducción al apartado que se va a explicar debido a su cercanía al encabezado.",
+                                                        "headingData": "Chunk de tipo Heading-Text"
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c08": {
+                                                    "type": "subheadingText",
+                                                    "attributes": {
+                                                        "textData": "Este Chunk tiene la misma funcionalidad que el chunk de tipo Heading-text pero con los sub-apartados.",
+                                                        "headingData": "Chunk de tipo Subheading-Text"
+                                                    },
+                                                    "__collections__": {}
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "l02": {
+                                        "URI": "/chunksInteractivos",
+                                        "title": "Chunks Interactivos",
+                                        "description": "En esta lección se muestran los Chunks de tipo interactivo",
+                                        "__collections__": {
+                                            "chunks": {
+                                                "c01": {
+                                                    "type": "heading",
+                                                    "attributes": {
+                                                        "data": "Checkbox"
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c02": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "El Chunk Checkbox se puede utilizar para comprobar que el usuario ha entendido los conceptos presentados, hasta que no se marquen todas las 'boxes' no se podrá avanzar de lección."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c03": {
+                                                    "type": "checkboxList",
+                                                    "attributes": {
+                                                        "items": [
+                                                            "Encabezados",
+                                                            "Subencabezados",
+                                                            "Texto plano (párrafos)",
+                                                            "Dos columnas de texto",
+                                                            "Hasta que no estén todos los campos marcados no se podrá avanzar de lección (por implementar)"
+                                                        ]
+                                                    },
+                                                    "__collections__": {}
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "l03": {
+                                        "URI": "/ejercicios",
+                                        "title": "Chunks de tipo ejercicio",
+                                        "description": "En esta lección se muestran los Chunks de tipo ejercicio.",
+                                        "__collections__": {
+                                            "chunks": {
+                                                "c01": {
+                                                    "attributes": {
+                                                        "data": "Ejercicio de selección múltiple"
+                                                    },
+                                                    "type": "heading",
+                                                    "__collections__": {}
+                                                },
+                                                "c02": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "En el ejercicio de selección múltiple se puede marcar una única solución, aunque puede haber varias respuestas correctas y se mostrará un feedback genérico para todas las respuestas."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c03": {
+                                                    "type": "multipleChoice",
+                                                    "attributes": {
+                                                        "interactionType": "choice",
+                                                        "feedback": "Hasta ahora solo se han repasado los Chunks de tipo Dos columnas y Encabezado de primer nivel, por lo que cualquiera de las dos opciones es correcta",
+                                                        "question": "¿Cuál de los siguientes tipos de Chunks hemos visto hasta ahora?",
+                                                        "choices": [
+                                                            "Dos columnas",
+                                                            "Audio",
+                                                            "Imagen",
+                                                            "Video",
+                                                            "Encabezado de primer nivel",
+                                                            "Arquitectura de una aplicación Angular. Los bloques principales son módulos, componentes, templates, metadatos, data binding, directivas, servicios e inyección de dependencias."
+                                                        ],
+                                                        "correctResponsePattern": [
+                                                            "Dos columnas",
+                                                            "Encabezado de primer nivel"
+                                                        ]
+                                                    },
+                                                    "__collections__": {}
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "l04": {
+                                        "URI": "/imagenes",
+                                        "title": "Chunks de tipo imagen",
+                                        "description": "En esta lección se muestran los Chunks de tipo imagen",
+                                        "__collections__": {
+                                            "chunks": {
+                                                "c01": {
+                                                    "type": "heading",
+                                                    "attributes": {
+                                                        "data": "Imagen centrada"
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c02": {
+                                                    "type": "imageCentered",
+                                                    "attributes": {
+                                                        "caption": "La descripción de la imagen complementa a la misma, por eso se integra dentro del mismo Chunk. Esta imagen por ejemplo es de una bicicleta de montaña.",
+                                                        "url": "https://firebasestorage.googleapis.com/v0/b/e-learning-ua.appspot.com/o/bicycle.jpg?alt=media&token=9f2e048e-9946-4a47-a3bc-ff8fba8349ba"
+                                                    },
+                                                    "__collections__": {}
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "l05": {
+                                        "URI": "/videos",
+                                        "title": "Chunks de tipo video",
+                                        "description": "En esta lección se muestran los Chunks de tipo video",
+                                        "__collections__": {
+                                            "chunks": {
+                                                "c01": {
+                                                    "type": "heading",
+                                                    "attributes": {
+                                                        "data": "Video de YouTube"
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c02": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Los Chunks de tipo video sirven para transmitir ideas que son especialmente difíciles de explicar en texto. Por defecto este chunk acepta Ids de YouTube y en un futuro se implementarán otros reproductores de video."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c03": {
+                                                    "type": "video",
+                                                    "attributes": {
+                                                        "videoId": "XEfDYMngJeE"
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c04": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Cuando el video tiene una transcripción adjunta aparecerá un botón arriba del video para poder descargarla"
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c05": {
+                                                    "type": "video",
+                                                    "attributes": {
+                                                        "videoId": "Scxs7L0vhZ4",
+                                                        "transcriptUrl": "https://firebasestorage.googleapis.com/v0/b/e-learning-ua.appspot.com/o/transcript_sample.pdf?alt=media&token=1f7a6dca-d2cd-43ad-ba4b-5843ba6f640b"
+                                                    },
+                                                    "__collections__": {}
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "s03": {
+                            "id": "s03",
+                            "title": "Personalización de Chunks",
+                            "__collections__": {
+                                "lessons": {
+                                    "l01": {
+                                        "description": "En esta lección se muestran las opciones de personalización de color de fondo",
+                                        "URI": "/colores",
+                                        "title": "Color de fondo",
+                                        "__collections__": {
+                                            "chunks": {
+                                                "c01": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "El color de fondo puede ayudar a destacar texto que sea más importante, cualquier color es admitido, pero se recomienda el uso de los colores más claros de la paleta de colores de Material Design."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c02": {
+                                                    "type": "twoColumn",
+                                                    "attributes": {
+                                                        "dataCol1": "Este Chunk destaca sobre los demás.",
+                                                        "dataCol2": "El color utilizado tampoco es lo suficientemente intrusivo como para que no pueda ser leído por el usuario.",
+                                                        "backgroundColor": "#fffde7"
+                                                    },
+                                                    "__collections__": {}
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "l02": {
+                                        "description": "En esta lección se muestran las opciones de separación entre Chunks",
+                                        "URI": "/separacionDeChunks",
+                                        "title": "Separación",
+                                        "__collections__": {
+                                            "chunks": {
+                                                "c01": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "La separación entre Chunks también puede ayudar a la comprensión del alumno, por ejemplo los dos siguientes Chunks tienen una separación mínima, por lo que da a entender que hablan de lo mismo."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c02": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingBottom": 10,
+                                                        "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut tortor lacinia, semper dui quis, lobortis dolor. Cras lacinia erat id ligula egestas, id lobortis metus venenatis. Cras dapibus ipsum porta, varius magna id, feugiat erat. Donec aliquam eu sapien a laoreet. Aenean lacinia finibus nulla, vitae euismod dui viverra dictum. Phasellus a sollicitudin leo, quis iaculis dui. Vivamus tellus nibh, porta eu tincidunt nec, fermentum quis metus. Cras a dictum magna. Nam a ligula et odio ornare porttitor eu in odio. Proin mattis ullamcorper libero vitae pulvinar. Proin at arcu ac mauris porta ultrices non eu lacus. Ut dapibus risus lacus, at pellentesque sapien accumsan eu. Cras lacinia leo leo, a mattis odio fermentum at. "
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c03": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 10,
+                                                        "data": "Praesent dapibus ex non augue semper, vitae fringilla mi lobortis. Praesent posuere neque id erat varius, sed condimentum neque aliquam. Fusce vestibulum quam vel nisl accumsan volutpat eu id dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pellentesque porta tellus, sit amet finibus eros fermentum ac. In sed finibus ex. Pellentesque eget fermentum lectus. "
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c04": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Los dos siguientes Chunks tienen una mayor separación por lo que se da a entender que no están tan relacionados como los anteriores."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c05": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingBottom": "150",
+                                                        "data": "Nulla blandit id ipsum eu sagittis. Etiam turpis augue, maximus nec accumsan in, faucibus ac nisi. Sed et condimentum dui. Aenean suscipit fringilla justo, vel finibus enim tempus in. Quisque ultrices facilisis nunc. Aenean tempor eleifend elementum. Sed ut mauris vel diam convallis tempus. Morbi hendrerit lacus id mauris molestie, vitae fermentum tellus lacinia. Sed in mauris arcu. Ut fermentum lobortis erat nec convallis. Proin at velit et neque rhoncus venenatis vel vel diam. Cras ut posuere nisl. Fusce eu ipsum augue. Morbi eget sapien et ligula auctor rutrum in scelerisque tortor. Duis non sapien vitae enim rhoncus egestas. Mauris bibendum consectetur condimentum. "
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c06": {
+                                                    "type": "checkboxList",
+                                                    "attributes": {
+                                                        "items": [
+                                                            "Los Chunks se pueden separar.",
+                                                            "Los Chunks se pueden juntar.",
+                                                            "Se pueden combinar las dos opciones de personalización (separación y color de fondo)"
+                                                        ],
+                                                        "backgroundColor": "#e8f5e9",
+                                                        "paddingTop": "200"
+                                                    },
+                                                    "__collections__": {}
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "c02": {
+                "imageUrl": "    background-image: url(\"https://firebasestorage.googleapis.com/v0/b/e-learning-ua.appspot.com/o/study_techniques-1.jpg?alt=media&token=fb974efc-4f03-439f-951c-e7a1c6ef4cc0\");",
+                "URI": "/studyTechniques",
+                "title": "Técnicas de Estudio Avanzadas",
+                "description": "Curso en el que los alumnos aprenden técnicas de estudio para aplicación en el aprendizaje propio",
+                "__collections__": {
+                    "sections": {
+                        "s01": {
+                            "id": "s01",
+                            "title": "Introducción",
+                            "__collections__": {
+                                "lessons": {
+                                    "l01": {
+                                        "description": "Se explican los objetivos del curso",
+                                        "URI": "/que_es_este_curso",
+                                        "title": "¿Qué es este curso?",
+                                        "__collections__": {
+                                            "chunks": {
+                                                "c01": {
+                                                    "type": "headingText",
+                                                    "attributes": {
+                                                        "textData": "Bienvenido al curso de técnicas avanzadas de aprendizaje. Antes de nada me gustaría darte las gracias por participar en este proyecto.",
+                                                        "headingData": "Primero una breve introducción"
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c02": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "A lo largo del curso aprenderás distintas técnicas que podrás aplicar a los estudios o a cualquier otra cosa que implique aprender. También se proporcionarán herramientas y materiales que pueden ayudar a conseguir tus objetivos de aprendizaje de una forma más rápida."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c03": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Cada lección te enseñará técnicas muy específicas aplicadas a ámbitos relacionados con el aprendizaje, por ejemplo habrá lecciones en las que te enseñaremos a leer más rápido y retener mejor la información. En otra lección aprenderás a tomar notas de una manera eficiente y rápida que te permitirá aprender más durante una clase, charla o cuando estés viendo un video."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c04": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "También te enseñaremos estrategias de asociación de conceptos para no olvidar lo aprendido y poder invertir el tiempo que tardarías en repasar aprendiendo más y más."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c05": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "El contenido de las lecciones será generalmente muy sencillo de entender, pero también abordaremos temas como el entendimiento y resolución de problemas complejos, y aunque se intentará hacer una explicación de la forma más clara posible estas lecciones tendrán un añadido de dificultad por el conocimiento que pretenden transmitir."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c06": {
+                                                    "type": "subheading",
+                                                    "attributes": {
+                                                        "data": "¿Qué vas a aprender en este curso?"
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c07": {
+                                                    "type": "checkboxList",
+                                                    "attributes": {
+                                                        "items": [
+                                                            "Lectura rápida reteniendo mejor la información.",
+                                                            "Técnicas para no olvidar los conceptos aprendidos.",
+                                                            "Tomar mejores apuntes.",
+                                                            "Entender conceptos complejos.",
+                                                            "Afrontar problemas de gran dificultad."
+                                                        ]
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c08": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Dado que el objetivo del curso es aprender técnicas de estudio y mejorar en el ámbito académico te invito a que cojas una libreta para tomar apuntes. En las próximas lecciones aprenderás cómo mejorar estructura de los apuntes e incluso a tomar notas más rápido con pequeños trucos, pero siempre está bien que empieces cuánto antes para adaptarte más rápido."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c09": {
+                                                    "type": "twoColumn",
+                                                    "attributes": {
+                                                        "dataCol2": "Poner en práctica estas técnicas te ayudará a incorporarlas de manera automática a tu manera de aprender nuevos conceptos.",
+                                                        "dataCol1": "Es muy interesante que intentes poner en práctica las técnicas y consejos que se describen a lo largo de cada lección, aunque no creas que tienen un propósito claro para lo que estás estudiando actualmente."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c11": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "backgroundColor": "#fff475",
+                                                        "data": "Piensa las distintas maneras de aplicar lo aprendido a tus estudios. Las técnicas que se explican en el curso pueden ser adaptadas fácilmente a circunstancias diferentes de las que se exponen."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c12": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Muchas gracias por participar en el curso, espero que disfrutes cada una de las lecciones y sobre todo que puedas aplicarlas a tus rutinas de estudio."
+                                                    },
+                                                    "__collections__": {}
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "l02": {
+                                        "description": "Se explican las ideas principales del curso y los principios básicos",
+                                        "URI": "/principios_basicos",
+                                        "title": "Principios Básicos",
+                                        "__collections__": {
+                                            "chunks": {
+                                                "c01": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "El curso recoge 3 principios básicos. Cada una de las técnicas o herramientas que se exponen están conectadas a uno de los 3 principios básicos."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c02": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Es muy importante que tengas esto en mente cada vez que estés practicando una nueva lección para que puedas conectar lo que se explica a uno de los 3 principios básicos. Esto te ayudará a identificar para qué se pueden utilizar las técnicas y podrás descubrir por ti mismo cómo se relacionan todas las técnicas y conceptos que se explican."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c03": {
+                                                    "type": "checkboxList",
+                                                    "attributes": {
+                                                        "items": [
+                                                            "Primer principio: Aprendizaje por asociación de conceptos.",
+                                                            "Segundo principio: Nunca memorizar cuando se necesita entender.",
+                                                            "Tercer principio: El feedback es fundamental."
+                                                        ]
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c04": {
+                                                    "type": "headingText",
+                                                    "attributes": {
+                                                        "textData": "Muchos expertos están de acuerdo en que si el alumno aprende creando una red de conexiones tendrá una mayor capacidad de recordar lo aprendido en un examen, haciendo ejercicios o incluso será capaz de aplicarlo a situaciones de la vida cotidiana.",
+                                                        "headingData": "1. Aprende por asociación de conceptos"
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c05": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "backgroundColor": "#fff475",
+                                                        "data": "Siendo capaz de crear una representación de las ideas también te ayudará a resolver los problemas de una manera más creativa."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c06": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Desarrollar esta habilidad ayuda a aprender de una manera más dinámica y flexible que la manera tradicional de memorización."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c07": {
+                                                    "type": "subheadingText",
+                                                    "attributes": {
+                                                        "textData": "La manera de aprender conceptos por asociación se explicará con más detalle en lecciones posteriores, pero el concepto es muy sencillo. Se trata de crear analogías entre las ideas y crear conexiones entre esas analogías que te permitan crear una historia o relacionar las ideas como si estuvieras viendo una película. Todo se resume en crear conexiones entre ideas que sean muy similares.",
+                                                        "headingData": "¿Cómo se desarrolla esta habilidad?"
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c08": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Otra manera muy popular y visual de relacionar ideas es creando imágenes que representen las ideas que quieres aprender. Esto permite convertir una idea en algo más representativo del mundo real y por lo tanto más fácil de memorizar. Creando una imagen también se simplifican los conceptos que se quieren aprender, se elimina la abstracción (normalmente es mucho más difícil de entender las cosas cuando no se sabe claramente de qué se está hablando) y permite asociar ideas simples a conceptos muy complejos."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c09": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Este es el primer principio del curso, recuérdalo bien porque gran parte de las lecciones irán ligadas a este principio."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c10": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "backgroundColor": "#fff475",
+                                                        "data": "Aprende por asociación de conceptos."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c11": {
+                                                    "type": "headingText",
+                                                    "attributes": {
+                                                        "textData": "Imagina que estás a 1 semana del examen, no has estudiado nada y te das cuenta de que tienes muchísima materia por aprender. Muchos estudiantes caen en la trampa de intentar memorizar toda esa cantidad de información en vez de intentar entender.",
+                                                        "headingData": "2. No memorices cuando necesitas entender"
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c12": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Esto puede ser una solución a corto plazo, pero sin duda es una estrategia que no lleva a aprender nada. Cuando se construye una base de conocimiento a partir de la memorización y no en base al entendimiento cuando te enfrentes a una situación que se salga un poco de lo que has estudiado no sabrás resolverlo, y sobre todo tendrás muchas más dificultades a la hora de añadir más materia relacionada."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c13": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "En el curso observarás que se presenta una visión distinta al ejemplo que acabamos de analizar. Vamos a intentar de entender muy claramente las ideas y en técnicas para entender conceptos difíciles, de una manera simple y conectados."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c14": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "backgroundColor": "#fff475",
+                                                        "data": "De esta manera las ideas serán mucho más sencillas de recordar."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c15": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "También es cierto que siempre se va a requerir memorización de conceptos, pero muchos estudiantes dedican la mayor parte del tiempo de estudio a memorizar. Esto se ve reflejado en muchos casos en las notas y en su habilidad de aprender en general."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c16": {
+                                                    "type": "headingText",
+                                                    "attributes": {
+                                                        "textData": "Es muy importante que hagas revisiones constantes de lo aprendido y que saques conclusiones nuevas. En el curso aprenderás a integrar la revisión de lo estudiado en todo el proceso de aprendizaje porque así te darás cuenta de lo que sabes y de lo que no sabes, en qué cosas te defiendes mejor y en cuales flojeas más.",
+                                                        "headingData": "3. El Feedback es fundamental"
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c17": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Y lo más importante, revisando lo estudiado te ayudará a decidir qué es exactamente lo que necesitas aprender después."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c18": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Uno de los errores más graves en el mundo del aprendizaje se debe a que la mayoría de técnicas de estudio no hacen énfasis en repasar lo aprendido y a pesar de que produzcan un sentimiento de trabajo, estas téncicas no suelen ser muy efectivas."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c19": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Resumiendo, los 3 principios básicos que te enseñará este curso son: aprender asociando conceptos, nunca memorizar cuando debes entender y por último aplicar feedback a lo largo de todo el proceso de estudio."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c20": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "En las siguientes lecciones se explicarán detalladamente cada uno de los principios y técnicas para implementarlos en tu rutina de estudio. ¿Cómo se podrían aplicar a situaciones concretas?"
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c21": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Como te he dicho al principio, si eres capaz de relacionar cada concepto que se explique con uno de los 3 principios ¡Ya habrás dado un gran paso hacia aprender más rápido y mejor!"
+                                                    },
+                                                    "__collections__": {}
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "l03": {
+                                        "description": "",
+                                        "URI": "/principios_basicos",
+                                        "title": "Principios Básicos",
+                                        "__collections__": {
+                                            "chunks": {
+                                                "c01": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "A lo largo del curso vas a aprender una gran variedad de técnicas y estrategias para aprender de una forma más eficiente."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c02": {
+                                                    "type": "twoColumn",
+                                                    "attributes": {
+                                                        "dataCol2": "Otras técnicas son muy efectivas pero tienen una curva de aprendizaje un poco más compleja y te llevará un poco más de tiempo adaptarte a estas nuevas formas de pensar, y por supuesto, tendrás que practicar antes de llevarlas a tu rutina de estudio.",
+                                                        "dataCol1": "Algunas de estas técnicas serán muy sencillas y podrás aplicarlas desde el minuto 1 a tus estudios y verás como desde el principio empiezan a dar fruto."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c03": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Por último, aprenderás técnicas sencillas que sustituyen a otras estrategias menos efectivas y más comunes entre los estudiantes. Es muy importante que uses estas nuevas técnicas que aprenderás y las implementes en tu rutina de estudio."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c04": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Un buen ejercicio para aplicar estas técnicas es cuando estés estudiando pensar en qué técnica podría ayudarte e intentar aplicarla. Al principio notarás que te lleva un poco más de tiempo pensar qué técnica aplicar para aprender determinada cosa, pero con un poco de práctica lo harás de forma casi automática. Algunas técnicas serán un poco más costosas de aplicar porque requerirán que previamente hayas practicado, pero aun así la mejor opción es intentar aplicarla, pasadas unas horas deberías ser capaz de haber aplicado una determinada técnica correctamente y a base de practicar más deberás ser capaz de aplicarlas sin a penas esfuerzo."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c05": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "backgroundColor": "#fff475",
+                                                        "data": "Una vez que seas capaz de aplicar las técnicas de estudio que aprenderás sin a penas esfuerzo notarás como tu capacidad de aprendizaje se multiplica."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c06": {
+                                                    "type": "headingText",
+                                                    "attributes": {
+                                                        "textData": "Cuando te enfrentes a técnicas que están pensadas que integres en tu rutina de estudio como una distribución de horas de estudio o un sistema de tomar apuntes te recomiendo que utilices periodos de prueba de 30 días.",
+                                                        "headingData": "Periodos de prueba de las técnicas"
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c07": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Seguramente habrás escuchado alguna vez que para adquirir un hábito es necesario repetir una acción como mínimo durante 30 días. Bien, pues es una buena aproximación y te recomiendo que la apliques a los conocimientos que adquieras durante el curso."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c08": {
+                                                    "type": "imageCentered",
+                                                    "attributes": {
+                                                        "caption": "Según muchos expertos es necesario practicar algo durante 30 días para adquirir un hábito.",
+                                                        "url": "https://firebasestorage.googleapis.com/v0/b/e-learning-ua.appspot.com/o/30_day_habit.png?alt=media&token=28626374-814d-4e24-bedc-88f64334deb0"
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c09": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Esta regla es necesaria cuando quieras implementar en tu rutina técnicas como el 'Sistema de productividad' o el 'Método de Tomar Apuntes'. Son cosas muy sencillas de aplicar, pero que si no se practican se acaban olvidando y se pierden los beneficios que aportan si se ha olvidado cómo se utilizaban y se acaba volviendo a los métodos tradicionales de tomar apuntes."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c10": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Ten esto siempre en cuenta, sé consciente de las técnicas que vas aprendiendo, si es algo que puedes empezar a aplicar ya te recomiendo que lo hagas. Si es una técnica que requiere un poco de práctica y sientes que hay demasiadas te recomiendo que escojas una o dos que creas que te vayan a ayudar más y dediques un par de horas a aprender como funcionan y a aplicarlas a tus estudios. "
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c11": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Probablemente no seas capaz de aprender todas las técnicas que se presentan en el curso, y probablemente tampoco lo necesitas. Tan solo con centrarte en un par ya serás capaz de aumentar tu capacidad de aprendizaje. Habrá técnicas que serán muy específicas para un tipo de estudio y otras para otro tipo de estudio, pero es bueno que al menos las conozcas por si en un futuro necesitas aplicarlas."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c12": {
+                                                    "type": "subheading",
+                                                    "attributes": {
+                                                        "backgroundColor": "#fff475",
+                                                        "data": "No es necesario que aprendas y apliques todas las técnicas que se van a presentar."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c13": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Por último, para las técnicas que hemos hablado que sería esencial que incorporaras en tu rutina pero es fácil que olvides si no practicas considera aplicar la prueba de los 30 días. Y te recomiendo que apliques solo una prueba de 30 días a la vez, por ejemplo, si quieres implementar el horario de productividad que veremos más adelante, haz la prueba de 30 días sólo del horario de productividad, no mezcles pruebas de otras técnicas porque cada una necesita sus 30 días de prueba para que sea adquirida como un hábito."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c14": {
+                                                    "type": "headingText",
+                                                    "attributes": {
+                                                        "textData": "Una vez que ya sabes el tipo de técnicas que aprenderás (algunas serán muy sencillas y podrás aplicarlas cuando te las enseñemos, para otras necesitarás un poco de práctica y otras requerirán que las apliques durante un periodo largo de tiempo para adquirirlas cómo hábito).",
+                                                        "headingData": "En resumen..."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c15": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Lo importante es que a lo largo del curso se presentarán muchas técnicas y no debes aplicarlas todas. Si en algún momento sientes agobiado por la cantidad de técnicas presentadas no te preocupes. Céntrate en la única que creas que te va a ayudar más porque siempre podrás volver al curso y volver a repasar nuevas técnicas cuando las necesites."
+                                                    },
+                                                    "__collections__": {}
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -5,11 +5,9 @@
           <div fxLayout="column" fxLayoutAlign="space-evenly center" fxFill>
             <div class="author">Nombre del autor del curso</div>
             <div class="title">Course demo</div>
-            <div class="controls">
-              <button mat-raised-button color="primary" routerLink="/course-viewer/section" (click)="sendStartStatement()">IR AL CURSO</button>
-              <button mat-raised-button color="primary" routerLink="/course-viewer/section" (click)="sendStartStatement()">SIGN IN</button>
-              <button mat-raised-button color="primary" routerLink="/course-viewer/section" (click)="sendStartStatement()">CHUNKS TOUR COURSE</button>
-              <button mat-raised-button color="primary" routerLink="/course-viewer/section" (click)="sendStartStatement()">LEARN MORE COURSE</button>
+            <div fxFlex="70" class="course-selection" fxLayout="column" fxLayoutAlign="space-evenly center" fxLayout.gt-md="row" fxLayoutAlign.gt-md="space-around center">
+              <button mat-raised-button color="primary" routerLink="/course-viewer/section" (click)="sendStartStatement('c01')">CHUNKS TOUR</button>
+              <button mat-raised-button color="primary" routerLink="/course-viewer/section" (click)="sendStartStatement('c02')">TÉCNICAS DE ESTUDIO</button>
             </div>
           </div>
       </div>
