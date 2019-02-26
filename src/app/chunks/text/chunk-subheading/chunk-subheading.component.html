@@ -2,7 +2,13 @@
 <div id={{id}} [style.background-color]="attributes.backgroundColor"> 
   <div fxLayout="row" fxLayoutAlign="center none" [style.padding-top.px]="attributes.paddingTop" [style.padding-bottom.px]="attributes.paddingBottom">
     <div fxFlex="90" fxFlex.gt-md="761.667px">
-      <h3> {{attributes.data}} </h3>
+      <h3 *ngIf="attributes.data; else loadingcss"> {{attributes.data}} </h3>
+
+      <ng-template #loadingcss>
+          <content-loader height="40">
+            <svg:rect x="0" y="15" rx="3" ry="3" height="30" width="200"/>
+          </content-loader>
+      </ng-template>
     </div>
   </div>
 </div>

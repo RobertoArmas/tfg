@@ -1,7 +1,8 @@
-import { Component, OnInit, Input, DoCheck } from '@angular/core';
+import { Component, OnInit, Input, DoCheck, AfterViewInit } from '@angular/core';
 import { LessonData } from '../../../course-viewer/lesson.model';
 import { XapiService } from '../../../core/xapi/xapi.service';
 import { ChunkMultipleChoice } from './chunk-multiple-choice';
+import { ProgressService } from 'src/app/core/progress.service';
 
 /**
  * Se utiliza para formatear la respuesta.
@@ -33,18 +34,19 @@ class Choice {
   templateUrl: './chunk-multiple-choice.component.html',
   styleUrls: ['./chunk-multiple-choice.component.scss']
 })
-export class ChunkMultipleChoiceComponent implements OnInit, DoCheck {
+export class ChunkMultipleChoiceComponent implements OnInit, DoCheck, AfterViewInit {
   @Input() attributes: ChunkMultipleChoice;
   @Input() id: string;
   @Input() parentLesson: LessonData;
   defaultChoices: string[];
-  choice: string;
+  choice = ''; // Necesario para que funcione Firebase (no existen los nulos)
   answer: Answer;
   showAnswer: boolean;
   noSelectedChoice: boolean;
 
   constructor(
-    private xApiService: XapiService
+    private xApiService: XapiService,
+    private progressStore: ProgressService
   ) {
     this.attributes = new ChunkMultipleChoice();
     this.noSelectedChoice = true;
@@ -57,19 +59,53 @@ export class ChunkMultipleChoiceComponent implements OnInit, DoCheck {
   ngOnInit() {
     // tslint:disable-next-line:max-line-length
     if (this.attributes.previousAttempts === undefined) { this.attributes.previousAttempts = 0; }
-
     if (this.attributes.paddingTop === undefined) { this.attributes.paddingTop = 30; }
     if (this.attributes.paddingBottom === undefined) { this.attributes.paddingBottom = 30; }
     if (this.attributes.backgroundColor === undefined) { this.attributes.backgroundColor = '#ffffff'; }
   }
 
+  /**
+   * Carga las respuestas de Firebase después de iniciar la vista
+   * si no existe crea una por defecto para análisis
+   */
+  ngAfterViewInit() {
+    this.progressStore.checkAnswered(this.id).subscribe(
+      progress => {
+        if (progress) {
+          this.choice = progress.answer;
+          if (this.choice !== '') {
+            this.displayResult();
+          }
+        } else {
+          const emptyChoice = '';
+          this.progressStore.setAnswer(this.id, emptyChoice);
+        }
+      }
+    );
+  }
+
   ngDoCheck() {
-    if (this.choice !== null) {
+    if (this.choice !== '') {
       this.noSelectedChoice = false;
+    } else {
+      this.noSelectedChoice = true;
     }
   }
 
   revealResult() {
+    this.progressStore.setAnswer(this.id, this.choice);
+    this.displayResult();
+    this.progressStore.answerInteractiveChunk(true);
+
+    this.attributes.statementData = this.attributes.question;
+    this.attributes.statementChoices = this.formatStatementChoices();
+    this.attributes.statementSuccess = this.isTheRightAnswer();
+    this.attributes.statementResponse = this.choice;
+    this.xApiService.answered(this.id, this.attributes, this.parentLesson);
+    this.attributes.previousAttempts++;
+  }
+
+  private displayResult() {
     this.showAnswer = true;
     if (this.isTheRightAnswer()) {
       this.answer.icon = 'sentiment_very_satisfied';
@@ -78,12 +114,6 @@ export class ChunkMultipleChoiceComponent implements OnInit, DoCheck {
       this.answer.icon = 'sentiment_very_dissatisfied';
       this.answer.label = 'Has fallado...';
     }
-    this.attributes.statementData = this.attributes.question;
-    this.attributes.statementChoices = this.formatStatementChoices();
-    this.attributes.statementSuccess = this.isTheRightAnswer();
-    this.attributes.statementResponse = this.choice;
-    this.xApiService.answered(this.id, this.attributes, this.parentLesson);
-    this.attributes.previousAttempts++;
   }
 
   formatStatementChoices(): Object[] {
@@ -113,8 +143,10 @@ export class ChunkMultipleChoiceComponent implements OnInit, DoCheck {
   }
 
   restoreAnswers() {
+    this.progressStore.answerInteractiveChunk(false);
     this.showAnswer = false;
     this.choice = '';
+    this.progressStore.setAnswer(this.id, '');
   }
 
   getChoice(index: number): string {

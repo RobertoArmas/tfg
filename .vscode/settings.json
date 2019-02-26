@@ -21,5 +21,6 @@
     "workbench.iconTheme": "vscode-simpler-icons",
     "explorer.autoReveal": false,
     "workbench.editor.closeEmptyGroups": false,
-    "editor.mouseWheelZoom": true
+    "editor.mouseWheelZoom": false,
+    "typescript.referencesCodeLens.enabled": true
 }

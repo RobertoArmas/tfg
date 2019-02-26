@@ -1,9 +1,9 @@
-
-<div id={{id}} [style.background-color]="attributes.backgroundColor"> 
-    <div fxLayout="row" fxLayoutAlign="center none" [style.padding-top.px]="attributes.paddingTop" [style.padding-bottom.px]="attributes.paddingBottom">
-      <div fxFlex="90" fxFlex.gt-md="761.667px" fxLayout="column" fxLayout.gt-md="row" fxLayoutAlign="center none">
-        <p> {{attributes.dataCol1}} </p>
-        <p> {{attributes.dataCol2}} </p>
-      </div>
+<div id={{id}} [style.background-color]="attributes.backgroundColor">
+  <div fxLayout="row" fxLayoutAlign="center none" [style.padding-top.px]="attributes.paddingTop"
+    [style.padding-bottom.px]="attributes.paddingBottom">
+    <div fxFlex="90" fxFlex.gt-md="761.667px" fxLayout="column" fxLayout.gt-md="row" fxLayoutAlign="center none">
+      <p fxFlex.gt-md="50"> {{attributes.dataCol1}} </p>
+      <p fxFlex.gt-md="50" fxFlexOffset="0" fxFlexOffset.gt-md="30px"> {{attributes.dataCol2}} </p>
     </div>
   </div>
+</div>
