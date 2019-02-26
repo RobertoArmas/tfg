@@ -57,15 +57,15 @@ export class ProgressService {
   }
 
   private createDefaultCourseProgress(): CourseProgress {
-    const defaultFirstLessonId = 's1l1';
+    const defaultFirstLessonId = 's01l01';
 
     return {
       courseId: this.courseDataStore.courseId,
       unlockedLessons: [defaultFirstLessonId],
       currentLesson: {
         isFinished: false,
-        lessonId: 'l1',
-        sectionId: 's1'
+        lessonId: 'l01',
+        sectionId: 's01'
       }
     };
   }
