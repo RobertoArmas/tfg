@@ -1,45 +1,75 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { tap, delay } from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
-import { auth } from 'firebase/app';
+import { map, take } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { User } from 'firebase/app';
 import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthService {
 
-  private user: Observable<firebase.User>;
-  private userDetails: firebase.User = null;
   redirectUrl: string;
+  private _userId: string; // Usar la userid resuelta para evitar ForkJoins
+  private profilePicture$: string;
 
-  constructor(private firebaseAuth: AngularFireAuth, private router: Router) {
-    this.user = this.firebaseAuth.authState;
+  constructor(private fbsAuth: AngularFireAuth, private router: Router) {
+    this.uid.subscribe(
+      uid => {
+        this._userId = uid;
+      }
+    );
 
-    this.user.subscribe(
+    // Cuando el usuario logea correctamente redirecciona a la url que quería activar
+    this.fbsAuth.auth.onAuthStateChanged(
       user => {
         if (user) {
-          this.userDetails = user;
-          console.log(this.userDetails);
-        }
-        else {
-          this.userDetails = null;
+          this.router.navigate([this.redirectUrl]);
+          this._userId = user.uid;
+          this.profilePicture$ = user.photoURL;
         }
       }
     );
   }
 
-  signInWithGoogle() {
-    return this.firebaseAuth.auth.signInWithPopup(
-      new firebase.auth.GoogleAuthProvider()
-    )
+  get userId() {
+    return this._userId;
   }
 
-  isLoggedIn(): boolean {
-    return this.userDetails === null ? false : true;
+  get profilePicture() {
+    return this.profilePicture$;
+  }
+
+  get uid(): Observable<string> {
+    return this.fbsAuth.user.pipe(
+      take(1),
+      map(user => user.uid)
+    );
+  }
+
+  get name(): Observable<string> {
+    return this.fbsAuth.user.pipe(
+      take(1),
+      map(user => user.displayName)
+    );
+  }
+
+  checkLogin(): Observable<boolean> {
+    return this.fbsAuth.user.pipe(
+      map(
+        user => {
+          if (!user) {
+            this.fbsAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+            return false;
+          } else {
+            return true;
+          }
+        }
+      )
+    );
   }
 
   logout() {
-    this.firebaseAuth.auth.signOut();
+    this.fbsAuth.auth.signOut();
   }
 }

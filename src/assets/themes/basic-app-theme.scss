@@ -16,6 +16,10 @@
   padding-left: 50px !important;
 }
 
+.mat-expansion-panel-body {
+  padding-left: 8px !important;
+  padding-right: 0px !important;
+}
 
 // Estilos comunes de Angular Material
 @include mat-core();

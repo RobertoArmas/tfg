@@ -13,7 +13,10 @@ export class WelcomePageComponent implements OnInit {
 
   course: CourseData;
 
-  constructor(private xapi: XapiService, private courseDataService: CourseDataService) { }
+  constructor(
+    private xapi: XapiService,
+    private courseDataService: CourseDataService
+    ) { }
 
   ngOnInit() {
     this.getCourseInformation();
@@ -30,7 +33,9 @@ export class WelcomePageComponent implements OnInit {
       );
   }
 
-  sendStartStatement() {
+  sendStartStatement(courseId: string) {
+    this.courseDataService.courseId = courseId;
+    this.getCourseInformation();
     this.xapi.started(this.course);
   }
 

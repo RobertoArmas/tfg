@@ -8,6 +8,7 @@ import { Section, SectionData } from '../course-viewer/section.model';
 import { LessonData } from '../course-viewer/lesson.model';
 import { FirebaseApiService } from './firebase-api.service';
 import { ChunkData } from '../chunks/chunk.model';
+import { combineAll } from 'rxjs/operators';
 
 /**
  * Servicio intermediario entre el API REST y la aplicación
@@ -16,27 +17,37 @@ import { ChunkData } from '../chunks/chunk.model';
 
 @Injectable()
 export class CourseDataService {
-  private courseId = 'c1';
+  private _courseId = 'c01';
+  public get courseId() {
+    return this._courseId;
+  }
+  public set courseId(value) {
+    this._courseId = value;
+  }
 
-  constructor(private firebaseApiService: FirebaseApiService) { }
+  constructor(private fbsApiService: FirebaseApiService) { }
 
   getCourseInformation(): Observable<CourseData> {
-    return this.firebaseApiService.getCourseInformation(this.courseId);
+    return this.fbsApiService.getCourseInformation(this.courseId);
   }
 
   getCourseSections(): Observable<SectionData[]> {
-    return this.firebaseApiService.getCourseSections(this.courseId);
+    return this.fbsApiService.getCourseSections(this.courseId);
   }
 
   getSectionLessons(sectionId: string): Observable<LessonData[]> {
-    return this.firebaseApiService.getSectionLessons(this.courseId, sectionId);
+    return this.fbsApiService.getSectionLessons(this.courseId, sectionId);
   }
 
   getLessonInformation(sectionId: string, lessonId: string): Observable<LessonData> {
-    return this.firebaseApiService.getLessonInformation(this.courseId, sectionId, lessonId);
+    return this.fbsApiService.getLessonInformation(this.courseId, sectionId, lessonId);
   }
 
   getLessonChunks(sectionId: string, lessonId: string): Observable<ChunkData[]> {
-    return this.firebaseApiService.getLessonChunks(this.courseId, sectionId, lessonId);
+    return this.fbsApiService.getLessonChunks(sectionId, lessonId);
+  }
+  
+  getLessonsArray(): any {
+    return this.fbsApiService.getLessonsArray();
   }
 }
