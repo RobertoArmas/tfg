@@ -242,6 +242,21 @@
                                                         "url": "https://firebasestorage.googleapis.com/v0/b/e-learning-ua.appspot.com/o/bicycle.jpg?alt=media&token=9f2e048e-9946-4a47-a3bc-ff8fba8349ba"
                                                     },
                                                     "__collections__": {}
+                                                },
+                                                "c03": {
+                                                    "type": "heading",
+                                                    "attributes": {
+                                                        "data": "Imagen ocupando toda la pantalla"
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c04": {
+                                                    "type": "imageFull",
+                                                    "attributes": {
+                                                        "caption": "La descripción puede ser corta o larga",
+                                                        "url": "https://firebasestorage.googleapis.com/v0/b/e-learning-ua.appspot.com/o/snow.jpg?alt=media&token=8ed47cdd-b107-46d5-9f61-c9e56495eb57"
+                                                    },
+                                                    "__collections__": {}
                                                 }
                                             }
                                         }
@@ -527,14 +542,22 @@
                                                         ]
                                                     },
                                                     "__collections__": {}
-                                                },
-                                                "c04": {
-                                                    "type": "headingText",
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "l03": {
+                                        "description": "Se explica con más detalle el primer principio básico",
+                                        "URI": "/principios_basicos/asociacion_de_conceptos",
+                                        "title": "1. Aprende por asociación de conceptos",
+                                        "__collections__": {
+                                            "chunks": {
+                                                "c01": {
+                                                    "type":"imageFull",
                                                     "attributes": {
-                                                        "textData": "Muchos expertos están de acuerdo en que si el alumno aprende creando una red de conexiones tendrá una mayor capacidad de recordar lo aprendido en un examen, haciendo ejercicios o incluso será capaz de aplicarlo a situaciones de la vida cotidiana.",
-                                                        "headingData": "1. Aprende por asociación de conceptos"
-                                                    },
-                                                    "__collections__": {}
+                                                        "caption": "Muchos expertos están de acuerdo en que si el alumno aprende creando una red de conexiones tendrá una mayor capacidad de recordar lo aprendido en un examen, haciendo ejercicios o incluso será capaz de aplicarlo a situaciones de la vida cotidiana.",
+                                                        "url": "https://firebasestorage.googleapis.com/v0/b/e-learning-ua.appspot.com/o/concept_association-min.jpg?alt=media&token=048f2b37-317c-4958-bae0-af67ac9440b2"
+                                                    }
                                                 },
                                                 "c05": {
                                                     "type": "text",
@@ -580,14 +603,22 @@
                                                         "data": "Aprende por asociación de conceptos."
                                                     },
                                                     "__collections__": {}
-                                                },
-                                                "c11": {
-                                                    "type": "headingText",
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "l04": {
+                                        "description": "Se explica con más detalle el segundo principio básico, se debe entender antes que aprender de memoria",
+                                        "URI": "/principios_basicos/understand_ideas",
+                                        "title": "2. No memorices cuando necesitas entender",
+                                        "__collections__": {
+                                            "chunks": {
+                                                "c01": {
+                                                    "type":"imageFull",
                                                     "attributes": {
-                                                        "textData": "Imagina que estás a 1 semana del examen, no has estudiado nada y te das cuenta de que tienes muchísima materia por aprender. Muchos estudiantes caen en la trampa de intentar memorizar toda esa cantidad de información en vez de intentar entender.",
-                                                        "headingData": "2. No memorices cuando necesitas entender"
-                                                    },
-                                                    "__collections__": {}
+                                                        "caption": "Imagina que estás a 1 semana del examen, no has estudiado nada y te das cuenta de que tienes muchísima materia por aprender. Muchos estudiantes caen en la trampa de intentar memorizar toda esa cantidad de información en vez de intentar entender.",
+                                                        "url": "https://firebasestorage.googleapis.com/v0/b/e-learning-ua.appspot.com/o/study_stress-min.jpg?alt=media&token=5044bbf0-00de-4949-a01c-fe0f677109f8"
+                                                    }
                                                 },
                                                 "c12": {
                                                     "type": "text",
@@ -617,14 +648,22 @@
                                                         "data": "También es cierto que siempre se va a requerir memorización de conceptos, pero muchos estudiantes dedican la mayor parte del tiempo de estudio a memorizar. Esto se ve reflejado en muchos casos en las notas y en su habilidad de aprender en general."
                                                     },
                                                     "__collections__": {}
-                                                },
-                                                "c16": {
-                                                    "type": "headingText",
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "l05": {
+                                        "description": "Se explica con más detalle el tercer principio básico, hay que repasar.",
+                                        "URI": "/principios_basicos/feedback",
+                                        "title": "3. El Feedback es fundamental",
+                                        "__collections__": {
+                                            "chunks": {
+                                                "c01": {
+                                                    "type":"imageFull",
                                                     "attributes": {
-                                                        "textData": "Es muy importante que hagas revisiones constantes de lo aprendido y que saques conclusiones nuevas. En el curso aprenderás a integrar la revisión de lo estudiado en todo el proceso de aprendizaje porque así te darás cuenta de lo que sabes y de lo que no sabes, en qué cosas te defiendes mejor y en cuales flojeas más.",
-                                                        "headingData": "3. El Feedback es fundamental"
-                                                    },
-                                                    "__collections__": {}
+                                                        "caption": "Es muy importante que hagas revisiones constantes de lo aprendido y que saques conclusiones nuevas. En el curso aprenderás a integrar la revisión de lo estudiado en todo el proceso de aprendizaje porque así te darás cuenta de lo que sabes y de lo que no sabes, en qué cosas te defiendes mejor y en cuales flojeas más.",
+                                                        "url": "https://firebasestorage.googleapis.com/v0/b/e-learning-ua.appspot.com/o/feedback-min.jpg?alt=media&token=1bbba3fc-0f5b-411e-b348-6b1f51dbdcd7"
+                                                    }
                                                 },
                                                 "c17": {
                                                     "type": "text",
@@ -664,10 +703,10 @@
                                             }
                                         }
                                     },
-                                    "l03": {
-                                        "description": "",
-                                        "URI": "/principios_basicos",
-                                        "title": "Principios Básicos",
+                                    "l06": {
+                                        "description": "Se propone al alumno mejorar sus hábitos de estudio para obtener mejor rendimiento",
+                                        "URI": "/study_habits",
+                                        "title": "Cambia tus hábitos de estudio",
                                         "__collections__": {
                                             "chunks": {
                                                 "c01": {
