@@ -816,7 +816,53 @@
                                                 "c15": {
                                                     "type": "text",
                                                     "attributes": {
-                                                        "data": "Lo importante es que a lo largo del curso se presentarán muchas técnicas y no debes aplicarlas todas. Si en algún momento sientes agobiado por la cantidad de técnicas presentadas no te preocupes. Céntrate en la única que creas que te va a ayudar más porque siempre podrás volver al curso y volver a repasar nuevas técnicas cuando las necesites."
+                                                        "data": "Lo importante es que a lo largo del curso se presentarán muchas técnicas y no debes aplicarlas todas. Si en algún momento sientes agobiado por la cantidad de técnicas presentadas no te preocupes. Céntrate en la única que creas que te va a ayudar más porque siempre podrás volver al curso y repasar nuevas técnicas cuando las necesites."
+                                                    },
+                                                    "__collections__": {}
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "s02": {
+                            "id": "s02",
+                            "title": "CREA UNA RUTINA",
+                            "__collections__": {
+                                "lessons": {
+                                    "l01": {
+                                        "description": "Se explica por qué tener una rutina es clave",
+                                        "URI": "/por_que_una_rutina",
+                                        "title": "Por qué tener una rutina es clave",
+                                        "__collections__": {
+                                            "chunks": {
+                                                "c01": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "En esta sección vas a aprender a crear una rutina y evitar la famosa procrastinación, notarás que tendrás tiempo para hacer más cosas."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c02": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Cuántas veces te ha pasado que te sentías agobiado por la cantidad de trabajo que tenías que hacer. Los 'Deadlines'. Y aún sintiendo tanta presión seguías haciendo descansos largos y no tenías una sensación de concentración en lo que hacías, pero a la vez tenías la sensación de que si pudieras solucionar este problema te daría tiempo a realizar todas las tareas..."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c03": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Te recomiendo que veas el siguiente video. Es una charla de TED en la que se explica qué pasa en la mente de una persona procrastinadora. Si te sientes identificado sigue con el curso y verás como combatir estos efectos es más fácil de lo que parece. El vídeo es en inglés, pero si sientes dificultad para entederlo con los propios subtítulos de YouTube te proporciono la transcripción en castellano pulsando el botón de descarga de transcripción."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c04": {
+                                                    "type": "video",
+                                                    "attributes": {
+                                                        "videoId": "arj7oStGLkU",
+                                                        "transcriptUrl": "https://firebasestorage.googleapis.com/v0/b/e-learning-ua.appspot.com/o/transcript_ted_talk.pdf?alt=media&token=285a6391-7f75-4786-b12d-888715f315df"
                                                     },
                                                     "__collections__": {}
                                                 }
