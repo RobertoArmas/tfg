@@ -1,6 +1,6 @@
-
 <div id={{id}} [style.background-color]="attributes.backgroundColor">
-  <div fxLayout="row" fxLayoutAlign="center none" [style.padding-top.px]="attributes.paddingTop" [style.padding-bottom.px]="attributes.paddingBottom">
+  <div fxLayout="row" fxLayoutAlign="center none" [style.padding-top.px]="attributes.paddingTop"
+    [style.padding-bottom.px]="attributes.paddingBottom">
     <div fxFlex="90" fxFlex.gt-md="761.667px">
       <mat-card>
 
@@ -8,12 +8,13 @@
         <mat-divider></mat-divider>
 
         <div class="choices" fxLayout="row" fxLayoutAlign="end none">
-          <mat-radio-group [disabled]='showAnswer' [(ngModel)]="choice" fxLayout="column" fxLayoutAlign="space-evenly start" fxLayoutGap="50px"
-            fxFlex="90" fxFlex.gt-md="631.66px">
-            <mat-radio-button class="choice-radio-button" *ngFor="let choice of attributes.choices" [value]="choice">
+
+          <div fxLayout="column" fxLayoutAlign="space-evenly start"
+            fxLayoutGap="50px" fxFlex="90" fxFlex.gt-md="631.66px">
+            <mat-checkbox [disabled]='showAnswer' class="choice-radio-button" *ngFor="let choice of attributes.choices" (change)="toggleChoice(choice)">
               {{choice}}
-            </mat-radio-button>
-          </mat-radio-group>
+            </mat-checkbox>
+          </div>
         </div>
 
 
