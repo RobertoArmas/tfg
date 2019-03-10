@@ -12,6 +12,7 @@ import { ChunkImageCenteredComponent } from './image/chunk-image-centered/chunk-
 import { ChunkVideoComponent } from './video/chunk-video/chunk-video.component';
 import { ChunkImageFullComponent } from './image/chunk-image-full/chunk-image-full.component';
 import { ChunkNumberedListComponent } from './list/chunk-numbered-list/chunk-numbered-list.component';
+import { ChunkMultipleAnswersComponent } from './activity/chunk-multiple-answers/chunk-multiple-answers.component';
 
 @Injectable()
 export class ChunkService {
@@ -57,6 +58,9 @@ export class ChunkService {
         break;
       case 'numberedList':
         component = ChunkNumberedListComponent;
+        break;
+      case 'multipleAnswers':
+        component = ChunkMultipleAnswersComponent;
         break;
       default:
         break;
