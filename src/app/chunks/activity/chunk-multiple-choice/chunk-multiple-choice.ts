@@ -9,7 +9,7 @@ export class ChunkMultipleChoice implements ChunkData {
     feedback: string;
     statementChoices: Object[];
     statementSuccess: boolean;
-    statementResponse: string;
+    statementResponse: string | string[];
     previousAttempts: number;
 
     paddingTop: number;
