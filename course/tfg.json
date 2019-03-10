@@ -238,6 +238,34 @@
                                                         ]
                                                     },
                                                     "__collections__": {}
+                                                },
+                                                "c04": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Ejercicio en el que existen varias respuestas correctas"
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c05": {
+                                                    "type": "multipleAnswers",
+                                                    "attributes": {
+                                                        "interactionType": "choice",
+                                                        "feedback": "Hasta ahora solo se han repasado los Chunks de tipo Dos columnas y Encabezado de primer nivel, por lo que cualquiera de las dos opciones es correcta",
+                                                        "question": "¿Cuál de los siguientes tipos de Chunks hemos visto hasta ahora?",
+                                                        "choices": [
+                                                            "Dos columnas",
+                                                            "Audio",
+                                                            "Imagen",
+                                                            "Video",
+                                                            "Encabezado de primer nivel",
+                                                            "Arquitectura de una aplicación Angular. Los bloques principales son módulos, componentes, templates, metadatos, data binding, directivas, servicios e inyección de dependencias."
+                                                        ],
+                                                        "correctResponsePattern": [
+                                                            "Dos columnas",
+                                                            "Encabezado de primer nivel"
+                                                        ]
+                                                    },
+                                                    "__collections__": {}
                                                 }
                                             }
                                         }
