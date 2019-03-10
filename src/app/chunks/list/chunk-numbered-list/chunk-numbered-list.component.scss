@@ -1,0 +1,24 @@
+@import "src/variables.scss";
+
+p {
+    font-family: $textFont;
+    font-size: 17px;
+    line-height: 33px;
+    margin: 0;
+    word-spacing: 0.8px;
+}
+
+.index-indicator {
+    font-family: $titleFont;
+    font-size: 20px;
+    background: $secondaryColor;
+    border-radius: 50%;
+    width: 25px;
+    height: 36px;
+    padding-left: 11px;
+    color: white;
+}
+
+.numbered-item {
+    margin-bottom: 30px;
+}
