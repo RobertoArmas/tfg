@@ -41,7 +41,7 @@ export class ChunkMultipleAnswersComponent implements OnInit, DoCheck, AfterView
   @Input() id: string;
   @Input() parentLesson: LessonData;
   defaultChoices: string[];
-  choice = ''; // Necesario para que funcione Firebase (no existen los nulos)
+  choices: string[] = []; // Necesario para que funcione Firebase (no existen los nulos)
   answer: Answer;
   showAnswer: boolean;
   noSelectedChoice: boolean;
@@ -52,7 +52,7 @@ export class ChunkMultipleAnswersComponent implements OnInit, DoCheck, AfterView
   ) {
     this.attributes = new ChunkMultipleChoice();
     this.noSelectedChoice = true;
-    this.choice = null;
+    this.choices = [];
     this.defaultChoices = ['Opción 1', 'Opción 2', 'Opción 3', 'Opción 4'];
     this.answer = new Answer();
     this.showAnswer = false;
@@ -70,39 +70,50 @@ export class ChunkMultipleAnswersComponent implements OnInit, DoCheck, AfterView
    * Carga las respuestas de Firebase después de iniciar la vista
    * si no existe crea una por defecto para análisis
    */
-  ngAfterViewInit() {
-    this.progressStore.checkAnswered(this.id).subscribe(
-      progress => {
-        if (progress) {
-          this.choice = progress.answer;
-          if (this.choice !== '') {
-            this.displayResult();
-          }
-        } else {
-          const emptyChoice = '';
-          this.progressStore.setAnswer(this.id, emptyChoice);
-        }
-      }
-    );
-  }
+  // ngAfterViewInit() {
+  //   this.progressStore.checkAnswered(this.id).subscribe(
+  //     progress => {
+  //       if (progress) {
+  //         this.choices = progress.answer;
+  //         if (progress.answer !== '') {
+  //           this.displayResult();
+  //         }
+  //       } else {
+  //         const emptyChoice = '';
+  //         this.progressStore.setAnswer(this.id, emptyChoice);
+  //       }
+  //     }
+  //   );
+  // }
 
   ngDoCheck() {
-    if (this.choice !== '') {
+    if (this.choices.length !== 0) {
       this.noSelectedChoice = false;
     } else {
       this.noSelectedChoice = true;
     }
   }
 
+
+  toggleChoice(choice: string) {
+    if (this.choices.findIndex(selectedChoice => selectedChoice === choice) === -1) {
+      this.choices.push(choice);
+    } else {
+      this.choices = this.choices.filter(selectedChoice => selectedChoice !== choice);
+    }
+    console.log(this.choices);
+  }
+
+
   revealResult() {
-    this.progressStore.setAnswer(this.id, this.choice);
+    this.progressStore.setAnswer(this.id, this.choices);
     this.displayResult();
     this.progressStore.answerInteractiveChunk(true);
 
     this.attributes.statementData = this.attributes.question;
     this.attributes.statementChoices = this.formatStatementChoices();
     this.attributes.statementSuccess = this.isTheRightAnswer();
-    this.attributes.statementResponse = this.choice;
+    this.attributes.statementResponse = this.choices;
     this.xApiService.answered(this.id, this.attributes, this.parentLesson);
     this.attributes.previousAttempts++;
   }
@@ -134,20 +145,24 @@ export class ChunkMultipleAnswersComponent implements OnInit, DoCheck, AfterView
   }
 
   isTheRightAnswer(): boolean {
-    let answeredRight = false;
+    let answeredRight = true;
 
-    for (const response of this.attributes.correctResponsePattern) {
-      if (this.choice === response) {
-        answeredRight = true;
+      for (const response of this.attributes.correctResponsePattern) {
+        if (!this.choices.includes(response)) {
+          answeredRight = false;
+        }
       }
-    }
+
+      if (answeredRight && this.attributes.correctResponsePattern.length !== this.choices.length) {
+        answeredRight = false;
+      }
     return answeredRight;
   }
 
   restoreAnswers() {
     this.progressStore.answerInteractiveChunk(false);
     this.showAnswer = false;
-    this.choice = '';
+
     this.progressStore.setAnswer(this.id, '');
   }
 
