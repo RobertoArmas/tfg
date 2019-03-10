@@ -174,6 +174,26 @@
                                                         ]
                                                     },
                                                     "__collections__": {}
+                                                },
+                                                "c04": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Listas numeradas (no es interactivo pero sigue la misma filosofía que un checkbox)"
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c05": {
+                                                    "type": "numberedList",
+                                                    "attributes": {
+                                                        "items": [
+                                                            "Primer objeto de la lista",
+                                                            "Segundo objeto de la lista",
+                                                            "Tercero",
+                                                            "Cuarto",
+                                                            "Último"
+                                                        ]
+                                                    },
+                                                    "__collections__": {}
                                                 }
                                             }
                                         }
