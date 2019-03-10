@@ -11,6 +11,7 @@ import { ChunkMultipleChoiceComponent } from './activity/chunk-multiple-choice/c
 import { ChunkImageCenteredComponent } from './image/chunk-image-centered/chunk-image-centered.component';
 import { ChunkVideoComponent } from './video/chunk-video/chunk-video.component';
 import { ChunkImageFullComponent } from './image/chunk-image-full/chunk-image-full.component';
+import { ChunkNumberedListComponent } from './list/chunk-numbered-list/chunk-numbered-list.component';
 
 @Injectable()
 export class ChunkService {
@@ -53,6 +54,9 @@ export class ChunkService {
         break;
       case 'imageFull':
         component = ChunkImageFullComponent;
+        break;
+      case 'numberedList':
+        component = ChunkNumberedListComponent;
         break;
       default:
         break;
