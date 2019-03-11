@@ -11,7 +11,7 @@
 
           <div fxLayout="column" fxLayoutAlign="space-evenly start"
             fxLayoutGap="50px" fxFlex="90" fxFlex.gt-md="631.66px">
-            <mat-checkbox [disabled]='showAnswer' class="choice-radio-button" *ngFor="let choice of attributes.choices" (change)="toggleChoice(choice)">
+            <mat-checkbox [disabled]='showAnswer' class="choice-radio-button" *ngFor="let choice of attributes.choices" (change)="toggleChoice(choice)" [checked]="checkIfSaved(choice)">
               {{choice}}
             </mat-checkbox>
           </div>

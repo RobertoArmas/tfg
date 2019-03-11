@@ -70,21 +70,21 @@ export class ChunkMultipleAnswersComponent implements OnInit, DoCheck, AfterView
    * Carga las respuestas de Firebase después de iniciar la vista
    * si no existe crea una por defecto para análisis
    */
-  // ngAfterViewInit() {
-  //   this.progressStore.checkAnswered(this.id).subscribe(
-  //     progress => {
-  //       if (progress) {
-  //         this.choices = progress.answer;
-  //         if (progress.answer !== '') {
-  //           this.displayResult();
-  //         }
-  //       } else {
-  //         const emptyChoice = '';
-  //         this.progressStore.setAnswer(this.id, emptyChoice);
-  //       }
-  //     }
-  //   );
-  // }
+  ngAfterViewInit() {
+    this.progressStore.checkAnswered(this.id).subscribe(
+      progress => {
+        if (progress) {
+          if (progress.answer !== '') {
+            this.choices = progress.answer;
+            this.displayResult();
+          }
+        } else {
+          const emptyChoice = '';
+          this.progressStore.setAnswer(this.id, emptyChoice);
+        }
+      }
+    );
+  }
 
   ngDoCheck() {
     if (this.choices.length !== 0) {
@@ -168,5 +168,12 @@ export class ChunkMultipleAnswersComponent implements OnInit, DoCheck, AfterView
 
   getChoice(index: number): string {
     return this.attributes.choices[index];
+  }
+
+  checkIfSaved(choice: string) {
+    if (this.choices.includes(choice)) {
+      return true;
+    }
+    return false;
   }
 }
