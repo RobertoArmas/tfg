@@ -93,7 +93,7 @@ interface StatementResult {
     completion?: boolean;
 
     // A response appropriately formatted for the given Activity.
-    response?: string;
+    response?: string | string[];
 
     // Period of time over which the Statement occurred.
     // For type see: https://github.com/adlnet/xAPI-Spec/blob/master/xAPI-Data.md#durations
