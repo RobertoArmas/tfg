@@ -2,7 +2,8 @@
 
 # others
 /src/assets/themes/*.css
-/.firebase/hosting.0.cache
+/.firebase/*.cache
+
 
 
 # compiled output
