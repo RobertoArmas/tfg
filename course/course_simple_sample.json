@@ -1,0 +1,57 @@
+{
+    "__collections__": {
+        "courses": {
+            "c01": {
+                "imageUrl": "    background-image: url(\"https://firebasestorage.googleapis.com/v0/b/e-learning-ua.appspot.com/o/agriculture-countryside-crop-1137338.jpg?alt=media&token=d7ce6f31-3ab2-4dda-9cf0-3bcb5cdb5e6a\");",
+                "URI": "/sample",
+                "title": "Sample Title",
+                "description": "",
+                "__collections__": {
+                    "sections": {
+                        "s0": {
+                            "id": "s01",
+                            "title": "",
+                            "__collections__": {
+                                "lessons": {
+                                    "l01": {
+                                        "description": "",
+                                        "URI": "/",
+                                        "title": "",
+                                        "__collections__": {
+                                            "chunks": {
+                                                "c0": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": ""
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c0": {
+                                                    "type": "video",
+                                                    "attributes": {
+                                                        "videoId": "",
+                                                        "transcriptUrl": ""
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c0": {
+                                                    "type": "subheadingText",
+                                                    "attributes": {
+                                                        "headingData": "",
+                                                        "textData": ""
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
