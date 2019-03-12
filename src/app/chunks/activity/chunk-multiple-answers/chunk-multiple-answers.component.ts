@@ -101,7 +101,6 @@ export class ChunkMultipleAnswersComponent implements OnInit, DoCheck, AfterView
     } else {
       this.choices = this.choices.filter(selectedChoice => selectedChoice !== choice);
     }
-    console.log(this.choices);
   }
 
 

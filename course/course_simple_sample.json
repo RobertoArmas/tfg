@@ -22,6 +22,7 @@
                                                 "c0": {
                                                     "type": "text",
                                                     "attributes": {
+                                                        "paddingTop": 0,
                                                         "data": ""
                                                     },
                                                     "__collections__": {}
@@ -33,7 +34,15 @@
                                                         "transcriptUrl": ""
                                                     },
                                                     "__collections__": {}
-                                                }
+                                                },
+                                                "c0": {
+                                                    "type": "subheadingText",
+                                                    "attributes": {
+                                                        "headingData": "",
+                                                        "textData": ""
+                                                    },
+                                                    "__collections__": {}
+                                                },
                                             }
                                         }
                                     }

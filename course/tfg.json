@@ -913,6 +913,131 @@
                                                         "transcriptUrl": "https://firebasestorage.googleapis.com/v0/b/e-learning-ua.appspot.com/o/transcript_ted_talk.pdf?alt=media&token=285a6391-7f75-4786-b12d-888715f315df"
                                                     },
                                                     "__collections__": {}
+                                                },
+                                                "c05": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "No se puede decir que haya una cura definitiva a la procrastinación, pero diseñar una rutina y haberla cumplido durante un periodo de tiempo ayuda a reducir este problema de forma significativa."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c06": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "Para crear una rutina diseñaremos lo que llamaremos un Sistema de Aprovechamiento. Un Sistema de aprovechamiento son una serie de reglas y principios que indicarán cuándo debes trabajar y cuándo no, además de decirte cuánto debes trabajar cuando lo hagas. Y lo importante de esto es que mucha gente tiene sistemas de organización, tienen listas de tareas y una agenda, pero todas estas herramientas sólo te dicen que tienes trabajo por hacer, no cuándo deberías hacerlo."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c07": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "La finalidad de tener un Sistema de Aprovechamiento es tener una serie de reglas que te digan cuándo es hora de ponerse a trabajar y cuándo es hora de no trabajar más, de esta manera tendrás ambas cosas en tu vida y no te agobiarás."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c08": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "Primero debes entender qué es un Sistema, mucha gente tiene un Sistema, pero muchas veces este Sistema consiste en un estrés contínuo y sentimientos de culpa, esto es lo que se denomina un Sistema Emocional. Cuando no están trabajando están procrastinando y se sienten cada vez más y más culpables hasta que el estrés les puede y deciden empezar a trabajar, y entonces trabajan duro hasta que vuelven a frustrarse y se cansan, es en ese momento cuando deciden tomar un descanso y vuelta al principio."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c09": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "Este sistema puede funcionar, siempre y cuando te encuentres en la situación en la que tienes una fecha de entrega que no puedes modificar, probablemente hayas experimentado como el sentimiento de culpa y el estrés (y mucho café) pueden hacerte terminar el trabajo. Pero en este sistema es imprescindible la parte emocional. ¿De verdad crees que dejarte guiar por las emociones para decidir cuándo deberías trabajar y cuándo no es una buena opción? Esto sólo llevaría a situaciones de mayor estrés."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c10": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "Por el contrario, teniendo un Sistema de Aprovechamiento evita que te agotes y te abstrae de los sentimientos de estrés y de culpa. Un Sistema de Aprovechamiento te permitirá centrarte en lo importante, que es terminar el trabajo y cumplir los objetivos propuestos sin el condicional de las emociones detrás."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c11": {
+                                                    "type": "headingText",
+                                                    "attributes": {
+                                                        "headingData": "¿Cómo se aplica el Sistema de Aprovechamiento?",
+                                                        "textData": "En esta sección explorarás 2 sistemas distintos:"
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c12": {
+                                                    "type": "numberedList",
+                                                    "attributes": {
+                                                        "items": [
+                                                            "Objetivos diarios/semanales",
+                                                            "Horario fijo"
+                                                        ]
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c13": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "Existen muchos otros sistemas para organizar tu trabajo y tu tiempo, pero vamos a repasar solo 2 para que realmente puedas centrarte en trabajar. Y puede ser que descubras otros sistemas que se adapten mejor a tu situación. Cada sistema tiene sus puntos fuertes y sus puntos débiles, no existe el sistema perfecto para todas las situaciones."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c14": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "Unos sistemas serán mejores para personas que necesiten hacer muchas tareas de pequeña dificultad y otros irán bien con personas que necesiten centrarse durante un largo periodo de tiempo en una sola tarea."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c15": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Para que entiendas los puntos fuertes y débiles de cada tipo de sistema he decidido presentarte 2 de ellos, que serán los sistemas que veremos a lo largo de la sección. El objetivo es que encuentres el tipo de sistema que se adapta mejor a tu situación y acabes utilizando uno de ellos, otro o incluso una combinación de los 2 sistemas."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c16": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "Lo que importa realmente es que te des cuenta de que cualquier Sistema de Aprovechamiento será mucho mejor que el tradicional sistema de estrés y culpabilidad a pesar de que tienen sus pros y contras. Cualquier Sistema de Aprovechamiento te permitirá tener una flexibilidad que te permitirá centrarte en trabajar en vez de preocuparte por cómo acabará todo. De esta manera incluso tendrás tiempo para dedicar a otras cosas que te gusten."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c17": {
+                                                    "type": "subheadingText",
+                                                    "attributes": {
+                                                        "headingData": "Antes de continuar...",
+                                                        "textData": "déjame asegurarme de que has entendido bien qué es un Sistema de Aprovechamiento y por qué es bueno invertir tiempo en elaborar uno propio:"
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c18": {
+                                                    "type": "multipleAnswers",
+                                                    "attributes": {
+                                                        "interactionType": "choice",
+                                                        "feedback": "Recuerda que el objetivo del Sistema de Aprovechamiento es que dependas menos de los sentimientos a la hora de estudiar y adquieras disciplina. (selecciona 3 respuestas)",
+                                                        "question": "¿Qué beneficios tiene un Sistema de Aprovechamiento?",
+                                                        "choices": [
+                                                            "Aprovechará al máximo tu estado de ánimo para hacer que estudies cuando te sientas más feliz.",
+                                                            "Te servirá para decidir cuándo debes estudiar y cuándo no debes estudiar.",
+                                                            "Intentará que estés feliz la mayor parte del tiempo para que rindas mejor en el tiempo de estudio.",
+                                                            "Te ayudará a establecer un tiempo de estudio fijo que te permitirá tener más tiempo libre.",
+                                                            "Evitará que te preocupes por cosas distintas a estudiar."
+                                                        ],
+                                                        "correctResponsePattern": [
+                                                            "Te servirá para decidir cuándo debes estudiar y cuándo no debes estudiar.",
+                                                            "Te ayudará a establecer un tiempo de estudio fijo que te permitirá tener más tiempo libre.",
+                                                            "Evitará que te preocupes por cosas distintas a estudiar."
+                                                        ]
+                                                    },
+                                                    "__collections__": {}
                                                 }
                                             }
                                         }
