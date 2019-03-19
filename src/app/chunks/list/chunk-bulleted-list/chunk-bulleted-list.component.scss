@@ -1,0 +1,22 @@
+@import "src/variables.scss";
+
+p {
+    font-family: $textFont;
+    font-size: 17px;
+    line-height: 33px;
+    margin: 0;
+    word-spacing: 0.8px;
+}
+
+.index-indicator {
+    background: $secondaryColor;
+    border-radius: 50%;
+    width: 0px;
+    height: 10px;
+    padding-left: 11px;
+    margin-top: 10px;
+}
+
+.numbered-item {
+    margin-bottom: 30px;
+}
