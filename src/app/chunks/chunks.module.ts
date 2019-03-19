@@ -19,6 +19,7 @@ import { ChunkVideoComponent } from './video/chunk-video/chunk-video.component';
 import { ChunkImageFullComponent } from './image/chunk-image-full/chunk-image-full.component';
 import { ChunkNumberedListComponent } from './list/chunk-numbered-list/chunk-numbered-list.component';
 import { ChunkMultipleAnswersComponent } from './activity/chunk-multiple-answers/chunk-multiple-answers.component';
+import { ChunkBulletedListComponent } from './list/chunk-bulleted-list/chunk-bulleted-list.component';
 
 @NgModule({
   imports: [
@@ -41,6 +42,7 @@ import { ChunkMultipleAnswersComponent } from './activity/chunk-multiple-answers
     ChunkVideoComponent,
     ChunkImageFullComponent,
     ChunkNumberedListComponent,
+    ChunkBulletedListComponent,
     ChunkMultipleAnswersComponent
   ],
   exports: [
@@ -55,6 +57,7 @@ import { ChunkMultipleAnswersComponent } from './activity/chunk-multiple-answers
     ChunkImageCenteredComponent,
     ChunkMultipleChoiceComponent,
     ChunkNumberedListComponent,
+    ChunkBulletedListComponent,
     ChunkMultipleAnswersComponent
   ],
   entryComponents: [ // <-- Hay que declarar los componentes que se van a generar dinámicamente https://angular.io/guide/entry-components
@@ -71,6 +74,7 @@ import { ChunkMultipleAnswersComponent } from './activity/chunk-multiple-answers
     ChunkVideoComponent,
     ChunkImageFullComponent,
     ChunkNumberedListComponent,
+    ChunkBulletedListComponent,
     ChunkMultipleAnswersComponent
   ],
   providers: [ChunkService]

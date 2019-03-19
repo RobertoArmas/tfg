@@ -194,6 +194,26 @@
                                                         ]
                                                     },
                                                     "__collections__": {}
+                                                },
+                                                "c06": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Listas no numeradas"
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c07": {
+                                                    "type": "bulletedList",
+                                                    "attributes": {
+                                                        "items": [
+                                                            "Primer objeto de la lista",
+                                                            "Segundo objeto de la lista",
+                                                            "Tercero",
+                                                            "Cuarto",
+                                                            "Último"
+                                                        ]
+                                                    },
+                                                    "__collections__": {}
                                                 }
                                             }
                                         }
