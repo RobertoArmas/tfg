@@ -20,6 +20,13 @@
                                         "__collections__": {
                                             "chunks": {
                                                 "c0": {
+                                                    "type": "subheading",
+                                                    "attributes": {
+                                                        "data": ""
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c0": {
                                                     "type": "text",
                                                     "attributes": {
                                                         "paddingTop": 0,
@@ -40,6 +47,23 @@
                                                     "attributes": {
                                                         "headingData": "",
                                                         "textData": ""
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c0": {
+                                                    "type": "imageCentered",
+                                                    "attributes": {
+                                                        "caption": "",
+                                                        "url": ""
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c0": {
+                                                    "type": "twoColumn",
+                                                    "attributes": {
+                                                        "dataCol1": "",
+                                                        "dataCol2": "",
+                                                        "backgroundColor": "#fff475"
                                                     },
                                                     "__collections__": {}
                                                 },
