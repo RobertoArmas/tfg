@@ -194,6 +194,26 @@
                                                         ]
                                                     },
                                                     "__collections__": {}
+                                                },
+                                                "c06": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Listas no numeradas"
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c07": {
+                                                    "type": "bulletedList",
+                                                    "attributes": {
+                                                        "items": [
+                                                            "Primer objeto de la lista",
+                                                            "Segundo objeto de la lista",
+                                                            "Tercero",
+                                                            "Cuarto",
+                                                            "Último"
+                                                        ]
+                                                    },
+                                                    "__collections__": {}
                                                 }
                                             }
                                         }
@@ -1036,6 +1056,576 @@
                                                             "Te ayudará a establecer un tiempo de estudio fijo que te permitirá tener más tiempo libre.",
                                                             "Evitará que te preocupes por cosas distintas a estudiar."
                                                         ]
+                                                    },
+                                                    "__collections__": {}
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "l02": {
+                                        "description": "Se presenta el Sistema de Aprovechamiento de Objetivos Diarios y Semanales",
+                                        "URI": "/objetivos_diarios_semanales",
+                                        "title": "Objetivos Diarios y Semanales",
+                                        "__collections__": {
+                                            "chunks": {
+                                                "c01": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "En esta lección vas a aprender como aplicar objetivos diarios y semanales a tu horario. Personalmente yo he estado utilizando este sistema durante mucho tiempo y me ha ayudado a ser más organizado y evitar el estrés y los sentimientos de culpa por no haber hecho esto o lo otro."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c02": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "El principio de los objetivos diarios y semanales es sumamente sencillo. Al final de cada semana (por ejemplo los domingos por la tarde) se escribe una lista de objetivos semanales. Esta es la lista a nivel más general de todo lo que quieres hacer durante la siguiente semana."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c03": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "Aquí puedes añadir entregas de trabajos, leer unos capítulos de un libro, aplicar las técnicas de estudio aprendidas en este curso. En resumen, esta lista contiene los proyectos a los que quieres dedicar tiempo la siguiente semana."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c04": {
+                                                    "type": "imageCentered",
+                                                    "attributes": {
+                                                        "caption": "Reduce la lista de objetivos a lo que creas que puedas cumplir esa semana, si estimas una lista con demasiados objetivos seguramente no los cumplirás todos y esta técnica no será efectiva.",
+                                                        "url": "https://firebasestorage.googleapis.com/v0/b/e-learning-ua.appspot.com/o/weekly_goals.jpg?alt=media&token=c0920a8e-9cd8-4de1-875b-d33b7510c025"
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c05": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "En la lista de objetivos semanales puedes incluir cualquier cosa que tenga relación con tus proyectos. El siguiente paso es que al final de cada día deberás mirar la lista de objetivos semanales y con tu calendario o agenda al lado crear una lista de objetivos que quieres completar al día siguiente."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c06": {
+                                                    "type": "twoColumn",
+                                                    "attributes": {
+                                                        "dataCol1": "La lista de objetivos debe ser limitada.",
+                                                        "dataCol2": "Céntrate en elaborar una lista de objetivos que sea muy fácil de completar.",
+                                                        "backgroundColor": "#fff475"
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c07": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "Muchas personas cometen el terrible error de hacer listas infinitas de objetivos que nunca llegan a completarse. Mantén una lista simple pero también con la cantidad de objetivos suficientes para que después de haber completado la lista te sientas orgulloso al final del día. Entonces al día siguiente céntrate única y exclusivamente en esa lista que hiciste el día anterior."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c08": {
+                                                    "type": "subheading",
+                                                    "attributes": {
+                                                        "data": "Elimina cualquier otra cosa que te preocupe de tu cabeza y céntrate exclusivamente en completar la lista de objetivos diarios."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c09": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "El poder de esta técnica está en que una vez que has acabado la lista de objetivos diarios ya está, eres libre. Así que si terminas a las 4 de la tarde un día ya está, el resto de horas puedes dedicarlas a cualquier otra cosa. Si un día has terminado a las 7 de la tarde perfecto! Puedes desconectar y tomar un respiro."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c10": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "El problema que tienen muchos estudiantes es la llamada lista de tareas infinita. Un ejemplo, ellos hacen la lista de objetivos diarios el día anterior, pero si terminan un poco más pronto de lo esperado añaden un poco más de trabajo a la lista. 'Bueno, ya he terminado pero a lo mejor debería hacer esto o adelantar esto otro...' Y el problema con esta mentalidad es que crearás un sentimiento en el que sabes que cuando termines la lista aún se añadirán más objetivos, entonces volverás al ciclo de estrés y culpabilidad."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c11": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "Si por el contrario tienes una lista con relativamente pocos objetivos en la que puedas centrarte completamente a lo largo del día estarás muy motivado y querrás terminarla lo antes posible porque sabes que después tendrás muchísimo tiempo libre y además no tendrás que preocuparte de nada hasta el final del día cuando vuelvas a hacer la lista de objetivos diarios."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c12": {
+                                                    "type": "headingText",
+                                                    "attributes": {
+                                                        "headingData": "Resumiendo...",
+                                                        "textData": "La idea es muy simple:"
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c13": {
+                                                    "type": "bulletedList",
+                                                    "attributes": {
+                                                        "items": [
+                                                            "Haz una lista de objetivos semanales.",
+                                                            "Haz una lista de objetivos diarios.",
+                                                            "Céntrate únicamente en completar la lista y no trabajes una vez la hayas completado."
+                                                        ]
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c14": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Si te interesa aplicar esta técnica, definitivamente esta es la clase de metodología en la que deberías poner en práctica el 30-day trial. Si aplicas esta técnica sólo un día o de forma discontinua no notarás ningún efecto positivo, es más, puede que sientas que es tiempo perdido."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c15": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "El valor de esta técnica se aprecia cuando sabes exactamente cuántos objetivos puedes cumplir semanalmente, o en un día. Por eso, si implementas esta técnica durante 2 días puede ser que no estés seguro de si has puesto muchos o pocos objetivos en la lista, pero a medida que pasa el tiempo estimarás mejor la cantidad de objetivos que puedes cumplir y verás como dejas de depositar confianza en los sentimientos de culpa y de estrés."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c16": {
+                                                    "type": "heading",
+                                                    "attributes": {
+                                                        "data": "Considera aplicar el 30-day trial este mes."
+                                                    },
+                                                    "__collections__": {}
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "l03": {
+                                        "description": "Se enseña al alumno a afrontar dificultados con el Sistema de Aprovechamiento de Objetivos Diarios y Semanales",
+                                        "URI": "/problemas_objetivos_diarios_semanales",
+                                        "title": "Afronta los problemas de los Objetivos Diarios y Semanales",
+                                        "__collections__": {
+                                            "chunks": {
+                                                "c01": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "En la lección anterior te enseñé la técnica de objetivos diarios y semanales como un Sistema de Aprovechamiento. En esta lección voy a explicarte cómo puedes resolver problemas comunes que encuentra la gente que empieza a aplicar este método."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c02": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Así que vamos directos al grano, uno de los problemas universales de la gente que aplica esta técnica es la frase 'Es imposible cumplir mi lista de objetivos diarios'. Y la solución es muy sencilla:"
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c03": {
+                                                    "type": "subheading",
+                                                    "attributes": {
+                                                        "data": "Haz una lista de objetivos diarios más pequeña",
+                                                        "backgroundColor": "#fff475"
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c04": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "La razón de que este problema ocurra es porque el objetivo primario de un Sistema de Aprovechamiento es que hagas la misma cantidad de tareas que llevabas haciendo hasta ahora, pero sin los sentimientos de culpa y estrés. Pero todo el mundo cree que por aplicar una técnica de Aprovechamiento ya va a multiplicar su productividad x3 o x4 y aunque hasta ahora estuvieran haciendo 2 partes de un objetivo quieren empezar haciendo 6."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c05": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "Este enfoque no es realista y siempre se acaba creando una lista de objetivos demasiado difícil de completar, aun sabiendo que será imposible completarla y no se completará, haciendo que aumente el sentimiento de culpabilidad y seguramente volviendo al sistema de la lista de tareas infinita dónde la culpabilidad y el estrés guiarán tu manera de trabajar y decidirán cuándo debes trabajar y cuando no."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c06": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "Este caso destruye el propósito del Sistema de Objetivos diarios y semanales. Por eso te recomiendo que empieces con listas muy pequeñas, incluso con un sólo objetivo diario y 4 o 5 semanales, aunque parezca demasiado fácil es la manera correcta de empezar. Si empiezas con listas muy difíciles lo que pasará es que la mayoría de días solo completarás el 50% o el 75%. Por eso, cuando cojas el ritmo de trabajo y elimines el sentimiento de culpabilidad y el estrés podrás aumentar la lista porque estarás seguro de que podrás completarla al día siguiente."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c07": {
+                                                    "type": "headingText",
+                                                    "attributes": {
+                                                        "headingData": "Segundo problema: Dejar las cosas para el final",
+                                                        "textData": "La rutina de muchos estudiantes es dejar que pase el tiempo y centrarse en la lista de objetivos de cara al final del día, y muchos consiguen terminar y llevar al día la lista de objetivos diarios, pero suelen acabar en torno a las 10 de la noche o incluso más tarde."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c08": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "Y la pregunta es: ¿Realmente es un problema dejar las cosas para el final?"
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c09": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "Muchos estudiantes piensan que para cumplir este Sistema de Aprovechamiento tendrán que levantarse a las 6 de la mañana y trabajar sin parar durante 8 horas sin descansos (y eso es lo que piensan que es la productividad). Bien, esto puede funcionar para ciertas personas, pero no es aplicable a todo el mundo. Hay gente que es más productiva a partir de las 6 de la tarde hasta media noche, y si este es tu caso el Sistema de Objetivos diarios y semanales permite este tipo de flexibilidad."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c10": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "Primero pregúntate a ti mismo si esto es realmente un problema, a lo mejor es que simplemente trabajas mejor por las tardes. La otra respuesta posible es que sabes que estás perdiendo el tiempo porque tienes mucho estrés y sentimiento de culpa. Así que realmente no estás resolviendo el problema trabajando tarde, aunque termines la lista de objetivos diarios sigues teniendo ese sentimiento de estrés y culpa."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c11": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "En este caso debes esforzarte en terminar la lista de objetivos diarios más pronto para tener tiempo libre por las tardes y puedas relajarte."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c12": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "Para ayudarte a empezar el día trabajando en la lista te voy a dar un consejo: Identifica el objetivo más importante y subráyalo o ponle un asterisco para tenerlo presente y nada más levantarte dedícale media hora a este objetivo. Tan pronto te levantas estarás trabajando en el objetivo más importante del día y esto construye lo que se denomina 'Momentum'."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c13": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "Podemos definir Momentum como la sensación de llevar un ritmo de trabajo constante en el que estás completamente concentrado en una tarea. Esto evitará que pierdas el tiempo en cosas menos importantes y te ayudará a concentrarte el resto del día en completar la lista de objetivos diarios. Este consejo parece muy simple pero puede solucionar un problema real si te supone una dificultad trabajar en completar la lista de objetivos durante el resto del día."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c14": {
+                                                    "type": "headingText",
+                                                    "attributes": {
+                                                        "headingData": "Tercer problema: Las tareas nunca se acaban",
+                                                        "textData": "El tercer problema es cuándo siempre tienes cosas que hacer que interfieren o interrumpen los momentos del día que dedicas a trabajar en la lista de objetivos diarios."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c15": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "Si este es tu caso existe otra modificación del Sistema de Aprovechamiento que podría ayudarte. Esta modificación es crear un bloque de tiempo de 2 a 4 horas llamado el periodo sin interrupciones ni distracciones. Intentar crear un bloque de tiempo de más de 4 horas es casi imposible para la gente que siempre tiene cosas que hacer."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c16": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "Todos los días durante este periodo evitarás todo tipo de distracción apagando el teléfono, desconectando internet o incluso diciendo a tus amigos que no pueden contactar contigo. Y mucha gente afirma que esforzándose por bloquear 2 o 3 horas son capaces de realizar la mayor parte de las tareas que tenían previstas para ese día."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c17": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "Prueba a establecer estos periodos de tiempo como si fuera una reunión diaria muy importante, una semana dedicando periodos de 2h en los que estás completamente concentrado pueden ser equivalentes a una semana de 68h de trabajo con interrupciones así que plantéatelo enserio."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c18": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Por último recuerda que si todos los días te quedan objetivos por completar de la lista o siempre acabas muy tarde, deberías probar con una lista de objetivos más asequible. Si te cuesta ponerte a completar la lista de objetivos prueba a dedicarle la primera media hora del día al objetivo más importante y si tienes demasiadas interrupciones que te impiden dedicar tiempo a completar la lista de objetivos diarios prueba a bloquear 2 o 4 horas para trabajar exclusivamente en la lista."
+                                                    },
+                                                    "__collections__": {}
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "l04": {
+                                        "description": "Se muestra al alumno el Sistema de Aprovechamiento del Horario Fijo",
+                                        "URI": "/horario_fijo",
+                                        "title": "Sistema del Horario Fijo",
+                                        "__collections__": {
+                                            "chunks": {
+                                                "c01": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "En esta lección te voy a presentar un Sistema de Aprovechamiento alternativo a los Objetivos diarios y semanales, pero con el mismo objetivo: limitar el número de horas que pasas trabajando."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c02": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "El ser humano tiene la sensación de que cuanto más tiempo invierte en el trabajo más productividad consigue, pero esto es muy psicológico porque cuando te obligas a trabajar sin parar el estrés y el sentimiento de culpa actúan como el acelerador de un coche para asegurarte de que haces algo de trabajo pero al mismo tiempo necesitas descansar más. Y este tipo de sistema en el que el estrés y el sentimiento de culpa guían la productividad es precisamente lo que pretendemos evitar restringiendo las horas que trabajas. Esto tiene 2 efectos:"
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c03": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Primero, sabes que vas a tener un tiempo en el día en el que no vas a estar trabajando y por supuesto, en el que no te vas a preocupar por trabajar. De esta manera estás descansando pero no tienes ese sentimiento de culpabilidad."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c04": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "A la vez, al tener esta restricción vas a poder centrarte en las cosas que realmente importan para acabar el trabajo pendiente. El Sistema de aprovechamiento de Objetivos diarios y semanales se centra en limitar el número de tareas que haces. Esto funciona especialmente bien si las tareas que tienes que hacer están bien definidas y sabes más o menos cuanto tiempo te va a llevar hacerlas, ejemplos de esto puede ser leer un capítulo de un libro, resolver una ficha de problemas. En estos casos cuando te centras más en la tarea que en el tiempo que le dedicas puedes evitar perder el tiempo sobretodo cuando te pones a hacer una tarea y la alargas para sentir que estás dedicando horas."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c05": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "El Sistema de Aprovechamiento que estamos presentando en esta lección funciona de forma distinta a como lo hace el Sistema de objetivos diarios y semanales. La idea es que en vez de limitar la cantidad de tareas que realizas vas a limitar la cantidad de tiempo que dedicas a trabajar."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c06": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "Una de las ventajas de este sistema es que vas a garantizar que habrá ciertas horas en las que no estarás trabajando. Por ejemplo si dices que vas a dedicar a un trabajo 5h, ese es el tiempo que vas a centrarte en eso, y después no vas a trabajar fuera de ese periodo de tiempo y así te asegurarás de que tus tardes están relativamente libres. Mientras que con el Sistema de objetivos diarios y semanales ese mismo trabajo puede alargarse durante días porque te distraes mucho, unos días terminarás a las 3 de la tarde, otros a las 7..."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c07": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "Aplicando el Sistema de Objetivos diarios y semanales te darás cuenta de que el tiempo es un poco más variable. Con el Sistema de Horario Fijo garantizas tiempo libre (viene muy bien cuando tienes otras actividades fuera del periodo de estudio a las que quieres dedicar tiempo)"
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c08": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "Otra ventaja del Sistema de Horario Fijo es que no te fuerza a categorizar una tarea. Por ejemplo, si te resulta muy difícil dividir una tarea en subtareas para convertirlas en pequeños objetivos alcanzables el Sistema de Horario Fijo es una buena opción. Otro ejemplo, si estás preparando una redacción y te va a llevar más de 1 día terminarla es muy difícil dividirla en trozos para poder completar objetivos diarios. En estos casos es mejor utilizar el Sistema de Horario Fijo y decirte a ti mismo que vas a dedicar 6 horas u 8 horas en un proyecto cada día hasta que lo termine. Esta es una buena manera de gestionar el tiempo que dedicas a proyectos."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c09": {
+                                                    "type": "subheadingText",
+                                                    "attributes": {
+                                                        "headingData": "Cada Sistema tiene sus ventajas y desventajas",
+                                                        "textData": "El Sistema de horario fijo aumenta considerablemente la productividad cuando quieres completar una lista de objetivos, así que si eres capaz de visualizar objetivos conseguibles diariamente en tus proyectos este es un buen sistema porque te permitirá centrarte exclusivamente en completar objetivos y no vas a pasar horas sin hacer nada intentando rellenar las horas de estudio."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c10": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "Por el contrario, el Sistema de Horario Fijo limita el tiempo que pasas trabajando, así que es mucho más fiable si la tarea es algo ambigua y no puedes dividirla en subtareas u objetivos, pero a veces esto puede ser un arma de doble filo si durante 8 horas de trabajo pierdes el tiempo o reduces el rendimiento para rellenar horas."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c11": {
+                                                    "type": "headingText",
+                                                    "attributes": {
+                                                        "headingData": "En conclusión",
+                                                        "textData": "Para saber qué Sistema implementar en cada situación te recomiendo que pruebes los 2 en los siguientes meses y así verás cuál se adapta mejor a tus hábitos o al tipo de proyectos en los que trabajas. No hay uno mejor, en algunos casos el Sistema de Objetivos diarios y semanales funciona mejor y en otros casos el Sistema de Horario Fijo funciona mejor."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c12": {
+                                                    "type": "multipleChoice",
+                                                    "attributes": {
+                                                        "interactionType": "choice",
+                                                        "feedback": "Cuando no sabes muy bien como dividir un proyecto en objetivos o no puedes estimar muy bien cuánto tiempo deberás invertir en terminar un objetivo es muy recomendable que utilices el Sistema de Aprovechamiento del Horario Fijo.",
+                                                        "question": "¿Qué estrategia seguirías para acabar un trabajo que tienes que terminar para clase, pero no sabes muy bien cuánto tiempo te llevará realizarlo porque es un tema nuevo que desconoces?",
+                                                        "choices": [
+                                                            "Establecer un día e intentar terminar el trabajo rápido para después tener tiempo libre.",
+                                                            "Dividirlo en subtareas y establecer unos objetivos diarios y semanales para terminarlo.",
+                                                            "Establecer periodos diarios de estudio y centrarme exclusivamente en este trabajo hasta que lo termine."
+                                                        ],
+                                                        "correctResponsePattern": [
+                                                            "Establecer periodos diarios de estudio y centrarme exclusivamente en este trabajo hasta que lo termine."
+                                                        ]
+                                                    },
+                                                    "__collections__": {}
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "l05": {
+                                        "description": "Se enseña al alumno a afrontar los problemas que pueden surgir utilizando el Sistema de Aprovechamiento del Horario Fijo.",
+                                        "URI": "/problemas_horario_fijo",
+                                        "title": "Afronta los problemas del Horario Fijo",
+                                        "__collections__": {
+                                            "chunks": {
+                                                "c01": {
+                                                    "type": "imageCentered",
+                                                    "attributes": {
+                                                        "caption": "",
+                                                        "url": "https://firebasestorage.googleapis.com/v0/b/e-learning-ua.appspot.com/o/fixed_schedule_troubleshooting.jpg?alt=media&token=3e448596-f58b-4d2e-b191-b0e56ab020e0"
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c02": {
+                                                    "type": "headingText",
+                                                    "attributes": {
+                                                        "headingData": "Problemas... Problemas por todos lados",
+                                                        "textData": "Cuando intentes implementar el Sistema de Aprovechamiento de Horario Fijo te encontrarás muchas dificultades para cumplirlo, interrupciones, trabajos en grupo, o pensar que tienes demasiadas tareas que hacer como para poder completarlas con las restricciones de tiempo que se imponen con este Sistema de Aprovechamiento."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c03": {
+                                                    "type": "multipleChoice",
+                                                    "attributes": {
+                                                        "interactionType": "choice",
+                                                        "feedback": "",
+                                                        "question": "¿Cómo crees que podrías combatir los problemas de productividad que surgen cuando implementas el Sistema del Horario Fijo en tu rutina de estudio?",
+                                                        "choices": [
+                                                            "Bloquear una franja horaria y cumplirla pase lo que pase.",
+                                                            "No es un Sistema que se pueda llevar a la práctica en el mundo real porque es demasiado laborioso.",
+                                                            "Haciendo un gran esfuerzo por cumplir el Sistema y no dejarlo aunque no se cumpla siempre, lo importante es crear una rutina."
+                                                        ],
+                                                        "correctResponsePattern": [
+                                                            "Haciendo un gran esfuerzo por cumplir el Sistema y no dejarlo aunque no se cumpla siempre, lo importante es crear una rutina."
+                                                        ]
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c04": {
+                                                    "type": "subheadingText",
+                                                    "attributes": {
+                                                        "headingData": "Por ejemplo...",
+                                                        "textData": "Digamos que estableces tu horario de trabajo de 9 de la mañana a 5 de la tarde pero tus amigos quieren quedar a las 8 de la tarde para hacer un trabajo en grupo. Esto puede ser difícil de gestionar. Si estás haciendo muchos trabajos en grupo a lo mejor deberías plantearte cambiar al Sistema de Objetivos diarios y semanales, puedes intentar convencer a tus compañeros para que ellos también adopten un Sistema de Aprovechamiento similar al tuyo, pero si nada de esto funciona siéntete libre de utilizar otro Sistema, recuerda que el propósito de lo que estás aprendiendo es ayudarte a ser más productivo, no puede impedir que trabajes."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c05": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Otra manera de afrontar este tipo de problemas es intentar minimizar el tiempo que necesita de todos los componentes del grupo para adelantar trabajo. Intenta hablarlo con el resto de miembros de tu grupo, transmite que si trabajas solo puedes trabajar mejor, o propón debatir las ideas importantes para poder desarrollar el trabajo y después individualmente. Esta es simplemente una manera de reducir el tiempo que pierdes de tu Sistema de Horario Fijo."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c06": {
+                                                    "type": "subheadingText",
+                                                    "attributes": {
+                                                        "headingData": "Interrupciones",
+                                                        "textData": "Otro problema muy común es que tengas interrupciones, a lo mejor tu horario de estudio es de 9 de la mañana a 5 de la tarde, pero siempre vas a tener interrupciones. Por ejemplo llamadas, recados que atender que te piden otras personas, en resumen, tareas que te alejan de tu tiempo de trabajo."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c07": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "Como te sugerí cuando se comentaron los problemas que podían surgir con el Sistema de Objetivos diarios y semanales, te recomiendo que pruebes a aislarte durante el tiempo que tienes pensado estudiar, y si te proponer estudiar 3 horas un día, esas 3 horas son plenamente dedicadas al estudio y nada más puede interferir, apaga el teléfono, note permitas hacer tareas como limpiar o ir a comprar porque crees que te falta algo para poder preparar la cena. Dedica esas 3 horas exclusivamente al estudio sin pensar en nada más."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c08": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "El siguiente video puede ayudarte a ver desde una perspectiva personal cómo se organiza una estudiante en su día a día permitiendo dedicar hasta 15 horas diarias al estudio. No es que vayas a obtener el mismo rendimiento, pero puedes sacar ideas interesantes sobre cómo gestionar tu tiempo y a qué dedicar cada momento."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c09": {
+                                                    "type": "video",
+                                                    "attributes": {
+                                                        "videoId": "vfg1oz5JAfk",
+                                                        "transcriptUrl": ""
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c10": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "Si consigues aislarte y concentrarte únicamente en el estudio aunque dediques 3 horas serán mucho más productivas que el tiempo que puedas dedicarle en un entorno en el que sufras distracciones constantes. Así que si crees que te es muy fácil distraerte o te ha pasado en otras ocasiones que has intentado ponerte a estudiar pero siempre te han surgido interrupciones o recados de otras personas, prueba a implementar este método. Al principio costará un poco pero cuando te des cuenta de los beneficios que te aporta verás que es una herramienta productiva muy potente."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c11": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "También tienes que tener en cuenta que cuando decidas aplicar esta técnica tienes que estar aislado un periodo de tiempo realista, no puedes proponerte estudiar 9 horas al día con este método porque es prácticamente imposible que hoy en día una persona pase desconectada la mayor parte del día, así que cuando vayas a aplicar esta técnica piensa en que también necesitas dedicar tiempo a otras cosas y limita el tiempo, pero que sea un periodo de estudio muy intenso."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c12": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "Siendo realistas es muy difícil aislarse de 9 de la mañana a 5 de la tarde, pero sin embargo si decides aplicar esta técnica de 8 de la mañana a 10 de la mañana probablemente lo consigas, o de 6 a 9 de la mañana. O incluso por la tarde si crees que puedes trabajar mejor de 9 a 11 de la noche o de 11 a 1 de la madrugada, pero intenta buscar horas que no sean de mucha demanda social y en las que sepas que podrás conseguir estudiar intensamente si te lo propones."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c13": {
+                                                    "type": "subheadingText",
+                                                    "attributes": {
+                                                        "headingData": "Todo esto está muy bien, pero poder dedicarle solo 2 horas al día para la cantidad de trabajo que tengo que hacer es muy poco tiempo",
+                                                        "textData": "Después también están las personas que quieren tenerlo todo hecho pero a la vez tienen mucho trabajo que hacer. Y esta es la clase de sentimiento que tienen cuando intentan implementar uno de estos Sistemas de Aprovechamiento."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c14": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "El problema es que este tipo de gente quiere terminar más tareas de las que cualquiera de los dos sistemas (Objetivos Diarios y Semanales u Horario Fijo) están diseñados que hagan. Y hay veces que te sentirás bajo mucha presión, 2 semanas antes de un examen o de una entrega de un proyecto y tendrás que trabajar más."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c15": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "Ten en cuenta que estos Sistemas es eliminar la procrastinación que se crea cuando estamos estudiando y la razón de limitar el tiempo de trabajo es porque muchas veces ayuda al estudiante a concentrarse.",
+                                                        "backgroundColor": "#fff475"
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c16": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "Así que si en algún momento te encuentras en una situación en la que tengas mucha presión y mucho trabajo por completar, realmente estarás concentrado cuando te pongas a trabajar y querer terminarlo crea un sentimiento de productividad por lo que durante esos periodos de tiempo siéntete libre de readaptar o flexibilizar la aplicación de las técnicas..."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c17": {
+                                                    "type": "heading",
+                                                    "attributes": {
+                                                        "data": "...Siempre teniendo presente que no puedes permitirte perder el tiempo."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c18": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Pero para esto deberás explorar e identificar cuáles son las horas más productivas para ti, cuál es tu horario perfecto y cómo debes aplicarlo, yo no puedo decirte que trabajar 6 horas al día durante 5 días es mejor que trabajar 9 horas al día durante 6 días. Esto es algo que debes descubrir por ti mismo."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c19": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "paddingTop": 0,
+                                                        "data": "La cosa más importante con la que quiero que te quedes en esta lección es que si te propones implementar el Sistema de Horario Fijo lo cumplas y que limites el tiempo que pasas estudiando porque te ayudará a no sentirte bajo presión de cuándo haré esto o cuándo haré esto otro, no, con este Sistema ya sabrás exactamente cuándo podrás hacer todo lo que tienes pendiente y cuándo podrás descansar. Porque cuando adquieras este hábito todo el estrés y la presión desaparecerán y tendrás una noción mejor de todo lo que tienes que hacer, cuando vas a poder descansar y cuando vas a tener que dedicar un poco más de tiempo, esto te permitirá tener un balance en tu vida incluyendo el estudio y sin estar estresado y a la vez relajado."
+                                                    },
+                                                    "__collections__": {}
+                                                },
+                                                "c20": {
+                                                    "type": "text",
+                                                    "attributes": {
+                                                        "data": "Como última idea quería comentar que a lo mejor te lleva unas cuantas semanas ajustar el Sistema, probarás distintos horarios, distintas maneras de bloquear tiempo exclusivo para el estudio, etc. Y conforme vayas convirtiéndolo en una rutina notarás que realmente puedes acabar la misma cantidad de trabajo o incluso más en ese tiempo limitado de estudio que antes cuando pasabas días completos estudiando pero a la vez perdías mucho el tiempo y simplemente rellenabas horas de estudio."
                                                     },
                                                     "__collections__": {}
                                                 }

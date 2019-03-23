@@ -22,5 +22,6 @@
     "explorer.autoReveal": false,
     "workbench.editor.closeEmptyGroups": false,
     "editor.mouseWheelZoom": false,
-    "typescript.referencesCodeLens.enabled": true
+    "typescript.referencesCodeLens.enabled": true,
+    "typescript.tsdk": "node_modules/typescript/lib"
 }
