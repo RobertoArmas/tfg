@@ -1,3 +1,7 @@
+@import "src/variables.scss";
+
+
+
 .course-nav-header {
     font-family: 'Lato', sans-serif;
     box-sizing: border-box;
@@ -133,5 +137,19 @@
     cursor: not-allowed;
 }
 
-
+.skip-to-content {
+    font-family: $titleFont;
+    font-size: 12px;
+    left:-999px;
+    overflow:hidden;
+    z-index:-999;
+    &:focus, &:active {
+        background-color:#000;
+        left: auto;
+        height: auto;
+        border-radius: 15px;
+        border:2px solid yellow;
+        z-index:999;
+    }
+}
 

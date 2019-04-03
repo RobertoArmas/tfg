@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges, SimpleChange } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, SimpleChange, AfterViewInit } from '@angular/core';
 import { ProgressService } from 'src/app/core/progress.service';
 import { CourseDataService } from 'src/app/core/course-data.service';
 import { zip, combineAll, merge, mergeAll, toArray } from 'rxjs/operators';
@@ -9,11 +9,11 @@ import { combineChanges } from 'angularfire2/firestore';
   templateUrl: './lesson-header.component.html',
   styleUrls: ['./lesson-header.component.scss']
 })
-export class LessonHeaderComponent implements OnChanges {
+export class LessonHeaderComponent implements OnChanges, AfterViewInit {
 
-  @Input() lessonId: string = 'Undefined';
-  @Input() sectionId: string = 'Undefined';
-  @Input() title: string = 'Undefined';
+  @Input() lessonId = 'Undefined';
+  @Input() sectionId = 'Undefined';
+  @Input() title = 'Undefined';
 
   private mergedId: string;
   currentLesson = 0;
