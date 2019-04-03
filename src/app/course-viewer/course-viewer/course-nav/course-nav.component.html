@@ -4,9 +4,15 @@
     <div class="course-nav-header-overlay">
 
       <div class="course-nav-overview" fxLayout="row" fxLayoutAlign="center end">
-        <div class="overview-info" fxLayout="column" fxLayoutAlign="space-between none">
+        <div class="overview-info" fxLayout="column" fxLayoutAlign="space-between none" tabindex="-1">
           <span class="overview-span"></span>
-          <h1 class="course-nav-header-title">{{course.title}}</h1>
+          <h1 class="course-nav-header-title" tabindex="0">{{course.title}}</h1>
+          <a mat-button class="skip-to-content"
+          (click)="focusTitle()" 
+          (keydown.enter)="focusTitle()" 
+          (keydown.space)="focusTitle()">
+          NAVEGAR A LECCIÓN
+        </a>
           <div class="overview-progress">
             <mat-progress-bar mode="determinate" value="{{progressStore.progress$}}"></mat-progress-bar>
             <h1 class="course-nav-header-progress"> {{progressStore.progress$}} % COMPLETADO</h1>
