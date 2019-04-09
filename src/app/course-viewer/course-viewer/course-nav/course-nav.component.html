@@ -6,11 +6,10 @@
       <div class="course-nav-overview" fxLayout="row" fxLayoutAlign="center end">
         <div class="overview-info" fxLayout="column" fxLayoutAlign="space-between none" tabindex="-1">
           <span class="overview-span"></span>
-          <h1 class="course-nav-header-title" tabindex="0">{{course.title}}</h1>
+          <h1 class="course-nav-header-title" id="CourseTitle" tabindex="0">{{course.title}}</h1>
           <a mat-button class="skip-to-content"
           (click)="focusTitle()" 
-          (keydown.enter)="focusTitle()" 
-          (keydown.space)="focusTitle()">
+          (keydown.enter)="focusTitle()">
           NAVEGAR A LECCIÓN
         </a>
           <div class="overview-progress">
@@ -24,9 +23,9 @@
 </div>
 
 <!-- Secciones y lecciones -->
-<div class="course-nav-container">
-  <mat-accordion multi="true">
-    <mat-expansion-panel *ngFor="let section of sections" [expanded]="true">
+<nav class="course-nav-container">
+  <mat-accordion multi="true" role="menu">
+    <mat-expansion-panel *ngFor="let section of sections" [expanded]="true" role="menuitem">
       <mat-expansion-panel-header>
         <div class="section-title">
           {{section.title}}
@@ -40,10 +39,13 @@
         <svg:rect x="5" y="250" rx="5" ry="5" height="50" width="240" />
       </content-loader>
       <ng-template #showLessons>
-      <mat-list>       
+      <mat-list role="menu">       
           <mat-list-item [routerLink]="['/course-viewer/section', section.id, 'lesson', lesson.id]" routerLinkActive="active-lesson"
             (click)="navigateToLesson(lesson, section.id)" class="lessons-list-item" [ngClass]="{'disabled': unlockedLessons$.indexOf(section.id + lesson.id) === -1}"
-            *ngFor="let lesson of section.lessons">
+            *ngFor="let lesson of section.lessons"
+            role="menuitem"
+            role="link"
+            attr.aria-label="{{lesson.title + disabledLessonAccessibleText(section.id, lesson.id)}}">
             <mat-icon mat-list-icon>notes</mat-icon>
             <p mat-line> {{lesson.title}} </p>
             <!-- <mat-progress-spinner [diameter]="21" [value]="70" *ngIf="unlockedLessons$.indexOf(section.id + lesson.id) !== -1"></mat-progress-spinner> -->
@@ -55,4 +57,4 @@
       </ng-template>
     </mat-expansion-panel>
   </mat-accordion>
-</div>
+</nav>

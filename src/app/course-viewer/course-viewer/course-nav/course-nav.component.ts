@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 import { Course } from '../../course.model';
 import { Section } from '../../section.model';
@@ -13,7 +13,7 @@ import { timer } from 'rxjs';
   templateUrl: './course-nav.component.html',
   styleUrls: ['./course-nav.component.scss']
 })
-export class CourseNavComponent implements OnInit {
+export class CourseNavComponent implements OnInit, AfterViewInit {
 
   course: Course = new Course();
   sections: Section[] = [];
@@ -56,6 +56,10 @@ export class CourseNavComponent implements OnInit {
     this.getCourseSections();
   }
 
+  ngAfterViewInit() {
+    this.focusCourseTitle();
+  }
+
   getCourseInformation() {
     this.courseDataService
     .getCourseInformation()
@@ -96,5 +100,20 @@ export class CourseNavComponent implements OnInit {
   focusTitle() {
     const element = document.getElementById(this.mainLessonElementId);
     element.focus();
+  }
+
+  focusCourseTitle() {
+    const element = document.getElementById('CourseTitle');
+    element.focus();
+  }
+
+  disabledLessonAccessibleText(sectionId, lessonId) {
+    if (this.unlockedLessons$.indexOf(sectionId + lessonId) === -1) {
+      return '. Bloqueada. Completa las lecciones anteriores para acceder a esta.';
+    } else if (this.unlockedLessons$.indexOf(sectionId + lessonId) !== -1 && this.unlockedLessons$.indexOf(sectionId + lessonId) ===
+              (this.unlockedLessons$.length - 1) && !this.progressStore.courseComplete) {
+      return '. Lección actual.';
+    }
+    return '. Lección completada.';
   }
 }
