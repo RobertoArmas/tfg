@@ -2,7 +2,7 @@
 <div id={{id}} [style.background-color]="attributes.backgroundColor"> 
   <div fxLayout="row" fxLayoutAlign="center none" [style.padding-top.px]="attributes.paddingTop" [style.padding-bottom.px]="attributes.paddingBottom">
     <div fxFlex="90" fxFlex.gt-md="761.667px">
-      <h2 *ngIf="attributes.data; else loadingcss"> {{attributes.data}} </h2>
+      <h3 *ngIf="attributes.data; else loadingcss"> {{attributes.data}} </h3>
       
       <ng-template #loadingcss>
           <content-loader height="40">
