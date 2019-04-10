@@ -13,14 +13,15 @@
 </mat-toolbar>
 
 <mat-sidenav-container class="app-container" hasBackdrop="false">
-    <mat-sidenav [mode]="isLargeScreen()" fixedInViewport="true" fixedTopGap="56" [(opened)]="startSidenavOpen">
+    <mat-sidenav role="region" aria-label="Barra lateral de la lección" attr.aria-hidden="{{!startSidenavOpen}}"
+        [mode]="isLargeScreen()" fixedInViewport="true" fixedTopGap="56" [(opened)]="startSidenavOpen">
         <app-course-nav></app-course-nav>
     </mat-sidenav>
 
     <mat-sidenav mode="side" position="end" [(opened)]="endSidenavOpen">End content</mat-sidenav>
 
     <mat-sidenav-content class="mat-elevation-z8 lesson-content">
-        <div class="page-content">
+        <main class="page-content">
             <section class="course-lesson">
                 <router-outlet></router-outlet>
 
@@ -33,6 +34,6 @@
                     <svg:rect x="150" y="420" rx="5" ry="5" height="50" width="300" />
                 </content-loader>
             </section>
-        </div>
+        </main>
     </mat-sidenav-content>
 </mat-sidenav-container>
