@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ComponentFactoryResolver } from '@angular/core';
+import { Component, OnInit, ViewChild, ComponentFactoryResolver, AfterViewInit, AfterViewChecked } from '@angular/core';
 import { ChunkDirective } from './chunk.directive';
 import { Lesson, LessonData } from '../../lesson.model';
 import { CourseDataService } from '../../../core/course-data.service';
@@ -46,6 +46,8 @@ export class LessonDetailComponent implements OnInit {
       this.getLessonInformation();
     });
   }
+
+
   getLessonInformation() {
     this.courseDataService
       .getLessonInformation(this.sectionId, this.lessonId)

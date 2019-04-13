@@ -13,8 +13,8 @@
           NAVEGAR A LECCIÓN
         </a>
           <div class="overview-progress">
-            <mat-progress-bar mode="determinate" value="{{progressStore.progress$}}"></mat-progress-bar>
-            <h1 class="course-nav-header-progress"> {{progressStore.progress$}} % COMPLETADO</h1>
+            <mat-progress-bar mode="determinate" value="{{progressStore.progress$}}" aria-label="Progreso del curso"></mat-progress-bar>
+            <h1 class="course-nav-header-progress" aria-label="Progreso del curso"> {{progressStore.progress$}} % COMPLETADO</h1>
           </div>
         </div>
       </div>

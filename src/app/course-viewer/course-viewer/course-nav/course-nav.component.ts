@@ -103,7 +103,7 @@ export class CourseNavComponent implements OnInit, AfterViewInit {
   }
 
   focusCourseTitle() {
-    const element = document.getElementById('CourseTitle');
+    const element = document.getElementById('titleRegion');
     element.focus();
   }
 

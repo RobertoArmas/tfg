@@ -11,9 +11,13 @@
 
 
 <div class="lesson-detail">
-    <app-lesson-header [lessonId]="lessonId" [sectionId]="sectionId" [title]="currentLesson?.title" 
+    <app-lesson-header 
+    [lessonId]="lessonId" 
+    [sectionId]="sectionId" 
+    [title]="currentLesson?.title" 
     role="region" 
-    aria-label="Título de la lección"></app-lesson-header>
+    aria-label="Título de la lección"
+    id="titleRegion"></app-lesson-header>
 
     <mat-progress-bar mode="determinate" value="100" aria-hidden="true"></mat-progress-bar>
 
