@@ -73,4 +73,11 @@ export class ChunkCheckboxListComponent implements OnInit, AfterViewInit {
 
     this.progressStore.answerInteractiveChunk(true);
   }
+
+  accessibilityLabel() {
+    if (!this.toggleItems) {
+      return 'Marca todos los Checkbox para completar';
+    }
+    return 'Chunk interactivo completado';
+  }
 }

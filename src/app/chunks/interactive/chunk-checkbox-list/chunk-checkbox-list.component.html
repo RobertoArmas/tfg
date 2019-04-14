@@ -1,9 +1,15 @@
-<div id={{id}} [style.background-color]="attributes.backgroundColor">
+
+<div id={{id}} [style.background-color]="attributes.backgroundColor" aria-label="Chunk Checkbox List" role="group">
   <div fxLayout="row" fxLayoutAlign="center none" [style.padding-top.px]="attributes.paddingTop"
     [style.padding-bottom.px]="attributes.paddingBottom">
     <div fxFlex="90" fxFlex.gt-md="761.667px">
-      <div fxLayout="column" fxLayoutGap="30px">
-        <mat-checkbox *ngFor="let item of attributes.items; let itemIndex=index" (change)="checkAllSelected(item)" [ngModel]="toggleItems" [disabled]="toggleItems">
+      <div fxLayout="column" fxLayoutGap="30px" role="list" attr.aria-label="{{accessibilityLabel()}}">
+        <mat-checkbox 
+        *ngFor="let item of attributes.items; let itemIndex=index" 
+        (change)="checkAllSelected(item)" 
+        [ngModel]="toggleItems" 
+        [disabled]="toggleItems"
+        role="listitem">
           {{item}}
         </mat-checkbox>
       </div>
