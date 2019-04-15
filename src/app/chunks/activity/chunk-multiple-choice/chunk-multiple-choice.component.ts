@@ -14,8 +14,8 @@ class Answer {
   label: string;
 
   constructor() {
-    this.icon = 'sentiment_very_satisfied';
-    this.label = 'Correct';
+    this.icon = '';
+    this.label = '';
   }
 }
 
@@ -40,6 +40,7 @@ export class ChunkMultipleChoiceComponent implements OnInit, DoCheck, AfterViewI
   @Input() parentLesson: LessonData;
   defaultChoices: string[];
   choice = ''; // Necesario para que funcione Firebase (no existen los nulos)
+  feedbackText = '';
   answer: Answer;
   showAnswer: boolean;
   noSelectedChoice: boolean;
@@ -107,6 +108,8 @@ export class ChunkMultipleChoiceComponent implements OnInit, DoCheck, AfterViewI
 
   private displayResult() {
     this.showAnswer = true;
+    this.feedbackText = this.attributes.feedback;
+
     if (this.isTheRightAnswer()) {
       this.answer.icon = 'sentiment_very_satisfied';
       this.answer.label = 'Correcto!';
@@ -114,6 +117,7 @@ export class ChunkMultipleChoiceComponent implements OnInit, DoCheck, AfterViewI
       this.answer.icon = 'sentiment_very_dissatisfied';
       this.answer.label = 'Has fallado...';
     }
+    document.getElementById('questionFeedback' + this.id).focus();
   }
 
   formatStatementChoices(): Object[] {
@@ -147,6 +151,10 @@ export class ChunkMultipleChoiceComponent implements OnInit, DoCheck, AfterViewI
     this.showAnswer = false;
     this.choice = '';
     this.progressStore.setAnswer(this.id, '');
+    this.feedbackText = '';
+    this.answer.icon = '';
+    this.answer.label = '';
+    document.getElementById('choicesGroup' + this.id).focus();
   }
 
   getChoice(index: number): string {
