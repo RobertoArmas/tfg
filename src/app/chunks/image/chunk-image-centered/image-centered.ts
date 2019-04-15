@@ -8,6 +8,8 @@ export class ImageCentered implements ChunkData {
     paddingBottom: number;
     paddingTop: number;
     reviewed: boolean;
+    longDesc: string;
+    isDecorative: boolean;
 
     constructor(values: Object = {}) {
         Object.assign(this, values);

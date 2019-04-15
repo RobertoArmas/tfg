@@ -6,7 +6,13 @@
                 <svg:rect x="0" y="15" rx="5" ry="5" height="615" width="920"/>
             </content-loader>
 
-            <img [hidden]="!isLoaded" src="{{attributes.url}}" (load)="removePlaceholder()" alt="{{attributes.caption}}">
+            <img 
+            [hidden]="!isLoaded" 
+            src="{{attributes.url}}" 
+            (load)="removePlaceholder()" 
+            alt="{{attributes.caption}}"
+            attr.longdesc="{{attributes.longDesc}}"
+            attr.role="{{imageRole}}">
             <div fxLayout="row" fxLayoutAlign="center none">
                 <div class="caption" fxFlex="85" fxFlex.gt-md="761.667px">
                     <p>{{attributes.caption}}</p>
