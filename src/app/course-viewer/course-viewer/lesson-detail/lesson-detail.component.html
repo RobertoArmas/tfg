@@ -1,5 +1,12 @@
 <div class="navigation-previous-lesson">
-    <a class="previous-lesson" *ngIf="!isFirstLesson" (click)=navigateBack() fxLayout="row" fxLayoutAlign="center center">
+    <a 
+    class="previous-lesson" 
+    *ngIf="!isFirstLesson" 
+    (click)=navigateBack() 
+    (keydown.enter)="navigateBack()"
+    fxLayout="row" 
+    fxLayoutAlign="center center" 
+    tabindex="0">
         <div fxLayout="column" fxLayoutAlign="space-evenly center">
             <mat-icon>arrow_back_ios</mat-icon>
             <span>
@@ -31,7 +38,14 @@
 
 
 <div class="navigation-next-lesson" *ngIf="isComplete$; else navigationLocked">
-    <a class="next-lesson" *ngIf="!isLastLesson" (click)=progressLesson() fxLayout="row" fxLayoutAlign="center center">
+    <a 
+    class="next-lesson" 
+    *ngIf="!isLastLesson" 
+    (click)=progressLesson()
+    (keydown.enter)="progressLesson()"
+    fxLayout="row" 
+    fxLayoutAlign="center center"
+    tabindex="0">
         <div fxLayout="column" fxLayoutAlign="space-evenly center">
             <span>
                 <b>Siguiente lección</b>
