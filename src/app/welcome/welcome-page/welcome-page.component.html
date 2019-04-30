@@ -1,4 +1,4 @@
-<div class="course-overview">
+<!-- <div class="course-overview">
   <header>
     <div class="course-overview-image">
       <div class="course-overview-image-overlay">
@@ -13,4 +13,36 @@
       </div>
     </div>
   </header>
+</div> -->
+
+
+<div class="welcome-wrapper">
+  <mat-toolbar color="primary" role="heading" fxLayout="row" fxLayoutAlign="space-between center">
+    <h1>Inés de Juan te quiero</h1>
+    <button mat-flat-button aria-label="Inicia sesión para acceder a los cursos">INICIAR SESIÓN</button>
+  </mat-toolbar>
+
+  <div class="welcome-title" fxLayout="row" fxLayoutAlign="center none">
+    <p>Bienvenido a Courses Preview</p>
+  </div>
+
+  <div class="courses-list" fxLayout="row" fxLayoutAlign="center none">
+    <mat-list role="list" fxFlex="70">
+      <mat-card *ngFor="let course of courses" fxLayout="row" fxLayoutAlign=" center" class="course-card"
+        role="listitem">
+
+        <img class="course-image" [src]="course.imageUrl">
+
+        <div fxFlexOffset="3" fxFlex="65" fxLayout="column">
+          <h2 class="course-title">{{course.title}}</h2>
+          <p class="course-attribute">Progreso: 78%</p>
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign=" center">
+          <span class="card-separator"></span>
+          <p fxFlexOffset="30" fxFill class="course-attribute">{{course.NumberOfLessons + ' Lecciones'}}</p>
+        </div>
+      </mat-card>
+    </mat-list>
+  </div>
 </div>

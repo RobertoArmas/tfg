@@ -2,7 +2,8 @@
     "__collections__": {
         "courses": {
             "c01": {
-                "imageUrl": "    background-image: url(\"https://firebasestorage.googleapis.com/v0/b/e-learning-ua.appspot.com/o/agriculture-countryside-crop-1137338.jpg?alt=media&token=d7ce6f31-3ab2-4dda-9cf0-3bcb5cdb5e6a\");",
+                "id": "c01",
+                "imageUrl": "https://firebasestorage.googleapis.com/v0/b/e-learning-ua.appspot.com/o/agriculture.jpg?alt=media&token=3941959c-92d6-4e00-a3e7-759200d94407",
                 "URI": "/chunksTour",
                 "title": "Chunks Tour",
                 "description": "Curso de pruebas donde se muestran todos los Chunks implementados para poder crear cursos",
@@ -474,7 +475,8 @@
                 }
             },
             "c02": {
-                "imageUrl": "    background-image: url(\"https://firebasestorage.googleapis.com/v0/b/e-learning-ua.appspot.com/o/study_techniques-1.jpg?alt=media&token=fb974efc-4f03-439f-951c-e7a1c6ef4cc0\");",
+                "id": "c02",
+                "imageUrl": "https://firebasestorage.googleapis.com/v0/b/e-learning-ua.appspot.com/o/study_techniques-1.jpg?alt=media&token=fb974efc-4f03-439f-951c-e7a1c6ef4cc0",
                 "URI": "/studyTechniques",
                 "title": "Técnicas de Estudio Avanzadas",
                 "description": "Curso en el que los alumnos aprenden técnicas de estudio para aplicación en el aprendizaje propio",
