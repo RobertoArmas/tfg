@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { CourseData } from '../../course-viewer/course.model';
 import { CourseDataService } from '../../core/course-data.service';
 import { XapiService } from '../../core/xapi/xapi.service';
+import { tap } from 'rxjs/internal/operators/tap';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { first } from 'rxjs/operators';
+import * as firebase from 'firebase/app';
 
 
 @Component({
@@ -17,12 +21,14 @@ export class WelcomePageComponent implements OnInit {
 
   constructor(
     private xapi: XapiService,
-    private courseDataService: CourseDataService
+    private courseDataService: CourseDataService,
+    private fbsAuth: AngularFireAuth,
   ) { }
 
   ngOnInit() {
     this.getCourseInformation();
     this.getCoursesData();
+    this.checkUserLoggedIn();
   }
   getCoursesData() {
     this.courseDataService
@@ -70,5 +76,26 @@ export class WelcomePageComponent implements OnInit {
       );
 
     // NumberOfLessonsSubscription.unsubscribe();
+  }
+
+
+  isLoggedIn() {
+    return this.fbsAuth.authState.pipe(first());
+ }
+
+ login() {
+  this.fbsAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+ }
+
+  checkUserLoggedIn() {
+    this.isLoggedIn().pipe(
+      tap(user => {
+        if (user) {
+          console.log("User signed in");
+        } else {
+          console.log("There is no user :\(");
+        }
+      })
+    ).subscribe();
   }
 }
