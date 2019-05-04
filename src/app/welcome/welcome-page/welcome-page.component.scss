@@ -22,6 +22,11 @@ button {
      background-size: cover;
      background-position: center center;
     }
+    &:focus {
+        outline-width: 5px;
+        outline-color: white;
+        outline-style: auto;
+    }
   }
 
 .course-image {
@@ -64,4 +69,12 @@ button {
 
 .course-card-link {
     text-decoration: none;
+}
+
+.user-menu-item {
+    font-family: $titleFont;
+    font-weight: 400;
+    color: #a8acae;
+    font-size: 12px;
+    line-height: 24px;
 }

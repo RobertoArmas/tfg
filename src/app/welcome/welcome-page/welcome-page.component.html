@@ -16,28 +16,30 @@
 </div> -->
 
 <mat-menu #menu="matMenu">
-    <button mat-menu-item (click)="logout()">CERRAR SESIÓN</button>
+    <button mat-menu-item (click)="logout()" class="user-menu-item">CERRAR SESIÓN</button>
 </mat-menu>
 
 <div class="welcome-wrapper">
-  <mat-toolbar color="primary" role="heading" fxLayout="row" fxLayoutAlign="space-between center">
-    <h1>Inés de Juan te quiero</h1>
+  <mat-toolbar color="primary" role="heading" fxLayout="row" fxLayoutAlign="space-between center" class="mat-elevation-z6">
+    <h1>TFG Jorge Espinosa</h1>
     <button mat-flat-button aria-label="Inicia sesión para acceder a los cursos" (click)="login()"
       *ngIf="!userIsLoggedIn; else userLogged;">INICIAR
       SESIÓN</button>
     <ng-template #userLogged>
 
-      <button mat-mini-fab [matMenuTriggerFor]="menu" class="image" [style.backgroundImage]="'url(' + this.profilePicture$ + ')'"></button>
+      <button mat-mini-fab [matMenuTriggerFor]="menu" class="image mat-elevation-z0" [style.backgroundImage]="'url(' + this.profilePicture$ + ')'"></button>
     </ng-template>
   </mat-toolbar>
 
-  <div class="welcome-title" fxLayout="row" fxLayoutAlign="center none">
-    <p>Bienvenido a Courses Preview</p>
+  <div fxLayout="row" fxLayoutAlign="center none">
+    <h1 class="welcome-title">Bienvenido a Courses Preview</h1>
   </div>
 
-  <div class="courses-list" fxLayout="row" fxLayoutAlign="center none">
+  <div class="courses-list" fxLayout="row" fxLayoutAlign="center none" role="region" 
+  aria-label="Lista de lecciones">
     <mat-list role="list" fxFlex="70">
-      <a *ngFor="let course of courses" class="course-card-link" routerLink="/course-viewer/section" (click)="sendStartStatement(course.id)">
+      <a *ngFor="let course of courses" class="course-card-link" routerLink="/course-viewer/section" (click)="sendStartStatement(course.id)"
+      attr.aria-label="{{'Acceder a ' + course.title}}">
           <mat-card  fxLayout="row" fxLayoutAlign=" center" class="course-card"
           role="listitem">
   
