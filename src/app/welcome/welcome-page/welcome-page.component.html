@@ -15,11 +15,20 @@
   </header>
 </div> -->
 
+<mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="logout()">CERRAR SESIÓN</button>
+</mat-menu>
 
 <div class="welcome-wrapper">
   <mat-toolbar color="primary" role="heading" fxLayout="row" fxLayoutAlign="space-between center">
     <h1>Inés de Juan te quiero</h1>
-    <button mat-flat-button aria-label="Inicia sesión para acceder a los cursos" (click)="login()">INICIAR SESIÓN</button>
+    <button mat-flat-button aria-label="Inicia sesión para acceder a los cursos" (click)="login()"
+      *ngIf="!userIsLoggedIn; else userLogged;">INICIAR
+      SESIÓN</button>
+    <ng-template #userLogged>
+
+      <button mat-mini-fab [matMenuTriggerFor]="menu" class="image" [style.backgroundImage]="'url(' + this.profilePicture$ + ')'"></button>
+    </ng-template>
   </mat-toolbar>
 
   <div class="welcome-title" fxLayout="row" fxLayoutAlign="center none">
@@ -28,21 +37,24 @@
 
   <div class="courses-list" fxLayout="row" fxLayoutAlign="center none">
     <mat-list role="list" fxFlex="70">
-      <mat-card *ngFor="let course of courses" fxLayout="row" fxLayoutAlign=" center" class="course-card"
-        role="listitem">
-
-        <img class="course-image" [src]="course.imageUrl">
-
-        <div fxFlexOffset="3" fxFlex="65" fxLayout="column">
-          <h2 class="course-title">{{course.title}}</h2>
-          <p class="course-attribute">Progreso: 78%</p>
-        </div>
-
-        <div fxLayout="row" fxLayoutAlign=" center">
-          <span class="card-separator"></span>
-          <p fxFlexOffset="30" fxFill class="course-attribute">{{course.NumberOfLessons + ' Lecciones'}}</p>
-        </div>
-      </mat-card>
+      <a *ngFor="let course of courses" class="course-card-link" routerLink="/course-viewer/section" (click)="sendStartStatement(course.id)">
+          <mat-card  fxLayout="row" fxLayoutAlign=" center" class="course-card"
+          role="listitem">
+  
+          <img class="course-image" [src]="course.imageUrl">
+  
+          <div fxFlexOffset="3" fxFlex="65" fxLayout="column">
+            <h2 class="course-title">{{course.title}}</h2>
+            <p class="course-attribute">{{course.description}}</p>
+          </div>
+  
+          <div fxLayout="row" fxLayoutAlign=" center">
+            <span class="card-separator"></span>
+            <p fxFlexOffset="30" fxFill class="course-attribute">{{course.NumberOfLessons + ' Lecciones'}}</p>
+          </div>
+        </mat-card>
+      </a>
+      
     </mat-list>
   </div>
 </div>

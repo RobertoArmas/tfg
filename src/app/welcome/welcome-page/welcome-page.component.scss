@@ -1,4 +1,5 @@
 @import "src/variables.scss";
+@import '~@angular/material/theming';
 
 .welcome-wrapper {
     background-color: F5F5F5;
@@ -13,6 +14,15 @@
     margin-top: 50px;
     margin-bottom: 50px;
 }
+
+button {
+    &.image {
+     background-color: transparent;
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center center;
+    }
+  }
 
 .course-image {
     background-size: cover;
@@ -44,4 +54,14 @@
         border-left: 3px solid green;
         height: 50px;
     }
+    @include mat-elevation-transition;
+    @include mat-elevation(2);
+    &:hover {
+        cursor: pointer;
+        @include mat-elevation(8);
+    }
+}
+
+.course-card-link {
+    text-decoration: none;
 }
