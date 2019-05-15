@@ -25,14 +25,14 @@
     <button mat-flat-button aria-label="Inicia sesión para acceder a los cursos" (click)="login()"
       *ngIf="!userIsLoggedIn; else userLogged;">INICIAR
       SESIÓN</button>
+      
     <ng-template #userLogged>
-
       <button mat-mini-fab [matMenuTriggerFor]="menu" class="image mat-elevation-z0" [style.backgroundImage]="'url(' + this.profilePicture$ + ')'"></button>
     </ng-template>
   </mat-toolbar>
 
   <div fxLayout="row" fxLayoutAlign="center none">
-    <h1 class="welcome-title">Bienvenido a Courses Preview</h1>
+    <h1 class="welcome-title">Bienvenido a E-gular</h1>
   </div>
 
   <div class="courses-list" fxLayout="row" fxLayoutAlign="center none" role="region" 
