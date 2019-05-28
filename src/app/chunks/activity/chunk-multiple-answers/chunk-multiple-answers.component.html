@@ -2,44 +2,66 @@
   <div fxLayout="row" fxLayoutAlign="center none" [style.padding-top.px]="attributes.paddingTop"
     [style.padding-bottom.px]="attributes.paddingBottom">
     <div fxFlex="90" fxFlex.gt-md="761.667px">
-      <mat-card>
+      <mat-card aria-label="Chunk Select Multiple Answers" role="group">
 
         <p> {{attributes.question}} </p>
-        <mat-divider></mat-divider>
+        <mat-divider aria-hidden="true"></mat-divider>
 
         <div class="choices" fxLayout="row" fxLayoutAlign="end none">
 
-          <div fxLayout="column" fxLayoutAlign="space-evenly start"
-            fxLayoutGap="50px" fxFlex="90" fxFlex.gt-md="631.66px">
-            <mat-checkbox [disabled]='showAnswer' class="choice-radio-button" *ngFor="let choice of attributes.choices" (change)="toggleChoice(choice)" [checked]="checkIfSaved(choice)">
+          <div 
+          id="{{'choicesGroup' + id}}"
+          fxLayout="column" 
+          fxLayoutAlign="space-evenly start"
+          fxLayoutGap="50px" 
+          fxFlex="90" 
+          fxFlex.gt-md="631.66px"
+          role="list"
+          tabindex="0"
+          attr.aria-label="{{attributes.question}}">
+            <mat-checkbox 
+            [disabled]='showAnswer' 
+            class="choice-radio-button" 
+            *ngFor="let choice of attributes.choices" 
+            (change)="toggleChoice(choice)" 
+            [checked]="checkIfSaved(choice)"
+            role="listitem">
               {{choice}}
             </mat-checkbox>
           </div>
         </div>
 
 
-        <div fxLayout="row" fxLayoutAlign="center none" *ngIf="!showAnswer; else showFeedback">
-          <button mat-flat-button color="primary" [disabled]="noSelectedChoice" (click)=revealResult()>ENVIAR</button>
+        <div [hidden]="showAnswer">
+          <div fxLayout="row" fxLayoutAlign="center none">
+              <button 
+              mat-flat-button color="primary" 
+              [disabled]="noSelectedChoice" 
+              (click)=revealResult()>
+              ENVIAR
+            </button>
+            </div>
         </div>
 
-        <ng-template #showFeedback>
-          <div class="feedback" fxLayout="column" fxLayoutAlign="center center">
-            <div class="sentiment" fxLayout="column" fxLayoutAlign="center center">
-              <mat-icon>{{answer.icon}}</mat-icon>
-              <label>{{answer.label}}</label>
+          <div [hidden]="!showAnswer" attr.aria-hidden="{{!showAnswer}}">
+              <div  class="feedback" fxLayout="column" fxLayoutAlign="center center" aria-label="Feedback" role="group" >
+                <div class="sentiment" fxLayout="column" fxLayoutAlign="center center">
+                  <mat-icon>{{answer.icon}}</mat-icon>
+                  <label id="{{'questionFeedback' + id}}" tabindex="0">{{answer.label}}</label>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center center">
+                  <p fxFlex="80" fxFlex.gt-md="491px"> {{feedbackText}} </p>
+                </div>
+              </div>
+    
+              <!-- <div class="retry" fxLayout="column" fxLayoutAlign="center center">
+                <button mat-button (click)=restoreAnswers()>
+                  <mat-icon>replay</mat-icon>
+                  INTENTAR DE NUEVO
+                </button>
+              </div> -->
             </div>
-            <div fxLayout="row" fxLayoutAlign="center center">
-              <p fxFlex="80" fxFlex.gt-md="491px"> {{attributes.feedback}} </p>
-            </div>
-          </div>
-
-          <div class="retry" fxLayout="column" fxLayoutAlign="center center">
-            <button mat-button (click)=restoreAnswers()>
-              <mat-icon>replay</mat-icon>
-              INTENTAR DE NUEVO
-            </button>
-          </div>
-        </ng-template>
+            
       </mat-card>
     </div>
   </div>

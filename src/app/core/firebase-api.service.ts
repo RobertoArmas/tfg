@@ -20,6 +20,11 @@ export class FirebaseApiService {
 
   constructor(private afs: AngularFirestore, private router: Router) { }
 
+  getCoursesData(): Observable<CourseData[]> {
+    return this.afs
+      .collection<CourseData>('courses')
+      .valueChanges();
+  }
   getCourseInformation(id: string): Observable<CourseData> {
     this.currentCourse = id;
 
@@ -130,7 +135,17 @@ export class FirebaseApiService {
         answer: choice
       });
   }
+  getCourseNumberOfLessons(courseId): Observable<any> {
+    const sections = this.getCourseSections(courseId);
 
+    return sections.pipe(
+      switchMap(sections => from(sections)),
+      flatMap(section => this.getSectionLessons(courseId, section.id)
+        .pipe(
+          switchMap(lessons => from(lessons)),
+          map(lesson => (section.id + lesson.id)
+        ))));
+  }
   getLessonsArray(): Observable<any> {
     const sections = this.getCourseSections(this.currentCourse);
 

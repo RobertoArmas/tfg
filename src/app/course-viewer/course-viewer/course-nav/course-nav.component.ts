@@ -1,22 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 import { Course } from '../../course.model';
 import { Section } from '../../section.model';
 import { CourseDataService } from '../../../core/course-data.service';
-import { LessonData } from '../../lesson.model';import { XapiService } from '../../../core/xapi/xapi.service';
+import { LessonData } from '../../lesson.model';
+import { XapiService } from '../../../core/xapi/xapi.service';
 import { ProgressService } from 'src/app/core/progress.service';
 import { retryWhen, delayWhen, tap } from 'rxjs/operators';
 import { timer } from 'rxjs';
 @Component({
   selector: 'app-course-nav',
   templateUrl: './course-nav.component.html',
-  styleUrls: ['./course-nav.component.css']
+  styleUrls: ['./course-nav.component.scss']
 })
-export class CourseNavComponent implements OnInit {
+export class CourseNavComponent implements OnInit, AfterViewInit {
 
   course: Course = new Course();
   sections: Section[] = [];
   unlockedLessons$: string[];
+  mainLessonElementId = 'LessonCounter';
 
   constructor(
     private courseDataService: CourseDataService,
@@ -54,6 +56,10 @@ export class CourseNavComponent implements OnInit {
     this.getCourseSections();
   }
 
+  ngAfterViewInit() {
+    this.focusCourseTitle();
+  }
+
   getCourseInformation() {
     this.courseDataService
     .getCourseInformation()
@@ -89,5 +95,25 @@ export class CourseNavComponent implements OnInit {
 
   navigateToLesson(lesson: LessonData, sectionId: string) {
     this.xapi.navigatedTo(lesson);
+  }
+
+  focusTitle() {
+    const element = document.getElementById(this.mainLessonElementId);
+    element.focus();
+  }
+
+  focusCourseTitle() {
+    const element = document.getElementById('titleRegion');
+    element.focus();
+  }
+
+  disabledLessonAccessibleText(sectionId, lessonId) {
+    if (this.unlockedLessons$.indexOf(sectionId + lessonId) === -1) {
+      return '. Bloqueada. Completa las lecciones anteriores para acceder a esta.';
+    } else if (this.unlockedLessons$.indexOf(sectionId + lessonId) !== -1 && this.unlockedLessons$.indexOf(sectionId + lessonId) ===
+              (this.unlockedLessons$.length - 1) && !this.progressStore.courseComplete) {
+      return '. Lección actual.';
+    }
+    return '. Lección completada.';
   }
 }

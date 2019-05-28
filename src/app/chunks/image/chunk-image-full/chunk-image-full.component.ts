@@ -16,6 +16,7 @@ export class ChunkImageFullComponent implements OnInit, AfterViewInit {
   @Input() parentLesson: Lesson;
   profileUrl: Observable<string | null>;
   isLoaded: boolean;
+  imageRole = '';
 
   constructor(
     private intersectionObserverService: IntersectionObserverService
@@ -28,6 +29,8 @@ export class ChunkImageFullComponent implements OnInit, AfterViewInit {
     if (this.attributes.paddingTop === undefined) { this.attributes.paddingTop = 30; }
     if (this.attributes.paddingBottom === undefined) { this.attributes.paddingBottom = 30; }
     if (this.attributes.backgroundColor === undefined) { this.attributes.backgroundColor = '#ffffff'; }
+    if (this.attributes.longDesc === undefined) { this.attributes.backgroundColor = ''; }
+    if (this.attributes.isDecorative === true) { this.imageRole = 'presentation'; } else {this.imageRole = ''; }
   }
 
   ngAfterViewInit() {

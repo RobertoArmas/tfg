@@ -27,6 +27,9 @@ export class CourseDataService {
 
   constructor(private fbsApiService: FirebaseApiService) { }
 
+  getCoursesData(): Observable<CourseData[]> {
+    return this.fbsApiService.getCoursesData();
+  }
   getCourseInformation(): Observable<CourseData> {
     return this.fbsApiService.getCourseInformation(this.courseId);
   }
@@ -46,8 +49,11 @@ export class CourseDataService {
   getLessonChunks(sectionId: string, lessonId: string): Observable<ChunkData[]> {
     return this.fbsApiService.getLessonChunks(sectionId, lessonId);
   }
-  
   getLessonsArray(): any {
     return this.fbsApiService.getLessonsArray();
+  }
+
+  getCourseNumberOfLessons(courseId: string): any {
+    return this.fbsApiService.getCourseNumberOfLessons(courseId);
   }
 }

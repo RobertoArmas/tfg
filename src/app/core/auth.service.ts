@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
-import { map, take } from 'rxjs/operators';
+import { map, take, first } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { User } from 'firebase/app';
 import { Router } from '@angular/router';
 
 @Injectable()
@@ -72,4 +71,8 @@ export class AuthService {
   logout() {
     this.fbsAuth.auth.signOut();
   }
+
+  isLoggedIn() {
+    return this.fbsAuth.authState.pipe(first());
+ }
 }

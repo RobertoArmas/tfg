@@ -13,6 +13,8 @@ export interface CourseData {
 
     imageUrl: string | SafeStyle;
 
+    NumberOfLessons: number;
+
     setData: (data: CourseData) => void;
 }
 
@@ -28,6 +30,8 @@ export class Course implements CourseData {
     URI: string;
 
     baseStatement?: Statement;
+
+    NumberOfLessons: number;
 
     // GUID de la sesión del curso que se ha lanzado
     attemptGUID?: string;

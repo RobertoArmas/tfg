@@ -1,11 +1,11 @@
 
 <div>
   <div fxLayout="row" fxLayoutAlign="center none">
-    <div fxFlex="90" fxFlex.gt-md="761.667px">
-      <p class="lesson-counter"> Lección {{currentLesson}} de {{totalLessons}} </p>
-      <h1> {{title}} </h1>
+    <div fxFlex="90" fxFlex.gt-md="761.667px" id="LessonCounter" tabindex="-1">
+      <p class="lesson-counter" > Lección {{currentLesson}} de {{totalLessons}} </p>
+      <h2 id="LessonTitle"> {{title}} </h2>
       <div class="lesson-underline">
-        <mat-progress-bar mode="determinate" value="100"></mat-progress-bar>
+        <mat-progress-bar mode="determinate" value="100" aria-hidden="true"></mat-progress-bar>
       </div>
     </div>
   </div>

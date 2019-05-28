@@ -45,3 +45,17 @@
         text-decoration: none;
     }
 }
+
+button {
+    &.image {
+     background-color: transparent;
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center center;
+    }
+    &:focus {
+        outline-width: 5px;
+        outline-color: white;
+        outline-style: auto;
+    }
+  }

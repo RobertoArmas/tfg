@@ -1,11 +1,11 @@
-<div id={{id}} [style.background-color]="attributes.backgroundColor"> 
+<div id={{id}} [style.background-color]="attributes.backgroundColor" aria-label="Chunk Numbered List" role="group"> 
   <div fxLayout="row" fxLayoutAlign="center none" [style.padding-top.px]="attributes.paddingTop" [style.padding-bottom.px]="attributes.paddingBottom">
     <div fxFlex="90" fxFlex.gt-md="761.667px">
-      <div *ngIf="attributes.items; else loadingcss">
+      <div *ngIf="attributes.items; else loadingcss" role="list">
         <div *ngFor="let item of attributes.items; let i = index">
           <div fxLayout="row" fxLayoutGap="6%" class="numbered-item">
             <p class="index-indicator"></p>
-            <p>{{item}}</p>
+            <p role="listitem">{{item}}</p>
           </div>
         </div>
       </div>

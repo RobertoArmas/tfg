@@ -69,7 +69,7 @@ export class CourseViewerComponent implements OnInit {
     this.progressStore.progress.subscribe(
       progress => {
         if (progress) {
-          this.router.navigate(['/course-viewer/section/' + progress.currentLesson.sectionId + 
+          this.router.navigate(['/course-viewer/section/' + progress.currentLesson.sectionId +
           '/lesson/' + progress.currentLesson.lessonId]);
           this.isProgressLoaded = true;
         } else {
