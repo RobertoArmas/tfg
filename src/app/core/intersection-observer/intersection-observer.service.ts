@@ -24,7 +24,7 @@ export class IntersectionObserverService {
     // No se puede definir fuera como una función porque no obtiene el this.id correctamente
     const callback = (entries) => {
       entries.forEach(entry => {
-        if (entry.intersectionRatio === 1) {
+        if (entry.intersectionRatio >= 1) {
           if (!attributes.reviewed) {
             this.xApiService.acknowledged(id, attributes, parentLesson);
             // TODO: Escribir en bd reviewed = true
