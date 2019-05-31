@@ -34,6 +34,7 @@ export class WelcomePageComponent implements OnInit, OnChanges {
 
     this.fbsAuth.auth.onAuthStateChanged(user => {
       this.checkUserLoggedIn();
+      this.sendStartStatement(this.courseDataService.courseId);
       this.profilePicture$ = user.photoURL;
     });
   }
@@ -71,9 +72,21 @@ export class WelcomePageComponent implements OnInit, OnChanges {
   }
 
   sendStartStatement(courseId: string) {
-    this.courseDataService.courseId = courseId;
-    this.getCourseInformation();
-    this.xapi.started(this.course);
+    if (courseId != null) {
+      this.courseDataService.courseId = courseId;
+      this.getCourseInformation();
+      this.isLoggedIn().subscribe(
+        user => {
+          if (user) {
+              console.log(user);
+              this.xapi.launchLrsConnection(user.displayName, user.email);
+              this.xapi.started(this.course);
+            } else {
+              console.log('No había usuario');
+            }
+        }
+      );
+    }
   }
 
 
