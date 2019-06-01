@@ -3,7 +3,7 @@
 # others
 /src/assets/themes/*.css
 /.firebase/*.cache
-
+/src/app/core/xapi/config.ts
 
 
 # compiled output
