@@ -15,7 +15,7 @@ import { timer } from 'rxjs';
 })
 export class CourseNavComponent implements OnInit, AfterViewInit {
 
-  course: Course = new Course();
+  // course: Course = new Course();
   sections: Section[] = [];
   unlockedLessons$: string[];
   mainLessonElementId = 'LessonCounter';
@@ -52,7 +52,7 @@ export class CourseNavComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    this.getCourseInformation();
+    // this.getCourseInformation();
     this.getCourseSections();
   }
 
@@ -60,15 +60,15 @@ export class CourseNavComponent implements OnInit, AfterViewInit {
     this.focusCourseTitle();
   }
 
-  getCourseInformation() {
-    this.courseDataService
-    .getCourseInformation()
-    .subscribe(
-      (course) => {
-        this.course = course;
-      }
-    );
-  }
+  // getCourseInformation() {
+  //   this.courseDataService
+  //   .getCourseInformation()
+  //   .subscribe(
+  //     (course) => {
+  //       this.course = course;
+  //     }
+  //   );
+  // }
 
   getCourseSections() {
     this.courseDataService

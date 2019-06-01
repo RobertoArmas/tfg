@@ -16,6 +16,7 @@ import { ProgressService } from 'src/app/core/progress.service';
 export class WelcomePageComponent implements OnInit, OnChanges {
 
   course: CourseData;
+  trackingCourseId = '';
 
   courses: CourseData[];
   userIsLoggedIn = false;
@@ -28,12 +29,13 @@ export class WelcomePageComponent implements OnInit, OnChanges {
   ) { }
 
   ngOnInit() {
-    this.getCourseInformation();
+    // this.getCourseInformation();
     this.getCoursesData();
     this.checkUserLoggedIn();
 
     this.fbsAuth.auth.onAuthStateChanged(user => {
       this.checkUserLoggedIn();
+      this.sendStartStatement(this.trackingCourseId);
       this.profilePicture$ = user.photoURL;
     });
   }
@@ -60,9 +62,9 @@ export class WelcomePageComponent implements OnInit, OnChanges {
         }
       );
   }
-  getCourseInformation() {
+  getCourseInformation(courseId: string) {
     this.courseDataService
-      .getCourseInformation()
+      .getCourseInformation(courseId)
       .subscribe(
         (course) => {
           this.course = course;
@@ -71,9 +73,27 @@ export class WelcomePageComponent implements OnInit, OnChanges {
   }
 
   sendStartStatement(courseId: string) {
-    this.courseDataService.courseId = courseId;
-    this.getCourseInformation();
-    this.xapi.started(this.course);
+    this.trackingCourseId = courseId;
+    if (this.trackingCourseId !== '') {
+      this.courseDataService.courseId = courseId;
+      this.courseDataService
+      .getCourseInformation(this.trackingCourseId)
+      .subscribe(
+        (course) => {
+          this.course = course;
+          this.isLoggedIn().subscribe(
+            user => {
+              if (user) {
+                  console.log('EEEEEEEEEE');
+                  console.log(this.course);
+                  this.xapi.launchLrsConnection(user.displayName, user.email);
+                  this.xapi.started(this.course);
+                }
+            }
+          );
+        }
+      );
+    }
   }
 
 

@@ -13,20 +13,23 @@ import { ChunkMultipleChoice } from '../../chunks/activity/chunk-multiple-choice
 @Injectable()
 export class XapiService {
   course: Course;
-  actor: StatementAgent;
+  actor: StatementAgent = {};
 
   constructor() {
     this.course = new Course();
-    this.launchLrsConnection();
+    // this.launchLrsConnection();
   }
 
-  launchLrsConnection() {
+  launchLrsConnection(userName: string, userEmail: string) {
 
     // Activa/desactiva el logging de xAPI
-    ADL.XAPIWrapper.log.debug = false;
+    ADL.XAPIWrapper.log.debug = true;
 
     ADL.XAPIWrapper.changeConfig(UaConfig);
-    this.actor = UaAgent;
+    // this.actor = UaAgent;
+    this.actor.name = userName;
+    this.actor.mbox = 'mailto:' + userEmail;
+    this.actor.objectType = 'Agent';
 
     ADL.XAPIWrapper.log('--- configuración de LRS realizada con éxito --- \n');
     ADL.XAPIWrapper.log(ADL.XAPIWrapper.lrs);

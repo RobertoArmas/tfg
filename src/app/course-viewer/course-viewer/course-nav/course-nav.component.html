@@ -57,7 +57,7 @@
             <!-- <mat-progress-spinner [diameter]="21" [value]="70" *ngIf="unlockedLessons$.indexOf(section.id + lesson.id) !== -1"></mat-progress-spinner> -->
             <mat-icon fxFlex="15" color = "primary" *ngIf="(unlockedLessons$.indexOf(section.id + lesson.id) !== -1 && unlockedLessons$.indexOf(section.id + lesson.id) < (unlockedLessons$.length - 1)) || progressStore.courseComplete">check_circle</mat-icon>
             <mat-icon fxFlex="15" color = "primary" *ngIf="(unlockedLessons$.indexOf(section.id + lesson.id) !== -1 && unlockedLessons$.indexOf(section.id + lesson.id) === (unlockedLessons$.length - 1)) && !progressStore.courseComplete">low_priority</mat-icon>
-            <mat-icon fxFlex="15" mat-list-icon *ngIf="(unlockedLessons$.indexOf(section.id + lesson.id) === -1 && unlockedLessons$.indexOf(section.id + lesson.id) < (unlockedLessons$.length - 1)) || progressStore.courseComplete">lock</mat-icon>
+            <mat-icon fxFlex="15" mat-list-icon *ngIf="(unlockedLessons$.indexOf(section.id + lesson.id) === -1 && unlockedLessons$.indexOf(section.id + lesson.id) < (unlockedLessons$.length - 1))">lock</mat-icon>
           </a>
         </mat-list>
       </ng-template>
