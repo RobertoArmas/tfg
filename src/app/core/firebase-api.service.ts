@@ -236,4 +236,22 @@ export class FirebaseApiService {
       'currentLesson.isFinished': 'false'
     });
   }
+  acnowledgeChunk(chunkId: string, uid: string) {
+    this.afs.collection('users').doc(uid)
+    .collection('courses').doc(this.currentCourse)
+    .update({
+      acknowledgedChunks: firebase.firestore.FieldValue.arrayUnion(chunkId)
+    });
+  }
+
+  getAcknowledgedChunks(uid: string): Observable<string[]> {
+    return this.afs.collection('users').doc(uid)
+      .collection('courses').doc<CourseProgress>(this.currentCourse)
+      .valueChanges()
+      .pipe(
+        map(course => {
+          return course.acknowledgedChunks;
+        })
+      );
+  }
 }

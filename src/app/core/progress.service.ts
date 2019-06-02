@@ -66,7 +66,8 @@ export class ProgressService {
         isFinished: false,
         lessonId: 'l01',
         sectionId: 's01'
-      }
+      },
+      acknowledgedChunks: []
     };
   }
 
@@ -108,6 +109,21 @@ export class ProgressService {
           }
         )
       );
+  }
+
+  public checkAcknowledgedChunk(chunkId: string): Observable<boolean> {
+    return this.fbsApi.getAcknowledgedChunks(this.authService.userId)
+      .pipe(
+        map(
+          acknowledgedChunks => {
+            return acknowledgedChunks.indexOf(chunkId) !== -1 ? true : false;
+          }
+        )
+      );
+  }
+
+  getAcknowledgedChunks(): Observable<string[]> {
+    return this.fbsApi.getAcknowledgedChunks(this.authService.userId);
   }
 
   public getUnlockedLessons(): Observable<string[]> {
@@ -163,5 +179,9 @@ export class ProgressService {
           }
         }
       );
+  }
+
+  acknowledgeChunk(chunkId: string) {
+    this.fbsApi.acnowledgeChunk(chunkId, this.authService.userId);
   }
 }

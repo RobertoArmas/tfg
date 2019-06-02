@@ -5,6 +5,7 @@ export interface UserProgress {
     progress: CourseProgress;
 }
 export interface CourseProgress {
+  acknowledgedChunks: string[];
     courseId: string;
     currentLesson: currentLessonProgress;
 
