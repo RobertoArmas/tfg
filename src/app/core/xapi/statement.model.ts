@@ -10,8 +10,14 @@ export interface Statement {
     verb?: StatementVerb;
     timestamp?: Date;
     result?: StatementResult;
+    authority?: StatementAuthority;
 }
 
+export interface StatementAuthority {
+    mbox?: string;
+    objectType?: string;
+    name?: string;
+}
 export interface StatementVerb {
     id: string;
     display: LanguageMap;

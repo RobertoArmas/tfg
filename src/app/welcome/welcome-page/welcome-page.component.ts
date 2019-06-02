@@ -84,8 +84,6 @@ export class WelcomePageComponent implements OnInit, OnChanges {
           this.isLoggedIn().subscribe(
             user => {
               if (user) {
-                  console.log('EEEEEEEEEE');
-                  console.log(this.course);
                   this.xapi.launchLrsConnection(user.displayName, user.email);
                   this.xapi.started(this.course);
                 }
