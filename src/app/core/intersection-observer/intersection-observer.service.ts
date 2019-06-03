@@ -61,4 +61,41 @@ export class IntersectionObserverService {
     const target = document.querySelector('#' + id);
     this.observer.observe(target);
   }
+
+
+
+  createLargeContentObserver(id: string, attributes: ChunkData, parentLesson: LessonData) {
+
+    // No se puede definir fuera como una función porque no obtiene el this.id correctamente
+    const callback = (entries) => {
+      entries.forEach(entry => {
+        console.log(entry.intersectionRatio);
+        if (entry.intersectionRatio >= 0.6) {
+          console.log('trigger!');
+          if (this.acknowledgedChunks.indexOf(id) === -1) {
+            this.progressStore.acknowledgeChunk(id);
+            this.xApiService.acknowledged(id, attributes, parentLesson);
+          } else {
+            this.xApiService.reviewed(id, attributes, parentLesson);
+          }
+
+
+          // if (!attributes.reviewed) {
+          //   this.xApiService.acknowledged(id, attributes, parentLesson);
+
+          //   // TODO: Escribir en bd reviewed = true
+          //   this.progressStore.acknowledgeChunk(id);
+
+          // } else {
+          //   this.xApiService.reviewed(id, attributes, parentLesson);
+          // }
+        }
+      });
+    };
+
+    this.observer = new IntersectionObserver(callback, IntersectionObserverOptions);
+
+    const target = document.querySelector('#' + id);
+    this.observer.observe(target);
+  }
 }
