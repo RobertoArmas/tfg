@@ -113,7 +113,7 @@ export class ChunkMultipleAnswersComponent implements OnInit, DoCheck, AfterView
     this.attributes.statementData = this.attributes.question;
     this.attributes.statementChoices = this.formatStatementChoices();
     this.attributes.statementSuccess = this.isTheRightAnswer();
-    this.attributes.statementResponse = this.choices;
+    this.attributes.statementResponse = this.choices.join(' | ');
     this.xApiService.answered(this.id, this.attributes, this.parentLesson);
     this.attributes.previousAttempts++;
   }

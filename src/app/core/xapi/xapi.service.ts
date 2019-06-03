@@ -332,6 +332,60 @@ export class XapiService {
   }
 
 
+
+  answered_multiple(chunkId: string, attributes: ChunkMultipleChoice, lesson: LessonData) {
+    const statement: Statement = this.getBase();
+
+    statement.verb = verbs.answered;
+
+    statement.object = {
+      id: this.course.URI + '/chunk',
+      definition: {
+        name: { 'es-Es': chunkId + ' - ' + this.trimData(attributes) },
+        description: { 'es-Es': attributes.statementData },
+        type: ActivityTypes.interaction,
+        interactionType: attributes.interactionType,
+        correctResponsesPattern: attributes.correctResponsePattern,
+        choices: attributes.statementChoices
+      },
+      objectType: 'Activity'
+    };
+
+    statement.context.contextActivities = {
+      parent: {
+        id: this.course.URI + '/lesson' + lesson.URI,
+        definition: {
+          name: { 'es-ES': lesson.id + ' - ' + lesson.title },
+          description: { 'es-ES': lesson.description },
+          type: ActivityTypes.slide
+        },
+        objectType: 'Activity'
+      },
+      grouping: {
+        id: this.course.URI,
+        objectType: 'Activity',
+        definition: {
+          type: ActivityTypes.course,
+          name: { 'es-Es': this.course.title },
+          description: { 'es-Es': this.course.description }
+        }
+      }
+    };
+
+    statement.result = {
+      success: attributes.statementSuccess,
+      response: attributes.statementResponse,
+      extensions: {
+        'https://www.ua.es/tfgJorgeEspinosa/extensions/previousAttempts': attributes.previousAttempts
+      }
+    };
+
+    ADL.XAPIWrapper.sendStatement(statement, (resp: any) => {
+      ADL.XAPIWrapper.log(resp.status + ' - statement id: ' + resp.response);
+    });
+  }
+
+
   checked(chunkId: string, option: string, lesson: LessonData) {
     const statement: Statement = this.getBase();
 
