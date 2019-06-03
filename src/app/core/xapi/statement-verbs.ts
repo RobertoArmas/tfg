@@ -30,5 +30,17 @@ export const verbs = {
     answered: {
         id: 'http://adlnet.gov/expapi/verbs/answered',
         display: { 'es-Es': 'ha contestado' }
-      }
+      },
+    interacted: {
+      id: 'http://adlnet.gov/expapi/verbs/interacted',
+      display: {'es-Es': 'ha completado interacción'}
+    },
+    checked: {
+      id: 'http://tfg-jespinosa/verbs/checked',
+      display: {'es-Es': 'ha marcado la opción'}
+    },
+    unchecked: {
+      id: 'http://tfg-jespinosa/verbs/unchecked',
+      display: {'es-Es': 'ha desmarcado la opción'}
+    }
 };

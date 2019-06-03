@@ -28,7 +28,7 @@ export class ChunkBulletedListComponent implements OnInit, AfterViewInit {
 
 
   ngAfterViewInit() {
-    this.attributes.statementData = this.attributes.items[0];
+    this.attributes.statementData = this.attributes.items.join(', ');
     this.intersectionObserverService.createObserver(this.id, this.attributes, this.parentLesson);
   }
 

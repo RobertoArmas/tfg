@@ -3,6 +3,7 @@ import { CheckboxList } from './CheckboxList';
 import { IntersectionObserverService } from '../../../core/intersection-observer/intersection-observer.service';
 import { LessonData } from '../../../course-viewer/lesson.model';
 import { ProgressService } from 'src/app/core/progress.service';
+import { XapiService } from 'src/app/core/xapi/xapi.service';
 
 
 @Component({
@@ -21,7 +22,8 @@ export class ChunkCheckboxListComponent implements OnInit, AfterViewInit {
 
   constructor(
     private intersectionObserverService: IntersectionObserverService,
-    private progressStore: ProgressService
+    private progressStore: ProgressService,
+    private xAPIService: XapiService
   ) {
     this.attributes = new CheckboxList();
     this.selectedItems = [];
@@ -34,7 +36,7 @@ export class ChunkCheckboxListComponent implements OnInit, AfterViewInit {
   }
   ngAfterViewInit() {
     this.loadAnswers();
-    this.attributes.statementData = this.attributes.items[0];
+    this.attributes.statementData = this.attributes.items.join(', ');
     this.intersectionObserverService.createObserver(this.id, this.attributes, this.parentLesson);
   }
 
@@ -60,13 +62,15 @@ export class ChunkCheckboxListComponent implements OnInit, AfterViewInit {
     // Añade o elimina el item del array de seleccionados porque se activa en cada toggle del checkbox
     if (this.selectedItems.findIndex(selectedItem => selectedItem === item) === -1) {
       this.selectedItems.push(item);
+      this.xAPIService.checked(this.id, item, this.parentLesson);
     } else {
       this.selectedItems = this.selectedItems.filter(selectedItem => selectedItem !== item);
+      this.xAPIService.unchecked(this.id, item, this.parentLesson);
     }
-
     // Si todos los items han sido seleccionados marca el chunk como completado
     if (this.selectedItems.length === this.attributes.items.length) {
       this.progressStore.setAnswer(this.id, this.selectedItems);
+      this.xAPIService.interacted(this.id, this.selectedItems.join(', '), this.parentLesson);
     } else {
       this.progressStore.setAnswer(this.id, '');
     }

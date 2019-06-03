@@ -183,7 +183,7 @@ export class XapiService {
 
   trimData(attributes: ChunkData): string {
     let trimmedData: string = attributes.statementData;
-    const charLimit = 60;
+    const charLimit = 81;
 
     if (attributes.statementData.length > charLimit) {
       trimmedData = attributes.statementData.slice(0, charLimit).split(' ').slice(0, -1).join(' ').concat('…');
@@ -322,7 +322,7 @@ export class XapiService {
       success: attributes.statementSuccess,
       response: attributes.statementResponse,
       extensions: {
-        'https://www.ua.es/tfgJorgeEspinosa/extensions/previousAttempts':  attributes.previousAttempts
+        'https://www.ua.es/tfgJorgeEspinosa/extensions/previousAttempts': attributes.previousAttempts
       }
     };
 
@@ -330,4 +330,142 @@ export class XapiService {
       ADL.XAPIWrapper.log(resp.status + ' - statement id: ' + resp.response);
     });
   }
+
+
+  checked(chunkId: string, option: string, lesson: LessonData) {
+    const statement: Statement = this.getBase();
+
+    statement.verb = verbs.checked;
+
+    statement.object = {
+      id: this.course.URI + '/chunk',
+      definition: {
+        name: { 'es-Es': chunkId + ', option: ' + option },
+        description: { 'es-Es': option },
+        type: ActivityTypes.interaction
+      },
+      objectType: 'Activity'
+    };
+
+    statement.context.contextActivities = {
+      parent: {
+        id: this.course.URI + '/lesson' + lesson.URI,
+        definition: {
+          name: { 'es-ES': lesson.id + ' - ' + lesson.title },
+          description: { 'es-ES': lesson.description },
+          type: ActivityTypes.slide
+        },
+        objectType: 'Activity'
+      },
+      grouping: {
+        id: this.course.URI,
+        objectType: 'Activity',
+        definition: {
+          type: ActivityTypes.course,
+          name: { 'es-Es': this.course.title },
+          description: { 'es-Es': this.course.description }
+        }
+      }
+    };
+
+    statement.context.registration = this.course.attemptGUID;
+    statement.timestamp = new Date();
+
+    ADL.XAPIWrapper.sendStatement(statement, (resp: any) => {
+      ADL.XAPIWrapper.log(resp.status + ' - statement id: ' + resp.response);
+    });
+  }
+
+
+
+  unchecked(chunkId: string, option: string, lesson: LessonData) {
+    const statement: Statement = this.getBase();
+
+    statement.verb = verbs.unchecked;
+
+    statement.object = {
+      id: this.course.URI + '/chunk',
+      definition: {
+        name: { 'es-Es': chunkId + ', option: ' + option },
+        description: { 'es-Es': option },
+        type: ActivityTypes.interaction
+      },
+      objectType: 'Activity'
+    };
+
+    statement.context.contextActivities = {
+      parent: {
+        id: this.course.URI + '/lesson' + lesson.URI,
+        definition: {
+          name: { 'es-ES': lesson.id + ' - ' + lesson.title },
+          description: { 'es-ES': lesson.description },
+          type: ActivityTypes.slide
+        },
+        objectType: 'Activity'
+      },
+      grouping: {
+        id: this.course.URI,
+        objectType: 'Activity',
+        definition: {
+          type: ActivityTypes.course,
+          name: { 'es-Es': this.course.title },
+          description: { 'es-Es': this.course.description }
+        }
+      }
+    };
+
+    statement.context.registration = this.course.attemptGUID;
+    statement.timestamp = new Date();
+
+    ADL.XAPIWrapper.sendStatement(statement, (resp: any) => {
+      ADL.XAPIWrapper.log(resp.status + ' - statement id: ' + resp.response);
+    });
+  }
+
+
+
+  interacted(chunkId: string, options: string, lesson: LessonData) {
+    const statement: Statement = this.getBase();
+
+    statement.verb = verbs.interacted;
+
+    statement.object = {
+      id: this.course.URI + '/chunk',
+      definition: {
+        name: { 'es-Es': chunkId + ' options: ' + options },
+        description: { 'es-Es': options },
+        type: ActivityTypes.interaction
+      },
+      objectType: 'Activity'
+    };
+
+    statement.context.contextActivities = {
+      parent: {
+        id: this.course.URI + '/lesson' + lesson.URI,
+        definition: {
+          name: { 'es-ES': lesson.id + ' - ' + lesson.title },
+          description: { 'es-ES': lesson.description },
+          type: ActivityTypes.slide
+        },
+        objectType: 'Activity'
+      },
+      grouping: {
+        id: this.course.URI,
+        objectType: 'Activity',
+        definition: {
+          type: ActivityTypes.course,
+          name: { 'es-Es': this.course.title },
+          description: { 'es-Es': this.course.description }
+        }
+      }
+    };
+
+    statement.context.registration = this.course.attemptGUID;
+    statement.timestamp = new Date();
+
+    ADL.XAPIWrapper.sendStatement(statement, (resp: any) => {
+      ADL.XAPIWrapper.log(resp.status + ' - statement id: ' + resp.response);
+    });
+  }
+
 }
