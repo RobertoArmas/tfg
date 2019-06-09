@@ -11,7 +11,10 @@ import { ProgressService } from 'src/app/core/progress.service';
 @Component({
   selector: 'app-welcome-page',
   templateUrl: './welcome-page.component.html',
-  styleUrls: ['./welcome-page.component.scss']
+  styleUrls: ['./welcome-page.component.scss'],
+  host: {
+    '(window:resize)': 'onResize($event)'
+  }
 })
 export class WelcomePageComponent implements OnInit, OnChanges {
 
@@ -21,6 +24,8 @@ export class WelcomePageComponent implements OnInit, OnChanges {
   courses: CourseData[];
   userIsLoggedIn = false;
   profilePicture$: string;
+
+  mobile = false;
 
   constructor(
     private xapi: XapiService,
@@ -38,6 +43,18 @@ export class WelcomePageComponent implements OnInit, OnChanges {
       this.sendStartStatement(this.trackingCourseId);
       this.profilePicture$ = user.photoURL;
     });
+
+    if (window.screen.width < 400) { // 768px portrait
+      this.mobile = true;
+    }
+  }
+
+  onResize(event) {
+    if (event.target.innerWidth < 400) {
+      this.mobile = true;
+    } else {
+      this.mobile = false;
+    }
   }
 
   ngOnChanges(changes: SimpleChanges) {

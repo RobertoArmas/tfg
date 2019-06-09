@@ -78,3 +78,43 @@ button {
     font-size: 12px;
     line-height: 24px;
 }
+
+
+
+
+
+
+
+.new-course-image {
+    width: 100% !important;
+    // border-bottom-left-radius: 6px;
+    // border-top-left-radius: 6px;
+}
+
+
+
+.new-course-card {
+    padding: 0;
+}
+
+
+.new-course-title {
+    font-family: $titleFont;
+    font-size: 16px;
+    line-height: 21px;
+    margin: 0;
+}
+.new-course-attribute {
+    font-family: $titleFont;
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0;
+    color: rgba(49,53,55,.4);
+}
+
+
+.new-card-separator {
+    border-top: 3px solid green;
+    width: 50%;
+    height: 10px;
+}
