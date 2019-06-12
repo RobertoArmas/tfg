@@ -44,13 +44,13 @@ export class WelcomePageComponent implements OnInit, OnChanges {
       this.profilePicture$ = user.photoURL;
     });
 
-    if (window.screen.width < 400) { // 768px portrait
+    if (window.screen.width < 420) { // 768px portrait
       this.mobile = true;
     }
   }
 
   onResize(event) {
-    if (event.target.innerWidth < 400) {
+    if (event.target.innerWidth < 420) {
       this.mobile = true;
     } else {
       this.mobile = false;
