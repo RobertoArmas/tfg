@@ -36,7 +36,12 @@ export class CourseDataService {
     // if (courseId !== undefined) {
     //   finalCourseId = courseId;
     // }
+    this.courseId = courseId;
     return this.fbsApiService.getCourseInformation(courseId);
+  }
+
+  getCurrentCourseInformation(): Observable<CourseData> {
+    return this.fbsApiService.getCourseInformation(this.courseId);
   }
 
   getCourseSections(): Observable<SectionData[]> {
